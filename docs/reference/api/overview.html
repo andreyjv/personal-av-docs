@@ -1,0 +1,633 @@
+<!doctype html><html lang=en dir=ltr class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-reference/api/overview" data-has-hydrated=false><head><meta charset=UTF-8><meta name=generator content="Docusaurus v3.10.2"><title data-rh=true>Web Services API | AirVantage documentation</title><meta data-rh=true name=viewport content="width=device-width, initial-scale=1.0"/><meta data-rh=true name=twitter:card content=summary_large_image /><meta data-rh=true property=og:image content=https://andreyjv.github.io/personal-av-docs/img/favicon.svg /><meta data-rh=true name=twitter:image content=https://andreyjv.github.io/personal-av-docs/img/favicon.svg /><meta data-rh=true property=og:url content=https://andreyjv.github.io/personal-av-docs/docs/reference/api/overview /><meta data-rh=true property=og:locale content=en /><meta data-rh=true name=docusaurus_locale content=en /><meta data-rh=true name=docsearch:language content=en /><meta data-rh=true name=docusaurus_version content=current /><meta data-rh=true name=docusaurus_tag content=docs-default-current /><meta data-rh=true name=docsearch:version content=current /><meta data-rh=true name=docsearch:docusaurus_tag content=docs-default-current /><meta data-rh=true property=og:title content="Web Services API | AirVantage documentation"/><meta data-rh=true name=description content="connectivity · imported from live Hugo on 2026-10-07. Guides stay latest. Original page."/><meta data-rh=true property=og:description content="connectivity · imported from live Hugo on 2026-10-07. Guides stay latest. Original page."/><link data-rh=true rel=icon href=/personal-av-docs/img/favicon.svg /><link data-rh=true rel=canonical href=https://andreyjv.github.io/personal-av-docs/docs/reference/api/overview /><link data-rh=true rel=alternate href=https://andreyjv.github.io/personal-av-docs/docs/reference/api/overview hreflang=en /><link data-rh=true rel=alternate href=https://andreyjv.github.io/personal-av-docs/docs/reference/api/overview hreflang=x-default /><link rel=stylesheet href=/personal-av-docs/assets/css/styles.1e3041e1.css /><script src=/personal-av-docs/assets/js/runtime~main.bbef5b78.js defer></script><script src=/personal-av-docs/assets/js/main.443f591d.js defer></script></head><body><svg style="display: none;"><defs>
+<symbol id=theme-svg-external-link viewBox="0 0 24 24"><path fill=currentColor d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme-deb")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||(window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light")),document.documentElement.setAttribute("data-theme-choice",t||"system")}(),function(){try{for(var[t,e]of new URLSearchParams(window.location.search).entries())if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id=__docusaurus><link rel=preload as=image href=/personal-av-docs/img/favicon.svg /><div role=region aria-label="Skip to main content"><a class=skipToContent_fXgn href=#__docusaurus_skipToContent_fallback>Skip to main content</a></div><nav aria-label=Main class="theme-layout-navbar navbar navbar--fixed-top"><div class=navbar__inner><div class="theme-layout-navbar-left navbar__items"><button aria-label="Toggle navigation bar" aria-expanded=false class="navbar__toggle clean-btn" type=button><svg width=30 height=30 viewBox="0 0 30 30" aria-hidden=true><path stroke=currentColor stroke-linecap=round stroke-miterlimit=10 stroke-width=2 d="M4 7h22M4 15h22M4 23h22"/></svg></button><a class=navbar__brand href=/personal-av-docs/><div class=navbar__logo><img src=/personal-av-docs/img/favicon.svg alt=AirVantage class="themedComponent_mlkZ themedComponent--light_NVdE"/><img src=/personal-av-docs/img/favicon.svg alt=AirVantage class="themedComponent_mlkZ themedComponent--dark_xIcU"/></div><b class="navbar__title text--truncate">AirVantage Docs</b></a><a class="navbar__item navbar__link navbar__guides" href=/personal-av-docs/docs/how-to/activate-sims>Guides</a><a class="navbar__item navbar__link" href=/personal-av-docs/api>API reference</a><a class="navbar__item navbar__link" href=/personal-av-docs/docs/changelog>Changelog</a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type=button disabled title="system mode" aria-label="Switch between dark and light mode (currently system mode)"><svg viewBox="0 0 24 24" width=24 height=24 aria-hidden=true class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill=currentColor d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"/></svg><svg viewBox="0 0 24 24" width=24 height=24 aria-hidden=true class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill=currentColor d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"/></svg><svg viewBox="0 0 24 24" width=24 height=24 aria-hidden=true class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill=currentColor d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"/></svg></button></div><div class=navbarSearchContainer_Bca1><div class="navbar__search searchBarContainer_NW3z" dir=ltr><svg aria-hidden=true class=searchIcon_T3tP focusable=false viewBox="0 0 16 16"><path fill=currentColor d="M6.02945 10.20327a4.17382 4.17382 0 1 1 4.17382-4.17382 4.15609 4.15609 0 0 1-4.17382 4.17382Zm9.69195 4.2199-4.8225-4.82338A5.88021 5.88021 0 0 0 12.058 6.02856 6.00467 6.00467 0 1 0 9.59979 10.8989l4.82338 4.82338a.89729.89729 0 0 0 1.29912 0 .89749.89749 0 0 0-.00087-1.29909Z"/></svg><input placeholder=Search aria-label=Search class="navbar__search-input searchInput_YFbd" value="" /><div class="loadingRing_RJI3 searchBarLoadingRing_YnHq"><div></div><div></div><div></div><div></div></div></div></div></div></div><div role=presentation class=navbar-sidebar__backdrop></div></nav><div id=__docusaurus_skipToContent_fallback class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class=av-shell><nav class=av-rail aria-label=Guides><p class=av-rail-kicker>Guides<ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class=menu__list-item-collapsible><span class="menu__link menu__link--sublist menu__link--sublist-caret av-rail-heading">Quick start</span></div><ul class=menu__list><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link href=/personal-av-docs/docs/how-to/activate-sims>Activate SIMs</a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link href=/personal-av-docs/docs/how-to/order-sims>Order SIMs</a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link href=/personal-av-docs/api>Call the API</a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link href=/personal-av-docs/docs/how-to/register-routers>Register routers</a></ul><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class=menu__list-item-collapsible><span class="menu__link menu__link--sublist menu__link--sublist-caret av-rail-heading">Browse by product</span></div><ul class=menu__list><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link href=/personal-av-docs/docs/how-to/activate-sims>Connectivity</a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link href=/personal-av-docs/docs/how-to/register-routers>Router management</a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link href=/personal-av-docs/docs/explain/states>States and operations</a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link href=/personal-av-docs/api>Developer platform</a></ul><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class=menu__list-item-collapsible><span class="menu__link menu__link--sublist menu__link--sublist-caret av-rail-heading">Keep building</span></div><ul class=menu__list><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link href=/personal-av-docs/docs/explain/states>States and operations</a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link href=/personal-av-docs/docs/reference/apn>APN table</a></ul><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class=menu__link href=/personal-av-docs/docs/get-started/first-sim>Get started</a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class=menu__link href=/personal-av-docs/docs/reference/api>Reference</a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class=menu__link href=/personal-av-docs/docs/changelog>Changelog</a></ul></nav><div class=av-shell-main><div class=docsWrapper_hBAB><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type=button></button><div class=docRoot_UBD9><main class="docMainContainer_TBSr docMainContainerEnhanced_lQrH"><div class="container padding-top--md padding-bottom--lg"><div class=row><div class="col docItemCol_VOVn"><div class=docItemContainer_Djhp><article><div class="theme-doc-markdown markdown"><header><h1>Web Services API</h1></header><p>:::note Edition
+<strong>connectivity</strong> · imported from live Hugo on 2026-10-07. Guides stay latest. <a href=https://doc.airvantage.net/connectivity/reference/cloud/API target=_blank rel="noopener noreferrer" class="">Original page</a>.
+:::</p>
+<p>Web Services API
+Cloud Connectors
+Cloud Connectors Format
+USSD Gateway
+More
+Product page
+Searching...
+Matching results
+Web Services API
+General
+f
+General Information
+Operations
+f
+System
+Operations
+Alert
+Application
+Gateway
+Settings
+Dataset
+Label
+Zone
+Operator
+Offer & Options
+System Configurations
+Administration
+f
+Company
+Partner
+Profile
+User
+Subscription
+f
+Subscription
+Ordering
+f
+Contact
+Order
+Product Reference
+API Overview
+This section describes the API of AirVantage. To test AirVantage API, you can view the
+Getting Started
+.
+The main entity of AirVantage is a
+System
+. It represents a real system: the
+physical objects, the associated data and its possible interactions.
+You can start to play with the API of this entity to understand how the API works.
+All API access is over HTTPS and accessed from your region's data center (for example, na.airvantage.net and eu.airvantage.net for USA and Europe respectively).
+(depending on the datacenter you use). All data is sent and received as JSON.
+HTTP Verbs
+Authentication
+Introspect a Token
+Expire a Token
+Error codes
+Types
+Paging
+Filtering
+Sorting
+Password rules
+HTTP Verbs
+Where possible, API strives to use appropriate HTTP verbs for each action.
+GET
+Used for retrieving resources.
+POST
+Used for creating resources, or performing custom actions.
+PUT
+Used for updating resources or collections.
+DELETE
+Used for deleting resources.
+Authentication
+AirVantage uses
+OAuth 2.0
+to provide authorized access to its API. The OAuth 2.0 authorization framework enables a third-party application to obtain limited access to an HTTP service, either on behalf of a user by orchestrating an approval interaction between the user and the HTTP service, or by allowing the third-party application to obtain access on its own behalf.
+The post
+Oauth2 Simplified
+explains very well the main concepts of this framework.
+When a user grants access to an API Client, an
+Access Token
+is issued to access user's data using AirVantage APIs. This token has a
+limited lifetime of 24 hours
+.
+There are different ways to request an access token:
+Authorization Code Flow
+Client Credentials Flow
+Resource Owner Flow
+Refresh Token Flow
+To request access, an API Client MUST be
+registered in AirVantage
+.
+Request an Access Token using the Authorization Code Flow
+In this flow, the client application needs to obtain an authorization code before requesting and access token.
+Instead of requesting authorization using the end-user credentials, the client redirects the user to AirVantage, which in turn directs the user back to the client with the authorization code.
+It is strongly recommended, specially for public applications such as native apps, to use
+Proof Key for Code Exchange (abbreviated PKCE)
+. It is an extension to the authorization code flow to prevent CSRF and authorization code injection attacks. The technique involves the client first creating a secret on each authorization request, and then using that secret again when exchanging the authorization code for an access token. This way if the code is intercepted, it will not be useful since the token request relies on the initial secret.
+Before directing the user back to the client with the authorization code, AirVantage authenticates the user and obtains authorization.</p>
+<ol>
+<li class="">Request an authorization code
+/api/oauth/authorize
+Sample
+Parameters
+Request
+GET <a href="https://na.airvantage.net/api/oauth/authorize?client_id=085d82466f824079a829f301b8a1f492&response_type=code&redirect_uri=http://www.example.org" target=_blank rel="noopener noreferrer" class="">https://na.airvantage.net/api/oauth/authorize?client_id=085d82466f824079a829f301b8a1f492&response_type=code&redirect_uri=http://www.example.org</a>
+Response
+AirVantage authenticates the user and ask for authorization.
+When the client application obtains authorization from the user, it is redirected to the provided redirect URI with the authorization code.
+<a href="http://www.example.org?code=1JV6zV" target=_blank rel="noopener noreferrer" class="">http://www.example.org?code=1JV6zV</a>
+Name
+Description
+Use
+Default
+Type
+response_type
+Value
+MUST be
+set to "code"
+required
+string
+client_id
+The client id
+required
+string
+redirect_uri
+RECOMMENDED. Indicates the URL to return the user to after authorization is complete. This field is REQUIRED when no URI was set during the client registration process or the client application is considered as public. When several redirect URIs have been registered this field will select the one you require to be redirected to. The URI
+MUST be
+an absolute URI and
+MUST NOT
+include fragment components.
+optional
+string
+state
+RECOMMENDED. This value is used by the client to maintain state between the request and callback.
+optional
+string
+code_challenge
+RECOMMENDED. When applications begin the authorization request, the client first creates what is known as a “code verifier“. This is a cryptographically random string using the characters A-Z, a-z, 0-9, and the punctuation characters -._~ (hyphen, period, underscore, and tilde), between 43 and 128 characters long.
+Once the app has generated the code verifier, it uses that to derive the code challenge. For devices that can perform a SHA256 hash, the code challenge is a Base64-URL-encoded string of the SHA256 hash of the code verifier. Clients that do not have the ability to perform a SHA256 hash are permitted to use the plain code verifier string as the challenge, although that provides less security benefits so should really only be used if absolutely necessary.
+optional
+string
+code_challenge_method
+Either plain or S256, depending on whether the challenge is the plain verifier string or the SHA256 hash of the string.
+optional
+plain
+string</li>
+<li class="">Request token
+Once the authorization code in hand, it is possible to request an access token.
+The client
+MUST use
+the HTTP
+POST
+method when making access token requests. Parameters are sent in the entity-body as Form-Encoded Body Parameters. The HTTP request entity-header includes the header
+Content-Type : application/x-www-form-urlencoded
+Also, the client
+MUST
+send its API client credentials
+when making requests to the token endpoint.
+/api/oauth/token
+Sample
+Parameters
+Request
+POST <a href=https://na.airvantage.net/api/oauth/token target=_blank rel="noopener noreferrer" class="">https://na.airvantage.net/api/oauth/token</a>
+Authorization: Basic dG90bzp0b3Rv
+Content-Type: application/x-www-form-urlencoded</li>
+</ol>
+<p>grant_type=authorization_code&code=1JV6zV
+Response
+If your application is successfully authenticated, the authorization server will return the access token:
+{
+"access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...",
+"refresh_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...",
+"token_type": "Bearer",
+"expires_in": 43199,
+}
+In addition to the access token, the response contains the number of seconds before the token expires and a refresh token, which can be used to obtain new access tokens using the same authorization grant.
+Bad credentials from an API client lead to 401 Unauthorized - Invalid Client.
+Name
+Description
+Use
+Default
+Type
+grant_type
+Value MUST be set to "authorization_code"
+required
+string
+code
+The authorization code requested before
+required
+string
+redirect_uri
+If the "redirect_uri" parameter was included in the authorization request, this field is required and their values MUST be identical. The URI MUST be an absolute URI and MUST NOT include fragment components.
+required
+string
+code_verifier
+Required when a code verifier was generated before the authorization request.
+optional
+string
+Request an Access Token using the Client Credentials Flow
+Existing API clients in the AirVantage platform do not support this flow type by default.
+To use the Client Credentials Flow, you will need an API client specifically configured with "Client Credentials" as the flow type.
+In this flow, the application uses its client credentials (client ID and client secret) directly as an authorization grant to obtain an access token.
+The client
+MUST use
+the HTTP
+POST
+method when making access token requests. Parameters are sent in the entity-body as Form-Encoded Body Parameters. The HTTP request entity-header includes the header
+Content-Type : application/x-www-form-urlencoded
+Also, the client
+MUST
+send its API client credentials
+when making requests to the token endpoint.
+Sample
+Parameters
+Request
+POST <a href=https://na.airvantage.net/api/oauth/token target=_blank rel="noopener noreferrer" class="">https://na.airvantage.net/api/oauth/token</a>
+Authorization: Basic dG90bzp0b3Rv
+Content-Type: application/x-www-form-urlencoded</p>
+<p>grant_type=client_credentials
+Response
+An access token is returned by the authorization server when your application is successfully authenticated:
+{
+"access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...",
+"token_type": "Bearer",
+"expires_in": 86400,
+}
+The response contains the access token and the number of seconds before the token expires. Note that refresh tokens are not provided in the Client Credentials flow as the application can request a new access token using the same client credentials.
+Bad credentials from an API client lead to 401 Unauthorized - Invalid Client.
+Name
+Description
+Use
+Default
+Type
+grant_type
+Value MUST be set to "client_credentials"
+required
+string
+Request an Access Token using the Resource Owner Flow
+The resource owner flow is being deprecated due to security risks, as it involves directly sharing passwords with applications. Support for this flow will end by the end of the year. If your API client was using the authorization code flow, that's perfectly fine. However, if your setup relied on the resource owner flow, it's recommended to switch to the client credentials flow instead.
+In this flow the end-user credentials (i.e. username and password) are used directly as an authorization grant to obtain an access token.
+The client
+MUST use
+the HTTP
+POST
+method when making access token requests. Parameters are sent in the entity-body as Form-Encoded Body Parameters. The HTTP request entity-header includes the header
+Content-Type : application/x-www-form-urlencoded
+Also, the client
+MUST
+send its API client credentials
+when making requests to the token endpoint.
+Sample
+Parameters
+Request
+POST <a href=https://na.airvantage.net/api/oauth/token target=_blank rel="noopener noreferrer" class="">https://na.airvantage.net/api/oauth/token</a>
+Authorization: Basic dG90bzp0b3Rv
+Content-Type: application/x-www-form-urlencoded</p>
+<p>grant_type=password&username=<a href=mailto:myLogin@anymail.com target=_blank rel="noopener noreferrer" class="">myLogin@anymail.com</a>&password=654dzzMk<br/>
+Response
+An access token is returned by the authorization server when your application is successfully authenticated:
+{
+"access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...",
+"refresh_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...",
+"token_type": "Bearer"
+"expires_in": 43199,
+}
+In addition to the access token, the response contains the number of seconds before the token expires and a refresh token, which can be used to obtain new access tokens using the same authorization grant.
+Bad credentials from the end-user to a bad request - Invalid Grant. Bad credentials from an API client lead to 401 Unauthorized - Invalid Client.
+Name
+Description
+Use
+Default
+Type
+grant_type
+Value MUST be set to "password"
+required
+string
+username
+The user's email, encoded as UTF-8
+required
+string
+password
+The password, encoded as UTF-8
+required
+string
+factor
+A 6 character code sent to you via SMS when 2-factor authentication has been activated for your company.
+Not needed in other cases.
+string
+Refresh Access Tokens
+When a client acquires an access token, the client also receives a refresh token. Refresh tokens are typically long-lasting credentials used to obtain new access tokens when they become invalid or expired.
+The client has to make a refresh request to the token endpoint by adding the right parameters.
+Refresh tokens are valid for 30 days. When the client does a refresh request, the actual refresh token is consumed and a new refresh token will be issued for the new access token.
+The client
+MUST use
+the HTTP
+POST
+method when making access token requests. Parameters are sent in the entity-body as Form-Encoded Body Parameters. The HTTP request entity-header includes the header
+Content-Type : application/x-www-form-urlencoded
+Also, the client
+MUST
+send its API client credentials
+when making requests to the token endpoint.
+/api/oauth/token
+Sample
+Parameters
+Request
+POST <a href=https://na.airvantage.net/api/oauth/token target=_blank rel="noopener noreferrer" class="">https://na.airvantage.net/api/oauth/token</a>
+Authorization: Basic dG90bzp0b3Rv
+Content-Type: application/x-www-form-urlencoded</p>
+<p>grant_type=refresh_token&refresh_token=00000000-0000-0000-0000-000000000000
+Response
+If your application is successfully authenticated, the authorization server will return a new access token along with a new refresh
+token:
+{</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style=--prism-color:#393A34;--prism-background-color:#f6f8fa><div class=codeBlockContent_QJqH><pre tabindex=0 class="prism-code language-text codeBlock_bY9V thin-scrollbar" style=color:#393A34;background-color:#f6f8fa><code class=codeBlockLines_e6Vv><div class=token-line style=color:#393A34><span class="token plain">"access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...",</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">"refresh_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...",</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">"token_type": "Bearer",</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">"expires_in": 43199,</span><br/></div></code></pre></div></div>
+<p>}
+In addition to the access token, the response contains the number of seconds before the token expires and a refresh token, which can be used to obtain new access tokens using the same authorization grant.
+The refresh token is regenerated on every refresh request.
+An invalid refresh token will finish with a
+400
+Bad Request when invalid grant.
+Name
+Description
+Use
+Default
+Type
+grant_type
+Value MUST be set to "refresh_token"
+required
+string
+refresh_token
+The refresh token sent by the authorization server when it authenticates the client and validates the
+authorization grant
+required
+string
+Access Token Usage
+The client accesses protected resources in AirVantage by presenting the access token
+The method in which the client utilizes the access token to authenticate with the AirVantage involves using the HTTP "Authorization" request header field
+RFC2617
+For example:
+GET <a href=https://na.airvantage.net/api/v1/applications target=_blank rel="noopener noreferrer" class="">https://na.airvantage.net/api/v1/applications</a>
+Authorization: Bearer fe47d528-0000-ffff-0000-ee6b82491f7
+Another possibility is to send the access token in the HTTP request URI, the client adds the access token to the request URI query component. However, its use is
+not recommended
+, due to its security deficiencies.
+For example:
+<a href="https://na.airvantage.net/api/v1/applications?access_token=00000000-0000-0000-0000-000000000000&name=myApplication" target=_blank rel="noopener noreferrer" class="">https://na.airvantage.net/api/v1/applications?access_token=00000000-0000-0000-0000-000000000000&name=myApplication</a>
+Because of the security weaknesses associated with the URI method, including the high likelihood that the URL containing the access token will be logged, it
+SHOULD NOT
+be used unless it is impossible to transport the access token in the "Authorization" request header field.
+Authenticating an API client
+API Clients
+MUST
+authenticate with AirVantage when making requests to the token endpoint. Client credentials (client_id/client_secret) are issued when the API Client is
+registered in AirVantage
+.
+It is highly recommended to use the HTTP Basic authentication scheme
+[RFC2617]
+to authenticate API clients with AirVantage.
+For example. The user agent wishes to send the client_id "my_client" and the client_secret "the_secret". First, it will create the credentials by separating the client_id and client_secret by a single colon (:)
+my_client:the_secret
+The resulting string has to be Base64 encoded (mostly all programming languages have libraries to do that. Or use an online encoder for testing).
+0000000000000000000000000000
+The basic credentials are built like this
+Basic 0000000000000000000000000000
+Finally, the basic credentials are set into the
+Authorization
+HTTP header.
+POST <a href=https://na.airvantage.net/api/oauth/token target=_blank rel="noopener noreferrer" class="">https://na.airvantage.net/api/oauth/token</a>
+Content-Type: application/x-www-form-urlencoded
+Authorization: Basic dG90bzp0b3Rv</p>
+<p>grant_type=authorization_code&code=1JV6zV&
+Alternatively, the authorization server MAY support including the client credentials in the request-body using the following parameters:
+Name
+Description
+Use
+Default
+Type
+client_id
+The client id
+required
+string
+client_secret
+The client secret key
+required
+string
+Including the client credentials in the request-body using the two parameters is NOT RECOMMENDED and SHOULD be limited to clients unable to directly utilize the HTTP Basic authentication scheme. The parameters can only be transmitted in the request-body and MUST NOT be included in the request URI.
+POST <a href=https://na.airvantage.net/api/oauth/token target=_blank rel="noopener noreferrer" class="">https://na.airvantage.net/api/oauth/token</a>
+Content-Type: application/x-www-form-urlencoded</p>
+<p>grant<em>type=authorization_code&code=1JV6zV&client_id=my_client</em>&client_secret=the_secret
+Create a Code verifier for PKCE extension
+If you are not familiar with PKCE you can learn more about it
+here
+The code verifier has to be a strong cryptographically random encoded as a Base64 URL string [characters A-Z, a-z, 0-9, and the punctuation characters -._~ (hyphen, period, underscore, and tilde)], between 43 and 128 characters long. A 32 byte string gives you a 43 characters size string.
+It is strongly recommended to use the S256 code challenge method. So you will need to hash the code verifier using the SHA256 algorithm.
+The resulting hash has to be encoded as a Base64 URL string.
+Introspect a Token
+/api/oauth/introspect
+This endpoint allows you to determine the active state of an token and to determine meta-information about this token. The endpoint implements the OAuth 2.0 Token Introspection specification
+RFC 7662
+.
+The client
+MUST use
+the HTTP
+POST
+method when making token introspection requests. Parameters are sent in the entity-body as Form-Encoded Body Parameters. The HTTP request entity-header includes the header
+Content-Type : application/x-www-form-urlencoded
+Also, the client
+MUST
+send its API client credentials
+when making requests to the introspection endpoint. If the client authentication fails, a
+401 Unauthorized
+error is returned.
+Sample
+Parameters
+Request
+POST <a href=https://na.airvantage.net/api/oauth/introspect target=_blank rel="noopener noreferrer" class="">https://na.airvantage.net/api/oauth/introspect</a>
+Authorization: Basic dG90bzp0b3Rv
+Content-Type: application/x-www-form-urlencoded</p>
+<p>token=444a378a-19fe-4de9-b056-c662f633d73d
+Response (Valid Token)
+200 OK
+When the token is valid and belongs to the authenticated client, detailed information about the token is returned:
+{
+"active": true,
+"client_id": "23594d341a4848b5bcedfe5120e246f4",
+"exp": 1760163041,
+"aud": [
+"<a href=https://na.airvantage.net target=_blank rel="noopener noreferrer" class="">https://na.airvantage.net</a>"
+],
+"companyId": "1",
+"username": "<a href=mailto:johndoe@gsmail.rcom target=_blank rel="noopener noreferrer" class="">johndoe@gsmail.rcom</a>",
+"sub": "6e745c0927cc4cf5af1afb3c62ffffff",
+"token_type": "Bearer"
+}
+Response (Invalid Token)
+200 OK
+When the token is invalid, expired, empty, or belongs to a different client than the one making the request, only the active status is returned:
+A
+401
+is sent when the client credentials are not valid.
+{
+"active": false
+}
+Name
+Description
+Use
+Type
+token
+The access token to introspect
+required
+string
+Expire a Token
+/api/oauth/expire
+When AirVantage authenticates a client, an access token is sent with an expiration date. After this date, the token will not be valid at all.
+It is also possible to expire a token explicitly. When the access_token is expired by this API, the related refresh_token will be expired too.
+Sample
+Parameters
+Additional information
+Request
+GET <a href="https://na.airvantage.net/api/oauth/expire?access_token=00000000-0000-0000-0000-000000000000" target=_blank rel="noopener noreferrer" class="">https://na.airvantage.net/api/oauth/expire?access_token=00000000-0000-0000-0000-000000000000</a></p>
+<p>...
+Response
+200 OK
+No specific return is sent. Only a
+200
+http status response is sent back.
+A
+401
+is sent when the token is not valid.
+Name
+Description
+Use
+Type
+access_token
+The token to expire
+required
+string
+HTTP Method
+GET
+Requires Authentication
+Yes
+Rate Limited
+No
+Headers
+None
+Permissions
+None
+Error codes
+While invoking services, several validations are made before returning results.
+When errors are raised, an error code is returned with
+parameters.
+{
+"error" : "unknown.label", // error code
+"errorParameters" : "Crashed" // details relative to error code
+}
+Each resource service has its own error codes. However there are some generic errors.
+Error
+Has parameters
+Raised when
+access.forbidden
+No
+the user does not have enough rights
+unknown.partner
+No
+the context is not valid for the user
+Types
+Name
+Description
+Example
+uid
+Unique identifier. It is a string
+16345d77a03f4882a97f79fe33cd581f
+string list
+A comma separated string list.
+string1,string2,string3
+string map
+A comma separated string map.
+key1:value1,key2:value2,key3:value3
+timestamp
+number of milliseconds since January 1, 1970, 00:00:00 GMT.
+1349906528204 is 10 Oct 2012 22:02:08.204 UTC
+Test it
+here
+NB. Remove the last three digits in any unix timestamp convertor.
+Useful Information for List
+If you want to use "," character in list, you must escape it with "".
+For example:
+If you want to send the following list:
+"strin,g1", "string2", "string3"
+You need to write this:
+strin,g1,string2,string3
+Useful Information for Map
+If you want to use "," or ":" characters in map, you must escape them with "".
+For example:
+If you want to make the following map:
+"key1":"val:ue1", "key2":"valu,e2", "key3":"val,:ue3"
+You need to write this:
+key1:val:ue1,key2:valu,e2,key3:val,:ue3
+Paging
+All queries returning a list of resources are paginated. Default pagination does not have any offset and may contain up to 100 elements.
+Use the following Request Parameters to paginate your queries
+offset
+: Set the first row to retrieve. If not set, rows will be retrieved from the beginning.
+size
+: Set the maximum number of items to retrieve (between 0 and 500). If not set, a maximum of 100 items will be returned.
+Example:
+<a href=https://na.airvantage.net/api/v1/applications target=_blank rel="noopener noreferrer" class="">https://na.airvantage.net/api/v1/applications</a> will return a maximum of 100 applications from the first record.</p>
+<p><a href="https://na.airvantage.net/api/v1/applications?offset=50" target=_blank rel="noopener noreferrer" class="">https://na.airvantage.net/api/v1/applications?offset=50</a> will return a maximum of 100 applications beginning from the 50th record.</p>
+<p><a href="https://na.airvantage.net/api/v1/applications?size=50" target=_blank rel="noopener noreferrer" class="">https://na.airvantage.net/api/v1/applications?size=50</a> will return a maximum of 50 applications from the first record.</p>
+<p><a href="https://na.airvantage.net/api/v1/applications?offset=50&size=50" target=_blank rel="noopener noreferrer" class="">https://na.airvantage.net/api/v1/applications?offset=50&size=50</a> will return a maximum of 50 applications beginning from the 50th record.
+The returned list will have
+items
+: an array with at must
+size
+items that matched the criteria (with the value of
+size
+from the
+query)
+size
+: the number of elements returned (should be the same as items.length)
+count
+: the total number of elements that matched the criteria in the database (potentially much more than the value
+of
+size
+from the query)
+Example :
+Assuming there are 100 applications in the DB, and 50 applications that match the criteria,
+<a href="https://na.airvantage.net/api/v1/applications?size=3&criteria=whatever" target=_blank rel="noopener noreferrer" class="">https://na.airvantage.net/api/v1/applications?size=3&criteria=whatever</a>
+would return
+{</p>
+<p>items : [ { uid : "..." } , { uid : "..." } , { uid : "..." } ],
+size : 3,
+count : 50
+}
+Filtering
+It is also possible to ask only specific information. Instead of getting items with an unneeded record, clients can filter the fields that
+have to be returned.
+Use the request parameter:
+fields
+, which is a string list. See
+types
+sections to see how to
+build string lists.
+<a href=https://na.airvantage.net/api/v1/applications target=_blank rel="noopener noreferrer" class="">https://na.airvantage.net/api/v1/applications</a>
+?fields=state,name
+will return applications filled up only with their unique identifier, their state and their name.
+When the
+fields
+parameter is missing, only default attributes are returned. Default attributes are dependent of the returned records.
+Sorting
+When queries are requested, results can be sorted.
+Sorting results are done using the
+asc
+and
+desc
+fields. As you may guess
+asc
+stands for ascending order and
+desc
+for descending order.
+The following line will return all the applications visible to the caller. Results will be sorted from the first created to the last created.
+Do not forget that results are paginated.
+<a href="https://na.airvantage.net/api/v1/applications?asc=creation" target=_blank rel="noopener noreferrer" class="">https://na.airvantage.net/api/v1/applications?asc=creation</a>
+You can also sort by several fields.
+<a href="https://na.airvantage.net/api/v1/applications?asc=creation,name" target=_blank rel="noopener noreferrer" class="">https://na.airvantage.net/api/v1/applications?asc=creation,name</a>
+In previous call, result items will be sorted first by creation date, from the first created to the last, and then by name.
+It is possible to combine ascending and descending sortings
+<a href="https://na.airvantage.net/api/v1/applications?asc=creation&desc=name" target=_blank rel="noopener noreferrer" class="">https://na.airvantage.net/api/v1/applications?asc=creation&desc=name</a>
+It is important to know that
+ASC sortings are done first
+.
+When an attribute is sent accidentally in either asc or desc, The asc ordering will be ignored.
+<a href="https://na.airvantage.net/api/v1/applications?asc=name,creation&desc=name" target=_blank rel="noopener noreferrer" class="">https://na.airvantage.net/api/v1/applications?asc=name,creation&desc=name</a>
+The previous call will sort by creation ascending and by name descending.
+See the information frame on GET methods to know which fields can be sorted.
+Password rules
+Rules use to validate a password are as follows:
+Require between 8 and 16 chars
+Require at least 1 digit
+Require at least 1 non-alphanumeric char
+Require at least 1 alphabetical char
+White space are prohibited
+Alphabetical sequences are prohibited
+Numerical sequences are prohibited
+Qwerty sequences are prohibited
+4 repeat characters are prohibited</div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href=https://github.com/andreyjv/personal-av/tree/docs/documentation-revamp/PRD_documentation-revamp/website/docs/reference/api/overview.md target=_blank rel="noopener noreferrer" class=theme-edit-this-page><svg fill=currentColor height=20 width=20 viewBox="0 0 40 40" class=iconEdit_Z9Sw aria-hidden=true><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"/></g></svg>Edit this page</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"></nav></div></div></div></div></main></div></div></div></div></div><footer class="theme-layout-footer footer"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class=footer__title>Jobs</div><ul class="footer__items clean-list"><li class=footer__item><a class=footer__link-item href=/personal-av-docs/docs/how-to/activate-sims>Activate SIMs</a><li class=footer__item><a class=footer__link-item href=/personal-av-docs/docs/how-to/order-sims>Order SIMs</a><li class=footer__item><a class=footer__link-item href=/personal-av-docs/api>Call the API</a><li class=footer__item><a class=footer__link-item href=/personal-av-docs/docs/how-to/register-routers>Register routers</a></ul></div><div class="theme-layout-footer-column col footer__col"><div class=footer__title>Reference</div><ul class="footer__items clean-list"><li class=footer__item><a class=footer__link-item href=/personal-av-docs/docs/reference/api>API HTML chapters</a><li class=footer__item><a class=footer__link-item href=/personal-av-docs/docs/reference/apn>APN table</a><li class=footer__item><a class=footer__link-item href=/personal-av-docs/docs/changelog>Changelog</a></ul></div><div class="theme-layout-footer-column col footer__col"><div class=footer__title>Preview</div><ul class="footer__items clean-list"><li class=footer__item><a href=https://doc.airvantage.net/ target=_blank rel="noopener noreferrer" class=footer__link-item>Live Hugo (canonical until cutover)<svg width=13.5 height=13.5 aria-label="(opens in new tab)" class=iconExternalLink_nPIU><use href=#theme-svg-external-link /></svg></a><li class=footer__item><a class=footer__link-item href=/personal-av-docs/docs/ui-library>UI library</a><li class=footer__item><a class=footer__link-item href=/personal-av-docs/docs/copy-library>Copy library</a></ul></div></div><div class="footer__bottom text--center"><div class=footer__copyright>Sierra Wireless / AirVantage documentation preview. Live doc.airvantage.net stays Hugo until cutover. Built with Docusaurus.</div></div></div></footer></div></body>

@@ -1,0 +1,336 @@
+<!doctype html><html lang=en dir=ltr class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-reference/configure/howtos/devicegroups_phase3" data-has-hydrated=false><head><meta charset=UTF-8><meta name=generator content="Docusaurus v3.10.2"><title data-rh=true>How to Use Groups (Dynamic and Fleet Management) | AirVantage documentation</title><meta data-rh=true name=viewport content="width=device-width, initial-scale=1.0"/><meta data-rh=true name=twitter:card content=summary_large_image /><meta data-rh=true property=og:image content=https://andreyjv.github.io/personal-av-docs/img/favicon.svg /><meta data-rh=true name=twitter:image content=https://andreyjv.github.io/personal-av-docs/img/favicon.svg /><meta data-rh=true property=og:url content=https://andreyjv.github.io/personal-av-docs/docs/reference/configure/howtos/devicegroups_phase3 /><meta data-rh=true property=og:locale content=en /><meta data-rh=true name=docusaurus_locale content=en /><meta data-rh=true name=docsearch:language content=en /><meta data-rh=true name=docusaurus_version content=current /><meta data-rh=true name=docusaurus_tag content=docs-default-current /><meta data-rh=true name=docsearch:version content=current /><meta data-rh=true name=docsearch:docusaurus_tag content=docs-default-current /><meta data-rh=true property=og:title content="How to Use Groups (Dynamic and Fleet Management) | AirVantage documentation"/><meta data-rh=true name=description content="almsc · imported from live Hugo on 2026-10-07. Guides stay latest. Original page."/><meta data-rh=true property=og:description content="almsc · imported from live Hugo on 2026-10-07. Guides stay latest. Original page."/><link data-rh=true rel=icon href=/personal-av-docs/img/favicon.svg /><link data-rh=true rel=canonical href=https://andreyjv.github.io/personal-av-docs/docs/reference/configure/howtos/devicegroups_phase3 /><link data-rh=true rel=alternate href=https://andreyjv.github.io/personal-av-docs/docs/reference/configure/howtos/devicegroups_phase3 hreflang=en /><link data-rh=true rel=alternate href=https://andreyjv.github.io/personal-av-docs/docs/reference/configure/howtos/devicegroups_phase3 hreflang=x-default /><link rel=stylesheet href=/personal-av-docs/assets/css/styles.1e3041e1.css /><script src=/personal-av-docs/assets/js/runtime~main.bbef5b78.js defer></script><script src=/personal-av-docs/assets/js/main.443f591d.js defer></script></head><body><svg style="display: none;"><defs>
+<symbol id=theme-svg-external-link viewBox="0 0 24 24"><path fill=currentColor d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme-deb")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||(window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light")),document.documentElement.setAttribute("data-theme-choice",t||"system")}(),function(){try{for(var[t,e]of new URLSearchParams(window.location.search).entries())if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id=__docusaurus><link rel=preload as=image href=/personal-av-docs/img/favicon.svg /><div role=region aria-label="Skip to main content"><a class=skipToContent_fXgn href=#__docusaurus_skipToContent_fallback>Skip to main content</a></div><nav aria-label=Main class="theme-layout-navbar navbar navbar--fixed-top"><div class=navbar__inner><div class="theme-layout-navbar-left navbar__items"><button aria-label="Toggle navigation bar" aria-expanded=false class="navbar__toggle clean-btn" type=button><svg width=30 height=30 viewBox="0 0 30 30" aria-hidden=true><path stroke=currentColor stroke-linecap=round stroke-miterlimit=10 stroke-width=2 d="M4 7h22M4 15h22M4 23h22"/></svg></button><a class=navbar__brand href=/personal-av-docs/><div class=navbar__logo><img src=/personal-av-docs/img/favicon.svg alt=AirVantage class="themedComponent_mlkZ themedComponent--light_NVdE"/><img src=/personal-av-docs/img/favicon.svg alt=AirVantage class="themedComponent_mlkZ themedComponent--dark_xIcU"/></div><b class="navbar__title text--truncate">AirVantage Docs</b></a><a class="navbar__item navbar__link navbar__guides" href=/personal-av-docs/docs/how-to/activate-sims>Guides</a><a class="navbar__item navbar__link" href=/personal-av-docs/api>API reference</a><a class="navbar__item navbar__link" href=/personal-av-docs/docs/changelog>Changelog</a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type=button disabled title="system mode" aria-label="Switch between dark and light mode (currently system mode)"><svg viewBox="0 0 24 24" width=24 height=24 aria-hidden=true class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill=currentColor d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"/></svg><svg viewBox="0 0 24 24" width=24 height=24 aria-hidden=true class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill=currentColor d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"/></svg><svg viewBox="0 0 24 24" width=24 height=24 aria-hidden=true class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill=currentColor d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"/></svg></button></div><div class=navbarSearchContainer_Bca1><div class="navbar__search searchBarContainer_NW3z" dir=ltr><svg aria-hidden=true class=searchIcon_T3tP focusable=false viewBox="0 0 16 16"><path fill=currentColor d="M6.02945 10.20327a4.17382 4.17382 0 1 1 4.17382-4.17382 4.15609 4.15609 0 0 1-4.17382 4.17382Zm9.69195 4.2199-4.8225-4.82338A5.88021 5.88021 0 0 0 12.058 6.02856 6.00467 6.00467 0 1 0 9.59979 10.8989l4.82338 4.82338a.89729.89729 0 0 0 1.29912 0 .89749.89749 0 0 0-.00087-1.29909Z"/></svg><input placeholder=Search aria-label=Search class="navbar__search-input searchInput_YFbd" value="" /><div class="loadingRing_RJI3 searchBarLoadingRing_YnHq"><div></div><div></div><div></div><div></div></div></div></div></div></div><div role=presentation class=navbar-sidebar__backdrop></div></nav><div id=__docusaurus_skipToContent_fallback class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class=av-shell><nav class=av-rail aria-label=Guides><p class=av-rail-kicker>Guides<ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class=menu__list-item-collapsible><span class="menu__link menu__link--sublist menu__link--sublist-caret av-rail-heading">Quick start</span></div><ul class=menu__list><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link href=/personal-av-docs/docs/how-to/activate-sims>Activate SIMs</a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link href=/personal-av-docs/docs/how-to/order-sims>Order SIMs</a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link href=/personal-av-docs/api>Call the API</a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link href=/personal-av-docs/docs/how-to/register-routers>Register routers</a></ul><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class=menu__list-item-collapsible><span class="menu__link menu__link--sublist menu__link--sublist-caret av-rail-heading">Browse by product</span></div><ul class=menu__list><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link href=/personal-av-docs/docs/how-to/activate-sims>Connectivity</a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link href=/personal-av-docs/docs/how-to/register-routers>Router management</a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link href=/personal-av-docs/docs/explain/states>States and operations</a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link href=/personal-av-docs/api>Developer platform</a></ul><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class=menu__list-item-collapsible><span class="menu__link menu__link--sublist menu__link--sublist-caret av-rail-heading">Keep building</span></div><ul class=menu__list><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link href=/personal-av-docs/docs/explain/states>States and operations</a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link href=/personal-av-docs/docs/reference/apn>APN table</a></ul><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class=menu__link href=/personal-av-docs/docs/get-started/first-sim>Get started</a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class=menu__link href=/personal-av-docs/docs/reference/api>Reference</a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class=menu__link href=/personal-av-docs/docs/changelog>Changelog</a></ul></nav><div class=av-shell-main><div class=docsWrapper_hBAB><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type=button></button><div class=docRoot_UBD9><main class="docMainContainer_TBSr docMainContainerEnhanced_lQrH"><div class="container padding-top--md padding-bottom--lg"><div class=row><div class="col docItemCol_VOVn"><div class=docItemContainer_Djhp><article><div class="theme-doc-markdown markdown"><header><h1>How to Use Groups (Dynamic and Fleet Management)</h1></header><p>:::note Edition
+<strong>almsc</strong> · imported from live Hugo on 2026-10-07. Guides stay latest. <a href=https://doc.airvantage.net/almsc/reference/configure/howtos/devicegroups_phase3 target=_blank rel="noopener noreferrer" class="">Original page</a>.
+:::</p>
+<p>How to Use Groups (Dynamic and Fleet Management)
+You can use Groups to organize your systems (for example, your fleet of routers) in order to visualize, configure, and control access to your systems. This is especially useful if you have a large number of systems in your account.
+There are two types of groups: Dynamic Groups and Fleet Management Groups.
+As an account administrator, you can create a Group and then create or edit profiles that control what Group users can do within the Groups. Once the profiles are defined, you can then add users to Groups and assign the related profiles to the users. See
+Setting Access Rights
+.
+Groups support hierarchy, allowing you to create parent/child Groups to better visualize your fleet.
+Initializing Table Of Contents...
+Dynamic Groups
+In Dynamic Groups, you can create Groups to organize your fleet by attributes such as label, gateway model, firmware version, or any combination of these.
+In Dynamic Groups, a system can belong to more than one Group. For example, if you have a fleet of AirLink XR90 routers with the label “California” that are running firmware version 5.3.66, you can create one Group for all systems with the label “California” (to organize systems by geography) and another Group for all XR90 routers running firmware version 5.3.66 (to identify systems running the current firmware release*).
+Groups can be empty—Groups don’t need systems to exist. You might want to create empty Groups for your organizational structure in advance, and then register new routers directly into the appropriate Groups.
+Below is an example of how you might organize Dynamic Groups of routers by label, gateway model, and firmware version. The example also shows how one router (such as “XR90-3”) can belong to multiple Groups.
+Fleet Management Groups
+Fleet Management Groups share the same properties as Dynamic Groups in that you can create a Group and then control access using user profiles.
+Unlike with Dynamic Groups, a system can only belong to one Fleet Management Group. Fleet Management Group membership cannot change unless you manually move the device from one group to another. In Dynamic Groups, group membership can change dynamically based on a Group property change (a label, for example).
+Fleet Management Groups are best suited to keeping your routers updated with common settings (using linked configuration templates) and software. This is done by setting group policies or rules that define what software and settings that routers in a group can run.
+Below is an example of how you might organize routers into parent/child Fleet Management Groups according to their deployment. The example also shows how each router must belong to only one Fleet Management Group.
+Why Use Groups?
+Managing a large fleet of individual devices can quickly become impractical. Groups in AirVantage solves this by letting you organize, monitor, and configure devices collectively based on shared characteristics. The following examples explain some of the benefits of using Groups.
+Time savings:
+Instead of spending hours updating firmware on 500 devices individually, you can filter by an “Outdated_Firmware” Group and upgrade all devices simultaneously. Operations scale effortlessly.
+Access control:
+Grant your California regional manager access only to California devices by adding them (based on the system labels) to the “California_Region” group. The manager will see only their devices—nothing from Oregon, Texas, or other regions. No risk of accidental cross-region changes.
+Automatic organization:
+In Dynamic Groups, as devices change (firmware upgrades, location moves, deployment status), group membership updates automatically. A router that upgrades from firmware 5.2.46 to 5.3.66 instantly moves from “Outdated” to “Current” groups without manual intervention.
+Visibility:
+Dashboard widgets filtered by “Public_Safety_CA” Group show real-time status for just those critical devices. This lets you spot outages affecting specific customers or regions immediately.
+Prerequisites
+Using Groups requires Groups-specific read/write permissions or the system administrator role.
+To create and manage Groups, you need:
+Groups Write permission OR Administrator role
+Access to the Configure menu
+For example, as a user, your administrator grants you a “Groups Read/Write” profile for California region Groups. This lets you create child groups under a top-level “California” group and manage users within those Groups.
+If you are an AirVantage user who can’t access Groups, contact your system administrator.
+Viewing Groups
+Main Groups Page
+To view Groups, go to
+Configure > Groups
+and then select
+Dynamic
+or
+Fleet Management
+Groups. Click a Group name to view the Group’s details.
+Note:
+If you don’t see the Groups page, ask your system administrator for access. Non-administrator users must be added to a Group and have Groups
+Read
+access to be able to view Groups. See
+Setting Access Rights
+below.
+Dynamic Groups
+Fleet Management Groups
+Using the Main Groups Page
+The main Groups page lets you view Groups, click Group names to view Group details, add Groups, delete Groups and sort columns. Depending on your level of permissions, some of these tasks may not be available. Contact your system administrator if you do not have access to the tasks you want.
+Monitor > Systems Filters
+Under
+Monitor > Systems
+, you can filter the system list table by Groups.
+To sort the system list by Group:
+In
+Monitor > Systems
+, select Groups from the Filters list.
+Select a Group name. Only one Group can be selected, and only Groups to which you have access are available on the list.
+The table will show you all the systems in that Group. Dynamic Groups and Fleet Management Groups are both listed, with the Dynamic Groups listed first (scroll down to find the Fleet Management Groups).
+Under
+Monitor > Systems
+and other pages that feature the page filter, you can filter the entire view—widgets and system view—for a selected Group. The widgets will update automatically.
+Dynamic Groups and Fleet Management Groups are both listed, with the Dynamic Groups listed first (scroll down to find the Fleet Management Groups).
+After filtering the page, you can launch operations only for the systems in that Group (if your user profile permits you to launch operations). If you launch an operation for a system that you do not have access to, the operation will fail.
+Setting Access Rights
+You can create user profiles that will control what users can do within Groups. After you have created these profiles, you can add users to a Group and assign the profile(s) to each user that will define their Groups-level rights. Note that these user profiles are the same types of user profiles that you can create and apply for users at the company level. See also
+Administration
+and
+Managing Profiles
+.
+For example, as an account administrator, create two profiles that include the required “Read”/“Write” permissions in the
+Groups
+entity:
+Groups Read
+Groups Read/Write
+Users with
+Read
+access to a Group can view:
+Group definitions
+Users and their assigned profiles
+If users with
+Read
+access also have Systems View and Gateways View permissions, they can view the list of systems included in a Group.
+Users with
+Read
+and
+Write
+access to a Group
+1
+can:
+View Group definitions
+View Users and their assigned profiles
+Edit the Group, including editing the Group name and filters
+Manage Group users (add users and profiles)
+Create child Groups under any Group to which they have
+Write
+access.
+1
+A non-Top-Level Group
+If users with
+Write
+access also have Systems View, Gateways View, and Operations permissions, they can view the list of systems included in a Group, and launch operations for those systems.
+For users without Read or Write access, Groups will appear as shown below.
+For more information, see
+Add users to a group
+.
+As a company administrator, you will continue to have access to everything, including all the systems and Groups. Groups-level rights will not affect your current administrator rights.
+Under
+Administration > Users
+, the Groups column shows you which users can access which Groups.
+After a user is added to a Group, the user will only see systems from their authorized Groups. For example, under Monitor > Systems, only systems from authorized Groups will appear in the List View. Everything related to systems will be determined by the Groups: Operations, APIs, Dashboard widgets, system List View, and Groups page.
+A user can have rights at both the company and Groups level. However, only one set of rights will apply.
+Groups-level rights grant access and only apply to the systems in the Group
+Company-level rights grant access and only apply to systems that are not in a Group
+Creating Groups
+See
+How to Create Dynamic Groups
+and
+How to Create Fleet Management Groups
+Add Users to a Group
+Administrators and users with “Groups Write” permission can add users to a Group. You can add users from your company and any partnered companies. The process of adding users also includes adding profiles to those users to control who can view or edit the Group, and control what users can do to the systems within the Group.
+Before starting, confirm that your users exist (see
+Administration > Users
+) and that the profiles for those users are configured (see
+Administration > Profiles
+). For more information, see
+Administration
+and
+Managing Profiles
+.
+To add users to a Group:
+When editing a Group, click
+Access
+.
+In the Access tab, click
+Add users…
+.
+In the Add users panel, under
+Company
+, select the company from which you want to add users. Click
+Filter…
+to search for a specific partnered company.
+Under
+Users
+, select one or more users. Click
+Select users…
+to search for a specific user.
+To select more users from a different company, return to Step 3.
+Under
+Profiles
+, select one or more profiles that will control what the users can do within that Group. For example,
+Groups Read
+or
+Groups Read/Write
+. In this example, you could also select
+Configuration Management
+so that the users can configure systems in that Group.
+Common profile combinations:
+“Groups Read” + “Systems View” for view-only users
+“Groups Read/Write” + “Systems View” + “Operations” for full management
+Click
+Add
+.
+Verify that the users now appear in the Access tab with assigned profiles.
+The next time those users log in, they will be able to view only the Groups to which they have access and be able to take actions according to their assigned rights.
+Users require both Groups
+Read
+and
+Write
+access to view and modify the Groups to which they have access.
+User access can be affected by whether a Group is a parent or child Group.
+Users added to a Group will have access to that Group’s child Groups using the same profiles they were assigned in the parent Group. You can add additional profiles for a user in the child Group. However, if a user wants to modify a child Group’s definition, then they must have Group Write permission in the immediate parent Group.
+Deleting Users
+To delete a user:
+When editing a group, click
+Access
+.
+In the Access tab, under Actions, click
+.
+Click
+Confirm
+. The user loses access immediately.
+You cannot delete a user or remove a profile from the user if that user or profile exists in a parent Group. If a user has access via a parent Group, remove them from the parent Group instead.
+Edit Groups
+To edit Groups, you must have Groups Read/Write access, AND the Group cannot be a top-level Group. Only system administrators can edit top-level Groups. If a user has write access to a group but they still cannot modify the group, then they must have Group Write permission in the immediate parent Group.
+To edit an existing group:
+Go to
+Configure > Groups
+.
+Click the desired group. The group details appear.
+If you have the required group access rights, you can edit the following options:
+Edit the group
+Name
+Edit or add a
+Filter
+(Dynamic Groups) or
+Rules
+(Fleet Management Groups)
+If you have the required group access rights, you can edit the Group users.
+Click
+Save
+or click
+Revert
+to cancel any changes.
+Changing filters immediately affects Group membership. Systems are removed from the Group automatically if they no longer match filter criteria.
+Delete Groups
+WARNING:
+In
+Dynamic Groups
+, deleting a parent Group deletes ALL child Groups permanently, and the operation cannot be undone. Semtech recommends reviewing child Groups first—consider removing child Groups before deleting the parent Group.
+In
+Fleet Management Groups
+, deleting any Group does not delete child Groups below it. After the deletion, Groups below the deleted Group will move up one level in the hierarchy.
+To delete a group:
+Go to
+Configure > Groups
+.
+Select the desired group(s).
+Click
+Actions
+, and then click
+Delete groups
+.
+Deleting a Group deletes the Group definition, all child Groups, and user access assignments.
+Deleting a group does not delete:
+systems that belonged to the group
+system configuration
+system history
+the labels. The systems that belonged to the deleted group retain their labels.
+Add a System to a Group at Registration
+If you have the required Groups access, you can add a new system to one or more existing Groups during registration. See also
+Register
+.
+Your Groups access does not affect any operations related to registrations, but be aware that your permissions may restrict access to systems after they are registered. You can register a system into a Group, but if you do not have System View access to that Group, you will not be able to view the system after registration.
+Regardless of whether you select any Groups at registration, a system can still be automatically added to a Group if it matches a Group’s criteria. For example, if you register an XR90 and a Group consisting of “Gateway model = XR90” exists, then that XR90 will automatically join that group.
+If you don’t select any Groups at registration, then you may not have access to the system after registration.
+To add a system to a Group at registration:
+In the register window, go to
+Groups
+.
+Click to select a Group from the list.
+The list shows you all the Groups to which you have been added as a user. Dynamic Groups and Fleet Management Groups are both listed, with the list of Dynamic Groups listed first (scroll down to find the Fleet Management Groups).
+Repeat step 2 to add any more Dynamic Groups for the new system.
+You can select only one Fleet Management Group for a system. A system can belong to one or more Dynamic Groups and a Fleet Management Group.
+Configure any other required settings, and then click
+Register
+.
+After registration, the labels defined in the Groups definition will be added to the newly registered system(s).
+Registration will fail
+if the Groups definition has attributes that do not match the system’s attributes (gateway model or incompatible firmware, for example).
+Go to
+Monitor > Operations
+to see the results of the Register and Join Device Groups operations that have been launched.
+Registration with CSV for Dynamic Groups
+The CSV template has a GROUP PATHS column that enables you to register a system into one or more
+Dynamic
+groups, and a FLEET MANAGEMENT GROUP PATH column that enables you to register a system into a
+Fleet Management
+group.
+You can use GROUP PATHS and FLEET MANAGEMENT GROUP PATH separately or combine them in a CSV template to register a system into both types of groups.
+See also
+How to change settings on multiple devices?
+and
+How to edit csv files?
+.
+The accepted value for the GROUP PATHS column is one or more Group paths. The accepted value for the FLEET MANAGEMENT GROUP PATH column is one Group path.
+A Group path uses unix file path style to define a hierarchy of Group names if you want to add the system to a child Group (
+/AirLink/XR90/Verizon
+, for example).
+To apply multiple Dynamic Group paths to a single router, use a pipe (
+|
+) character to separate the paths within the GROUP PATHS column. Multiple Group paths must be in wrapped in quotes: “/Group1|/Group2”
+You cannot use “/” alone. There is no “root” Group concept.
+If no Group assignments are required, leave the column empty.
+CSV Syntax Rules
+VALID
+INVALID
+/GroupName
+GroupName (missing the “/”)
+/Parent/Child
+/California_Routers (“_” character is invalid for defining paths)
+”/Group1|/Group2”
+”/Group1,/Group2” (no commas allowed and missing pipe (
+|
+) character)
+Sample CSV
+GATEWAY[SERIAL NUMBER],GATEWAY[REGISTRATION CODE],NAME,GROUP PATHS,FLEET MANAGEMENT GROUP PATH
+A2329451211B17,K9sjk9890,New_XR60,"/AOS_group/XR60|/canada_region/BC","/FM_GROUP/XR60"
+Add Systems to an Existing Group After Registration
+You can add a system to a group at any time; not just at registration.
+To add a system to a group:
+Go to
+Monitor > Systems
+.
+Select the desired system(s). Click the column header to select all systems.
+From the general & life cycle actions menu, select
+Groups > Add to groups…
+. The Add Group panel appears.
+Select the desired group(s) in the Dynamic or Fleet Management categories.
+Click
+Add
+.
+Check
+Monitor > Operations
+for
+Join Device Groups
+status.
+If the operation applies successfully, any labels defined in the group will be added to the selected systems.
+If the group definition has attributes that do not match the system’s attributes, the operation to join the group will fail.
+Systems are automatically removed from a Group when attributes no longer match the Group filters.
+Automatic Group Updates (Dynamic Groups only)
+Dynamic Groups update automatically when the following operations are launched:
+system attribute changes (for example, the labels changed or firmware version changed)
+the group definition changes (for example, the label definition changes, firmware revision changes, gateway model changes, parent group changes)
+You can check the
+Timeline
+for any REFRESH_GROUPS operations to determine whether a group has been edited.
+Using the API for Groups
+The following API requests are available for configuring Groups.
+Create Groups:
+POST /api/v1/devicegroups
+Edit Groups:
+PUT /api/v1/devicegroups/&lt;uid>
+Delete Groups:
+DELETE /api/v1/devicegroups/&lt;uid></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href=https://github.com/andreyjv/personal-av/tree/docs/documentation-revamp/PRD_documentation-revamp/website/docs/reference/configure/howtos/devicegroups_phase3.md target=_blank rel="noopener noreferrer" class=theme-edit-this-page><svg fill=currentColor height=20 width=20 viewBox="0 0 40 40" class=iconEdit_Z9Sw aria-hidden=true><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"/></g></svg>Edit this page</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"></nav></div></div></div></div></main></div></div></div></div></div><footer class="theme-layout-footer footer"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class=footer__title>Jobs</div><ul class="footer__items clean-list"><li class=footer__item><a class=footer__link-item href=/personal-av-docs/docs/how-to/activate-sims>Activate SIMs</a><li class=footer__item><a class=footer__link-item href=/personal-av-docs/docs/how-to/order-sims>Order SIMs</a><li class=footer__item><a class=footer__link-item href=/personal-av-docs/api>Call the API</a><li class=footer__item><a class=footer__link-item href=/personal-av-docs/docs/how-to/register-routers>Register routers</a></ul></div><div class="theme-layout-footer-column col footer__col"><div class=footer__title>Reference</div><ul class="footer__items clean-list"><li class=footer__item><a class=footer__link-item href=/personal-av-docs/docs/reference/api>API HTML chapters</a><li class=footer__item><a class=footer__link-item href=/personal-av-docs/docs/reference/apn>APN table</a><li class=footer__item><a class=footer__link-item href=/personal-av-docs/docs/changelog>Changelog</a></ul></div><div class="theme-layout-footer-column col footer__col"><div class=footer__title>Preview</div><ul class="footer__items clean-list"><li class=footer__item><a href=https://doc.airvantage.net/ target=_blank rel="noopener noreferrer" class=footer__link-item>Live Hugo (canonical until cutover)<svg width=13.5 height=13.5 aria-label="(opens in new tab)" class=iconExternalLink_nPIU><use href=#theme-svg-external-link /></svg></a><li class=footer__item><a class=footer__link-item href=/personal-av-docs/docs/ui-library>UI library</a><li class=footer__item><a class=footer__link-item href=/personal-av-docs/docs/copy-library>Copy library</a></ul></div></div><div class="footer__bottom text--center"><div class=footer__copyright>Sierra Wireless / AirVantage documentation preview. Live doc.airvantage.net stays Hugo until cutover. Built with Docusaurus.</div></div></div></footer></div></body>

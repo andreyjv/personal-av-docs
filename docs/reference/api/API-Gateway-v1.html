@@ -1,0 +1,1468 @@
+<!doctype html><html lang=en dir=ltr class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-reference/api/API-Gateway-v1" data-has-hydrated=false><head><meta charset=UTF-8><meta name=generator content="Docusaurus v3.10.2"><title data-rh=true>Gateway | AirVantage documentation</title><meta data-rh=true name=viewport content="width=device-width, initial-scale=1.0"/><meta data-rh=true name=twitter:card content=summary_large_image /><meta data-rh=true property=og:image content=https://andreyjv.github.io/personal-av-docs/img/favicon.svg /><meta data-rh=true name=twitter:image content=https://andreyjv.github.io/personal-av-docs/img/favicon.svg /><meta data-rh=true property=og:url content=https://andreyjv.github.io/personal-av-docs/docs/reference/api/API-Gateway-v1 /><meta data-rh=true property=og:locale content=en /><meta data-rh=true name=docusaurus_locale content=en /><meta data-rh=true name=docsearch:language content=en /><meta data-rh=true name=docusaurus_version content=current /><meta data-rh=true name=docusaurus_tag content=docs-default-current /><meta data-rh=true name=docsearch:version content=current /><meta data-rh=true name=docsearch:docusaurus_tag content=docs-default-current /><meta data-rh=true property=og:title content="Gateway | AirVantage documentation"/><meta data-rh=true name=description content="almsc · imported from live Hugo on 2026-10-07. Guides stay latest. Original page."/><meta data-rh=true property=og:description content="almsc · imported from live Hugo on 2026-10-07. Guides stay latest. Original page."/><link data-rh=true rel=icon href=/personal-av-docs/img/favicon.svg /><link data-rh=true rel=canonical href=https://andreyjv.github.io/personal-av-docs/docs/reference/api/API-Gateway-v1 /><link data-rh=true rel=alternate href=https://andreyjv.github.io/personal-av-docs/docs/reference/api/API-Gateway-v1 hreflang=en /><link data-rh=true rel=alternate href=https://andreyjv.github.io/personal-av-docs/docs/reference/api/API-Gateway-v1 hreflang=x-default /><link rel=stylesheet href=/personal-av-docs/assets/css/styles.1e3041e1.css /><script src=/personal-av-docs/assets/js/runtime~main.bbef5b78.js defer></script><script src=/personal-av-docs/assets/js/main.443f591d.js defer></script></head><body><svg style="display: none;"><defs>
+<symbol id=theme-svg-external-link viewBox="0 0 24 24"><path fill=currentColor d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme-deb")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||(window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light")),document.documentElement.setAttribute("data-theme-choice",t||"system")}(),function(){try{for(var[t,e]of new URLSearchParams(window.location.search).entries())if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id=__docusaurus><link rel=preload as=image href=/personal-av-docs/img/favicon.svg /><div role=region aria-label="Skip to main content"><a class=skipToContent_fXgn href=#__docusaurus_skipToContent_fallback>Skip to main content</a></div><nav aria-label=Main class="theme-layout-navbar navbar navbar--fixed-top"><div class=navbar__inner><div class="theme-layout-navbar-left navbar__items"><button aria-label="Toggle navigation bar" aria-expanded=false class="navbar__toggle clean-btn" type=button><svg width=30 height=30 viewBox="0 0 30 30" aria-hidden=true><path stroke=currentColor stroke-linecap=round stroke-miterlimit=10 stroke-width=2 d="M4 7h22M4 15h22M4 23h22"/></svg></button><a class=navbar__brand href=/personal-av-docs/><div class=navbar__logo><img src=/personal-av-docs/img/favicon.svg alt=AirVantage class="themedComponent_mlkZ themedComponent--light_NVdE"/><img src=/personal-av-docs/img/favicon.svg alt=AirVantage class="themedComponent_mlkZ themedComponent--dark_xIcU"/></div><b class="navbar__title text--truncate">AirVantage Docs</b></a><a class="navbar__item navbar__link navbar__guides" href=/personal-av-docs/docs/how-to/activate-sims>Guides</a><a class="navbar__item navbar__link" href=/personal-av-docs/api>API reference</a><a class="navbar__item navbar__link" href=/personal-av-docs/docs/changelog>Changelog</a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type=button disabled title="system mode" aria-label="Switch between dark and light mode (currently system mode)"><svg viewBox="0 0 24 24" width=24 height=24 aria-hidden=true class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill=currentColor d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"/></svg><svg viewBox="0 0 24 24" width=24 height=24 aria-hidden=true class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill=currentColor d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"/></svg><svg viewBox="0 0 24 24" width=24 height=24 aria-hidden=true class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill=currentColor d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"/></svg></button></div><div class=navbarSearchContainer_Bca1><div class="navbar__search searchBarContainer_NW3z" dir=ltr><svg aria-hidden=true class=searchIcon_T3tP focusable=false viewBox="0 0 16 16"><path fill=currentColor d="M6.02945 10.20327a4.17382 4.17382 0 1 1 4.17382-4.17382 4.15609 4.15609 0 0 1-4.17382 4.17382Zm9.69195 4.2199-4.8225-4.82338A5.88021 5.88021 0 0 0 12.058 6.02856 6.00467 6.00467 0 1 0 9.59979 10.8989l4.82338 4.82338a.89729.89729 0 0 0 1.29912 0 .89749.89749 0 0 0-.00087-1.29909Z"/></svg><input placeholder=Search aria-label=Search class="navbar__search-input searchInput_YFbd" value="" /><div class="loadingRing_RJI3 searchBarLoadingRing_YnHq"><div></div><div></div><div></div><div></div></div></div></div></div></div><div role=presentation class=navbar-sidebar__backdrop></div></nav><div id=__docusaurus_skipToContent_fallback class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class=av-shell><nav class=av-rail aria-label=Guides><p class=av-rail-kicker>Guides<ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class=menu__list-item-collapsible><span class="menu__link menu__link--sublist menu__link--sublist-caret av-rail-heading">Quick start</span></div><ul class=menu__list><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link href=/personal-av-docs/docs/how-to/activate-sims>Activate SIMs</a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link href=/personal-av-docs/docs/how-to/order-sims>Order SIMs</a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link href=/personal-av-docs/api>Call the API</a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link href=/personal-av-docs/docs/how-to/register-routers>Register routers</a></ul><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class=menu__list-item-collapsible><span class="menu__link menu__link--sublist menu__link--sublist-caret av-rail-heading">Browse by product</span></div><ul class=menu__list><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link href=/personal-av-docs/docs/how-to/activate-sims>Connectivity</a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link href=/personal-av-docs/docs/how-to/register-routers>Router management</a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link href=/personal-av-docs/docs/explain/states>States and operations</a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link href=/personal-av-docs/api>Developer platform</a></ul><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class=menu__list-item-collapsible><span class="menu__link menu__link--sublist menu__link--sublist-caret av-rail-heading">Keep building</span></div><ul class=menu__list><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link href=/personal-av-docs/docs/explain/states>States and operations</a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link href=/personal-av-docs/docs/reference/apn>APN table</a></ul><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class=menu__link href=/personal-av-docs/docs/get-started/first-sim>Get started</a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class=menu__link href=/personal-av-docs/docs/reference/api>Reference</a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class=menu__link href=/personal-av-docs/docs/changelog>Changelog</a></ul></nav><div class=av-shell-main><div class=docsWrapper_hBAB><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type=button></button><div class=docRoot_UBD9><main class="docMainContainer_TBSr docMainContainerEnhanced_lQrH"><div class="container padding-top--md padding-bottom--lg"><div class=row><div class="col docItemCol_VOVn"><div class=docItemContainer_Djhp><article><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type=button class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><div class="theme-doc-markdown markdown"><p>:::note Edition
+<strong>almsc</strong> · imported from live Hugo on 2026-10-07. Guides stay latest. <a href=https://doc.airvantage.net/almsc/reference/cloud/API/API-Gateway-v1 target=_blank rel="noopener noreferrer" class="">Original page</a>.
+:::</p>
+<header><h1>Gateway
+General
+f
+General Information
+Operations
+f
+System
+Operations
+Alert
+Application
+Gateway
+Settings
+Dataset
+Label
+Zone
+Operator
+Offer & Options
+System Configurations
+Administration
+f
+Company
+Partner
+Profile
+User
+Subscription
+f
+Subscription
+Ordering
+f
+Contact
+Order
+Product Reference
+Gateway
+Overview
+Fields
+JSON
+A gateway is a hardware that can be managed by AirVantage. Currently, several kind of gateways are supported.
+It can be :
+an AirLink device: GX400, GX440, LS300, Raven XE, Raven XT, Raven X, PinPoint X, PinPoint XT, MP, FXT009, GL6100.
+an AirPrime module: WMP100, WMP150, etc.
+or a generic Linux gateway.
+Read only fields are computed by AirVantage and can only be seen on response fragments sent by
+find
+,
+create
+, or
+edit
+requests.
+Field
+Description
+Read Only
+Type
+uid
+Gateway's unique identifier.
+true
+uid
+imei
+International Mobile Equipment Identity of the gateway.
+false
+string
+macAddress
+MAC address of the gateway.
+false
+string
+serialNumber
+Serial number of the gateway.
+false
+string
+type
+Type of the gateway
+false
+string
+state
+Shows the state of the gateway. Possible values can be INVENTORY, BEING_TRANSFERRED.
+true
+enum
+creationDate
+Shows the creation date of the gateway
+true
+timestamp
+labels
+Gateways can be labeled with a list of
+labels.
+false
+string array
+metadata
+key/value pairs
+false
+map
+This is a complete representation of a Gateway. This fragment can be used for
+create
+or
+edit
+requests.
+Please refer to the fields section to know which fields can be modified.
+{
+"uid": "",
+"imei": "",
+"macAddress": "",
+"serialNumber": "",
+"type": "",
+"metadata": [
+{
+"key" : "",
+"value" : ""
+}],
+"labels": ["Label1", "Label2"],
+"creationDate": ,
+"state": ""
+}
+API Methods
+Gateway
+Find
+Create
+Edit
+Delete
+Details
+Operations
+Import
+Delete multiple gateways
+Change labels
+Find
+/api/v1/gateways
+Returns a paginated list of gateways with their complete details.
+It is possible to restrain the result list using criteria parameters.
+The
+fields
+parameter has to be defined in order to specify the attributes of the gateway which will be returned.
+If
+fields
+parameter is missing, only the following attributes of the gateway are returned:
+uid, state, imei, macAddress, serialNumber, type, creationDate
+.
+More information about paging, filtering, and sorting
+here
+Sample
+Parameters
+Additional Information
+Request
+GET <a href="https://na.airvantage.net/api/v1/gateways?fields=uid,imei,serialNumber&state=INVENTORY" target=_blank rel="noopener noreferrer" class="">https://na.airvantage.net/api/v1/gateways?fields=uid,imei,serialNumber&state=INVENTORY</a>
+Response
+200 OK
+HTTP/1.1 200 OK
+Content-Type: application/json
+{
+"items":    [
+{
+"uid": "082ff307d428461a9eb24f3c8b68f756",
+"imei": "353270041012745",
+"serialNumber": null
+},
+{
+"uid": "96393342be2649fea1cb144ce13d0b5d",
+"imei": "353270041012749",
+"serialNumber": null
+}
+],
+"count": 2,
+"size": 2,
+"offset": 0
+}
+Name
+Description
+Use
+Default
+Type
+Operand
+uid
+Finds a gateway whose uid match with the specified id.
+optional
+null
+uid</h1></header>
+<h1>imei
+Finds gateways by their International Mobile Equipment
+Identity
+optional
+null
+string
+like
+macAddress
+The gateway's mac address. Notice that mac addresses
+are saved with colon( : ) separators.
+optional
+null
+string
+like
+serialNumber
+Finds gateways by serial number .
+optional
+null
+string
+like
+labels
+Returns all gateways labeled as the specified string.
+Several labels can be set.
+optional
+null
+string array
+in
+type
+Finds gateways by their type.
+optional
+null
+string
+like
+states
+Returns all gateways whose state is in the given list.
+States are INVENTORY, BEING_TRANSFERRED.
+optional
+null
+string array
+in
+metadata
+Finds gateways matching the given metadata.
+optional
+null
+string map with the following format:
+key1:value1,key2:value2,...
+= for the key and like for the value
+assigned
+Returns all gateways assigned (or not) to a system.
+optional
+null
+boolean</h1>
+<h1>company
+Set the context company.
+optional
+caller's company
+uid</h1>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=http-methodgetrequires-authenticationyesrate-limitedyesheadersnonepermissionsentitiesgatewaysvieworder-bycreationdatefieldsuid-state-imei-macaddress-serialnumber-type-creationdate-metadata-labelsget-detailsapiv1gatewaysuidreturns-detailed-information-about-the-specified-gatewaysampleexceptionsadditional-informationrequestget-httpsnaairvantagenetapiv1gateways1cc562f8ec1340e79214f2113db751f6response200-okhttp11-200-okcontent-type-applicationjsontype-gatewaytypelabels----label1label2uid-1cc562f8ec1340e79214f2113db751f6metadata--key--envvalue--gatewayenvmacaddress-nullserialnumber-458555527imei-nullcreationdate-1337948436603state-inventorynamedescriptiongatewayunknownraised-when-the-uid-points-to-an-unknown-gatewayhttp-methodgetrequires-authenticationyesrate-limitedyesheadersnonepermissionsentitiesgatewaysviewcreateapiv1gatewayscreates-a-new-gateway-response-returns-the-gateway-with-its-uidat-least-one-ofimeiserialnumberormacaddressmust-be-set-these-fields-have-to-be-uniqueread-only-fields-will-be-ignoredsampleparametersexceptionsadditional-informationrequestpost-httpsnaairvantagenetapiv1gatewayscontent-type-applicationjsonmacaddress-01a203780506serialnumber-ca0125698737imei-187496536874560type-gatewaytype1metadata--key--envvalue--gatewayenv1labels----label1label2response200-okhttp11-200-okcontent-type-applicationjsonuid-cde6b26d3c344c0780f06caa26cf7113labels----label1label2macaddress-01a203780506serialnumber-ca0125698737imei-187496536874560type-gatewaytype1metadata--key--envvalue--gatewayenv1creationdate-1337948436603state-inventorynamedescriptionusedefaulttypecompanyset-the-context-companyoptionalcallers-companyuidnamedescriptiongatewaymissingidentifiersat-least-one-of-imei-macaddress-or-serialnumberhas-to-be-setgatewaynotuniqueidentifiersone-of-imei-macaddress-or-serialnumber-is-notuniquegatewayinvalidmetadatablank-or-duplicate-keys-are-not-allowedgatewayinvalidmacaddressmac-address-must-be-a-string-with-the-followingformat-six-groups-of-two-hexadecimal-digitsseparated-bycolons--eg-0123456789companyunknownthe-given-company-is-unknownhttp-methodpostrequires-authenticationyesrate-limitedyesheaderscontent-type-applicationjsonpermissionsentitiesgatewayscreateeditapiv1gatewaysuidedits-the-gateway-identified-by-the-uid-of-the-requestif-the-gateway-is-linked-to-a-system-in-ready-deployed-or-being_transfered-statethen-only-the-labels-can-be-edited-otherwise-you-can-edit-all-the-fieldsnb-it-is-not-necessary-to-send-the-whole-json-block-to-editfields-only-fields-sent-to-the-service-will-be-updatedsampleexceptionsadditional-informationrequestput-httpsnaairvantagenetapiv1gateways1cc562f8ec1340e79214f2113db751f6content-type-applicationjsonimei--353270040002745macaddress--0c1224f110serialnumber--007type--m2mboxprometadata--key--envvalue--openatlabels--label1label2response200-okhttp11-200-okcontent-type-applicationjsonuid-1cc562f8ec1340e79214f2113db751f6type-m2mboxprolabels----label1label2metadata--key--envvalue--openatimei-353270040002745macaddress-0c1224f110serialnumber-007--creationdate--1337948436603state-inventorynamedescriptiongatewayunknownthe-uid-of-the-gateway-is-unknowngatewaybeingtransferredthe-gateway-is-being-transferred-it-is-not-editablegatewaymissingidentifiersat-least-one-of-imei-macaddress-or-serialnumberhas-to-be-setgatewaynotuniqueidentifiersone-of-imei-macaddress-or-serialnumber-is-notuniquegatewayinvalidmacaddressmac-address-must-be-a-string-with-the-followingformat-six-groups-of-two-hexadecimal-digitsseparated-bycolons--eg-0123456789systeminvalidstateonly-labels-can-be-updated-when-system-state-isdifferent-from-inventory-or-maintenancesystemcommunicationidentifieralreadyusedthe-generated-communication-identifier-is-not-uniqueanother-system-already-use-itcompanyunknownthe-given-company-is-unkownhttp-methodputrequires-authenticationyesrate-limitedyesheaderscontent-type-applicationjsonpermissionsentitiesgatewayseditdeleteapiv1gatewaysuiddeletes-a-specific-gateway-from-theairvantage-to-delete-a-gateway-it-does-not-have-to-be-assigned-to-anysystemsampleexceptionsadditional-informationrequestdelete-httpsnaairvantagenetapiv1gateways1cc562f8ec1340e79214f2113db751f6response200-okhttp11-200-okcontent-length-0namedescriptiongatewayunknownraised-when-the-uid-points-to-an-unknown-gatewaygatewayassignedraised-when-the-gateway-is-assigned-to-a-systemhttp-methoddeleterequires-authenticationyesrate-limitedyesheaders>HTTP Method
+GET
+Requires Authentication
+Yes
+Rate Limited
+Yes
+Headers
+None
+Permissions
+entities.gateways.view
+Order by
+creationDate
+Fields
+uid, state, imei, macAddress, serialNumber, type, creationDate, metadata, labels
+Get Details
+/api/v1/gateways/{uid}
+Returns detailed information about the specified gateway.
+Sample
+Exceptions
+Additional Information
+Request
+GET <a href=https://na.airvantage.net/api/v1/gateways/1cc562f8ec1340e79214f2113db751f6 target=_blank rel="noopener noreferrer" class="">https://na.airvantage.net/api/v1/gateways/1cc562f8ec1340e79214f2113db751f6</a>
+Response
+200 OK
+HTTP/1.1 200 OK
+Content-Type: application/json
+{
+"type": "gatewayType",
+"labels":    [
+"Label1",
+"Label2"
+],
+"uid": "1cc562f8ec1340e79214f2113db751f6",
+"metadata" : [
+{
+"key" : "env",
+"value" : "gatewayEnv"
+}
+],
+"macAddress": null,
+"serialNumber": "458555527",
+"imei": null,
+"creationDate": "1337948436603",
+"state": "INVENTORY"
+}
+Name
+Description
+gateway.unknown
+Raised when the 'uid' points to an unknown gateway.
+HTTP Method
+GET
+Requires Authentication
+Yes
+Rate Limited
+Yes
+Headers
+None
+Permissions
+entities.gateways.view
+Create
+/api/v1/gateways
+Creates a new gateway. Response returns the gateway with its uid.
+At least one of
+imei
+,
+serialNumber
+or
+macAddress
+must be set. These fields have to be unique.
+Read only fields will be ignored.
+Sample
+Parameters
+Exceptions
+Additional Information
+Request
+POST <a href=https://na.airvantage.net/api/v1/gateways target=_blank rel="noopener noreferrer" class="">https://na.airvantage.net/api/v1/gateways</a>
+Content-Type: application/json
+...
+{
+"macAddress": "01:a2:03:78:05:06",
+"serialNumber": "CA0125698737",
+"imei": "187496536874560",
+"type": "gatewayType1",
+"metadata" : [
+{
+"key" : "env",
+"value" : "gatewayEnv1"
+}
+],
+"labels":    [
+"Label1",
+"Label2"
+]
+}
+Response
+200 OK
+HTTP/1.1 200 OK
+Content-Type: application/json
+...
+{
+"uid": "cde6b26d3c344c0780f06caa26cf7113",
+"labels":    [
+"Label1",
+"Label2"
+],
+"macAddress": "01:a2:03:78:05:06",
+"serialNumber": "CA0125698737",
+"imei": "187496536874560",
+"type": "gatewayType1",
+"metadata" : [
+{
+"key" : "env",
+"value" : "gatewayEnv1"
+}
+],
+"creationDate": "1337948436603",
+"state": "INVENTORY"
+}
+Name
+Description
+Use
+Default
+Type
+company
+Set the context company.
+optional
+caller's company
+uid
+Name
+Description
+gateway.missing.identifiers
+At least one of 'imei', 'macAddress' or 'serialNumber'
+has to be set.
+gateway.not.unique.identifiers
+One of 'imei', 'macAddress' or 'serialNumber' is not
+unique.
+gateway.invalid.metadata
+Blank or duplicate keys are not allowed.
+gateway.invalid.mac.address
+Mac address must be a string with the following
+format: six groups of two hexadecimal digits,separated by
+colons (:). E.g. 01:23:45:67:89:ab
+company.unknown
+The given company is unknown.
+HTTP Method
+POST
+Requires Authentication
+Yes
+Rate Limited
+Yes
+Headers
+Content-type: application/json
+Permissions
+entities.gateways.create
+Edit
+/api/v1/gateways/{uid}
+Edits the gateway identified by the uid of the request.
+If the gateway is linked to a system in 'READY', 'DEPLOYED', or 'BEING_TRANSFERED' state,
+then only the labels can be edited. Otherwise, you can edit all the fields.
+NB: It is not necessary to send the whole JSON block to edit
+fields. Only fields sent to the service will be updated.
+Sample
+Exceptions
+Additional Information
+Request
+PUT <a href=https://na.airvantage.net/api/v1/gateways/1cc562f8ec1340e79214f2113db751f6 target=_blank rel="noopener noreferrer" class="">https://na.airvantage.net/api/v1/gateways/1cc562f8ec1340e79214f2113db751f6</a>
+Content-Type: application/json
+...
+{
+"imei" : "353270040002745",
+"macAddress" : "0C:12:24:F1:10:A0",
+"serialNumber" : "007",
+"type" : "M2MBoxPro",
+"metadata" : [
+{
+"key" : "env",
+"value" : "OpenAT"
+}
+],
+"labels" : ["Label1","Label2"]
+}
+Response
+200 OK
+HTTP/1.1 200 OK
+Content-Type: application/json
+...
+{
+"uid": "1cc562f8ec1340e79214f2113db751f6",
+"type": "M2MBoxPro",
+"labels":    [
+"Label1",
+"Label2"
+],
+"metadata" : [
+{
+"key" : "env",
+"value" : "OpenAT"
+}
+],
+"imei": "353270040002745",
+"macAddress": "0C:12:24:F1:10:A0",
+"serialNumber": "007",
+   "creationDate" : "1337948436603",
+"state": "INVENTORY"
+}
+Name
+Description
+gateway.unknown
+The uid of the gateway is unknown.
+gateway.being.transferred
+The gateway is being transferred, it is not editable.
+gateway.missing.identifiers
+At least one of 'imei', 'macAddress' or 'serialNumber'
+has to be set.
+gateway.not.unique.identifiers
+One of 'imei', 'macAddress' or 'serialNumber' is not
+unique.
+gateway.invalid.mac.address
+Mac address must be a string with the following
+format: six groups of two hexadecimal digits,separated by
+colons (:). E.g. 01:23:45:67:89:ab
+system.invalid.state
+Only labels can be updated when system state is
+different from INVENTORY or MAINTENANCE.
+system.communication.identifier.already.used
+The generated communication identifier is not unique,
+another system already use it.
+company.unknown
+The given company is unkown.
+HTTP Method
+PUT
+Requires Authentication
+Yes
+Rate Limited
+Yes
+Headers
+Content-type: application/json
+Permissions
+entities.gateways.edit
+Delete
+/api/v1/gateways/{uid}
+Deletes a specific gateway from the
+AirVantage. To delete a gateway it does not have to be assigned to any
+system.
+Sample
+Exceptions
+Additional Information
+Request
+DELETE <a href=https://na.airvantage.net/api/v1/gateways/1cc562f8ec1340e79214f2113db751f6 target=_blank rel="noopener noreferrer" class="">https://na.airvantage.net/api/v1/gateways/1cc562f8ec1340e79214f2113db751f6</a>
+Response
+200 OK
+HTTP/1.1 200 OK
+Content-Length: 0
+Name
+Description
+gateway.unknown
+Raised when the 'uid' points to an unknown gateway.
+gateway.assigned
+Raised when the gateway is assigned to a system.
+HTTP Method
+DELETE
+Requires Authentication
+Yes
+Rate Limited
+Yes
+Headers<a href=#http-methodgetrequires-authenticationyesrate-limitedyesheadersnonepermissionsentitiesgatewaysvieworder-bycreationdatefieldsuid-state-imei-macaddress-serialnumber-type-creationdate-metadata-labelsget-detailsapiv1gatewaysuidreturns-detailed-information-about-the-specified-gatewaysampleexceptionsadditional-informationrequestget-httpsnaairvantagenetapiv1gateways1cc562f8ec1340e79214f2113db751f6response200-okhttp11-200-okcontent-type-applicationjsontype-gatewaytypelabels----label1label2uid-1cc562f8ec1340e79214f2113db751f6metadata--key--envvalue--gatewayenvmacaddress-nullserialnumber-458555527imei-nullcreationdate-1337948436603state-inventorynamedescriptiongatewayunknownraised-when-the-uid-points-to-an-unknown-gatewayhttp-methodgetrequires-authenticationyesrate-limitedyesheadersnonepermissionsentitiesgatewaysviewcreateapiv1gatewayscreates-a-new-gateway-response-returns-the-gateway-with-its-uidat-least-one-ofimeiserialnumberormacaddressmust-be-set-these-fields-have-to-be-uniqueread-only-fields-will-be-ignoredsampleparametersexceptionsadditional-informationrequestpost-httpsnaairvantagenetapiv1gatewayscontent-type-applicationjsonmacaddress-01a203780506serialnumber-ca0125698737imei-187496536874560type-gatewaytype1metadata--key--envvalue--gatewayenv1labels----label1label2response200-okhttp11-200-okcontent-type-applicationjsonuid-cde6b26d3c344c0780f06caa26cf7113labels----label1label2macaddress-01a203780506serialnumber-ca0125698737imei-187496536874560type-gatewaytype1metadata--key--envvalue--gatewayenv1creationdate-1337948436603state-inventorynamedescriptionusedefaulttypecompanyset-the-context-companyoptionalcallers-companyuidnamedescriptiongatewaymissingidentifiersat-least-one-of-imei-macaddress-or-serialnumberhas-to-be-setgatewaynotuniqueidentifiersone-of-imei-macaddress-or-serialnumber-is-notuniquegatewayinvalidmetadatablank-or-duplicate-keys-are-not-allowedgatewayinvalidmacaddressmac-address-must-be-a-string-with-the-followingformat-six-groups-of-two-hexadecimal-digitsseparated-bycolons--eg-0123456789companyunknownthe-given-company-is-unknownhttp-methodpostrequires-authenticationyesrate-limitedyesheaderscontent-type-applicationjsonpermissionsentitiesgatewayscreateeditapiv1gatewaysuidedits-the-gateway-identified-by-the-uid-of-the-requestif-the-gateway-is-linked-to-a-system-in-ready-deployed-or-being_transfered-statethen-only-the-labels-can-be-edited-otherwise-you-can-edit-all-the-fieldsnb-it-is-not-necessary-to-send-the-whole-json-block-to-editfields-only-fields-sent-to-the-service-will-be-updatedsampleexceptionsadditional-informationrequestput-httpsnaairvantagenetapiv1gateways1cc562f8ec1340e79214f2113db751f6content-type-applicationjsonimei--353270040002745macaddress--0c1224f110serialnumber--007type--m2mboxprometadata--key--envvalue--openatlabels--label1label2response200-okhttp11-200-okcontent-type-applicationjsonuid-1cc562f8ec1340e79214f2113db751f6type-m2mboxprolabels----label1label2metadata--key--envvalue--openatimei-353270040002745macaddress-0c1224f110serialnumber-007--creationdate--1337948436603state-inventorynamedescriptiongatewayunknownthe-uid-of-the-gateway-is-unknowngatewaybeingtransferredthe-gateway-is-being-transferred-it-is-not-editablegatewaymissingidentifiersat-least-one-of-imei-macaddress-or-serialnumberhas-to-be-setgatewaynotuniqueidentifiersone-of-imei-macaddress-or-serialnumber-is-notuniquegatewayinvalidmacaddressmac-address-must-be-a-string-with-the-followingformat-six-groups-of-two-hexadecimal-digitsseparated-bycolons--eg-0123456789systeminvalidstateonly-labels-can-be-updated-when-system-state-isdifferent-from-inventory-or-maintenancesystemcommunicationidentifieralreadyusedthe-generated-communication-identifier-is-not-uniqueanother-system-already-use-itcompanyunknownthe-given-company-is-unkownhttp-methodputrequires-authenticationyesrate-limitedyesheaderscontent-type-applicationjsonpermissionsentitiesgatewayseditdeleteapiv1gatewaysuiddeletes-a-specific-gateway-from-theairvantage-to-delete-a-gateway-it-does-not-have-to-be-assigned-to-anysystemsampleexceptionsadditional-informationrequestdelete-httpsnaairvantagenetapiv1gateways1cc562f8ec1340e79214f2113db751f6response200-okhttp11-200-okcontent-length-0namedescriptiongatewayunknownraised-when-the-uid-points-to-an-unknown-gatewaygatewayassignedraised-when-the-gateway-is-assigned-to-a-systemhttp-methoddeleterequires-authenticationyesrate-limitedyesheaders class=hash-link aria-label="Direct link to http-methodgetrequires-authenticationyesrate-limitedyesheadersnonepermissionsentitiesgatewaysvieworder-bycreationdatefieldsuid-state-imei-macaddress-serialnumber-type-creationdate-metadata-labelsget-detailsapiv1gatewaysuidreturns-detailed-information-about-the-specified-gatewaysampleexceptionsadditional-informationrequestget-httpsnaairvantagenetapiv1gateways1cc562f8ec1340e79214f2113db751f6response200-okhttp11-200-okcontent-type-applicationjsontype-gatewaytypelabels----label1label2uid-1cc562f8ec1340e79214f2113db751f6metadata--key--envvalue--gatewayenvmacaddress-nullserialnumber-458555527imei-nullcreationdate-1337948436603state-inventorynamedescriptiongatewayunknownraised-when-the-uid-points-to-an-unknown-gatewayhttp-methodgetrequires-authenticationyesrate-limitedyesheadersnonepermissionsentitiesgatewaysviewcreateapiv1gatewayscreates-a-new-gateway-response-returns-the-gateway-with-its-uidat-least-one-ofimeiserialnumberormacaddressmust-be-set-these-fields-have-to-be-uniqueread-only-fields-will-be-ignoredsampleparametersexceptionsadditional-informationrequestpost-httpsnaairvantagenetapiv1gatewayscontent-type-applicationjsonmacaddress-01a203780506serialnumber-ca0125698737imei-187496536874560type-gatewaytype1metadata--key--envvalue--gatewayenv1labels----label1label2response200-okhttp11-200-okcontent-type-applicationjsonuid-cde6b26d3c344c0780f06caa26cf7113labels----label1label2macaddress-01a203780506serialnumber-ca0125698737imei-187496536874560type-gatewaytype1metadata--key--envvalue--gatewayenv1creationdate-1337948436603state-inventorynamedescriptionusedefaulttypecompanyset-the-context-companyoptionalcallers-companyuidnamedescriptiongatewaymissingidentifiersat-least-one-of-imei-macaddress-or-serialnumberhas-to-be-setgatewaynotuniqueidentifiersone-of-imei-macaddress-or-serialnumber-is-notuniquegatewayinvalidmetadatablank-or-duplicate-keys-are-not-allowedgatewayinvalidmacaddressmac-address-must-be-a-string-with-the-followingformat-six-groups-of-two-hexadecimal-digitsseparated-bycolons--eg-0123456789companyunknownthe-given-company-is-unknownhttp-methodpostrequires-authenticationyesrate-limitedyesheaderscontent-type-applicationjsonpermissionsentitiesgatewayscreateeditapiv1gatewaysuidedits-the-gateway-identified-by-the-uid-of-the-requestif-the-gateway-is-linked-to-a-system-in-ready-deployed-or-being_transfered-statethen-only-the-labels-can-be-edited-otherwise-you-can-edit-all-the-fieldsnb-it-is-not-necessary-to-send-the-whole-json-block-to-editfields-only-fields-sent-to-the-service-will-be-updatedsampleexceptionsadditional-informationrequestput-httpsnaairvantagenetapiv1gateways1cc562f8ec1340e79214f2113db751f6content-type-applicationjsonimei--353270040002745macaddress--0c1224f110serialnumber--007type--m2mboxprometadata--key--envvalue--openatlabels--label1label2response200-okhttp11-200-okcontent-type-applicationjsonuid-1cc562f8ec1340e79214f2113db751f6type-m2mboxprolabels----label1label2metadata--key--envvalue--openatimei-353270040002745macaddress-0c1224f110serialnumber-007--creationdate--1337948436603state-inventorynamedescriptiongatewayunknownthe-uid-of-the-gateway-is-unknowngatewaybeingtransferredthe-gateway-is-being-transferred-it-is-not-editablegatewaymissingidentifiersat-least-one-of-imei-macaddress-or-serialnumberhas-to-be-setgatewaynotuniqueidentifiersone-of-imei-macaddress-or-serialnumber-is-notuniquegatewayinvalidmacaddressmac-address-must-be-a-string-with-the-followingformat-six-groups-of-two-hexadecimal-digitsseparated-bycolons--eg-0123456789systeminvalidstateonly-labels-can-be-updated-when-system-state-isdifferent-from-inventory-or-maintenancesystemcommunicationidentifieralreadyusedthe-generated-communication-identifier-is-not-uniqueanother-system-already-use-itcompanyunknownthe-given-company-is-unkownhttp-methodputrequires-authenticationyesrate-limitedyesheaderscontent-type-applicationjsonpermissionsentitiesgatewayseditdeleteapiv1gatewaysuiddeletes-a-specific-gateway-from-theairvantage-to-delete-a-gateway-it-does-not-have-to-be-assigned-to-anysystemsampleexceptionsadditional-informationrequestdelete-httpsnaairvantagenetapiv1gateways1cc562f8ec1340e79214f2113db751f6response200-okhttp11-200-okcontent-length-0namedescriptiongatewayunknownraised-when-the-uid-points-to-an-unknown-gatewaygatewayassignedraised-when-the-gateway-is-assigned-to-a-systemhttp-methoddeleterequires-authenticationyesrate-limitedyesheaders" title="Direct link to http-methodgetrequires-authenticationyesrate-limitedyesheadersnonepermissionsentitiesgatewaysvieworder-bycreationdatefieldsuid-state-imei-macaddress-serialnumber-type-creationdate-metadata-labelsget-detailsapiv1gatewaysuidreturns-detailed-information-about-the-specified-gatewaysampleexceptionsadditional-informationrequestget-httpsnaairvantagenetapiv1gateways1cc562f8ec1340e79214f2113db751f6response200-okhttp11-200-okcontent-type-applicationjsontype-gatewaytypelabels----label1label2uid-1cc562f8ec1340e79214f2113db751f6metadata--key--envvalue--gatewayenvmacaddress-nullserialnumber-458555527imei-nullcreationdate-1337948436603state-inventorynamedescriptiongatewayunknownraised-when-the-uid-points-to-an-unknown-gatewayhttp-methodgetrequires-authenticationyesrate-limitedyesheadersnonepermissionsentitiesgatewaysviewcreateapiv1gatewayscreates-a-new-gateway-response-returns-the-gateway-with-its-uidat-least-one-ofimeiserialnumberormacaddressmust-be-set-these-fields-have-to-be-uniqueread-only-fields-will-be-ignoredsampleparametersexceptionsadditional-informationrequestpost-httpsnaairvantagenetapiv1gatewayscontent-type-applicationjsonmacaddress-01a203780506serialnumber-ca0125698737imei-187496536874560type-gatewaytype1metadata--key--envvalue--gatewayenv1labels----label1label2response200-okhttp11-200-okcontent-type-applicationjsonuid-cde6b26d3c344c0780f06caa26cf7113labels----label1label2macaddress-01a203780506serialnumber-ca0125698737imei-187496536874560type-gatewaytype1metadata--key--envvalue--gatewayenv1creationdate-1337948436603state-inventorynamedescriptionusedefaulttypecompanyset-the-context-companyoptionalcallers-companyuidnamedescriptiongatewaymissingidentifiersat-least-one-of-imei-macaddress-or-serialnumberhas-to-be-setgatewaynotuniqueidentifiersone-of-imei-macaddress-or-serialnumber-is-notuniquegatewayinvalidmetadatablank-or-duplicate-keys-are-not-allowedgatewayinvalidmacaddressmac-address-must-be-a-string-with-the-followingformat-six-groups-of-two-hexadecimal-digitsseparated-bycolons--eg-0123456789companyunknownthe-given-company-is-unknownhttp-methodpostrequires-authenticationyesrate-limitedyesheaderscontent-type-applicationjsonpermissionsentitiesgatewayscreateeditapiv1gatewaysuidedits-the-gateway-identified-by-the-uid-of-the-requestif-the-gateway-is-linked-to-a-system-in-ready-deployed-or-being_transfered-statethen-only-the-labels-can-be-edited-otherwise-you-can-edit-all-the-fieldsnb-it-is-not-necessary-to-send-the-whole-json-block-to-editfields-only-fields-sent-to-the-service-will-be-updatedsampleexceptionsadditional-informationrequestput-httpsnaairvantagenetapiv1gateways1cc562f8ec1340e79214f2113db751f6content-type-applicationjsonimei--353270040002745macaddress--0c1224f110serialnumber--007type--m2mboxprometadata--key--envvalue--openatlabels--label1label2response200-okhttp11-200-okcontent-type-applicationjsonuid-1cc562f8ec1340e79214f2113db751f6type-m2mboxprolabels----label1label2metadata--key--envvalue--openatimei-353270040002745macaddress-0c1224f110serialnumber-007--creationdate--1337948436603state-inventorynamedescriptiongatewayunknownthe-uid-of-the-gateway-is-unknowngatewaybeingtransferredthe-gateway-is-being-transferred-it-is-not-editablegatewaymissingidentifiersat-least-one-of-imei-macaddress-or-serialnumberhas-to-be-setgatewaynotuniqueidentifiersone-of-imei-macaddress-or-serialnumber-is-notuniquegatewayinvalidmacaddressmac-address-must-be-a-string-with-the-followingformat-six-groups-of-two-hexadecimal-digitsseparated-bycolons--eg-0123456789systeminvalidstateonly-labels-can-be-updated-when-system-state-isdifferent-from-inventory-or-maintenancesystemcommunicationidentifieralreadyusedthe-generated-communication-identifier-is-not-uniqueanother-system-already-use-itcompanyunknownthe-given-company-is-unkownhttp-methodputrequires-authenticationyesrate-limitedyesheaderscontent-type-applicationjsonpermissionsentitiesgatewayseditdeleteapiv1gatewaysuiddeletes-a-specific-gateway-from-theairvantage-to-delete-a-gateway-it-does-not-have-to-be-assigned-to-anysystemsampleexceptionsadditional-informationrequestdelete-httpsnaairvantagenetapiv1gateways1cc562f8ec1340e79214f2113db751f6response200-okhttp11-200-okcontent-length-0namedescriptiongatewayunknownraised-when-the-uid-points-to-an-unknown-gatewaygatewayassignedraised-when-the-gateway-is-assigned-to-a-systemhttp-methoddeleterequires-authenticationyesrate-limitedyesheaders" translate=no>​</a></h2>
+<h1>Permissions
+entities.gateways.delete
+Import
+/api/v1/operations/gateways/import
+Imports and creates gateways from a CSV file.
+Returns the uid of the created
+operation
+.
+Sample
+Parameters
+CSV Header
+JSON Content
+Exceptions
+Additional Information
+Request
+POST <a href=https://na.airvantage.net/api/v1/operations/gateways/import target=_blank rel="noopener noreferrer" class="">https://na.airvantage.net/api/v1/operations/gateways/import</a>
+Content-type: multipart/mixed; boundary="BoundaryUgix6QHMxLwJ4siU"
+--BoundaryUgix6QHMxLwJ4siU
+Content-Disposition: form-data; name="file"; filename="file.csv"
+Content-Type: text/csv
+// CSV attached
+...
+--BoundaryUgix6QHMxLwJ4siU
+Content-Disposition: form-data; name="parameters"; filename="parameters.json"
+Content-Type: application/json
+// JSON attached
+{
+"notify" : true,
+"callback" : "callback_url"
+}
+--BoundaryUgix6QHMxLwJ4siU--
+Response
+200 OK
+HTTP/1.1 200 OK
+Content-Type: application/json
+...
+{
+"operation":"4b89657f63aac4b299c1d46e98a495326"
+}
+Name
+Description
+Use
+Default
+Type
+company
+Set the context company.
+optional
+caller's company
+uid
+Header
+Description
+Use
+IMEI
+The imei of the new gateway.
+Expected format :
+a string of 15 digits
+optional
+MAC ADDRESS
+The mac address of the new gateway.
+Expected
+format : six groups of two hexadecimal digits, separated by
+colons (:). (E.g. 01:23:45:67:89:AB)
+optional
+SERIAL NUMBER
+The serial number of the new gateway.
+optional
+TYPE
+The gateway type (E.g. M2MBoxPro)
+optional
+METADATA[metadataName]
+The gateway metadata (E.g. ENV for environnement)
+optional
+LABELS
+The labels of the new gateway, separated by a '|'
+character.
+optional
+At least one of the gateway identifiers (Imei, Mac
+Address, Serial number) is expected.
+{
+"notify" : true|false,
+"callback" : "callback_url"
+}
+Field
+Description
+Use
+Default
+Type
+notify
+Send an email notification to the user calling this method when the operation finishes.
+optional
+false
+boolean
+callback
+The endpoint URL to call when the operation state changes. The callback is done
+using HTTP 'POST' method
+.
+optional
+string
+Name
+Description
+file.unreadable
+File is unreadable
+file.header.missing
+CSV header is missing
+csv.header.unknown.column
+CSV header column is unknown
+file.missing.data
+File contains no data
+file.too.large
+Files cannot be more than 10MB
+HTTP Method
+POST
+Requires Authentication
+Yes
+Rate Limited
+Yes
+Headers
+Content-type: application/octet-stream
+Permissions
+entities.gateways.create
+Change labels
+/api/v1/operations/gateways/label
+Adds or removes labels to gateways matching a given criteria. When no criteria are set, all gateways in the company will be labelled.
+Sample
+Content
+Parameters
+Exceptions
+Additional Information
+Request
+POST <a href=https://na.airvantage.net/api/v1/operations/gateways/label target=_blank rel="noopener noreferrer" class="">https://na.airvantage.net/api/v1/operations/gateways/label</a>
+Content-Type: application/json
+...
+{
+"labels" : {
+"add" :  ["france"]
+},
+"criteria" : {
+"type" : "M2MBoxPro",
+"labels" : ["test"]
+}
+}
+This request adds the label 'france' to all gateways
+matching the type 'M2MBoxPro' and labeled 'test'.
+Response
+200 OK
+HTTP/1.1 200 OK
+Content-Type: application/json
+...
+{
+"operation":"4b89657f63aac4b299c1d46e98a495326"
+}
+Returns the id of the labeling operation.
+{
+"notify" : ,
+"callback" : ,
+"labels" : {
+"add" : ["Label1", ...],
+"remove" : ["Label2", ...]
+},
+"criteria" : {
+"uids" : []
+"labels" : [],
+"serialNumber" : ,
+"imei" : ,
+"macAddress" : ,
+"type" : ,
+"states" : [],
+"assigned" : ,
+"metadata" : {
+"key1" : "value1",
+"key2" : "value2",
+...
+}
+},
+"dependsOn" : {
+"operation" : "uid",
+"states" : ["FAILURE"]
+},
+"identifiers" : {
+"serialNumber" : ["serial1", "serial2"],
+"imei" : ["imei1", "imei2"],
+"macAddress" : ["mac1", "mac2"]
+}
+}
+Add or remove labels should be required
+Either 'criteria' or 'dependsOn' should be set.
+Field
+Description
+Use
+Default
+Type
+notify
+Send an email notification to the user calling this method when the operation finishes
+optional
+false
+boolean
+callback
+The endpoint URL to call when the operation state changes. The callback is done
+using HTTP 'POST' method
+.
+optional
+string
+labels.add
+The list of labels to add
+optional
+string
+labels.remove
+The list of labels to remove
+optional
+string
+dependsOn.operation
+Operation to be used to launch this operation
+In other words,
+the tasks of the new operation will start only when the tasks of specified operation will be finished.
+required if 'dependsOn' set
+uid
+dependsOn.states
+States of the tasks which will be used as input of this operation.
+Possible values are : SUCCESS, FAILURE and CANCELLED.
+If null or empty, all tasks from the parent operation will be used as input of this operation.
+optional
+SUCCESS,FAILURE,CANCELLED
+string array
+identifiers
+List of identifiers to be used to identify gateway. The understandable identifiers are :
+serial number, IMEI and MAC address.
+A maximum of 5000 identifiers can be provided.
+optional
+string
+identifiers.serialNumber
+List of serial number to be used to identify gateways.
+A maximum of 5000 serial numbers can be provided.
+optional
+string
+identifiers.imei
+List of IMEI to be used to identify gateways.
+A maximum of 5000 IMEIs can be provided.
+optional
+string
+identifiers.macAddress
+List of MAC address to be used to identify gateways.
+A maximum of 5000 MAC addresses can be provided.
+optional
+string
+criteria.uids
+Labels all gateways whose uid matches with the
+specified ids.
+optional
+string
+criteria.labels
+Labels all gateways which have one of the specified
+labels.
+optional
+string
+serialNumber
+Labels all gateways whose serial number contains the
+given string.
+optional
+string
+imei
+Labels all gateways whose imei contains the given
+string.
+optional
+string
+macAddress
+Labels all gateways whose mac address contains the
+given string.
+optional
+string
+type
+Labels all gateways whose type contains the given
+string.
+optional
+string
+states
+Labels all gateways matching the specified states.
+States are : INVENTORY, BEING_TRANSFERRED.
+optional
+string
+assigned
+Labels all gateways assigned (or not) to a system.
+Expected value : true/false.
+optional
+boolean
+metadata
+Labels all gateways matching the specified metadata.
+optional
+string
+Name
+Description
+Use
+Default
+Type
+Operand
+company
+Set the context company.
+optional
+caller's company
+uid</h1>
+<p>Name
+Description
+label.missing
+The list of label to add or remove is empty.
+label.amount.exceeded
+The number of labels to add or remove is greater than 100.
+selection.empty
+There is no gateway matching the given criteria.
+selection.invalid
+The selection is invalid. The possible causes are :
+Only one of the following attributes has to be set : criteria, dependsOn
+'dependsOn' is defined but 'dependsOn.operation' is not set
+HTTP Method
+POST
+Requires Authentication
+Yes
+Rate Limited
+Yes
+Headers
+Content-type: application/json
+Permissions
+entities.gateways.edit
+Delete multiple gateways
+/api/v1/operations/gateways/delete
+Deletes several gateways. As this operation may be long,
+depending on the number of gateways to delete, it is done
+asynchronously. Gateways linked to a system will not be deleted and
+the task associated to these gateways will fail.
+Sample
+Parameters
+Contents
+Exceptions
+Additional Information
+Request
+POST <a href=https://na.airvantage.net/api/v1/operations/gateways/delete target=_blank rel="noopener noreferrer" class="">https://na.airvantage.net/api/v1/operations/gateways/delete</a>
+Content-Type: application/json
+...
+{
+"gateways" : {
+"uids" : ["16199496f6d24f0691fa006ef53e5592"]
+}
+}
+Response
+200 OK
+HTTP/1.1 200 OK
+Content-Type: application/json
+...
+{
+"operation":"4b89657f63aac4b299c1d46e98a495326"
+}
+Name
+Description
+Use
+Default
+Type
+company
+Set the context company.
+optional
+caller's company
+uid
+{
+"notify" : true|false,
+"callback" : "callback URL",
+"gateways" : {
+"label" : "label",
+"uids" : ["uid1", ...],
+"dependsOn" : {
+"operation" : "uid",
+"states" : ["FAILURE"]
+},
+"criteria" : {
+"uids" : []
+"labels" : [],
+"serialNumber" : ,
+"imei" : ,
+"macAddress" : ,
+"type" : ,
+"states" : [],
+"assigned" : ,
+"metadata" : {
+"key1" : "value1",
+"key2" : "value2",
+...
+}
+}
+}
+}
+Field
+Description
+Use
+Default
+Type
+notify
+Send an email notification to the user calling this method when the operation finishes
+optional
+false
+boolean
+callback
+The endpoint URL to call when the operation state changes. The callback is done
+using HTTP 'POST' method
+.
+optional
+string
+gateways.label
+Label name. All gateways linked to the label will be incorporated to the operation
+required
+string
+gateways.uids
+List of gateway uids to be used to launch the operation
+required
+uid
+gateways.dependsOn.operation
+Identifier of the operation to be used to launch this operation
+In other words,
+the tasks of the new operation will start only when the tasks of specified operation will be finished.
+required if 'dependsOn' set
+uid
+gateways.dependsOn.states
+States of the tasks which will be used as input of this operation.
+Possible values are : SUCCESS, FAILURE and CANCELLED.
+If null or empty, all tasks from the parent operation will be used as input of this operation.
+optional
+SUCCESS,FAILURE,CANCELLED
+string array
+gateways.criteria.uids
+Selects all gateways whose uid matches with the
+specified ids.
+optional
+string
+gateways.criteria.labels
+Selects all gateways which have one of the specified
+labels.
+optional
+string
+gateways.criteria.serialNumber
+Selects all gateways whose serial number contains the
+given string.
+optional
+string
+gateways.criteria.imei
+Selects all gateways whose imei contains the given
+string.
+optional
+string
+gateways.criteria.macAddress
+Selects all gateways whose mac address contains the
+given string.
+optional
+string
+gateways.criteria.type
+Selects all gateways whose type contains the given
+string.
+optional
+string
+gateways.criteria.states
+Selects all gateways matching the specified states.
+States are : INVENTORY, BEING_TRANSFERRED.
+optional
+string
+gateways.criteria.assigned
+Selects all gateways assigned (or not) to a system.
+Expected value : true/false.
+optional
+boolean
+gateways.criteria.metadata
+Selects all gateways matching the specified metadata.
+optional
+string
+Name
+Description
+selection.empty
+The list of gateway uids is empty or no gateway found for the specified label or criteria.
+selection.invalid
+The selection is invalid. Only one of the following attributes has to be set : label, uids, dependsOn, or criteria.
+selection.max.uid.reached
+The list of gateway uids contains more than 100 distinct uids.
+label.unknown
+The specified label is unknown
+operation.unknown
+The specified 'dependsOn' operation is unknown
+gateway.assigned
+Shown in the operation task. Raised when
+the gateway cannot be deleted because it is still assigned to
+a system.
+gateway.unknown
+Shown in the operation task. Raised when
+the gateway cannot be found in AirVantage.
+HTTP Method
+POST
+Requires Authentication
+Yes
+Rate Limited
+Yes
+Headers
+Content-type: application/json
+Permissions
+entities.gateways.delete
+DEPRECATED
+Transfer
+/api/v1/operations/gateways/transfer
+Transfers gateways to a partner company.
+The group of gateways to transfer can be specified using a
+label, a set of 100 uids, or criteria. After launching the transfer,
+a request will be sent to the destination. The operation will not be
+finished until the request has been treated by the destination company.
+This API is deprecated, please use system transfer instead.
+Returns the uid of the created
+operation
+.
+Sample
+Content
+Parameters
+Exceptions
+Additional Information
+Request
+POST <a href=https://na.airvantage.net/api/v1/operations/gateways/transfer target=_blank rel="noopener noreferrer" class="">https://na.airvantage.net/api/v1/operations/gateways/transfer</a>
+Content-Type: application/json
+...
+{
+"message" : "Accept this!!",
+"destination" : "787ef34132fe89734acb9871",
+"gateways" : {
+"uids" : ["gate1", "gate2"]
+}
+}
+This request sends a transfer request to the destination
+company. The destination company has to be partner of the
+source company.
+Response
+200 OK
+HTTP/1.1 200 OK
+Content-Type: application/json
+...
+{
+"operation":"4b89657f63aac4b299c1d46e98a495326"
+}
+Send a transfert request
+{
+"notify" : true,
+"callback" : "callback URL",
+"message" : "xxx",
+"destination" : "xxx",
+"gateways" : {
+"uids" : ["xxx", "yyy"],
+"label" : "zzz",
+"criteria" : {
+"uids" : []
+"labels" : [],
+"serialNumber" : ,
+"imei" : ,
+"macAddress" : ,
+"type" : ,
+"states" : [],
+"assigned" : ,
+"metadata" : {
+"key1" : "value1",
+"key2" : "value2",
+...
+}
+}
+}
+}
+Field
+Description
+Use
+Default
+Type
+notify
+Send an email notification to the user calling this method when the operation finishes
+optional
+false
+boolean
+callback
+The endpoint URL to call when the operation state changes. The callback is done
+using HTTP 'POST' method
+.
+optional
+string
+gateways.label
+Gateway selection by label
+optional
+string list
+gateways.uids
+Gateway selection by list of uids
+optional
+uids list
+gateways.criteria.uids
+Selects all gateways whose uid matches with the
+specified ids.
+optional
+string
+gateways.criteria.labels
+Selects all gateways which have one of the specified
+labels.
+optional
+string
+gateways.criteria.serialNumber
+Selects all gateways whose serial number contains the
+given string.
+optional
+string
+gateways.criteria.imei
+Selects all gateways whose imei contains the given
+string.
+optional
+string
+gateways.criteria.macAddress
+Selects all gateways whose mac address contains the
+given string.
+optional
+string
+gateways.criteria.type
+Selects all gateways whose type contains the given
+string.
+optional
+string
+gateways.criteria.states
+Selects all gateways matching the specified states.
+States are : INVENTORY, BEING_TRANSFERRED.
+optional
+string
+gateways.criteria.assigned
+Selects all gateways assigned (or not) to a system.
+Expected value : true/false.
+optional
+boolean
+gateways.criteria.metadata
+Selects all gateways matching the specified metadata.
+optional
+string
+message
+Message to explain the purpose of the transfer
+optional
+string
+destination
+The uid of the destination company
+required
+uid
+Use either 'gateways.label' or 'gateways.uids' but not
+both.
+Accept a transfert request
+The following API has to be used to accept a gateways
+transfer:
+Accept
+.
+When you accept a set of gateways, you can specify a label which
+will be applied to all the transfered gateways. The label is
+optional and created if it does not exist.
+{
+"message" : "",
+"data" : {
+"label" : ""
+}
+}
+Field
+Description
+Use
+Default
+Type
+message
+An acceptance message to be returned to the request
+sender.
+optional
+string
+data.label
+The label to add to the transfered gateways.
+optional
+string
+Name
+Description
+Use
+Default
+Type
+company
+Set the context company.
+optional
+caller's company
+uid
+Name
+Description
+company.missing
+The destination company identifier is missing.
+partner.unknown
+The destination company is not a partner.
+gateway.unknown
+One of the specifed uid doesn't correspond to an
+existing gateway.
+selection.empty
+The given label or criteria selection returns no gateway.
+selection.invalid
+The given selection is either empty or defined both uids and label.
+selection.max.uid.reached
+The given selection contains more than 100 distinct uids.
+HTTP Method
+POST
+Requires Authentication
+Yes
+Rate Limited
+Yes
+Headers
+Content-type: application/json
+Permissions
+entities.gateways.transfers.create</div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href=https://github.com/andreyjv/personal-av/tree/docs/documentation-revamp/PRD_documentation-revamp/website/docs/reference/api/API-Gateway-v1.md target=_blank rel="noopener noreferrer" class=theme-edit-this-page><svg fill=currentColor height=20 width=20 viewBox="0 0 40 40" class=iconEdit_Z9Sw aria-hidden=true><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"/></g></svg>Edit this page</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href=#http-methodgetrequires-authenticationyesrate-limitedyesheadersnonepermissionsentitiesgatewaysvieworder-bycreationdatefieldsuid-state-imei-macaddress-serialnumber-type-creationdate-metadata-labelsget-detailsapiv1gatewaysuidreturns-detailed-information-about-the-specified-gatewaysampleexceptionsadditional-informationrequestget-httpsnaairvantagenetapiv1gateways1cc562f8ec1340e79214f2113db751f6response200-okhttp11-200-okcontent-type-applicationjsontype-gatewaytypelabels----label1label2uid-1cc562f8ec1340e79214f2113db751f6metadata--key--envvalue--gatewayenvmacaddress-nullserialnumber-458555527imei-nullcreationdate-1337948436603state-inventorynamedescriptiongatewayunknownraised-when-the-uid-points-to-an-unknown-gatewayhttp-methodgetrequires-authenticationyesrate-limitedyesheadersnonepermissionsentitiesgatewaysviewcreateapiv1gatewayscreates-a-new-gateway-response-returns-the-gateway-with-its-uidat-least-one-ofimeiserialnumberormacaddressmust-be-set-these-fields-have-to-be-uniqueread-only-fields-will-be-ignoredsampleparametersexceptionsadditional-informationrequestpost-httpsnaairvantagenetapiv1gatewayscontent-type-applicationjsonmacaddress-01a203780506serialnumber-ca0125698737imei-187496536874560type-gatewaytype1metadata--key--envvalue--gatewayenv1labels----label1label2response200-okhttp11-200-okcontent-type-applicationjsonuid-cde6b26d3c344c0780f06caa26cf7113labels----label1label2macaddress-01a203780506serialnumber-ca0125698737imei-187496536874560type-gatewaytype1metadata--key--envvalue--gatewayenv1creationdate-1337948436603state-inventorynamedescriptionusedefaulttypecompanyset-the-context-companyoptionalcallers-companyuidnamedescriptiongatewaymissingidentifiersat-least-one-of-imei-macaddress-or-serialnumberhas-to-be-setgatewaynotuniqueidentifiersone-of-imei-macaddress-or-serialnumber-is-notuniquegatewayinvalidmetadatablank-or-duplicate-keys-are-not-allowedgatewayinvalidmacaddressmac-address-must-be-a-string-with-the-followingformat-six-groups-of-two-hexadecimal-digitsseparated-bycolons--eg-0123456789companyunknownthe-given-company-is-unknownhttp-methodpostrequires-authenticationyesrate-limitedyesheaderscontent-type-applicationjsonpermissionsentitiesgatewayscreateeditapiv1gatewaysuidedits-the-gateway-identified-by-the-uid-of-the-requestif-the-gateway-is-linked-to-a-system-in-ready-deployed-or-being_transfered-statethen-only-the-labels-can-be-edited-otherwise-you-can-edit-all-the-fieldsnb-it-is-not-necessary-to-send-the-whole-json-block-to-editfields-only-fields-sent-to-the-service-will-be-updatedsampleexceptionsadditional-informationrequestput-httpsnaairvantagenetapiv1gateways1cc562f8ec1340e79214f2113db751f6content-type-applicationjsonimei--353270040002745macaddress--0c1224f110serialnumber--007type--m2mboxprometadata--key--envvalue--openatlabels--label1label2response200-okhttp11-200-okcontent-type-applicationjsonuid-1cc562f8ec1340e79214f2113db751f6type-m2mboxprolabels----label1label2metadata--key--envvalue--openatimei-353270040002745macaddress-0c1224f110serialnumber-007--creationdate--1337948436603state-inventorynamedescriptiongatewayunknownthe-uid-of-the-gateway-is-unknowngatewaybeingtransferredthe-gateway-is-being-transferred-it-is-not-editablegatewaymissingidentifiersat-least-one-of-imei-macaddress-or-serialnumberhas-to-be-setgatewaynotuniqueidentifiersone-of-imei-macaddress-or-serialnumber-is-notuniquegatewayinvalidmacaddressmac-address-must-be-a-string-with-the-followingformat-six-groups-of-two-hexadecimal-digitsseparated-bycolons--eg-0123456789systeminvalidstateonly-labels-can-be-updated-when-system-state-isdifferent-from-inventory-or-maintenancesystemcommunicationidentifieralreadyusedthe-generated-communication-identifier-is-not-uniqueanother-system-already-use-itcompanyunknownthe-given-company-is-unkownhttp-methodputrequires-authenticationyesrate-limitedyesheaderscontent-type-applicationjsonpermissionsentitiesgatewayseditdeleteapiv1gatewaysuiddeletes-a-specific-gateway-from-theairvantage-to-delete-a-gateway-it-does-not-have-to-be-assigned-to-anysystemsampleexceptionsadditional-informationrequestdelete-httpsnaairvantagenetapiv1gateways1cc562f8ec1340e79214f2113db751f6response200-okhttp11-200-okcontent-length-0namedescriptiongatewayunknownraised-when-the-uid-points-to-an-unknown-gatewaygatewayassignedraised-when-the-gateway-is-assigned-to-a-systemhttp-methoddeleterequires-authenticationyesrate-limitedyesheaders class="table-of-contents__link toc-highlight">HTTP Method
+GET
+Requires Authentication
+Yes
+Rate Limited
+Yes
+Headers
+None
+Permissions
+entities.gateways.view
+Order by
+creationDate
+Fields
+uid, state, imei, macAddress, serialNumber, type, creationDate, metadata, labels
+Get Details
+/api/v1/gateways/{uid}
+Returns detailed information about the specified gateway.
+Sample
+Exceptions
+Additional Information
+Request
+GET https://na.airvantage.net/api/v1/gateways/1cc562f8ec1340e79214f2113db751f6
+Response
+200 OK
+HTTP/1.1 200 OK
+Content-Type: application/json
+{
+"type": "gatewayType",
+"labels":    [
+"Label1",
+"Label2"
+],
+"uid": "1cc562f8ec1340e79214f2113db751f6",
+"metadata" : [
+{
+"key" : "env",
+"value" : "gatewayEnv"
+}
+],
+"macAddress": null,
+"serialNumber": "458555527",
+"imei": null,
+"creationDate": "1337948436603",
+"state": "INVENTORY"
+}
+Name
+Description
+gateway.unknown
+Raised when the 'uid' points to an unknown gateway.
+HTTP Method
+GET
+Requires Authentication
+Yes
+Rate Limited
+Yes
+Headers
+None
+Permissions
+entities.gateways.view
+Create
+/api/v1/gateways
+Creates a new gateway. Response returns the gateway with its uid.
+At least one of
+imei
+,
+serialNumber
+or
+macAddress
+must be set. These fields have to be unique.
+Read only fields will be ignored.
+Sample
+Parameters
+Exceptions
+Additional Information
+Request
+POST https://na.airvantage.net/api/v1/gateways
+Content-Type: application/json
+...
+{
+"macAddress": "01:a2:03:78:05:06",
+"serialNumber": "CA0125698737",
+"imei": "187496536874560",
+"type": "gatewayType1",
+"metadata" : [
+{
+"key" : "env",
+"value" : "gatewayEnv1"
+}
+],
+"labels":    [
+"Label1",
+"Label2"
+]
+}
+Response
+200 OK
+HTTP/1.1 200 OK
+Content-Type: application/json
+...
+{
+"uid": "cde6b26d3c344c0780f06caa26cf7113",
+"labels":    [
+"Label1",
+"Label2"
+],
+"macAddress": "01:a2:03:78:05:06",
+"serialNumber": "CA0125698737",
+"imei": "187496536874560",
+"type": "gatewayType1",
+"metadata" : [
+{
+"key" : "env",
+"value" : "gatewayEnv1"
+}
+],
+"creationDate": "1337948436603",
+"state": "INVENTORY"
+}
+Name
+Description
+Use
+Default
+Type
+company
+Set the context company.
+optional
+caller's company
+uid
+Name
+Description
+gateway.missing.identifiers
+At least one of 'imei', 'macAddress' or 'serialNumber'
+has to be set.
+gateway.not.unique.identifiers
+One of 'imei', 'macAddress' or 'serialNumber' is not
+unique.
+gateway.invalid.metadata
+Blank or duplicate keys are not allowed.
+gateway.invalid.mac.address
+Mac address must be a string with the following
+format: six groups of two hexadecimal digits,separated by
+colons (:). E.g. 01:23:45:67:89
+company.unknown
+The given company is unknown.
+HTTP Method
+POST
+Requires Authentication
+Yes
+Rate Limited
+Yes
+Headers
+Content-type: application/json
+Permissions
+entities.gateways.create
+Edit
+/api/v1/gateways/{uid}
+Edits the gateway identified by the uid of the request.
+If the gateway is linked to a system in 'READY', 'DEPLOYED', or 'BEING_TRANSFERED' state,
+then only the labels can be edited. Otherwise, you can edit all the fields.
+NB: It is not necessary to send the whole JSON block to edit
+fields. Only fields sent to the service will be updated.
+Sample
+Exceptions
+Additional Information
+Request
+PUT https://na.airvantage.net/api/v1/gateways/1cc562f8ec1340e79214f2113db751f6
+Content-Type: application/json
+...
+{
+"imei" : "353270040002745",
+"macAddress" : "0C:12:24:F1:10",
+"serialNumber" : "007",
+"type" : "M2MBoxPro",
+"metadata" : [
+{
+"key" : "env",
+"value" : "OpenAT"
+}
+],
+"labels" : ["Label1","Label2"]
+}
+Response
+200 OK
+HTTP/1.1 200 OK
+Content-Type: application/json
+...
+{
+"uid": "1cc562f8ec1340e79214f2113db751f6",
+"type": "M2MBoxPro",
+"labels":    [
+"Label1",
+"Label2"
+],
+"metadata" : [
+{
+"key" : "env",
+"value" : "OpenAT"
+}
+],
+"imei": "353270040002745",
+"macAddress": "0C:12:24:F1:10",
+"serialNumber": "007",
+   "creationDate" : "1337948436603",
+"state": "INVENTORY"
+}
+Name
+Description
+gateway.unknown
+The uid of the gateway is unknown.
+gateway.being.transferred
+The gateway is being transferred, it is not editable.
+gateway.missing.identifiers
+At least one of 'imei', 'macAddress' or 'serialNumber'
+has to be set.
+gateway.not.unique.identifiers
+One of 'imei', 'macAddress' or 'serialNumber' is not
+unique.
+gateway.invalid.mac.address
+Mac address must be a string with the following
+format: six groups of two hexadecimal digits,separated by
+colons (:). E.g. 01:23:45:67:89
+system.invalid.state
+Only labels can be updated when system state is
+different from INVENTORY or MAINTENANCE.
+system.communication.identifier.already.used
+The generated communication identifier is not unique,
+another system already use it.
+company.unknown
+The given company is unkown.
+HTTP Method
+PUT
+Requires Authentication
+Yes
+Rate Limited
+Yes
+Headers
+Content-type: application/json
+Permissions
+entities.gateways.edit
+Delete
+/api/v1/gateways/{uid}
+Deletes a specific gateway from the
+AirVantage. To delete a gateway it does not have to be assigned to any
+system.
+Sample
+Exceptions
+Additional Information
+Request
+DELETE https://na.airvantage.net/api/v1/gateways/1cc562f8ec1340e79214f2113db751f6
+Response
+200 OK
+HTTP/1.1 200 OK
+Content-Length: 0
+Name
+Description
+gateway.unknown
+Raised when the 'uid' points to an unknown gateway.
+gateway.assigned
+Raised when the gateway is assigned to a system.
+HTTP Method
+DELETE
+Requires Authentication
+Yes
+Rate Limited
+Yes
+Headers</a></ul></div></div></div></div></main></div></div></div></div></div><footer class="theme-layout-footer footer"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class=footer__title>Jobs</div><ul class="footer__items clean-list"><li class=footer__item><a class=footer__link-item href=/personal-av-docs/docs/how-to/activate-sims>Activate SIMs</a><li class=footer__item><a class=footer__link-item href=/personal-av-docs/docs/how-to/order-sims>Order SIMs</a><li class=footer__item><a class=footer__link-item href=/personal-av-docs/api>Call the API</a><li class=footer__item><a class=footer__link-item href=/personal-av-docs/docs/how-to/register-routers>Register routers</a></ul></div><div class="theme-layout-footer-column col footer__col"><div class=footer__title>Reference</div><ul class="footer__items clean-list"><li class=footer__item><a class=footer__link-item href=/personal-av-docs/docs/reference/api>API HTML chapters</a><li class=footer__item><a class=footer__link-item href=/personal-av-docs/docs/reference/apn>APN table</a><li class=footer__item><a class=footer__link-item href=/personal-av-docs/docs/changelog>Changelog</a></ul></div><div class="theme-layout-footer-column col footer__col"><div class=footer__title>Preview</div><ul class="footer__items clean-list"><li class=footer__item><a href=https://doc.airvantage.net/ target=_blank rel="noopener noreferrer" class=footer__link-item>Live Hugo (canonical until cutover)<svg width=13.5 height=13.5 aria-label="(opens in new tab)" class=iconExternalLink_nPIU><use href=#theme-svg-external-link /></svg></a><li class=footer__item><a class=footer__link-item href=/personal-av-docs/docs/ui-library>UI library</a><li class=footer__item><a class=footer__link-item href=/personal-av-docs/docs/copy-library>Copy library</a></ul></div></div><div class="footer__bottom text--center"><div class=footer__copyright>Sierra Wireless / AirVantage documentation preview. Live doc.airvantage.net stays Hugo until cutover. Built with Docusaurus.</div></div></div></footer></div></body>

@@ -1,0 +1,426 @@
+<!doctype html><html lang=en dir=ltr class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-how-to/hardware/samples/legato-asset-data" data-has-hydrated=false><head><meta charset=UTF-8><meta name=generator content="Docusaurus v3.10.2"><title data-rh=true>Develop your application to communicate with AirVantage | AirVantage documentation</title><meta data-rh=true name=viewport content="width=device-width, initial-scale=1.0"/><meta data-rh=true name=twitter:card content=summary_large_image /><meta data-rh=true property=og:image content=https://andreyjv.github.io/personal-av-docs/img/favicon.svg /><meta data-rh=true name=twitter:image content=https://andreyjv.github.io/personal-av-docs/img/favicon.svg /><meta data-rh=true property=og:url content=https://andreyjv.github.io/personal-av-docs/docs/how-to/hardware/samples/legato-asset-data /><meta data-rh=true property=og:locale content=en /><meta data-rh=true name=docusaurus_locale content=en /><meta data-rh=true name=docsearch:language content=en /><meta data-rh=true name=docusaurus_version content=current /><meta data-rh=true name=docusaurus_tag content=docs-default-current /><meta data-rh=true name=docsearch:version content=current /><meta data-rh=true name=docsearch:docusaurus_tag content=docs-default-current /><meta data-rh=true property=og:title content="Develop your application to communicate with AirVantage | AirVantage documentation"/><meta data-rh=true name=description content="av · imported from live Hugo on 2026-10-07. Guides stay latest. Original page."/><meta data-rh=true property=og:description content="av · imported from live Hugo on 2026-10-07. Guides stay latest. Original page."/><link data-rh=true rel=icon href=/personal-av-docs/img/favicon.svg /><link data-rh=true rel=canonical href=https://andreyjv.github.io/personal-av-docs/docs/how-to/hardware/samples/legato-asset-data /><link data-rh=true rel=alternate href=https://andreyjv.github.io/personal-av-docs/docs/how-to/hardware/samples/legato-asset-data hreflang=en /><link data-rh=true rel=alternate href=https://andreyjv.github.io/personal-av-docs/docs/how-to/hardware/samples/legato-asset-data hreflang=x-default /><link rel=stylesheet href=/personal-av-docs/assets/css/styles.1e3041e1.css /><script src=/personal-av-docs/assets/js/runtime~main.bbef5b78.js defer></script><script src=/personal-av-docs/assets/js/main.443f591d.js defer></script></head><body><svg style="display: none;"><defs>
+<symbol id=theme-svg-external-link viewBox="0 0 24 24"><path fill=currentColor d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme-deb")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||(window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light")),document.documentElement.setAttribute("data-theme-choice",t||"system")}(),function(){try{for(var[t,e]of new URLSearchParams(window.location.search).entries())if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id=__docusaurus><link rel=preload as=image href=/personal-av-docs/img/favicon.svg /><div role=region aria-label="Skip to main content"><a class=skipToContent_fXgn href=#__docusaurus_skipToContent_fallback>Skip to main content</a></div><nav aria-label=Main class="theme-layout-navbar navbar navbar--fixed-top"><div class=navbar__inner><div class="theme-layout-navbar-left navbar__items"><button aria-label="Toggle navigation bar" aria-expanded=false class="navbar__toggle clean-btn" type=button><svg width=30 height=30 viewBox="0 0 30 30" aria-hidden=true><path stroke=currentColor stroke-linecap=round stroke-miterlimit=10 stroke-width=2 d="M4 7h22M4 15h22M4 23h22"/></svg></button><a class=navbar__brand href=/personal-av-docs/><div class=navbar__logo><img src=/personal-av-docs/img/favicon.svg alt=AirVantage class="themedComponent_mlkZ themedComponent--light_NVdE"/><img src=/personal-av-docs/img/favicon.svg alt=AirVantage class="themedComponent_mlkZ themedComponent--dark_xIcU"/></div><b class="navbar__title text--truncate">AirVantage Docs</b></a><a class="navbar__item navbar__link navbar__guides" href=/personal-av-docs/docs/how-to/activate-sims>Guides</a><a class="navbar__item navbar__link" href=/personal-av-docs/api>API reference</a><a class="navbar__item navbar__link" href=/personal-av-docs/docs/changelog>Changelog</a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type=button disabled title="system mode" aria-label="Switch between dark and light mode (currently system mode)"><svg viewBox="0 0 24 24" width=24 height=24 aria-hidden=true class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill=currentColor d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"/></svg><svg viewBox="0 0 24 24" width=24 height=24 aria-hidden=true class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill=currentColor d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"/></svg><svg viewBox="0 0 24 24" width=24 height=24 aria-hidden=true class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill=currentColor d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"/></svg></button></div><div class=navbarSearchContainer_Bca1><div class="navbar__search searchBarContainer_NW3z" dir=ltr><svg aria-hidden=true class=searchIcon_T3tP focusable=false viewBox="0 0 16 16"><path fill=currentColor d="M6.02945 10.20327a4.17382 4.17382 0 1 1 4.17382-4.17382 4.15609 4.15609 0 0 1-4.17382 4.17382Zm9.69195 4.2199-4.8225-4.82338A5.88021 5.88021 0 0 0 12.058 6.02856 6.00467 6.00467 0 1 0 9.59979 10.8989l4.82338 4.82338a.89729.89729 0 0 0 1.29912 0 .89749.89749 0 0 0-.00087-1.29909Z"/></svg><input placeholder=Search aria-label=Search class="navbar__search-input searchInput_YFbd" value="" /><div class="loadingRing_RJI3 searchBarLoadingRing_YnHq"><div></div><div></div><div></div><div></div></div></div></div></div></div><div role=presentation class=navbar-sidebar__backdrop></div></nav><div id=__docusaurus_skipToContent_fallback class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class=av-shell><nav class=av-rail aria-label=Guides><p class=av-rail-kicker>Guides<ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class=menu__list-item-collapsible><span class="menu__link menu__link--sublist menu__link--sublist-caret av-rail-heading">Quick start</span></div><ul class=menu__list><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link href=/personal-av-docs/docs/how-to/activate-sims>Activate SIMs</a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link href=/personal-av-docs/docs/how-to/order-sims>Order SIMs</a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link href=/personal-av-docs/api>Call the API</a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link href=/personal-av-docs/docs/how-to/register-routers>Register routers</a></ul><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class=menu__list-item-collapsible><span class="menu__link menu__link--sublist menu__link--sublist-caret av-rail-heading">Browse by product</span></div><ul class=menu__list><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link href=/personal-av-docs/docs/how-to/activate-sims>Connectivity</a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link href=/personal-av-docs/docs/how-to/register-routers>Router management</a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link href=/personal-av-docs/docs/explain/states>States and operations</a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link href=/personal-av-docs/api>Developer platform</a></ul><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class=menu__list-item-collapsible><span class="menu__link menu__link--sublist menu__link--sublist-caret av-rail-heading">Keep building</span></div><ul class=menu__list><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link href=/personal-av-docs/docs/explain/states>States and operations</a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link href=/personal-av-docs/docs/reference/apn>APN table</a></ul><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class=menu__link href=/personal-av-docs/docs/get-started/first-sim>Get started</a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class=menu__link href=/personal-av-docs/docs/reference/api>Reference</a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class=menu__link href=/personal-av-docs/docs/changelog>Changelog</a></ul></nav><div class=av-shell-main><div class=docsWrapper_hBAB><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type=button></button><div class=docRoot_UBD9><main class="docMainContainer_TBSr docMainContainerEnhanced_lQrH"><div class="container padding-top--md padding-bottom--lg"><div class=row><div class="col docItemCol_VOVn"><div class=docItemContainer_Djhp><article><div class="theme-doc-markdown markdown"><header><h1>Develop your application to communicate with AirVantage</h1></header><p>:::note Edition
+<strong>av</strong> · imported from live Hugo on 2026-10-07. Guides stay latest. <a href=https://doc.airvantage.net/av/howto/hardware/samples/legato-asset-data target=_blank rel="noopener noreferrer" class="">Original page</a>.
+:::</p>
+<p>Develop your application to communicate with AirVantage
+Objective
+This tutorial describes how to develop a Legato application to exchange data with AirVantage.
+The following use cases are covered:
+Sending data such as sensor values from a Legato application to AirVantage
+Sending commands or applying settings from AirVantage to a Legato application
+Data is transmitted over the standardized OMA LightWeight M2M protocol and secured with DTLS.
+This underlying protocol and security stacks are supported by the Legato framework. Therefore when developing Legato applications you only have to focus on gathering the data from the sensors and NO need to implement communication protocol and security stacks.
+Let’s develop a simple Legato application to illustrate this in 3 main steps:
+Develop a simple Legato application
+Upload the Legato application to AirVantage
+Run the application to exchange data between the device and AirVantage
+Prerequisite
+We recommend that you work through entirely the
+MangOH Getting Started Tutorial
+.
+Part references used in this tutorial
+AirPrime WP8548 module
+MangOH board
+Power adapter 12Vdc 1.5A
+USB-to-Serial cable
+1 /
+Develop
+2 /
+Release
+3 /
+Communicate
+Any issues ?
+If you encounter any issue to set up your device, don’t hesitate to use the
+developer forum
+to benefit from the developer community experience.
+Step 1: Develop and Install Application
+Let’s create our Legato application having the following capabilities:
+Send application data variables to AirVantage
+Receive application data settings from AirVantage
+This step starts defining a scenario to implement along with the data to be exchanged. It will then guide you through the code to manage the application data life cycle.
+Defining Application data
+Let’s design a simple home automation scenario to monitor and to control temperature of a Room, remotely using AirVantage.
+In this model, a Room has 3
+variables
+, they can be read (no write access) by AirVantage:
+The name of the room
+Current temperature of the room
+Current state of the AC switch (on/off)
+The Room has 1
+setting
+, a target temperature, that can be set (read and write access) by AirVantage. User can remotely set the temperature of the room.
+The Room also has 1
+command
+, an AC switch, that can be triggered by AirVantage
+In this remote control use case, the user can turn on the AC by defining a target temperature
+setting
+, the AC can then be turned off using this
+command
+.
+The above variables, setting and command are gathered in an application data named
+Room
+, and declared as follow:
+assets:
+{
+Room =
+{
+variables:
+{
+string  Name
+float   Temperature
+bool    IsAC_on
+}</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style=--prism-color:#393A34;--prism-background-color:#f6f8fa><div class=codeBlockContent_QJqH><pre tabindex=0 class="prism-code language-text codeBlock_bY9V thin-scrollbar" style=color:#393A34;background-color:#f6f8fa><code class=codeBlockLines_e6Vv><div class=token-line style=color:#393A34><span class="token plain">    settings:</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">    {</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">        int TargetTemperature</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">    }</span><br/></div><div class=token-line style=color:#393A34><span class="token plain" style=display:inline-block></span><br/></div><div class=token-line style=color:#393A34><span class="token plain">    commands:</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">    {</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">        TurnOffAC</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">    }</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">}</span><br/></div></code></pre></div></div>
+<p>}
+Embedded Application scenario
+Let’s monitor 2 rooms (a living room and a bedroom) in our application.
+To monitor 2 rooms, we need to create 2 instances of the Room data model, and for each instance:
+assign a name to the room, in the field
+Name
+set the current temperature of the room to variable
+TemperatureC
+reflect the on/off state of the AC to variable
+IsAC_on
+If the user remotely changes the target temperature
+TargetTemperatureC
+on AirVantage, then the AC will automatically be switched on
+The user has the ability to remotely switch off the AC on AirVantage, by sending the
+TurnOffAc
+command
+Implementing the application
+Download the source code from
+GitHub
+.
+The Room data model, defined previousely, is declared in
+Component.cdef
+file
+Before data exchange can occur with AirVantage, a LWM2M session must be established. Usually, this session is initiated by another application (e.g. a controler application managing the connectivity).
+Legato AirVantage Data api (le_avdata.api) and Legato AirVantage Controler api (le_avc.api) are used to exchange data and to create LWM2M session. To be used in the application, these APIs must be declared as follow:
+In the component definition file,
+Component.cdef
+:
+...
+requires:
+{
+api:
+{
+le_avdata.api
+le_avc.api
+}
+}
+In the application defition file,
+assetDataTutorial.adef
+:
+...
+bindings:
+{
+assetDataTutorial.componentAssetData.le_avdata -> avcService.le_avdata
+assetDataTutorial.componentAssetData.le_avc -> avcService.le_avc
+}
+In the Makefile, to include the path to AirVantage APIs:
+mkapp -v -t $@ <br/>
+-i $(LEGATO_ROOT)/interfaces/airVantage <br/>
+assetDataTutorial.adef
+The main code handling the application data exchange with AirVantage is in
+assetDataMain.c
+For your reference, more detail on assetDataMain.c code
+Variable and Setting declaration
+Let’s declare the following as global:
+le_avdata_AssetInstanceRef_t    _assetInstRef[2];               //reference to the 2 asset instances
+char*                           _roomName[2];                   //array of 2 Variable Name
+float                           _currentTemperature[2];         //array of 2 Variable Temperature
+bool                            _isAcOn[2];                     //array of 2 Variable IsAC_on
+int                             _targetTemperature[2];          //array of 2 Setting TargetTemperature
+int                             _outsideTemperature = 30;       //assuming hot summer
+le_timer_Ref_t                  _tempUpdateTimerRef = NULL;     //reference to temperature update timer
+le_timer_Ref_t                  _avcTimerRef;                   //reference to the AVC session timer
+le_avc_StatusEventHandlerRef_t  _avcEventHandlerRef = NULL;     //reference to AirVantage Controller (AVC) Session handler
+Application initialization
+COMPONENT_INIT
+is called ONCE by Legato framework when the application starts. This function is the placeholder for initialization code.
+This function must
+return
+to the framework. Application logic tasks shall be implemented outside of this function using event-handlers; event-driven model application.
+Let’s do the following initializations in
+COMPONENT_INIT
+:
+Register an AirVantage Controler (AVC) handler function, by calling
+le_avc_AddStatusEventHandler
+function, refer to
+Legato le_avc interface
+. This registration is required prior starting an AVC sesssion
+Call le_avc interface (
+le_avc_StartSession
+) to start an AVC Session with AirVantage
+_avcEventHandlerRef = le_avc_AddStatusEventHandler(AVsessionHandler, NULL);    //register a AVC handler
+le_result_t result = le_avc_StartSession();      //Start AVC session. Note: AVC handler must be registered prior starting a session
+if (LE_FAULT == result)
+{
+le_avc_StopSession();
+le_avc_StartSession();
+}
+Create a timer to close the AVC session and exit application, in 10 min
+_avcTimerRef = le_timer_Create("assetDataAppSessionTimer");     //create timer
+le_clk_Time_t    delay = { 600, 0 };                            //allow this app to run for 10 min
+le_timer_SetInterval(_avcTimerRef, delay);
+le_timer_SetRepeat(_avcTimerRef, 1);                            //set repeat to once
+//set callback function to handle timer expiration event
+le_timer_SetHandler(_avcTimerRef, timerExpiredHandler);
+//start timer
+le_timer_Start(_avcTimerRef);
+Create 2 instances of Room Asset, by calling
+le_avdata_Create
+, refer to
+Legato le_avdata interface
+_assetInstRef[0] = le_avdata_Create("Room"); //create instance #1 for asset "Room"
+_assetInstRef[1] = le_avdata_Create("Room"); //create instance #2 for asset "Room"
+Assign default values to our 2 instances of Room asset (declared as global variables)
+int i = 0;
+//Assign default value to asset data fields
+_roomName[i] = (char *) malloc(16);
+strcpy(_roomName[i], "bedroom");
+_currentTemperature[i] = 31.0;
+_isAcOn[i] = false;
+_targetTemperature[i] = 19;
+i++;
+_roomName[i] = (char *) malloc(16);
+strcpy(_roomName[i], "living-room");
+_currentTemperature[i] = 30.0;
+_isAcOn[i] = false;
+_targetTemperature[i] = 19;
+Map the data value to instances
+for (i=0; i&lt; 2; i++)
+{
+le_avdata_SetString(_assetInstRef[i], "Name", _roomName[i]);
+le_avdata_SetInt(_assetInstRef[i], "Temperature", _currentTemperature[i]);
+le_avdata_SetBool(_assetInstRef[i], "IsAC_on", _isAcOn[i]);
+le_avdata_SetInt(_assetInstRef[i], "TargetTemperature", _targetTemperature[i]);
+}
+Register handler, in order to apply Settings and Commands sent by AirVantage. For each data field (settings and commands), call Legato API (
+le_avdata_AddFieldEventHandler
+) to register handler functions that will be called by the framework whenever the field is altered by AirVantage.
+for (i=0; i&lt; 2; i++)
+{
+// call OnWriteSetting() handler whenever the setting "TargetTemperature" is accessed
+le_avdata_AddFieldEventHandler(_assetInstRef[i], "TargetTemperature", OnWriteSetting, NULL);
+// call OnCommand() handler whenever the setting "TurnOffAC" is accessed
+le_avdata_AddFieldEventHandler(_assetInstRef[i], "TurnOffAC", OnCommand, NULL);
+}
+Simulate the rooms temperature, let’s set a timer to update the temperature every 5 seconds
+_tempUpdateTimerRef = le_timer_Create("tempUpdateTimer");     //create timer
+le_clk_Time_t      interval = { 5, 0 };                       //update temperature every 5 seconds
+le_timer_SetInterval(_tempUpdateTimerRef, interval);
+le_timer_SetRepeat(_tempUpdateTimerRef, 0);                   //set repeat to always
+le_timer_SetHandler(_tempUpdateTimerRef, updateTemperature);  //call updateTemperature function every 5 seconds
+le_timer_Start(_tempUpdateTimerRef);
+Setting Handler functions
+Our application needs to implement handler function to retrieve the value of a Setting (
+TargetTemperature
+) set by AirVantage.
+This function should have the prototype defined by
+le_avdata_FieldHandlerFunc_t
+, refer to le_avdata interface
+This function shall be registered in
+COMPONENT_INIT
+with
+le_avdata_AddFieldEventHandler
+Let’s name it OnWriteVariable:
+void OnWriteVariable(le_avdata_AssetInstanceRef_t instRef, const char *fieldName, void *contextPtr)
+This function will be called by the framework whenever AirVantage wants to change the
+fieldname
+Setting of our asset instance, referenced by
+instRef
+To retrieve the Setting value pushed by AirVantage, call
+le_avdata_GetString
+,
+le_avdata_GetInt
+or
+le_avdata_GetBool
+void OnWriteSetting(le_avdata_AssetInstanceRef_t instRef, const char *fieldName, void *contextPtr)
+{
+int i;
+for (i=0; i&lt;2; i++)
+{
+if (instRef == _assetInstRef[i])
+{
+if (strcmp(fieldName, "TargetTemperature") == 0)
+{
+int  nTemp;
+le_avdata_GetInt(instRef, fieldName, &nTemp);                       //Get the new setting from AirVantage
+if (nTemp != _targetTemperature[i])
+{
+_isAcOn[i] = true; //let's set the AC status to ON
+le_avdata_SetBool(instRef, "IsAC_on", _isAcOn[i]);              //reflect the new value to instance
+_targetTemperature[i] = nTemp;
+le_avdata_SetInt(instRef, fieldName, _targetTemperature[i]);    //reflect the new value to instance
+}
+}
+break;
+}
+}
+}
+Command Handler functions
+Our application needs to implement handler function to Execute the Command (
+TurnOffAC
+) set by AirVantage.
+This function should have the prototype defined by
+le_avdata_FieldHandlerFunc_t
+, refer to le_avdata interface
+This function shall be registered in
+COMPONENT_INIT
+with
+le_avdata_AddFieldEventHandler
+Let’s name it OnCommand:
+void OnCommand(le_avdata_AssetInstanceRef_t instRef, const char *fieldName, void *contextPtr)
+This function will be called by the framework whenever AirVantage wants to execute the
+TurnOffAC
+Command on our asset instance, referenced by
+instRef
+void OnCommand(le_avdata_AssetInstanceRef_t instRef, const char *fieldName, void *contextPtr)
+{
+int i;
+for (i=0; i&lt;2; i++)
+{
+if (instRef == _assetInstRef[i])
+{
+if (strcmp(fieldName, "TurnOffAC") == 0)
+{
+_isAcOn[i] = false;                                 //Execute the commande, just turn AC status to OFF
+le_avdata_SetBool(instRef, "IsAC_on", _isAcOn[i]);  //reflect the new value to instance
+}
+break;
+}
+}
+}
+Simulate temperature
+The handler
+updateTemperature
+is called by the framwork every 5 seconds, as set in
+COMPONENT_INIT
+This function modifies the temperature as follow:
+if AC switch is OFF, then converge the room temperature to the outside temperature
+if AC switch is ON, then converge the room temperature to the targetTemperature (set in AirVantage)
+Simulated room temperatures are then pushed to AirVantage by calling Legato API
+le_avdata_SetFloat
+. This is performed automatically by the underlying LWM2M Observe feature when AVC session is opened.
+AVC Handler function
+AVC handler function,
+AVsessionHandler
+, has been registered in the
+COMPONENT_INIT
+function, this is required to start an AVC session with AirVantage
+For this tutorial, let’s do nothing in this function
+Exit Application
+The handler
+timerExpiredHandler
+is called by the framwork 10min later, as set in
+COMPONENT_INIT
+This function Close LWM2M session and Quit the application
+Compiling & Installing the application on the target device
+Compile the source code from assetDataTutorial main folder and install the application on target
+In this tutorial, we are targeting mangOH board embedding a WP8548 module, therefore the compiler target is wp85 in guidelines hereafter. Depending on the target module, you’d need to use a different compiler target (e.g. ar7, wp7 or ar86).
+Enter these 2 commands on the Host, in Termimal #1:
+make wp85
+Upon the make, a &lt;software package> should be generated:
+&lt;software package> is <em>assetDataTutorial.wp85.update</em></p>
+<p>instapp &lt;software package> &lt;device_ip_address>
+This command will upload the &lt;software package> to the device
+In Step 1, we’ve covered the following:
+Define the application data model and the different type of data: Variables, Settings and Commands
+Source code provided in GitHub
+Requirements to use Legato AirVantage APIs
+Compile our sample Legato application for MangOH/WP85xx
+Install the Legato application onto MangOH/WP85xx
+Step 2: Upload App to AirVantage
+In the previous step, we have developed the application and installed it on the target device.
+In this step, let’s upload our application and data model to AirVantage. The “Room” data model declared in Component.cdef (refer to step1) is defined in a manifest file (XML file generated automatically at compile time). AirVantage needs to have this manifest information to gain awareness of “Room” data model in order to exchange predefined data with our device application.
+Create an update package & Generate package for upload to AirVantage
+This step shall be performed on the Host, in Termimal #1:
+av-pack -f assetDataTutorial.wp85.update &lt;TypeName>
+where &lt;TypeName> shall be globally unique (e.g. assetTutorialAppV3),
+AirVantage uses it to uniquely identify multiple versions of our application
+Upload Application package to AirVantage
+Log into AirVantage portal
+Click on the “Develop” activity
+then click on
+My Apps
+Click on the Release button
+Select the application package zip file
+assetDataTutorial.zip
+, created in the previous section
+Check the “I want to publish my application after releasing it” checkbox in the
+Advanced settings
+option
+Finally, click on Start
+Assign our application to device on AirVantage
+Before our device can exchange “Room” data fields with AirVantage, the uploaded application must be assigned to our device on AirVantage
+Log into AirVantage portal, go to
+Inventory
+activity then
+Systems
+Select your system by clicking on its Name
+Click on the Edit icon
+In the
+Applications
+field, type in the name of the application (i.e. assetDataTutorial) and select it
+Click on Save button
+You can now use this package to install your application remotely using AirVantage.
+In Step 2, we’ve covered how to:
+Create an application update package for a target device
+Generate application package for upload to AirVantage, application package comprise the update package and data model
+Upload application package to AirVantage
+Assign application to our device on AirVantage
+Step 3: Data Exchange
+In step #1, we have created an application that can exchange a collection of information (application data fields) with AirVantage.
+In step #2, we have packaged the application along with a manifest file then uploaded it to AirVantage. The manifest file exposes application data collection information to AirVantage.
+In this step, we are going to retrieve the current values, i.e. name of the room, current temperature, target temperature and the AC switch state for bedroom and the living room on AirVantage.
+Launch application & View application log
+We are now ready to start data exchange with AirVantage, let’s start the application and get ready to view the log:
+In the Terminal #2:
+Connect to the target using ssh: ssh root@device_ipAddr
+Launch
+logread -f | grep “Legato AssetData”
+to continuously view the log
+In the Terminal #3:
+Connect to the target using ssh: ssh root@device_ipAddr
+Type in “app status” command to make sure that
+assetDataTutorial
+is listed
+Launch the application: “app start assetDataTutorial”
+Note the data exchange log in the Terminal #2 (using logread -f)
+Communication with AirVantage
+The default behavior of LightWeight M2M protocol consists in initiating a communication to the server by the device. Once there is a connection between the server and the device, the server can send any request to the device: read or write a data, execute a command, apply a firmware upgrade, install an application, …
+When a device is on the field:
+At first boot, it starts to communicate with the bootstrap server to collect credentials and AirVantage url. It will do this communication, only if AirVantage deny the connection or at regular period to change the security keys (step 1 and 2)
+Then the device initiates a communication with AirVantage, updates the objects list (step 3)
+AirVantage sends the pending requests to the device (step 4)
+The device executes the requests
+The device communicates the acknowledgements and close the connection
+If the use case requires to collect data as soon as the device is ready to communicate to AirVantage and at high frequency, this behaviour doesn’t fit this use case.
+AirVantage supports a feature called LWM2M Observe to fit this use case.
+Pushing the data to AirVantage
+We want to use the Observe mechanism in order to send new data values on the fly:
+At first communication with a device, AirVantage will request to observe a list of data (step 1). That means to be notified when there is any new values for this list of data.
+When a new value is get from the sensor, the value is pushed to legato (step 2).
+The device will send the applicative data automatically without any new request from AirVantage (step 3).
+The observed objects are the following:
+4
+: Connectivity
+5
+: Firmware
+9
+: Applications Package information
+le_xxxx/ > 1000
+: Applicative data
+During the sample application updates data in Legato, you can see the new values directly updated in AirVantage, for example using the timeline view.
+You can go to the
+next tutorial
+to discover:
+How to create a dataset that specifies the device data to be read by AirVantage
+How to retrieve data from device
+How to apply new setting to device
+How to send command to device
+More features you may be interrested:
+Monitor your system and upgrade your application</div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href=https://github.com/andreyjv/personal-av/tree/docs/documentation-revamp/PRD_documentation-revamp/website/docs/how-to/hardware/samples/legato-asset-data.md target=_blank rel="noopener noreferrer" class=theme-edit-this-page><svg fill=currentColor height=20 width=20 viewBox="0 0 40 40" class=iconEdit_Z9Sw aria-hidden=true><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"/></g></svg>Edit this page</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"></nav></div></div></div></div></main></div></div></div></div></div><footer class="theme-layout-footer footer"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class=footer__title>Jobs</div><ul class="footer__items clean-list"><li class=footer__item><a class=footer__link-item href=/personal-av-docs/docs/how-to/activate-sims>Activate SIMs</a><li class=footer__item><a class=footer__link-item href=/personal-av-docs/docs/how-to/order-sims>Order SIMs</a><li class=footer__item><a class=footer__link-item href=/personal-av-docs/api>Call the API</a><li class=footer__item><a class=footer__link-item href=/personal-av-docs/docs/how-to/register-routers>Register routers</a></ul></div><div class="theme-layout-footer-column col footer__col"><div class=footer__title>Reference</div><ul class="footer__items clean-list"><li class=footer__item><a class=footer__link-item href=/personal-av-docs/docs/reference/api>API HTML chapters</a><li class=footer__item><a class=footer__link-item href=/personal-av-docs/docs/reference/apn>APN table</a><li class=footer__item><a class=footer__link-item href=/personal-av-docs/docs/changelog>Changelog</a></ul></div><div class="theme-layout-footer-column col footer__col"><div class=footer__title>Preview</div><ul class="footer__items clean-list"><li class=footer__item><a href=https://doc.airvantage.net/ target=_blank rel="noopener noreferrer" class=footer__link-item>Live Hugo (canonical until cutover)<svg width=13.5 height=13.5 aria-label="(opens in new tab)" class=iconExternalLink_nPIU><use href=#theme-svg-external-link /></svg></a><li class=footer__item><a class=footer__link-item href=/personal-av-docs/docs/ui-library>UI library</a><li class=footer__item><a class=footer__link-item href=/personal-av-docs/docs/copy-library>Copy library</a></ul></div></div><div class="footer__bottom text--center"><div class=footer__copyright>Sierra Wireless / AirVantage documentation preview. Live doc.airvantage.net stays Hugo until cutover. Built with Docusaurus.</div></div></div></footer></div></body>

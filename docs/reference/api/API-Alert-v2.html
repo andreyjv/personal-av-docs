@@ -1,0 +1,2130 @@
+<!doctype html><html lang=en dir=ltr class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-reference/api/API-Alert-v2" data-has-hydrated=false><head><meta charset=UTF-8><meta name=generator content="Docusaurus v3.10.2"><title data-rh=true>Alert | AirVantage documentation</title><meta data-rh=true name=viewport content="width=device-width, initial-scale=1.0"/><meta data-rh=true name=twitter:card content=summary_large_image /><meta data-rh=true property=og:image content=https://andreyjv.github.io/personal-av-docs/img/favicon.svg /><meta data-rh=true name=twitter:image content=https://andreyjv.github.io/personal-av-docs/img/favicon.svg /><meta data-rh=true property=og:url content=https://andreyjv.github.io/personal-av-docs/docs/reference/api/API-Alert-v2 /><meta data-rh=true property=og:locale content=en /><meta data-rh=true name=docusaurus_locale content=en /><meta data-rh=true name=docsearch:language content=en /><meta data-rh=true name=docusaurus_version content=current /><meta data-rh=true name=docusaurus_tag content=docs-default-current /><meta data-rh=true name=docsearch:version content=current /><meta data-rh=true name=docsearch:docusaurus_tag content=docs-default-current /><meta data-rh=true property=og:title content="Alert | AirVantage documentation"/><meta data-rh=true name=description content="connectivity · imported from live Hugo on 2026-10-07. Guides stay latest. Original page."/><meta data-rh=true property=og:description content="connectivity · imported from live Hugo on 2026-10-07. Guides stay latest. Original page."/><link data-rh=true rel=icon href=/personal-av-docs/img/favicon.svg /><link data-rh=true rel=canonical href=https://andreyjv.github.io/personal-av-docs/docs/reference/api/API-Alert-v2 /><link data-rh=true rel=alternate href=https://andreyjv.github.io/personal-av-docs/docs/reference/api/API-Alert-v2 hreflang=en /><link data-rh=true rel=alternate href=https://andreyjv.github.io/personal-av-docs/docs/reference/api/API-Alert-v2 hreflang=x-default /><link rel=stylesheet href=/personal-av-docs/assets/css/styles.1e3041e1.css /><script src=/personal-av-docs/assets/js/runtime~main.bbef5b78.js defer></script><script src=/personal-av-docs/assets/js/main.443f591d.js defer></script></head><body><svg style="display: none;"><defs>
+<symbol id=theme-svg-external-link viewBox="0 0 24 24"><path fill=currentColor d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme-deb")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||(window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light")),document.documentElement.setAttribute("data-theme-choice",t||"system")}(),function(){try{for(var[t,e]of new URLSearchParams(window.location.search).entries())if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id=__docusaurus><link rel=preload as=image href=/personal-av-docs/img/favicon.svg /><div role=region aria-label="Skip to main content"><a class=skipToContent_fXgn href=#__docusaurus_skipToContent_fallback>Skip to main content</a></div><nav aria-label=Main class="theme-layout-navbar navbar navbar--fixed-top"><div class=navbar__inner><div class="theme-layout-navbar-left navbar__items"><button aria-label="Toggle navigation bar" aria-expanded=false class="navbar__toggle clean-btn" type=button><svg width=30 height=30 viewBox="0 0 30 30" aria-hidden=true><path stroke=currentColor stroke-linecap=round stroke-miterlimit=10 stroke-width=2 d="M4 7h22M4 15h22M4 23h22"/></svg></button><a class=navbar__brand href=/personal-av-docs/><div class=navbar__logo><img src=/personal-av-docs/img/favicon.svg alt=AirVantage class="themedComponent_mlkZ themedComponent--light_NVdE"/><img src=/personal-av-docs/img/favicon.svg alt=AirVantage class="themedComponent_mlkZ themedComponent--dark_xIcU"/></div><b class="navbar__title text--truncate">AirVantage Docs</b></a><a class="navbar__item navbar__link navbar__guides" href=/personal-av-docs/docs/how-to/activate-sims>Guides</a><a class="navbar__item navbar__link" href=/personal-av-docs/api>API reference</a><a class="navbar__item navbar__link" href=/personal-av-docs/docs/changelog>Changelog</a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type=button disabled title="system mode" aria-label="Switch between dark and light mode (currently system mode)"><svg viewBox="0 0 24 24" width=24 height=24 aria-hidden=true class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill=currentColor d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"/></svg><svg viewBox="0 0 24 24" width=24 height=24 aria-hidden=true class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill=currentColor d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"/></svg><svg viewBox="0 0 24 24" width=24 height=24 aria-hidden=true class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill=currentColor d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"/></svg></button></div><div class=navbarSearchContainer_Bca1><div class="navbar__search searchBarContainer_NW3z" dir=ltr><svg aria-hidden=true class=searchIcon_T3tP focusable=false viewBox="0 0 16 16"><path fill=currentColor d="M6.02945 10.20327a4.17382 4.17382 0 1 1 4.17382-4.17382 4.15609 4.15609 0 0 1-4.17382 4.17382Zm9.69195 4.2199-4.8225-4.82338A5.88021 5.88021 0 0 0 12.058 6.02856 6.00467 6.00467 0 1 0 9.59979 10.8989l4.82338 4.82338a.89729.89729 0 0 0 1.29912 0 .89749.89749 0 0 0-.00087-1.29909Z"/></svg><input placeholder=Search aria-label=Search class="navbar__search-input searchInput_YFbd" value="" /><div class="loadingRing_RJI3 searchBarLoadingRing_YnHq"><div></div><div></div><div></div><div></div></div></div></div></div></div><div role=presentation class=navbar-sidebar__backdrop></div></nav><div id=__docusaurus_skipToContent_fallback class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class=av-shell><nav class=av-rail aria-label=Guides><p class=av-rail-kicker>Guides<ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class=menu__list-item-collapsible><span class="menu__link menu__link--sublist menu__link--sublist-caret av-rail-heading">Quick start</span></div><ul class=menu__list><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link href=/personal-av-docs/docs/how-to/activate-sims>Activate SIMs</a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link href=/personal-av-docs/docs/how-to/order-sims>Order SIMs</a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link href=/personal-av-docs/api>Call the API</a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link href=/personal-av-docs/docs/how-to/register-routers>Register routers</a></ul><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class=menu__list-item-collapsible><span class="menu__link menu__link--sublist menu__link--sublist-caret av-rail-heading">Browse by product</span></div><ul class=menu__list><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link href=/personal-av-docs/docs/how-to/activate-sims>Connectivity</a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link href=/personal-av-docs/docs/how-to/register-routers>Router management</a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link href=/personal-av-docs/docs/explain/states>States and operations</a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link href=/personal-av-docs/api>Developer platform</a></ul><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class=menu__list-item-collapsible><span class="menu__link menu__link--sublist menu__link--sublist-caret av-rail-heading">Keep building</span></div><ul class=menu__list><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link href=/personal-av-docs/docs/explain/states>States and operations</a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link href=/personal-av-docs/docs/reference/apn>APN table</a></ul><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class=menu__link href=/personal-av-docs/docs/get-started/first-sim>Get started</a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class=menu__link href=/personal-av-docs/docs/reference/api>Reference</a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class=menu__link href=/personal-av-docs/docs/changelog>Changelog</a></ul></nav><div class=av-shell-main><div class=docsWrapper_hBAB><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type=button></button><div class=docRoot_UBD9><main class="docMainContainer_TBSr docMainContainerEnhanced_lQrH"><div class="container padding-top--md padding-bottom--lg"><div class=row><div class="col docItemCol_VOVn"><div class=docItemContainer_Djhp><article><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type=button class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><div class="theme-doc-markdown markdown"><header><h1>Alert</h1></header><p>:::note Edition
+<strong>connectivity</strong> · imported from live Hugo on 2026-10-07. Guides stay latest. <a href=https://doc.airvantage.net/connectivity/reference/cloud/API/API-Alert-v2 target=_blank rel="noopener noreferrer" class="">Original page</a>.
+:::</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=alertgeneralfgeneral-informationoperationsfsystemoperationsalertapplicationgatewaysettingsdatasetlabelzoneoperatoroffer--optionssystem-configurationsadministrationfcompanypartnerprofileusersubscriptionfsubscriptionorderingfcontactorderproduct-referencealertoverviewoperatorsattributesalert-rulealertwith-airvantage-alert-features-you-can-monitor-all-your-systems-by-definingrulestheserulesare-made-up-ofconditionswhich-checkattributesof-your-systemsaconditionis-built-with-anoperatorand-a-list-ofoperands-details-can-be-foundhereattributesare-information-related-to-your-systemssystem-attributes-like-the-name-the-communication-status-the-gateway-serial-number-etcsystem-data-coming-from-the-device-communicationsand-usage-data-coming-from-the-operatorthe-complete-list-of-attributes-are-availableherewhen-all-the-conditions-of-aruleare-met-for-a-specific-systemif-the-rule-isstateless-analertis-generated-it-is-accessible-from-thefind-history-apiif-the-rule-isstatefulandthe-state-changed-analert-stateis-createdupdated-it-gives-you-the-current-state-true-or-false-of-a-system-against-a-rule-it-is-accessible-fromfind-current-apiyou-can-also-access-the-state-history-withfind-history-apia-rule-defines-the-conditions-under-which-a-target-becomes-in-alert-or-notthis-is-a-complete-representation-of-an-alertruletargettype-name-message-stateful-truefalseactive-truefalseemails-notifmode-conditions-operator-operands-attributeid-targetid-name-filter---function-functionparam-valuestr-valuenum-valuesstr-readonly-truefalsefielddescriptiontypetargettypethe-type-of-target-for-which-the-rule-applies-system--offerstringnamethe-name-of-the-rulestringmessagethe-message-used-in-the-alert-event-in-case-of-alertstringstatefulindicates-if-the-rule-is-stateful-ie-generates-and-maintains-states-or-not-ie-only-generates-events-true--false-default-value-to-truebooleanactiveindicates-if-the-rule-is-enabled-or-not-true--falsebooleanemailsthe-list-of-emails-to-send-notifications-tostring-arraynotifmodeevery_time-every-time-an-alert-is-generatedwhen_state_changes-default-only-when-the-state-of-an-alertstate-changeswhen_state_true-only-when-the-state-of-an-alertstate-changes-from-false-to-truewhen_state_false-only-when-the-state-of-an-alertstate-changes-from-true-to-falsein_all_cases-either-when-an-alert-is-generated-or-when-the-state-changesstringconditionsthe-list-of-conditions-to-be-checkedarray-of-conditionsconditionsoperatorthe-operatorstringconditionsoperandsfunctions-of-the-chosen-operator-you-have-to-define-one-or-more-operandsarray-of-operandsconditionsoperandsattributeidan-attributeid-is-composed-of-a-targetid-and-an-attribute-nameattributeidconditionsoperandsattributeidtargetidthe-id-of-the-target-systemid-companyid-or-null-to-consider-the-current-target-the-one-responsible-for-the-rule-evaluationstringconditionsoperandsattributeidnamethe-name-of-theattributeto-considerstringconditionsoperandsattributeidfilterthe-criteria-to-filter-the-data-for-aggregationcriteria-to-select-a-sub-set-of-usage-recordsinofferzone-iftrueonly-the-usages-occured-in-the-offer-zone-will-be-selectedfalsemeans-outside-the-offer-zone-otherwise-nullvalue-no-filter-on-zone-will-be-appliedpartial-iftrueonly-the-partial-usage-sessions-will-be-selectedfalsemeans-only-the-complete-usage-sessions-will-be-selected-otherwise-nullvalue-all-usages-sessions-will-be-selectedmapconditionsoperandsfunctionthe-aggregation-function-to-use-in-case-of-an-aggregated-attributeid-for-instance-aggroomtempdminmaxmeansumcntstringconditionsoperandsvaluestra-string-value-to-compare-with-the-attribute-value-functions-of-the-selected-operatorstringconditionsoperandsvaluenuma-numeric-value-to-compare-with-the-attribute-value-functions-of-the-selected-operatornumberconditionsoperandsvaluesstran-array-of-strings-to-compare-with-the-attribute-value-functions-of-the-selected-operatorarray-of-stringsreadonlyindicates-if-the-rule-is-read-only-or-not-true--falsebooleanhere-is-a-picture-explaining-how-the-notification-mode-worksan-attributeid-is-made-up-of-a-name-and-an-optional-targetid-if-targetid-is-set-the-condition-only-apply-on-the-corresponding-target-if-not-the-conditions-applies-on-all-targets-of-the-companyattributeid-targetid-name-here-is-the-list-of-all-attribute-names-available-when-creating-alert-rules-some-names-are-dynamic-and-use-the-following-parametersdataid-the-id-of-the-data-sent-by-the-system-or-a-data-generated-by-the-platformtimescale-for-aggregated-data-h-hourly-d-daily-m-monthlysystem-attributessystemidsystemnamesystemlabelssystemstatesystemactivitystatesystemlifecyclestatesystemcommstatussystemcommstatuschangedatesystemlastcommdatesystemheartbeatstatesystemheartbeatperiodsystemheartbeaterrorslasystemheartbeatwarningslasystemofferidsystemdefaultstatusreportstatesystemdefaultstatusreportperiodgatewayidgatewayimeigatewaymacaddressgatewayserialnumbersubscriptionidsystem-communicationsystemcommprotocoldatadataid-raw-data-for-instancedataroomtempdatalon_lat-the-gps-position-of-the-system-used-by-geofencing-operatorsaggdataidtimescale-aggregated-data-for-instanceaggdataroomtempdoffer-attributesofferidofferpoolbyteslimit-the-pool-size-limit-of-the-offer-it-is-updated-every-month-according-to-the-current-number-of-active-systemsofferpoolwarnlimit-80-of-the-offer-pool-size-limit-by-defaultsystem-usage-attributessystemusagestatussystemusagerecordvoiceinphonenumbersystemusagerecordvoiceoutphonenumbersystemusagerecordsmssentphonenumbersystemusagerecordsmsreceivedphonenumbersystemusagerecordvisitedcountrysystemusagerecordimeiaggregated-usage-dataaggusagedataidtimescale-see-description-of-theusage-dataaggvoice-attributes-only-available-for-monthly-timescale-because-voice-usages-are-received-from-carriers-few-days-after-consumption-aggvoice_maconditionis-built-with-anoperatorand-a-list-ofoperands-the-first-operand-of-all-operators-has-to-define-theattributeto-check-on-systems-details-about-attributes-can-be-foundherefor-each-operand-one-of-the-following-field-must-be-usedattributeid-valuestr-valuenum-valuesstr-geofencing-operators-use-well-known-text-format-to-define-shapes-polygon-or-pointhere-is-the-list-of-all-operators-with-the-operand-fields-availablename1st-operand2nd-operand3rd-operandchangeattributeidequalsattributeidattributeidvaluestrvaluenumnot_equalsattributeidattributeidvaluestrvaluenumgreater_thanattributeidattributeidvaluenumless_thanattributeidattributeidvaluenumexistsattributeidnot_existsattributeidinattributeidattributeidvaluesstrnot_inattributeidattributeidvaluesstrcontains1attributeidattributeidvaluestrnot_containsattributeidattributeidvaluestrstarts_withattributeidattributeidvaluestrends_withattributeidattributeidvaluestrgeo_withinattributeidnamedata_lon_latvaluestr-a-polygon-described-with-wkt-formatgeo_not_withinattributeidnamedata_lon_latvaluestr-a-polygon-described-with-wkt-formatgeo_distance_too_farattributeidnamedata_lon_latattributeidnamedata_lon_lat-or-a-valuestr-containing-a-point-in-wkt-formatvaluenum-corresponding-to-the-distance-in-kmgeo_distance_too_closeattributeidnamedata_lon_latattributeidnamedata_lon_lat-or-a-valuestr-containing-a-point-in-wkt-formatvaluenum-corresponding-to-the-distance-in-km1the-value-of-the-right-operand-must-be-contained-in-the-value-of-the-left-operand-for-the-rule-to-trigger-this-is-to-support-cases-like-the-left-operand-being-systemattribute-labels-and-the-right-operand-being-the-string-value-of-the-label-that-the-rule-is-checking-fornotethis-differs-from-other-containment-operators-such-as-in-or-geo_within-where-the-spaceset-that-must-contain-the-value-is-specified-as-a-left-operand-insteadan-alert-gathers-all-the-information-required-to-understand-what-happened-on-a-target-for-a-specific-rulethis-is-a-complete-representation-of-an-alertcompanyid-targetid-targettype-ruleid-state-statechangets-attributes-id-name---the-name-of-the-attributevalue---the-value-of-the-attributevaluestr-valuesstr-valuenum-valueagg-min-max-cnt-sum-meanreftimefielddescriptiontypecompanyidthe-id-of-the-company-the-target-belongs-tostringtargetidthe-id-of-the-targetstringtargettypethe-type-of-the-target-system--offerstringruleidthe-id-of-the-rulestringstatetruefalse-to-indicate-if-the-specified-target-is-in-alert-for-the-specified-sateful-rule-or-null-if-the-rule-is-statelessbooleanstatechangetsthe-timestamp-when-the-state-changestimestampattributesthe-list-of-attributes-that-brought-to-the-current-alert-statelist-of-attributeattributesidnamethe-name-of-the-checked-attributestringattributesvaluethe-value-of-the-attribute-that-triggered-the-alert-the-value-depends-on-the-type-it-can-be-a-string-a-list-of-string-a-number-or-an-aggregated-value-when-it-is-an-aggregated-value-only-the-function-used-to-generate-the-value-is-provided-for-instance-if-the-min-function-has-been-used-then-only-the-min-attribute-value-is-returnedattribute-valueapi-methodsalert-rulecreateretrieve-allget-detailsupdatedeletealertfind-currentfind-historynotificationsconfigure-web-hooksget-web-hooksdelete-a-web-hookcreate-ruleapiv2alertrulescreates-a-new-alert-rulesampleparametersexceptionsadditional-informationrequestpost-httpsnaairvantagenetapiv2alertrulescompany74e52f0379ec3b4e75f91b4750824c22content-type-applicationjsontargettype-systemname-daily-usage-exceededmessage-daily-usage-exceededactive-trueemails-machintruccomconditions-operator-greater_thanoperands-attributeidname-agg_data_bytes_total_deltadfunction-sumvaluenum-1024response200-okhttp11-200-okcontent-type-applicationjsonid-0f3919fd1ac0403ab9e70ae2c3729a21targettype-systemname-daily-usage-exceededmessage-daily-usage-exceededactive-trueemails-machintruccomconditions-operator-greater_thanoperands-attributeidname-agg_data_bytes_total_deltadfunction-sumvaluenum-1024readonly-falsenamedescriptionusedefaulttypecompanyset-the-context-companyoptionalcallers-companyuidnamedescriptionalertrulemissingoperatora-condition-must-have-an-operatoralertrulemultipleoperandtypean-operand-can-only-be-one-of-attributeidvaluestrvaluenumvaluesstralertruleinvalidnumberofoperandswrong-number-of-operands-for-the-chosen-operatoralertruleinvalidoperandtypean-operand-is-not-using-the-proper-value-for-the-chosen-operatoralertrulegeoinvalidwktthe-given-wkt-is-not-validalertrulegeobadattributeidthe-geofencing-rule-is-not-using-the-right-attributeid-datalon_latalertruleinvalidfunctionthe-given-function-is-not-availablealertrulemissingattroperandfirst-operand-must-be-an-attributeidalertruletoomanythe-number-of-rules-per-company-is-greater-than-75alertruleconditiontoomanythe-number-of-conditions-per-rule-is-greather-than-10alertruleincorrecttargettypethe-target-type-is-missing-or-invalidalertrulebadvoiceaggusageaggvoice-attributes-can-only-be-used-with-monthly-timescalehttp-methodpostrequires-authenticationyesrate-limitedyesheadersnonepermissionsentitiesalertsrulecreateeditdeleteretrieve-all-rulesapiv2alertrulesretrieves-all-rules-of-your-company-sorted-by-namesampleparametersadditional-informationrequestget-httpsnaairvantagenetapiv2alertrulescompany74e52f0379ec3b4e75f91b4750824c22response200-okhttp11-200-okcontent-type-applicationjsonid-0f3919fd1ac0403ab9e70ae2c3729a21targettype-systemname-daily-usage-exceededmessage-daily-usage-exceededactive-trueemails-machintruccomconditions-operator-greater_thanoperands-attributeidname-agg_data_bytes_total_deltadfunction-sumvaluenum-1024readonly-falsenamedescriptionusedefaulttypecompanyset-the-context-companyoptionalcallers-companyuidhttp-methodgetrequires-authenticationyesrate-limitedyesheadersnonepermissionsentitiesalertsruleviewget-rule-detailsapiv2alertrulesuidreturns-detailed-information-about-the-specified-rulesampleparametersadditional-informationrequestget-httpsnaairvantagenetapiv2alertrules0f3919fd1ac0403ab9e70ae2c3729a21company74e52f0379ec3b4e75f91b4750824c22response200-okhttp11-200-okcontent-type-applicationjsonid-0f3919fd1ac0403ab9e70ae2c3729a21targettype-systemname-daily-usage-exceededmessage-daily-usage-exceededactive-trueemails-machintruccomconditions-operator-greater_thanoperands-attributeidname-agg_data_bytes_total_deltadfunction-sumvaluenum-1024readonly-falsenamedescriptionusedefaulttypecompanyset-the-context-companyoptionalcallers-companyuidhttp-methodgetrequires-authenticationyesrate-limitedyesheadersnonepermissionsentitiesalertsruleviewupdate-ruleapiv2alertrulesuidupdates-the-specified-alert-rule-all-alert-rule-fields-are-exepected-in-the-body-not-only-the-ones-you-want-to-modifysampleparametersexceptionsadditional-informationrequestput-httpsnaairvantagenetapiv2alertrules0f3919fd1ac0403ab9e70ae2c3729a21company74e52f0379ec3b4e75f91b4750824c22content-type-applicationjsontargettype-systemname-temperature-exceededmessage-temperature-exceededactive-trueemails-machintruccomconditions-operator-greater_thanoperands-attributeidname-dataroomtempvaluenum-38readonly-falseresponse200-okhttp11-200-okcontent-type-applicationjsonid-0f3919fd1ac0403ab9e70ae2c3729a21targettype-systemname-temperature-exceededmessage-temperature-exceededactive-trueemails-machintruccomconditions-operator-greater_thanoperands-attributeidname-dataroomtempvaluenum-38readonly-falsenamedescriptionusedefaulttypecompanyset-the-context-companyoptionalcallers-companyuidnamedescriptionalertrulemissingida-rule-id-must-be-specifiedalertruleunknownidthe-specified-rule-is-unknownalertrulemissingoperatora-condition-must-have-an-operatoralertrulemultipleoperandtypean-operand-can-only-be-one-of-attributeidvaluestrvaluenumvaluesstralertruleinvalidnumberofoperandswrong-number-of-operands-for-the-chosen-operatoralertruleinvalidoperandtypean-operand-is-not-using-the-proper-value-for-the-chosen-operatoralertrulegeoinvalidwktthe-given-wkt-is-not-validalertrulegeobadattributeidthe-geofencing-rule-is-not-using-the-right-attributeid-datalon_latalertruleinvalidfunctionthe-given-function-is-not-availablealertrulemissingattroperandfirst-operand-must-be-an-attributeidalertruletoomanythe-number-of-rules-per-company-is-greater-than-75alertruleconditiontoomanythe-number-of-conditions-per-rule-is-greather-than-10alertruleincorrecttargettypethe-target-type-is-missing-or-invalidalertrulebadvoiceaggusageaggvoice-attributes-can-only-be-used-with-monthly-timescalealertruleinvalidoperationforreadonlyoperation-is-invalid-for-read-only-rulehttp-methodputrequires-authenticationyesrate-limitedyesheadersnonepermissionsentitiesalertsrulecreateeditdeletedelete-ruleapiv2alertrulesuiddeletes-the-specified-alert-rulesampleparametersexceptionsadditional-informationrequestdelete-httpsnaairvantagenetapiv2alertrules0f3919fd1ac0403ab9e70ae2c3729a21company74e52f0379ec3b4e75f91b4750824c22response200-okhttp11-200-okcontent-type-applicationjsonsuccessnamedescriptionusedefaulttypecompanyset-the-context-companyoptionalcallers-companyuidnamedescriptionalertrulemissingida-rule-id-must-be-specifiedalertruleunknownidthe-specified-rule-is-unknown-or-read-onlyhttp-methoddeleterequires-authenticationyesrate-limitedyesheadersnonepermissionsentitiesalertsrulecreateeditdeletefind-current-alertsapiv3alertscurrentfinds-current-alertsreturns-a-paginated-list-of-alerts-sorted-by-statechangets-fieldit-is-possible-to-filter-out-the-result-list-using-criteria-parameters-note-that-all-combinations-of-criteria-are-not-possible-here-are-all-the-possible-combinationsby-target-get-apiv3alertscurrentcompany-targetid-offset-sizeby-target-and-rule-get-apiv3alertscurrentcompany-targetid-ruleid-offset-sizeby-state-get-apiv3alertscurrentcompany-state-offset-sizeby-state-and-targettype-get-apiv3alertscurrentcompany-state-targettype-offset-sizeby-state-targettype-and-rule-get-apiv3alertscurrentcompany-state-targettype-ruleid-offset-sizemore-information-about-pagingheresampleparametersadditional-informationrequestget-httpsnaairvantagenetapiv3alertscurrenttargetid91b74e52f04750824c22379ec3b4e75foffset0size100company74e52f0379ec3b4e75f91b4750824c22response200-okhttp11-200-okcontent-type-applicationjsonitems-companyid-74e52f0379ec3b4e75f91b4750824c22targetid-91b74e52f04750824c22379ec3b4e75ftargettype-systemruleid-e52237824c29ecf003b4e7745f91b475state-truestatechangets-1469446036000attributes-id-name-dataroomtempvalue-valuenum-45reftime-1466859976000count-1namedescriptionusedefaulttypetargetidsearch-alert-states-by-target-idoptionalnullstringruleidsearch-alert-states-by-rule-id-must-be-used-together-with-targetid-or-targettype-filteroptionalnullstringstatesearch-alert-states-by-stateoptionalnullbooleantargettypesearch-alert-states-by-target-type-must-be-used-together-with-state-filteroptionalnullstringcompanyset-the-context-companyoptionalcallers-companystringhttp-methodgetrequires-authenticationyesrate-limitedyesheadersnonepermissionsentitiesalertsviewfind-alerts-historyapiv3alertshistoryfinds-stateful-and-stateless-alerts-between-two-datesreturns-a-maxium-of-500-alerts-sorted-by-ts-fieldsampleparametersexceptionsadditional-informationrequestget-httpsnaairvantagenetapiv3alertshistorytargetid91b74e52f04750824c22379ec3b4e75fto1469451977000company74e52f0379ec3b4e75f91b4750824c22response200-okhttp11-200-okcontent-type-applicationjsonitems-companyid-74e52f0379ec3b4e75f91b4750824c22targetid-91b74e52f04750824c22379ec3b4e75ftargettype-systemts-1466859977000ruleid-0f3919fd1ac0403ab9e70ae2c3729a21state-null--null-because-the-rule-is-statelessattributes-id-name-dataroomdooropenedvalue-valuestr-truereftime-1466859976000companyid-74e52f0379ec3b4e75f91b4750824c22targetid-91b74e52f04750824c22379ec3b4e75ftargettype-systemts-1466859967000ruleid-04e70a0fb9ace2c3729a3919fd103a21state-true--not-null-because-the-rule-is-stateful-can-be-true-or-falseattributes-id-name-dataroomtempvalue-valuenum-45reftime-1466859966000namedescriptionusedefaulttypetargetidsearch-alerts-for-the-specified-target-idoptionalstringruleidssearch-alerts-for-the-specified-rule-idsoptionalstring-ruleid-separated-by-fromtosearch-alerts-whose-timestamp-is-between-from-and-toif-asc-is-true-----from---------to------if-asc-is-false-----from---------to------optionalto-now-from-now---90-daystimestampascif-true-sort-alert-by-ts-in-ascending-order-otherwise-in-descending-orderoptionalfalsebooleansizepage-sizeoptional100numbercompanyset-the-context-companymandatorystringnamedescriptionmissingcompanycompany-parameter-is-mandatorysysteminvalidtimerangefrom-paramter-needs-to-be-lower-than-to-parameterhttp-methodgetrequires-authenticationyesrate-limitedyesheadersnonepermissionsentitiesalertsviewconfigure-notification-hooksapiv1alertsrulesuidhooksconfigures-notification-hooks-when-the-alert-rule-is-triggeredwhen-a-rule-get-trigged-a-callback-is-invoked-with-the-contentdescribed-in-subscriber-api-tab-belowsamplecontentsubscriber-apiexceptionsadditionalinformationrequestpost-httpsnaairvantagenetapiv1alertsrulesedcda0dce0fb47948d03fbec5350c18ehookscontent-type-applicationjsoncallback---httpwwwmysitecomcallbackresponse200-okuid--48d03fbec5350c18eedcda0dce0fb479callback---httpwwwmysitecomcallbackfielddescriptionusedefaulttypecallbackthe-url-that-will-be-called-when-the-alert-rule-gettriggerd-the-url-has-the-following-pattern-httpsuserwwwyourhostcomyour_rest_servicemandatory>Alert
+General
+f
+General Information
+Operations
+f
+System
+Operations
+Alert
+Application
+Gateway
+Settings
+Dataset
+Label
+Zone
+Operator
+Offer & Options
+System Configurations
+Administration
+f
+Company
+Partner
+Profile
+User
+Subscription
+f
+Subscription
+Ordering
+f
+Contact
+Order
+Product Reference
+Alert
+Overview
+Operators
+Attributes
+Alert Rule
+Alert
+With AirVantage Alert features, you can monitor all your systems by defining
+rules
+.
+These
+rules
+are made up of
+conditions
+which check
+attributes
+of your systems.
+A
+condition
+is built with an
+operator
+and a list of
+operands
+. Details can be found
+here
+.
+Attributes
+are information related to your systems:
+system attributes like the name, the communication status, the gateway serial number, etc.
+system data coming from the device communications,
+and usage data coming from the operator.
+The complete list of attributes are available
+here
+When all the conditions of a
+rule
+are met for a specific system:
+If the rule is
+stateless
+, an
+alert
+is generated. It is accessible from the
+Find history API.
+If the rule is
+stateful
+and
+the state changed
+, an
+alert state
+is created/updated. It gives you the current state (true or false) of a system against a rule. It is accessible from
+Find current API.
+You can also access the state history with
+Find history API.
+A rule defines the conditions under which a target becomes in alert or not.
+This is a complete representation of an AlertRule.
+{
+"targetType": "",
+"name": "",
+"message": "",
+"stateful": true|false,
+"active": true|false,
+"emails": [""],
+"notifMode": "",
+"conditions": [{
+"operator": "",
+"operands": [{
+"attributeId": {
+"targetId": "",
+"name": "",
+"filter": { "": }
+},
+"function": "",
+"functionParam": "",
+"valueStr": "",
+"valueNum": ,
+"valuesStr": [""]
+}]
+}],
+"readOnly": true|false
+}
+Field
+Description
+Type
+targetType
+The type of target for which the rule applies: SYSTEM | OFFER
+string
+name
+The name of the rule
+string
+message
+The message used in the Alert event in case of alert.
+string
+stateful
+Indicates if the rule is stateful (ie. generates and maintains states) or not (ie. only generates events): true | false. Default value to true.
+boolean
+active
+Indicates if the rule is enabled or not: true | false
+boolean
+emails
+The list of emails to send notifications to.
+string array
+notifMode
+EVERY_TIME: every time an alert is generated.
+WHEN_STATE_CHANGES: default, only when the state of an AlertState changes.
+WHEN_STATE_TRUE: only when the state of an AlertState changes from false to true.
+WHEN_STATE_FALSE: only when the state of an AlertState changes from true to false.
+IN_ALL_CASES: either when an alert is generated or when the state changes.
+string
+conditions
+The list of conditions to be checked.
+array of conditions
+conditions.operator
+The operator.
+string
+conditions.operands
+Functions of the chosen operator, you have to define one or more operands.
+array of operands
+conditions.operands.attributeId
+An attributeId is composed of a targetId and an attribute name.
+attributeId
+conditions.operands.attributeId.targetId
+The id of the target: systemId, companyId or null to consider the current target (the one responsible for the rule evaluation)
+string
+conditions.operands.attributeId.name
+The name of the
+attribute
+to consider
+string
+conditions.operands.attributeId.filter
+The criteria to filter the data for aggregation.
+Criteria to select a sub-set of usage records:
+"inOfferZone": if
+true
+only the usages occured in the offer zone will be selected,
+false
+means outside the offer zone, otherwise (
+null
+value) no filter on zone will be applied.
+"partial": if
+true
+only the partial usage sessions will be selected,
+false
+means only the complete usage sessions will be selected, otherwise (
+null
+value) all usages sessions will be selected.
+map
+conditions.operands.function
+The aggregation function to use in case of an aggregated attributeId (for instance AGG.room.temp/D)
+MIN
+MAX
+MEAN
+SUM
+CNT
+string
+conditions.operands.valueStr
+A string value to compare with the attribute value functions of the selected operator.
+string
+conditions.operands.valueNum
+A numeric value to compare with the attribute value functions of the selected operator.
+number
+conditions.operands.valuesStr
+An array of strings to compare with the attribute value functions of the selected operator.
+array of strings
+readOnly
+Indicates if the rule is read only or not: true | false.
+boolean
+Here is a picture explaining how the notification mode works.
+An attributeId is made up of a name and an optional targetId. If targetId is set, the condition only apply on the corresponding target, if not, the conditions applies on all targets of the company.
+"attributeId": {
+"targetId": "",
+"name": ""
+}
+Here is the list of all attribute names available when creating alert rules. Some names are dynamic and use the following parameters:
+{dataId}
+: the id of the data sent by the system or a data generated by the platform.
+{timeScale}
+: for aggregated data, H (hourly), D (daily), M (monthly)
+System attributes:
+system.id
+system.name
+system.labels
+system.state
+system.activityState
+system.lifeCycleState
+system.commStatus
+system.commStatus.changeDate
+system.lastCommDate
+system.heartbeat.state
+system.heartbeat.period
+system.heartbeat.errorSLA
+system.heartbeat.warningSLA
+system.offerId
+system.defaultStatusReportState
+system.defaultStatusReportPeriod
+gateway.id
+gateway.imei
+gateway.mac.address
+gateway.serial.number
+subscription.id
+System communication:
+system.comm.protocol
+DATA.
+{dataId}
+: raw data, for instance
+DATA.room.temp
+DATA.<em>LON_LAT: the GPS position of the system, used by geofencing operators
+AGG.
+{dataId}
+/
+{timeScale}
+: aggregated data, for instance
+AGG.data.room.temp/D
+Offer attributes:
+offer.id
+offer.poolBytesLimit: the pool size limit of the offer. It is updated every month according to the current number of active systems.
+offer.poolWarnLimit: 80% of the offer pool size limit by default.
+System usage attributes:
+system.usage.status
+system.usage.record.voice.in.phone.number
+system.usage.record.voice.out.phone.number
+system.usage.record.sms.sent.phone.number
+system.usage.record.sms.received.phone.number
+system.usage.record.visited.country
+system.usage.record.imei
+Aggregated usage data:
+AGG.
+{usageDataId}
+/
+{timeScale}
+: see description of the
+usage data
+AGG.VOICE</em>* attributes, only available for monthly timescale because voice usages are received from carriers few days after consumption: AGG.VOICE_<em>/
+M
+.
+A
+condition
+is built with an
+operator
+and a list of
+operands
+. The first operand of all operators has to define the
+attribute
+to check on systems. Details about attributes can be found
+here
+For each operand, one of the following field must be used.
+{
+"attributeId": {},
+"valueStr": "",
+"valueNum": ,
+"valuesStr": [""]
+}
+Geofencing operators use Well-Known-Text format to define shapes (POLYGON or POINT).
+Here is the list of all operators with the operand fields available.
+Name
+1st operand
+2nd operand
+3rd operand
+CHANGE
+attributeId
+EQUALS
+attributeId
+attributeId/valueStr/valueNum
+NOT_EQUALS
+attributeId
+attributeId/valueStr/valueNum
+GREATER_THAN
+attributeId
+attributeId/valueNum
+LESS_THAN
+attributeId
+attributeId/valueNum
+EXISTS
+attributeId
+NOT_EXISTS
+attributeId
+IN
+attributeId
+attributeId/valuesStr
+NOT_IN
+attributeId
+attributeId/valuesStr
+CONTAINS
+1
+attributeId
+attributeId/valueStr
+NOT_CONTAINS
+attributeId
+attributeId/valueStr
+STARTS_WITH
+attributeId
+attributeId/valueStr
+ENDS_WITH
+attributeId
+attributeId/valueStr
+GEO_WITHIN
+attributeId(name=DATA._LON_LAT)
+valueStr: a POLYGON described with WKT format
+GEO_NOT_WITHIN
+attributeId(name=DATA._LON_LAT)
+valueStr: a POLYGON described with WKT format
+GEO_DISTANCE_TOO_FAR
+attributeId(name=DATA._LON_LAT)
+attributeId(name=DATA._LON_LAT) or a valueStr containing a POINT in WKT format
+valueNum corresponding to the distance in km
+GEO_DISTANCE_TOO_CLOSE
+attributeId(name=DATA._LON_LAT)
+attributeId(name=DATA._LON_LAT) or a valueStr containing a POINT in WKT format
+valueNum corresponding to the distance in km
+1
+The value of the right operand must be contained in the value of the left operand for the rule to trigger (this is to support cases like the left operand being “systemAttribute: labels” and the right operand being the string value of the label that the rule is checking for).
+Note:
+this differs from other containment operators such as IN or GEO_WITHIN where the space/set that must contain the value is specified as a left operand instead.
+An alert gathers all the information required to understand what happened on a target for a specific rule.
+This is a complete representation of an Alert
+{
+"companyId": "",
+"targetId": "",
+"targetType": "",
+"ruleId": ""
+"state": ,
+"stateChangeTs": ,
+"attributes": [{
+"id": {
+"name": "" // the name of the attribute
+},
+"value": { // the value of the attribute
+"valueStr": "",
+"valuesStr": [""],
+"valueNum": ,
+"valueAgg": {
+"min": ,
+"max": ,
+"cnt": ,
+"sum": ,
+"mean":
+}
+},
+"refTime":
+}]
+}
+Field
+Description
+Type
+companyId
+The id of the company the target belongs to
+string
+targetId
+The id of the target
+string
+targetType
+The type of the target: SYSTEM | OFFER
+string
+ruleId
+The id of the rule
+string
+state
+True/False to indicate if the specified target is in alert for the specified sateful rule, or null if the rule is stateless
+boolean
+stateChangeTs
+The timestamp when the state changes
+timestamp
+attributes
+The list of attributes that brought to the current alert state
+list of Attribute
+attributes.id.name
+The name of the checked attribute
+string
+attributes.value
+The value of the attribute that triggered the alert. The value depends on the type. It can be a string, a list of string, a number or an aggregated value. When it is an aggregated value only the function used to generate the value is provided. For instance if the 'min' function has been used then only the 'min' attribute value is returned.
+Attribute value
+API Methods
+Alert Rule
+Create
+Retrieve all
+Get details
+Update
+Delete
+Alert
+Find current
+Find history
+Notifications
+Configure Web hooks
+Get Web hooks
+Delete a Web hook
+Create rule
+/api/v2/alertrules
+Creates a new alert rule
+Sample
+Parameters
+Exceptions
+Additional Information
+Request
+POST <a href="https://na.airvantage.net/api/v2/alertrules?company=74e52f0379ec3b4e75f91b4750824c22" target=_blank rel="noopener noreferrer" class="">https://na.airvantage.net/api/v2/alertrules?company=74e52f0379ec3b4e75f91b4750824c22</a>
+Content-Type: application/json
+...
+{
+"targetType": "SYSTEM",
+"name": "Daily usage exceeded",
+"message": "Daily usage exceeded",
+"active": true,
+"emails": ["<a href=mailto:machin@truc.com target=_blank rel="noopener noreferrer" class="">machin@truc.com</a>"],
+"conditions": [{
+"operator": "GREATER_THAN",
+"operands": [
+{
+"attributeId":
+{
+"name": "AGG._DATA_BYTES_TOTAL_DELTA/D"
+},
+"function": "SUM"
+},
+{
+"valueNum": 1024
+}
+]
+}]
+}
+Response
+200 OK
+HTTP/1.1 200 OK
+Content-Type: application/json
+...
+{
+"id": "0f3919fd1ac0403ab9e70ae2c3729a21",
+"targetType": "SYSTEM",
+"name": "Daily usage exceeded",
+"message": "Daily usage exceeded",
+"active": true,
+"emails": ["<a href=mailto:machin@truc.com target=_blank rel="noopener noreferrer" class="">machin@truc.com</a>"],
+"conditions": [{
+"operator": "GREATER_THAN",
+"operands": [
+{
+"attributeId":
+{
+"name": "AGG._DATA_BYTES_TOTAL_DELTA/D"
+},
+"function": "SUM"
+},
+{
+"valueNum": 1024
+}
+]
+}],
+"readOnly": false
+}
+Name
+Description
+Use
+Default
+Type
+company
+Set the context company.
+optional
+caller's company
+uid
+Name
+Description
+alert.rule.missing.operator
+A condition must have an operator
+alert.rule.multiple.operand.type
+An operand can only be one of attributeId/valueStr/valueNum/valuesStr
+alert.rule.invalid.number.of.operands
+Wrong number of operands for the chosen operator
+alert.rule.invalid.operand.type
+An operand is not using the proper value for the chosen operator
+alert.rule.geo.invalid.wkt
+The given WKT is not valid
+alert.rule.geo.bad.attribute.id
+The geofencing rule is not using the right attributeId (DATA.<em>LON_LAT)
+alert.rule.invalid.function
+The given function is not available
+alert.rule.missing.attr.operand
+First operand must be an attributeId
+alert.rule.too.many
+The number of rules per company is greater than 75
+alert.rule.condition.too.many
+The number of conditions per rule is greather than 10
+alert.rule.incorrect.target.type
+The target type is missing or invalid
+alert.rule.bad.voice.agg.usage
+AGG.VOICE</em></em> attributes can only be used with monthly timescale
+HTTP Method
+POST
+Requires Authentication
+Yes
+Rate Limited
+Yes
+Headers
+None
+Permissions
+entities.alerts.rule.create.edit.delete
+Retrieve all rules
+/api/v2/alertrules
+Retrieves all rules of your company sorted by name.
+Sample
+Parameters
+Additional Information
+Request
+GET <a href="https://na.airvantage.net/api/v2/alertrules?company=74e52f0379ec3b4e75f91b4750824c22" target=_blank rel="noopener noreferrer" class="">https://na.airvantage.net/api/v2/alertrules?company=74e52f0379ec3b4e75f91b4750824c22</a>
+Response
+200 OK
+HTTP/1.1 200 OK
+Content-Type: application/json
+...
+[
+{
+"id": "0f3919fd1ac0403ab9e70ae2c3729a21",
+"targetType": "SYSTEM",
+"name": "Daily usage exceeded",
+"message": "Daily usage exceeded",
+"active": true,
+"emails": ["<a href=mailto:machin@truc.com target=_blank rel="noopener noreferrer" class="">machin@truc.com</a>"],
+"conditions": [{
+"operator": "GREATER_THAN",
+"operands": [
+{
+"attributeId":
+{
+"name": "AGG._DATA_BYTES_TOTAL_DELTA/D"
+},
+"function": "SUM"
+},
+{
+"valueNum": 1024
+}
+]
+}],
+"readOnly": false
+},
+...
+]
+Name
+Description
+Use
+Default
+Type
+company
+Set the context company.
+optional
+caller's company
+uid
+HTTP Method
+GET
+Requires Authentication
+Yes
+Rate Limited
+Yes
+Headers
+None
+Permissions
+entities.alerts.rule.view
+Get rule details
+/api/v2/alertrules/{uid}
+Returns detailed information about the specified rule.
+Sample
+Parameters
+Additional Information
+Request
+GET <a href="https://na.airvantage.net/api/v2/alertrules/0f3919fd1ac0403ab9e70ae2c3729a21?company=74e52f0379ec3b4e75f91b4750824c22" target=_blank rel="noopener noreferrer" class="">https://na.airvantage.net/api/v2/alertrules/0f3919fd1ac0403ab9e70ae2c3729a21?company=74e52f0379ec3b4e75f91b4750824c22</a>
+Response
+200 OK
+HTTP/1.1 200 OK
+Content-Type: application/json
+...
+{
+"id": "0f3919fd1ac0403ab9e70ae2c3729a21",
+"targetType": "SYSTEM",
+"name": "Daily usage exceeded",
+"message": "Daily usage exceeded",
+"active": true,
+"emails": ["<a href=mailto:machin@truc.com target=_blank rel="noopener noreferrer" class="">machin@truc.com</a>"],
+"conditions": [{
+"operator": "GREATER_THAN",
+"operands": [
+{
+"attributeId":
+{
+"name": "AGG._DATA_BYTES_TOTAL_DELTA/D"
+},
+"function": "SUM"
+},
+{
+"valueNum": 1024
+}
+]
+}],
+"readOnly": false
+}
+Name
+Description
+Use
+Default
+Type
+company
+Set the context company.
+optional
+caller's company
+uid
+HTTP Method
+GET
+Requires Authentication
+Yes
+Rate Limited
+Yes
+Headers
+None
+Permissions
+entities.alerts.rule.view
+Update rule
+/api/v2/alertrules/{uid}
+Updates the specified alert rule. All alert rule fields are exepected in the body, not only the ones you want to modify.
+Sample
+Parameters
+Exceptions
+Additional Information
+Request
+PUT <a href="https://na.airvantage.net/api/v2/alertrules/0f3919fd1ac0403ab9e70ae2c3729a21?company=74e52f0379ec3b4e75f91b4750824c22" target=_blank rel="noopener noreferrer" class="">https://na.airvantage.net/api/v2/alertrules/0f3919fd1ac0403ab9e70ae2c3729a21?company=74e52f0379ec3b4e75f91b4750824c22</a>
+Content-Type: application/json
+...
+{
+"targetType": "SYSTEM",
+"name": "Temperature exceeded",
+"message": "Temperature exceeded",
+"active": true,
+"emails": ["<a href=mailto:machin@truc.com target=_blank rel="noopener noreferrer" class="">machin@truc.com</a>"],
+"conditions": [{
+"operator": "GREATER_THAN",
+"operands": [
+{
+"attributeId":
+{
+"name": "DATA.room.temp"
+}
+},
+{
+"valueNum": 38
+}
+]
+}],
+"readOnly": false
+}
+Response
+200 OK
+HTTP/1.1 200 OK
+Content-Type: application/json
+...
+{
+"id": "0f3919fd1ac0403ab9e70ae2c3729a21",
+"targetType": "SYSTEM",
+"name": "Temperature exceeded",
+"message": "Temperature exceeded",
+"active": true,
+"emails": ["<a href=mailto:machin@truc.com target=_blank rel="noopener noreferrer" class="">machin@truc.com</a>"],
+"conditions": [{
+"operator": "GREATER_THAN",
+"operands": [
+{
+"attributeId":
+{
+"name": "DATA.room.temp"
+}
+},
+{
+"valueNum": 38
+}
+]
+}],
+"readOnly": false
+}
+Name
+Description
+Use
+Default
+Type
+company
+Set the context company.
+optional
+caller's company
+uid
+Name
+Description
+alert.rule.missing.id
+A rule id must be specified.
+alert.rule.unknown.id
+The specified rule is unknown.
+alert.rule.missing.operator
+A condition must have an operator
+alert.rule.multiple.operand.type
+An operand can only be one of attributeId/valueStr/valueNum/valuesStr
+alert.rule.invalid.number.of.operands
+Wrong number of operands for the chosen operator
+alert.rule.invalid.operand.type
+An operand is not using the proper value for the chosen operator
+alert.rule.geo.invalid.wkt
+The given WKT is not valid
+alert.rule.geo.bad.attribute.id
+The geofencing rule is not using the right attributeId (DATA.<em>LON_LAT)
+alert.rule.invalid.function
+The given function is not available
+alert.rule.missing.attr.operand
+First operand must be an attributeId
+alert.rule.too.many
+The number of rules per company is greater than 75
+alert.rule.condition.too.many
+The number of conditions per rule is greather than 10
+alert.rule.incorrect.target.type
+The target type is missing or invalid
+alert.rule.bad.voice.agg.usage
+AGG.VOICE</em>* attributes can only be used with monthly timescale
+alert.rule.invalid.operation.for.readonly
+Operation is invalid for read only rule
+HTTP Method
+PUT
+Requires Authentication
+Yes
+Rate Limited
+Yes
+Headers
+None
+Permissions
+entities.alerts.rule.create.edit.delete
+Delete rule
+/api/v2/alertrules/{uid}
+Deletes the specified alert rule
+Sample
+Parameters
+Exceptions
+Additional Information
+Request
+DELETE <a href="https://na.airvantage.net/api/v2/alertrules/0f3919fd1ac0403ab9e70ae2c3729a21?company=74e52f0379ec3b4e75f91b4750824c22" target=_blank rel="noopener noreferrer" class="">https://na.airvantage.net/api/v2/alertrules/0f3919fd1ac0403ab9e70ae2c3729a21?company=74e52f0379ec3b4e75f91b4750824c22</a>
+Response
+200 OK
+HTTP/1.1 200 OK
+Content-Type: application/json
+"success"
+Name
+Description
+Use
+Default
+Type
+company
+Set the context company.
+optional
+caller's company
+uid
+Name
+Description
+alert.rule.missing.id
+A rule id must be specified.
+alert.rule.unknown.id
+The specified rule is unknown or read only.
+HTTP Method
+DELETE
+Requires Authentication
+Yes
+Rate Limited
+Yes
+Headers
+None
+Permissions
+entities.alerts.rule.create.edit.delete
+Find current alerts
+/api/v3/alerts/current
+Finds current alerts
+Returns a paginated list of alerts sorted by 'stateChangeTs' field.
+It is possible to filter out the result list using criteria parameters. Note that all combinations of criteria are not possible. Here are all the possible combinations:
+by target: GET /api/v3/alerts/current?company= &targetId= &offset= &size=
+by target and rule: GET /api/v3/alerts/current?company= &targetId= &ruleId= &offset= &size=
+by state: GET /api/v3/alerts/current?company= &state= &offset= &size=
+by state and targetType: GET /api/v3/alerts/current?company= &state= &targetType= &offset= &size=
+by state, targetType and rule: GET /api/v3/alerts/current?company= &state= &targetType= &ruleId= &offset= &size=
+More information about paging
+here
+Sample
+Parameters
+Additional Information
+Request
+GET <a href="https://na.airvantage.net/api/v3/alerts/current?targetId=91b74e52f04750824c22379ec3b4e75f&offset=0&size=100&company=74e52f0379ec3b4e75f91b4750824c22" target=_blank rel="noopener noreferrer" class="">https://na.airvantage.net/api/v3/alerts/current?targetId=91b74e52f04750824c22379ec3b4e75f&offset=0&size=100&company=74e52f0379ec3b4e75f91b4750824c22</a>
+Response
+200 OK
+HTTP/1.1 200 OK
+Content-Type: application/json
+...
+{
+"items": [{
+"companyId": "74e52f0379ec3b4e75f91b4750824c22",
+"targetId": "91b74e52f04750824c22379ec3b4e75f",
+"targetType": "SYSTEM",
+"ruleId": "e52237824c29ecf003b4e7745f91b475"
+"state": true,
+"stateChangeTs": 1469446036000,
+"attributes": [{
+"id": {
+"name": "DATA.room.temp"
+},
+"value": {
+"valueNum": 45
+},
+"refTime": 1466859976000
+}]
+}],
+"count": 1
+}
+Name
+Description
+Use
+Default
+Type
+targetId
+Search alert states by target id.
+optional
+null
+string
+ruleId
+Search alert states by rule id. Must be used together with targetId or targetType filter.
+optional
+null
+string
+state
+Search alert states by state.
+optional
+null
+boolean
+targetType
+Search alert states by target type. Must be used together with state filter.
+optional
+null
+string
+company
+Set the context company.
+optional
+caller's company
+string
+HTTP Method
+GET
+Requires Authentication
+Yes
+Rate Limited
+Yes
+Headers
+None
+Permissions
+entities.alerts.view
+Find alerts history
+/api/v3/alerts/history
+Finds stateful and stateless alerts between two dates.
+Returns a maxium of 500 alerts sorted by 'ts' field.
+Sample
+Parameters
+Exceptions
+Additional Information
+Request
+GET <a href="https://na.airvantage.net/api/v3/alerts/history?targetId=91b74e52f04750824c22379ec3b4e75f&to=1469451977000&company=74e52f0379ec3b4e75f91b4750824c22" target=_blank rel="noopener noreferrer" class="">https://na.airvantage.net/api/v3/alerts/history?targetId=91b74e52f04750824c22379ec3b4e75f&to=1469451977000&company=74e52f0379ec3b4e75f91b4750824c22</a>
+Response
+200 OK
+HTTP/1.1 200 OK
+Content-Type: application/json
+...
+{
+"items": [{
+"companyId": "74e52f0379ec3b4e75f91b4750824c22",
+"targetId": "91b74e52f04750824c22379ec3b4e75f",
+"targetType": "SYSTEM",
+"ts": 1466859977000,
+"ruleId": "0f3919fd1ac0403ab9e70ae2c3729a21",
+"state": null, // null because the rule is stateless
+"attributes": [{
+"id": {
+"name": "DATA.room.door.opened"
+},
+"value": {
+"valueStr": "true"
+},
+"refTime": 1466859976000
+}]
+},{
+"companyId": "74e52f0379ec3b4e75f91b4750824c22",
+"targetId": "91b74e52f04750824c22379ec3b4e75f",
+"targetType": "SYSTEM",
+"ts": 1466859967000,
+"ruleId": "04e70a0fb9ace2c3729a3919fd103a21",
+"state": true, // not null because the rule is stateful (can be true or false)
+"attributes": [{
+"id": {
+"name": "DATA.room.temp"
+},
+"value": {
+"valueNum": 45
+},
+"refTime": 1466859966000
+}]
+}
+]
+}
+Name
+Description
+Use
+Default
+Type
+targetId
+Search alerts for the specified target id.
+optional
+string
+ruleIds
+Search alerts for the specified rule ids.
+optional
+string (ruleId separated by ",")
+from/to
+Search alerts whose timestamp is between 'from' and 'to'.
+if asc is true: ----from-[--------to-[----->
+if asc is false: ----from-]--------to-]----->
+optional
+to: now, from: now - 90 days
+timestamp
+asc
+If true, sort alert by ts in ascending order, otherwise in descending order.
+optional
+false
+boolean
+size
+Page size
+optional
+100
+number
+company
+Set the context company.
+mandatory
+string
+Name
+Description
+missing.company
+'company' parameter is mandatory.
+system.invalid.timerange
+'from' paramter needs to be lower than 'to' parameter.
+HTTP Method
+GET
+Requires Authentication
+Yes
+Rate Limited
+Yes
+Headers
+None
+Permissions
+entities.alerts.view
+Configure Notification Hooks
+/api/v1/alerts/rules/{uid}/hooks
+Configures notification hooks when the alert rule is triggered.
+When a rule get trigged, a callback is invoked with the content
+described in Subscriber API tab below
+Sample
+Content
+Subscriber API
+Exceptions
+Additional
+information
+Request
+POST <a href=https://na.airvantage.net/api/v1/alerts/rules/edcda0dce0fb47948d03fbec5350c18e/hooks target=_blank rel="noopener noreferrer" class="">https://na.airvantage.net/api/v1/alerts/rules/edcda0dce0fb47948d03fbec5350c18e/hooks</a>
+Content-Type: application/json
+...
+{
+"callback" :  "<a href=http://www.mysite.com/callback target=_blank rel="noopener noreferrer" class="">http://www.mysite.com/callback</a>"
+}
+Response
+200 OK
+{
+"uid" : "48d03fbec5350c18eedcda0dce0fb479"
+"callback" :  "<a href=http://www.mysite.com/callback target=_blank rel="noopener noreferrer" class="">http://www.mysite.com/callback</a>"
+}
+Field
+Description
+Use
+Default
+Type
+callback
+The url that will be called when the alert rule get
+triggerd. The url has the following pattern :
+http(s)://(user:password@)<a href=http://www.yourhost.com/your_rest_service target=_blank rel="noopener noreferrer" class="">www.yourhost.com/your_rest_service</a>
+mandatory<a href=#alertgeneralfgeneral-informationoperationsfsystemoperationsalertapplicationgatewaysettingsdatasetlabelzoneoperatoroffer--optionssystem-configurationsadministrationfcompanypartnerprofileusersubscriptionfsubscriptionorderingfcontactorderproduct-referencealertoverviewoperatorsattributesalert-rulealertwith-airvantage-alert-features-you-can-monitor-all-your-systems-by-definingrulestheserulesare-made-up-ofconditionswhich-checkattributesof-your-systemsaconditionis-built-with-anoperatorand-a-list-ofoperands-details-can-be-foundhereattributesare-information-related-to-your-systemssystem-attributes-like-the-name-the-communication-status-the-gateway-serial-number-etcsystem-data-coming-from-the-device-communicationsand-usage-data-coming-from-the-operatorthe-complete-list-of-attributes-are-availableherewhen-all-the-conditions-of-aruleare-met-for-a-specific-systemif-the-rule-isstateless-analertis-generated-it-is-accessible-from-thefind-history-apiif-the-rule-isstatefulandthe-state-changed-analert-stateis-createdupdated-it-gives-you-the-current-state-true-or-false-of-a-system-against-a-rule-it-is-accessible-fromfind-current-apiyou-can-also-access-the-state-history-withfind-history-apia-rule-defines-the-conditions-under-which-a-target-becomes-in-alert-or-notthis-is-a-complete-representation-of-an-alertruletargettype-name-message-stateful-truefalseactive-truefalseemails-notifmode-conditions-operator-operands-attributeid-targetid-name-filter---function-functionparam-valuestr-valuenum-valuesstr-readonly-truefalsefielddescriptiontypetargettypethe-type-of-target-for-which-the-rule-applies-system--offerstringnamethe-name-of-the-rulestringmessagethe-message-used-in-the-alert-event-in-case-of-alertstringstatefulindicates-if-the-rule-is-stateful-ie-generates-and-maintains-states-or-not-ie-only-generates-events-true--false-default-value-to-truebooleanactiveindicates-if-the-rule-is-enabled-or-not-true--falsebooleanemailsthe-list-of-emails-to-send-notifications-tostring-arraynotifmodeevery_time-every-time-an-alert-is-generatedwhen_state_changes-default-only-when-the-state-of-an-alertstate-changeswhen_state_true-only-when-the-state-of-an-alertstate-changes-from-false-to-truewhen_state_false-only-when-the-state-of-an-alertstate-changes-from-true-to-falsein_all_cases-either-when-an-alert-is-generated-or-when-the-state-changesstringconditionsthe-list-of-conditions-to-be-checkedarray-of-conditionsconditionsoperatorthe-operatorstringconditionsoperandsfunctions-of-the-chosen-operator-you-have-to-define-one-or-more-operandsarray-of-operandsconditionsoperandsattributeidan-attributeid-is-composed-of-a-targetid-and-an-attribute-nameattributeidconditionsoperandsattributeidtargetidthe-id-of-the-target-systemid-companyid-or-null-to-consider-the-current-target-the-one-responsible-for-the-rule-evaluationstringconditionsoperandsattributeidnamethe-name-of-theattributeto-considerstringconditionsoperandsattributeidfilterthe-criteria-to-filter-the-data-for-aggregationcriteria-to-select-a-sub-set-of-usage-recordsinofferzone-iftrueonly-the-usages-occured-in-the-offer-zone-will-be-selectedfalsemeans-outside-the-offer-zone-otherwise-nullvalue-no-filter-on-zone-will-be-appliedpartial-iftrueonly-the-partial-usage-sessions-will-be-selectedfalsemeans-only-the-complete-usage-sessions-will-be-selected-otherwise-nullvalue-all-usages-sessions-will-be-selectedmapconditionsoperandsfunctionthe-aggregation-function-to-use-in-case-of-an-aggregated-attributeid-for-instance-aggroomtempdminmaxmeansumcntstringconditionsoperandsvaluestra-string-value-to-compare-with-the-attribute-value-functions-of-the-selected-operatorstringconditionsoperandsvaluenuma-numeric-value-to-compare-with-the-attribute-value-functions-of-the-selected-operatornumberconditionsoperandsvaluesstran-array-of-strings-to-compare-with-the-attribute-value-functions-of-the-selected-operatorarray-of-stringsreadonlyindicates-if-the-rule-is-read-only-or-not-true--falsebooleanhere-is-a-picture-explaining-how-the-notification-mode-worksan-attributeid-is-made-up-of-a-name-and-an-optional-targetid-if-targetid-is-set-the-condition-only-apply-on-the-corresponding-target-if-not-the-conditions-applies-on-all-targets-of-the-companyattributeid-targetid-name-here-is-the-list-of-all-attribute-names-available-when-creating-alert-rules-some-names-are-dynamic-and-use-the-following-parametersdataid-the-id-of-the-data-sent-by-the-system-or-a-data-generated-by-the-platformtimescale-for-aggregated-data-h-hourly-d-daily-m-monthlysystem-attributessystemidsystemnamesystemlabelssystemstatesystemactivitystatesystemlifecyclestatesystemcommstatussystemcommstatuschangedatesystemlastcommdatesystemheartbeatstatesystemheartbeatperiodsystemheartbeaterrorslasystemheartbeatwarningslasystemofferidsystemdefaultstatusreportstatesystemdefaultstatusreportperiodgatewayidgatewayimeigatewaymacaddressgatewayserialnumbersubscriptionidsystem-communicationsystemcommprotocoldatadataid-raw-data-for-instancedataroomtempdatalon_lat-the-gps-position-of-the-system-used-by-geofencing-operatorsaggdataidtimescale-aggregated-data-for-instanceaggdataroomtempdoffer-attributesofferidofferpoolbyteslimit-the-pool-size-limit-of-the-offer-it-is-updated-every-month-according-to-the-current-number-of-active-systemsofferpoolwarnlimit-80-of-the-offer-pool-size-limit-by-defaultsystem-usage-attributessystemusagestatussystemusagerecordvoiceinphonenumbersystemusagerecordvoiceoutphonenumbersystemusagerecordsmssentphonenumbersystemusagerecordsmsreceivedphonenumbersystemusagerecordvisitedcountrysystemusagerecordimeiaggregated-usage-dataaggusagedataidtimescale-see-description-of-theusage-dataaggvoice-attributes-only-available-for-monthly-timescale-because-voice-usages-are-received-from-carriers-few-days-after-consumption-aggvoice_maconditionis-built-with-anoperatorand-a-list-ofoperands-the-first-operand-of-all-operators-has-to-define-theattributeto-check-on-systems-details-about-attributes-can-be-foundherefor-each-operand-one-of-the-following-field-must-be-usedattributeid-valuestr-valuenum-valuesstr-geofencing-operators-use-well-known-text-format-to-define-shapes-polygon-or-pointhere-is-the-list-of-all-operators-with-the-operand-fields-availablename1st-operand2nd-operand3rd-operandchangeattributeidequalsattributeidattributeidvaluestrvaluenumnot_equalsattributeidattributeidvaluestrvaluenumgreater_thanattributeidattributeidvaluenumless_thanattributeidattributeidvaluenumexistsattributeidnot_existsattributeidinattributeidattributeidvaluesstrnot_inattributeidattributeidvaluesstrcontains1attributeidattributeidvaluestrnot_containsattributeidattributeidvaluestrstarts_withattributeidattributeidvaluestrends_withattributeidattributeidvaluestrgeo_withinattributeidnamedata_lon_latvaluestr-a-polygon-described-with-wkt-formatgeo_not_withinattributeidnamedata_lon_latvaluestr-a-polygon-described-with-wkt-formatgeo_distance_too_farattributeidnamedata_lon_latattributeidnamedata_lon_lat-or-a-valuestr-containing-a-point-in-wkt-formatvaluenum-corresponding-to-the-distance-in-kmgeo_distance_too_closeattributeidnamedata_lon_latattributeidnamedata_lon_lat-or-a-valuestr-containing-a-point-in-wkt-formatvaluenum-corresponding-to-the-distance-in-km1the-value-of-the-right-operand-must-be-contained-in-the-value-of-the-left-operand-for-the-rule-to-trigger-this-is-to-support-cases-like-the-left-operand-being-systemattribute-labels-and-the-right-operand-being-the-string-value-of-the-label-that-the-rule-is-checking-fornotethis-differs-from-other-containment-operators-such-as-in-or-geo_within-where-the-spaceset-that-must-contain-the-value-is-specified-as-a-left-operand-insteadan-alert-gathers-all-the-information-required-to-understand-what-happened-on-a-target-for-a-specific-rulethis-is-a-complete-representation-of-an-alertcompanyid-targetid-targettype-ruleid-state-statechangets-attributes-id-name---the-name-of-the-attributevalue---the-value-of-the-attributevaluestr-valuesstr-valuenum-valueagg-min-max-cnt-sum-meanreftimefielddescriptiontypecompanyidthe-id-of-the-company-the-target-belongs-tostringtargetidthe-id-of-the-targetstringtargettypethe-type-of-the-target-system--offerstringruleidthe-id-of-the-rulestringstatetruefalse-to-indicate-if-the-specified-target-is-in-alert-for-the-specified-sateful-rule-or-null-if-the-rule-is-statelessbooleanstatechangetsthe-timestamp-when-the-state-changestimestampattributesthe-list-of-attributes-that-brought-to-the-current-alert-statelist-of-attributeattributesidnamethe-name-of-the-checked-attributestringattributesvaluethe-value-of-the-attribute-that-triggered-the-alert-the-value-depends-on-the-type-it-can-be-a-string-a-list-of-string-a-number-or-an-aggregated-value-when-it-is-an-aggregated-value-only-the-function-used-to-generate-the-value-is-provided-for-instance-if-the-min-function-has-been-used-then-only-the-min-attribute-value-is-returnedattribute-valueapi-methodsalert-rulecreateretrieve-allget-detailsupdatedeletealertfind-currentfind-historynotificationsconfigure-web-hooksget-web-hooksdelete-a-web-hookcreate-ruleapiv2alertrulescreates-a-new-alert-rulesampleparametersexceptionsadditional-informationrequestpost-httpsnaairvantagenetapiv2alertrulescompany74e52f0379ec3b4e75f91b4750824c22content-type-applicationjsontargettype-systemname-daily-usage-exceededmessage-daily-usage-exceededactive-trueemails-machintruccomconditions-operator-greater_thanoperands-attributeidname-agg_data_bytes_total_deltadfunction-sumvaluenum-1024response200-okhttp11-200-okcontent-type-applicationjsonid-0f3919fd1ac0403ab9e70ae2c3729a21targettype-systemname-daily-usage-exceededmessage-daily-usage-exceededactive-trueemails-machintruccomconditions-operator-greater_thanoperands-attributeidname-agg_data_bytes_total_deltadfunction-sumvaluenum-1024readonly-falsenamedescriptionusedefaulttypecompanyset-the-context-companyoptionalcallers-companyuidnamedescriptionalertrulemissingoperatora-condition-must-have-an-operatoralertrulemultipleoperandtypean-operand-can-only-be-one-of-attributeidvaluestrvaluenumvaluesstralertruleinvalidnumberofoperandswrong-number-of-operands-for-the-chosen-operatoralertruleinvalidoperandtypean-operand-is-not-using-the-proper-value-for-the-chosen-operatoralertrulegeoinvalidwktthe-given-wkt-is-not-validalertrulegeobadattributeidthe-geofencing-rule-is-not-using-the-right-attributeid-datalon_latalertruleinvalidfunctionthe-given-function-is-not-availablealertrulemissingattroperandfirst-operand-must-be-an-attributeidalertruletoomanythe-number-of-rules-per-company-is-greater-than-75alertruleconditiontoomanythe-number-of-conditions-per-rule-is-greather-than-10alertruleincorrecttargettypethe-target-type-is-missing-or-invalidalertrulebadvoiceaggusageaggvoice-attributes-can-only-be-used-with-monthly-timescalehttp-methodpostrequires-authenticationyesrate-limitedyesheadersnonepermissionsentitiesalertsrulecreateeditdeleteretrieve-all-rulesapiv2alertrulesretrieves-all-rules-of-your-company-sorted-by-namesampleparametersadditional-informationrequestget-httpsnaairvantagenetapiv2alertrulescompany74e52f0379ec3b4e75f91b4750824c22response200-okhttp11-200-okcontent-type-applicationjsonid-0f3919fd1ac0403ab9e70ae2c3729a21targettype-systemname-daily-usage-exceededmessage-daily-usage-exceededactive-trueemails-machintruccomconditions-operator-greater_thanoperands-attributeidname-agg_data_bytes_total_deltadfunction-sumvaluenum-1024readonly-falsenamedescriptionusedefaulttypecompanyset-the-context-companyoptionalcallers-companyuidhttp-methodgetrequires-authenticationyesrate-limitedyesheadersnonepermissionsentitiesalertsruleviewget-rule-detailsapiv2alertrulesuidreturns-detailed-information-about-the-specified-rulesampleparametersadditional-informationrequestget-httpsnaairvantagenetapiv2alertrules0f3919fd1ac0403ab9e70ae2c3729a21company74e52f0379ec3b4e75f91b4750824c22response200-okhttp11-200-okcontent-type-applicationjsonid-0f3919fd1ac0403ab9e70ae2c3729a21targettype-systemname-daily-usage-exceededmessage-daily-usage-exceededactive-trueemails-machintruccomconditions-operator-greater_thanoperands-attributeidname-agg_data_bytes_total_deltadfunction-sumvaluenum-1024readonly-falsenamedescriptionusedefaulttypecompanyset-the-context-companyoptionalcallers-companyuidhttp-methodgetrequires-authenticationyesrate-limitedyesheadersnonepermissionsentitiesalertsruleviewupdate-ruleapiv2alertrulesuidupdates-the-specified-alert-rule-all-alert-rule-fields-are-exepected-in-the-body-not-only-the-ones-you-want-to-modifysampleparametersexceptionsadditional-informationrequestput-httpsnaairvantagenetapiv2alertrules0f3919fd1ac0403ab9e70ae2c3729a21company74e52f0379ec3b4e75f91b4750824c22content-type-applicationjsontargettype-systemname-temperature-exceededmessage-temperature-exceededactive-trueemails-machintruccomconditions-operator-greater_thanoperands-attributeidname-dataroomtempvaluenum-38readonly-falseresponse200-okhttp11-200-okcontent-type-applicationjsonid-0f3919fd1ac0403ab9e70ae2c3729a21targettype-systemname-temperature-exceededmessage-temperature-exceededactive-trueemails-machintruccomconditions-operator-greater_thanoperands-attributeidname-dataroomtempvaluenum-38readonly-falsenamedescriptionusedefaulttypecompanyset-the-context-companyoptionalcallers-companyuidnamedescriptionalertrulemissingida-rule-id-must-be-specifiedalertruleunknownidthe-specified-rule-is-unknownalertrulemissingoperatora-condition-must-have-an-operatoralertrulemultipleoperandtypean-operand-can-only-be-one-of-attributeidvaluestrvaluenumvaluesstralertruleinvalidnumberofoperandswrong-number-of-operands-for-the-chosen-operatoralertruleinvalidoperandtypean-operand-is-not-using-the-proper-value-for-the-chosen-operatoralertrulegeoinvalidwktthe-given-wkt-is-not-validalertrulegeobadattributeidthe-geofencing-rule-is-not-using-the-right-attributeid-datalon_latalertruleinvalidfunctionthe-given-function-is-not-availablealertrulemissingattroperandfirst-operand-must-be-an-attributeidalertruletoomanythe-number-of-rules-per-company-is-greater-than-75alertruleconditiontoomanythe-number-of-conditions-per-rule-is-greather-than-10alertruleincorrecttargettypethe-target-type-is-missing-or-invalidalertrulebadvoiceaggusageaggvoice-attributes-can-only-be-used-with-monthly-timescalealertruleinvalidoperationforreadonlyoperation-is-invalid-for-read-only-rulehttp-methodputrequires-authenticationyesrate-limitedyesheadersnonepermissionsentitiesalertsrulecreateeditdeletedelete-ruleapiv2alertrulesuiddeletes-the-specified-alert-rulesampleparametersexceptionsadditional-informationrequestdelete-httpsnaairvantagenetapiv2alertrules0f3919fd1ac0403ab9e70ae2c3729a21company74e52f0379ec3b4e75f91b4750824c22response200-okhttp11-200-okcontent-type-applicationjsonsuccessnamedescriptionusedefaulttypecompanyset-the-context-companyoptionalcallers-companyuidnamedescriptionalertrulemissingida-rule-id-must-be-specifiedalertruleunknownidthe-specified-rule-is-unknown-or-read-onlyhttp-methoddeleterequires-authenticationyesrate-limitedyesheadersnonepermissionsentitiesalertsrulecreateeditdeletefind-current-alertsapiv3alertscurrentfinds-current-alertsreturns-a-paginated-list-of-alerts-sorted-by-statechangets-fieldit-is-possible-to-filter-out-the-result-list-using-criteria-parameters-note-that-all-combinations-of-criteria-are-not-possible-here-are-all-the-possible-combinationsby-target-get-apiv3alertscurrentcompany-targetid-offset-sizeby-target-and-rule-get-apiv3alertscurrentcompany-targetid-ruleid-offset-sizeby-state-get-apiv3alertscurrentcompany-state-offset-sizeby-state-and-targettype-get-apiv3alertscurrentcompany-state-targettype-offset-sizeby-state-targettype-and-rule-get-apiv3alertscurrentcompany-state-targettype-ruleid-offset-sizemore-information-about-pagingheresampleparametersadditional-informationrequestget-httpsnaairvantagenetapiv3alertscurrenttargetid91b74e52f04750824c22379ec3b4e75foffset0size100company74e52f0379ec3b4e75f91b4750824c22response200-okhttp11-200-okcontent-type-applicationjsonitems-companyid-74e52f0379ec3b4e75f91b4750824c22targetid-91b74e52f04750824c22379ec3b4e75ftargettype-systemruleid-e52237824c29ecf003b4e7745f91b475state-truestatechangets-1469446036000attributes-id-name-dataroomtempvalue-valuenum-45reftime-1466859976000count-1namedescriptionusedefaulttypetargetidsearch-alert-states-by-target-idoptionalnullstringruleidsearch-alert-states-by-rule-id-must-be-used-together-with-targetid-or-targettype-filteroptionalnullstringstatesearch-alert-states-by-stateoptionalnullbooleantargettypesearch-alert-states-by-target-type-must-be-used-together-with-state-filteroptionalnullstringcompanyset-the-context-companyoptionalcallers-companystringhttp-methodgetrequires-authenticationyesrate-limitedyesheadersnonepermissionsentitiesalertsviewfind-alerts-historyapiv3alertshistoryfinds-stateful-and-stateless-alerts-between-two-datesreturns-a-maxium-of-500-alerts-sorted-by-ts-fieldsampleparametersexceptionsadditional-informationrequestget-httpsnaairvantagenetapiv3alertshistorytargetid91b74e52f04750824c22379ec3b4e75fto1469451977000company74e52f0379ec3b4e75f91b4750824c22response200-okhttp11-200-okcontent-type-applicationjsonitems-companyid-74e52f0379ec3b4e75f91b4750824c22targetid-91b74e52f04750824c22379ec3b4e75ftargettype-systemts-1466859977000ruleid-0f3919fd1ac0403ab9e70ae2c3729a21state-null--null-because-the-rule-is-statelessattributes-id-name-dataroomdooropenedvalue-valuestr-truereftime-1466859976000companyid-74e52f0379ec3b4e75f91b4750824c22targetid-91b74e52f04750824c22379ec3b4e75ftargettype-systemts-1466859967000ruleid-04e70a0fb9ace2c3729a3919fd103a21state-true--not-null-because-the-rule-is-stateful-can-be-true-or-falseattributes-id-name-dataroomtempvalue-valuenum-45reftime-1466859966000namedescriptionusedefaulttypetargetidsearch-alerts-for-the-specified-target-idoptionalstringruleidssearch-alerts-for-the-specified-rule-idsoptionalstring-ruleid-separated-by-fromtosearch-alerts-whose-timestamp-is-between-from-and-toif-asc-is-true-----from---------to------if-asc-is-false-----from---------to------optionalto-now-from-now---90-daystimestampascif-true-sort-alert-by-ts-in-ascending-order-otherwise-in-descending-orderoptionalfalsebooleansizepage-sizeoptional100numbercompanyset-the-context-companymandatorystringnamedescriptionmissingcompanycompany-parameter-is-mandatorysysteminvalidtimerangefrom-paramter-needs-to-be-lower-than-to-parameterhttp-methodgetrequires-authenticationyesrate-limitedyesheadersnonepermissionsentitiesalertsviewconfigure-notification-hooksapiv1alertsrulesuidhooksconfigures-notification-hooks-when-the-alert-rule-is-triggeredwhen-a-rule-get-trigged-a-callback-is-invoked-with-the-contentdescribed-in-subscriber-api-tab-belowsamplecontentsubscriber-apiexceptionsadditionalinformationrequestpost-httpsnaairvantagenetapiv1alertsrulesedcda0dce0fb47948d03fbec5350c18ehookscontent-type-applicationjsoncallback---httpwwwmysitecomcallbackresponse200-okuid--48d03fbec5350c18eedcda0dce0fb479callback---httpwwwmysitecomcallbackfielddescriptionusedefaulttypecallbackthe-url-that-will-be-called-when-the-alert-rule-gettriggerd-the-url-has-the-following-pattern-httpsuserwwwyourhostcomyour_rest_servicemandatory class=hash-link aria-label="Direct link to alertgeneralfgeneral-informationoperationsfsystemoperationsalertapplicationgatewaysettingsdatasetlabelzoneoperatoroffer--optionssystem-configurationsadministrationfcompanypartnerprofileusersubscriptionfsubscriptionorderingfcontactorderproduct-referencealertoverviewoperatorsattributesalert-rulealertwith-airvantage-alert-features-you-can-monitor-all-your-systems-by-definingrulestheserulesare-made-up-ofconditionswhich-checkattributesof-your-systemsaconditionis-built-with-anoperatorand-a-list-ofoperands-details-can-be-foundhereattributesare-information-related-to-your-systemssystem-attributes-like-the-name-the-communication-status-the-gateway-serial-number-etcsystem-data-coming-from-the-device-communicationsand-usage-data-coming-from-the-operatorthe-complete-list-of-attributes-are-availableherewhen-all-the-conditions-of-aruleare-met-for-a-specific-systemif-the-rule-isstateless-analertis-generated-it-is-accessible-from-thefind-history-apiif-the-rule-isstatefulandthe-state-changed-analert-stateis-createdupdated-it-gives-you-the-current-state-true-or-false-of-a-system-against-a-rule-it-is-accessible-fromfind-current-apiyou-can-also-access-the-state-history-withfind-history-apia-rule-defines-the-conditions-under-which-a-target-becomes-in-alert-or-notthis-is-a-complete-representation-of-an-alertruletargettype-name-message-stateful-truefalseactive-truefalseemails-notifmode-conditions-operator-operands-attributeid-targetid-name-filter---function-functionparam-valuestr-valuenum-valuesstr-readonly-truefalsefielddescriptiontypetargettypethe-type-of-target-for-which-the-rule-applies-system--offerstringnamethe-name-of-the-rulestringmessagethe-message-used-in-the-alert-event-in-case-of-alertstringstatefulindicates-if-the-rule-is-stateful-ie-generates-and-maintains-states-or-not-ie-only-generates-events-true--false-default-value-to-truebooleanactiveindicates-if-the-rule-is-enabled-or-not-true--falsebooleanemailsthe-list-of-emails-to-send-notifications-tostring-arraynotifmodeevery_time-every-time-an-alert-is-generatedwhen_state_changes-default-only-when-the-state-of-an-alertstate-changeswhen_state_true-only-when-the-state-of-an-alertstate-changes-from-false-to-truewhen_state_false-only-when-the-state-of-an-alertstate-changes-from-true-to-falsein_all_cases-either-when-an-alert-is-generated-or-when-the-state-changesstringconditionsthe-list-of-conditions-to-be-checkedarray-of-conditionsconditionsoperatorthe-operatorstringconditionsoperandsfunctions-of-the-chosen-operator-you-have-to-define-one-or-more-operandsarray-of-operandsconditionsoperandsattributeidan-attributeid-is-composed-of-a-targetid-and-an-attribute-nameattributeidconditionsoperandsattributeidtargetidthe-id-of-the-target-systemid-companyid-or-null-to-consider-the-current-target-the-one-responsible-for-the-rule-evaluationstringconditionsoperandsattributeidnamethe-name-of-theattributeto-considerstringconditionsoperandsattributeidfilterthe-criteria-to-filter-the-data-for-aggregationcriteria-to-select-a-sub-set-of-usage-recordsinofferzone-iftrueonly-the-usages-occured-in-the-offer-zone-will-be-selectedfalsemeans-outside-the-offer-zone-otherwise-nullvalue-no-filter-on-zone-will-be-appliedpartial-iftrueonly-the-partial-usage-sessions-will-be-selectedfalsemeans-only-the-complete-usage-sessions-will-be-selected-otherwise-nullvalue-all-usages-sessions-will-be-selectedmapconditionsoperandsfunctionthe-aggregation-function-to-use-in-case-of-an-aggregated-attributeid-for-instance-aggroomtempdminmaxmeansumcntstringconditionsoperandsvaluestra-string-value-to-compare-with-the-attribute-value-functions-of-the-selected-operatorstringconditionsoperandsvaluenuma-numeric-value-to-compare-with-the-attribute-value-functions-of-the-selected-operatornumberconditionsoperandsvaluesstran-array-of-strings-to-compare-with-the-attribute-value-functions-of-the-selected-operatorarray-of-stringsreadonlyindicates-if-the-rule-is-read-only-or-not-true--falsebooleanhere-is-a-picture-explaining-how-the-notification-mode-worksan-attributeid-is-made-up-of-a-name-and-an-optional-targetid-if-targetid-is-set-the-condition-only-apply-on-the-corresponding-target-if-not-the-conditions-applies-on-all-targets-of-the-companyattributeid-targetid-name-here-is-the-list-of-all-attribute-names-available-when-creating-alert-rules-some-names-are-dynamic-and-use-the-following-parametersdataid-the-id-of-the-data-sent-by-the-system-or-a-data-generated-by-the-platformtimescale-for-aggregated-data-h-hourly-d-daily-m-monthlysystem-attributessystemidsystemnamesystemlabelssystemstatesystemactivitystatesystemlifecyclestatesystemcommstatussystemcommstatuschangedatesystemlastcommdatesystemheartbeatstatesystemheartbeatperiodsystemheartbeaterrorslasystemheartbeatwarningslasystemofferidsystemdefaultstatusreportstatesystemdefaultstatusreportperiodgatewayidgatewayimeigatewaymacaddressgatewayserialnumbersubscriptionidsystem-communicationsystemcommprotocoldatadataid-raw-data-for-instancedataroomtempdatalon_lat-the-gps-position-of-the-system-used-by-geofencing-operatorsaggdataidtimescale-aggregated-data-for-instanceaggdataroomtempdoffer-attributesofferidofferpoolbyteslimit-the-pool-size-limit-of-the-offer-it-is-updated-every-month-according-to-the-current-number-of-active-systemsofferpoolwarnlimit-80-of-the-offer-pool-size-limit-by-defaultsystem-usage-attributessystemusagestatussystemusagerecordvoiceinphonenumbersystemusagerecordvoiceoutphonenumbersystemusagerecordsmssentphonenumbersystemusagerecordsmsreceivedphonenumbersystemusagerecordvisitedcountrysystemusagerecordimeiaggregated-usage-dataaggusagedataidtimescale-see-description-of-theusage-dataaggvoice-attributes-only-available-for-monthly-timescale-because-voice-usages-are-received-from-carriers-few-days-after-consumption-aggvoice_maconditionis-built-with-anoperatorand-a-list-ofoperands-the-first-operand-of-all-operators-has-to-define-theattributeto-check-on-systems-details-about-attributes-can-be-foundherefor-each-operand-one-of-the-following-field-must-be-usedattributeid-valuestr-valuenum-valuesstr-geofencing-operators-use-well-known-text-format-to-define-shapes-polygon-or-pointhere-is-the-list-of-all-operators-with-the-operand-fields-availablename1st-operand2nd-operand3rd-operandchangeattributeidequalsattributeidattributeidvaluestrvaluenumnot_equalsattributeidattributeidvaluestrvaluenumgreater_thanattributeidattributeidvaluenumless_thanattributeidattributeidvaluenumexistsattributeidnot_existsattributeidinattributeidattributeidvaluesstrnot_inattributeidattributeidvaluesstrcontains1attributeidattributeidvaluestrnot_containsattributeidattributeidvaluestrstarts_withattributeidattributeidvaluestrends_withattributeidattributeidvaluestrgeo_withinattributeidnamedata_lon_latvaluestr-a-polygon-described-with-wkt-formatgeo_not_withinattributeidnamedata_lon_latvaluestr-a-polygon-described-with-wkt-formatgeo_distance_too_farattributeidnamedata_lon_latattributeidnamedata_lon_lat-or-a-valuestr-containing-a-point-in-wkt-formatvaluenum-corresponding-to-the-distance-in-kmgeo_distance_too_closeattributeidnamedata_lon_latattributeidnamedata_lon_lat-or-a-valuestr-containing-a-point-in-wkt-formatvaluenum-corresponding-to-the-distance-in-km1the-value-of-the-right-operand-must-be-contained-in-the-value-of-the-left-operand-for-the-rule-to-trigger-this-is-to-support-cases-like-the-left-operand-being-systemattribute-labels-and-the-right-operand-being-the-string-value-of-the-label-that-the-rule-is-checking-fornotethis-differs-from-other-containment-operators-such-as-in-or-geo_within-where-the-spaceset-that-must-contain-the-value-is-specified-as-a-left-operand-insteadan-alert-gathers-all-the-information-required-to-understand-what-happened-on-a-target-for-a-specific-rulethis-is-a-complete-representation-of-an-alertcompanyid-targetid-targettype-ruleid-state-statechangets-attributes-id-name---the-name-of-the-attributevalue---the-value-of-the-attributevaluestr-valuesstr-valuenum-valueagg-min-max-cnt-sum-meanreftimefielddescriptiontypecompanyidthe-id-of-the-company-the-target-belongs-tostringtargetidthe-id-of-the-targetstringtargettypethe-type-of-the-target-system--offerstringruleidthe-id-of-the-rulestringstatetruefalse-to-indicate-if-the-specified-target-is-in-alert-for-the-specified-sateful-rule-or-null-if-the-rule-is-statelessbooleanstatechangetsthe-timestamp-when-the-state-changestimestampattributesthe-list-of-attributes-that-brought-to-the-current-alert-statelist-of-attributeattributesidnamethe-name-of-the-checked-attributestringattributesvaluethe-value-of-the-attribute-that-triggered-the-alert-the-value-depends-on-the-type-it-can-be-a-string-a-list-of-string-a-number-or-an-aggregated-value-when-it-is-an-aggregated-value-only-the-function-used-to-generate-the-value-is-provided-for-instance-if-the-min-function-has-been-used-then-only-the-min-attribute-value-is-returnedattribute-valueapi-methodsalert-rulecreateretrieve-allget-detailsupdatedeletealertfind-currentfind-historynotificationsconfigure-web-hooksget-web-hooksdelete-a-web-hookcreate-ruleapiv2alertrulescreates-a-new-alert-rulesampleparametersexceptionsadditional-informationrequestpost-httpsnaairvantagenetapiv2alertrulescompany74e52f0379ec3b4e75f91b4750824c22content-type-applicationjsontargettype-systemname-daily-usage-exceededmessage-daily-usage-exceededactive-trueemails-machintruccomconditions-operator-greater_thanoperands-attributeidname-agg_data_bytes_total_deltadfunction-sumvaluenum-1024response200-okhttp11-200-okcontent-type-applicationjsonid-0f3919fd1ac0403ab9e70ae2c3729a21targettype-systemname-daily-usage-exceededmessage-daily-usage-exceededactive-trueemails-machintruccomconditions-operator-greater_thanoperands-attributeidname-agg_data_bytes_total_deltadfunction-sumvaluenum-1024readonly-falsenamedescriptionusedefaulttypecompanyset-the-context-companyoptionalcallers-companyuidnamedescriptionalertrulemissingoperatora-condition-must-have-an-operatoralertrulemultipleoperandtypean-operand-can-only-be-one-of-attributeidvaluestrvaluenumvaluesstralertruleinvalidnumberofoperandswrong-number-of-operands-for-the-chosen-operatoralertruleinvalidoperandtypean-operand-is-not-using-the-proper-value-for-the-chosen-operatoralertrulegeoinvalidwktthe-given-wkt-is-not-validalertrulegeobadattributeidthe-geofencing-rule-is-not-using-the-right-attributeid-datalon_latalertruleinvalidfunctionthe-given-function-is-not-availablealertrulemissingattroperandfirst-operand-must-be-an-attributeidalertruletoomanythe-number-of-rules-per-company-is-greater-than-75alertruleconditiontoomanythe-number-of-conditions-per-rule-is-greather-than-10alertruleincorrecttargettypethe-target-type-is-missing-or-invalidalertrulebadvoiceaggusageaggvoice-attributes-can-only-be-used-with-monthly-timescalehttp-methodpostrequires-authenticationyesrate-limitedyesheadersnonepermissionsentitiesalertsrulecreateeditdeleteretrieve-all-rulesapiv2alertrulesretrieves-all-rules-of-your-company-sorted-by-namesampleparametersadditional-informationrequestget-httpsnaairvantagenetapiv2alertrulescompany74e52f0379ec3b4e75f91b4750824c22response200-okhttp11-200-okcontent-type-applicationjsonid-0f3919fd1ac0403ab9e70ae2c3729a21targettype-systemname-daily-usage-exceededmessage-daily-usage-exceededactive-trueemails-machintruccomconditions-operator-greater_thanoperands-attributeidname-agg_data_bytes_total_deltadfunction-sumvaluenum-1024readonly-falsenamedescriptionusedefaulttypecompanyset-the-context-companyoptionalcallers-companyuidhttp-methodgetrequires-authenticationyesrate-limitedyesheadersnonepermissionsentitiesalertsruleviewget-rule-detailsapiv2alertrulesuidreturns-detailed-information-about-the-specified-rulesampleparametersadditional-informationrequestget-httpsnaairvantagenetapiv2alertrules0f3919fd1ac0403ab9e70ae2c3729a21company74e52f0379ec3b4e75f91b4750824c22response200-okhttp11-200-okcontent-type-applicationjsonid-0f3919fd1ac0403ab9e70ae2c3729a21targettype-systemname-daily-usage-exceededmessage-daily-usage-exceededactive-trueemails-machintruccomconditions-operator-greater_thanoperands-attributeidname-agg_data_bytes_total_deltadfunction-sumvaluenum-1024readonly-falsenamedescriptionusedefaulttypecompanyset-the-context-companyoptionalcallers-companyuidhttp-methodgetrequires-authenticationyesrate-limitedyesheadersnonepermissionsentitiesalertsruleviewupdate-ruleapiv2alertrulesuidupdates-the-specified-alert-rule-all-alert-rule-fields-are-exepected-in-the-body-not-only-the-ones-you-want-to-modifysampleparametersexceptionsadditional-informationrequestput-httpsnaairvantagenetapiv2alertrules0f3919fd1ac0403ab9e70ae2c3729a21company74e52f0379ec3b4e75f91b4750824c22content-type-applicationjsontargettype-systemname-temperature-exceededmessage-temperature-exceededactive-trueemails-machintruccomconditions-operator-greater_thanoperands-attributeidname-dataroomtempvaluenum-38readonly-falseresponse200-okhttp11-200-okcontent-type-applicationjsonid-0f3919fd1ac0403ab9e70ae2c3729a21targettype-systemname-temperature-exceededmessage-temperature-exceededactive-trueemails-machintruccomconditions-operator-greater_thanoperands-attributeidname-dataroomtempvaluenum-38readonly-falsenamedescriptionusedefaulttypecompanyset-the-context-companyoptionalcallers-companyuidnamedescriptionalertrulemissingida-rule-id-must-be-specifiedalertruleunknownidthe-specified-rule-is-unknownalertrulemissingoperatora-condition-must-have-an-operatoralertrulemultipleoperandtypean-operand-can-only-be-one-of-attributeidvaluestrvaluenumvaluesstralertruleinvalidnumberofoperandswrong-number-of-operands-for-the-chosen-operatoralertruleinvalidoperandtypean-operand-is-not-using-the-proper-value-for-the-chosen-operatoralertrulegeoinvalidwktthe-given-wkt-is-not-validalertrulegeobadattributeidthe-geofencing-rule-is-not-using-the-right-attributeid-datalon_latalertruleinvalidfunctionthe-given-function-is-not-availablealertrulemissingattroperandfirst-operand-must-be-an-attributeidalertruletoomanythe-number-of-rules-per-company-is-greater-than-75alertruleconditiontoomanythe-number-of-conditions-per-rule-is-greather-than-10alertruleincorrecttargettypethe-target-type-is-missing-or-invalidalertrulebadvoiceaggusageaggvoice-attributes-can-only-be-used-with-monthly-timescalealertruleinvalidoperationforreadonlyoperation-is-invalid-for-read-only-rulehttp-methodputrequires-authenticationyesrate-limitedyesheadersnonepermissionsentitiesalertsrulecreateeditdeletedelete-ruleapiv2alertrulesuiddeletes-the-specified-alert-rulesampleparametersexceptionsadditional-informationrequestdelete-httpsnaairvantagenetapiv2alertrules0f3919fd1ac0403ab9e70ae2c3729a21company74e52f0379ec3b4e75f91b4750824c22response200-okhttp11-200-okcontent-type-applicationjsonsuccessnamedescriptionusedefaulttypecompanyset-the-context-companyoptionalcallers-companyuidnamedescriptionalertrulemissingida-rule-id-must-be-specifiedalertruleunknownidthe-specified-rule-is-unknown-or-read-onlyhttp-methoddeleterequires-authenticationyesrate-limitedyesheadersnonepermissionsentitiesalertsrulecreateeditdeletefind-current-alertsapiv3alertscurrentfinds-current-alertsreturns-a-paginated-list-of-alerts-sorted-by-statechangets-fieldit-is-possible-to-filter-out-the-result-list-using-criteria-parameters-note-that-all-combinations-of-criteria-are-not-possible-here-are-all-the-possible-combinationsby-target-get-apiv3alertscurrentcompany-targetid-offset-sizeby-target-and-rule-get-apiv3alertscurrentcompany-targetid-ruleid-offset-sizeby-state-get-apiv3alertscurrentcompany-state-offset-sizeby-state-and-targettype-get-apiv3alertscurrentcompany-state-targettype-offset-sizeby-state-targettype-and-rule-get-apiv3alertscurrentcompany-state-targettype-ruleid-offset-sizemore-information-about-pagingheresampleparametersadditional-informationrequestget-httpsnaairvantagenetapiv3alertscurrenttargetid91b74e52f04750824c22379ec3b4e75foffset0size100company74e52f0379ec3b4e75f91b4750824c22response200-okhttp11-200-okcontent-type-applicationjsonitems-companyid-74e52f0379ec3b4e75f91b4750824c22targetid-91b74e52f04750824c22379ec3b4e75ftargettype-systemruleid-e52237824c29ecf003b4e7745f91b475state-truestatechangets-1469446036000attributes-id-name-dataroomtempvalue-valuenum-45reftime-1466859976000count-1namedescriptionusedefaulttypetargetidsearch-alert-states-by-target-idoptionalnullstringruleidsearch-alert-states-by-rule-id-must-be-used-together-with-targetid-or-targettype-filteroptionalnullstringstatesearch-alert-states-by-stateoptionalnullbooleantargettypesearch-alert-states-by-target-type-must-be-used-together-with-state-filteroptionalnullstringcompanyset-the-context-companyoptionalcallers-companystringhttp-methodgetrequires-authenticationyesrate-limitedyesheadersnonepermissionsentitiesalertsviewfind-alerts-historyapiv3alertshistoryfinds-stateful-and-stateless-alerts-between-two-datesreturns-a-maxium-of-500-alerts-sorted-by-ts-fieldsampleparametersexceptionsadditional-informationrequestget-httpsnaairvantagenetapiv3alertshistorytargetid91b74e52f04750824c22379ec3b4e75fto1469451977000company74e52f0379ec3b4e75f91b4750824c22response200-okhttp11-200-okcontent-type-applicationjsonitems-companyid-74e52f0379ec3b4e75f91b4750824c22targetid-91b74e52f04750824c22379ec3b4e75ftargettype-systemts-1466859977000ruleid-0f3919fd1ac0403ab9e70ae2c3729a21state-null--null-because-the-rule-is-statelessattributes-id-name-dataroomdooropenedvalue-valuestr-truereftime-1466859976000companyid-74e52f0379ec3b4e75f91b4750824c22targetid-91b74e52f04750824c22379ec3b4e75ftargettype-systemts-1466859967000ruleid-04e70a0fb9ace2c3729a3919fd103a21state-true--not-null-because-the-rule-is-stateful-can-be-true-or-falseattributes-id-name-dataroomtempvalue-valuenum-45reftime-1466859966000namedescriptionusedefaulttypetargetidsearch-alerts-for-the-specified-target-idoptionalstringruleidssearch-alerts-for-the-specified-rule-idsoptionalstring-ruleid-separated-by-fromtosearch-alerts-whose-timestamp-is-between-from-and-toif-asc-is-true-----from---------to------if-asc-is-false-----from---------to------optionalto-now-from-now---90-daystimestampascif-true-sort-alert-by-ts-in-ascending-order-otherwise-in-descending-orderoptionalfalsebooleansizepage-sizeoptional100numbercompanyset-the-context-companymandatorystringnamedescriptionmissingcompanycompany-parameter-is-mandatorysysteminvalidtimerangefrom-paramter-needs-to-be-lower-than-to-parameterhttp-methodgetrequires-authenticationyesrate-limitedyesheadersnonepermissionsentitiesalertsviewconfigure-notification-hooksapiv1alertsrulesuidhooksconfigures-notification-hooks-when-the-alert-rule-is-triggeredwhen-a-rule-get-trigged-a-callback-is-invoked-with-the-contentdescribed-in-subscriber-api-tab-belowsamplecontentsubscriber-apiexceptionsadditionalinformationrequestpost-httpsnaairvantagenetapiv1alertsrulesedcda0dce0fb47948d03fbec5350c18ehookscontent-type-applicationjsoncallback---httpwwwmysitecomcallbackresponse200-okuid--48d03fbec5350c18eedcda0dce0fb479callback---httpwwwmysitecomcallbackfielddescriptionusedefaulttypecallbackthe-url-that-will-be-called-when-the-alert-rule-gettriggerd-the-url-has-the-following-pattern-httpsuserwwwyourhostcomyour_rest_servicemandatory" title="Direct link to alertgeneralfgeneral-informationoperationsfsystemoperationsalertapplicationgatewaysettingsdatasetlabelzoneoperatoroffer--optionssystem-configurationsadministrationfcompanypartnerprofileusersubscriptionfsubscriptionorderingfcontactorderproduct-referencealertoverviewoperatorsattributesalert-rulealertwith-airvantage-alert-features-you-can-monitor-all-your-systems-by-definingrulestheserulesare-made-up-ofconditionswhich-checkattributesof-your-systemsaconditionis-built-with-anoperatorand-a-list-ofoperands-details-can-be-foundhereattributesare-information-related-to-your-systemssystem-attributes-like-the-name-the-communication-status-the-gateway-serial-number-etcsystem-data-coming-from-the-device-communicationsand-usage-data-coming-from-the-operatorthe-complete-list-of-attributes-are-availableherewhen-all-the-conditions-of-aruleare-met-for-a-specific-systemif-the-rule-isstateless-analertis-generated-it-is-accessible-from-thefind-history-apiif-the-rule-isstatefulandthe-state-changed-analert-stateis-createdupdated-it-gives-you-the-current-state-true-or-false-of-a-system-against-a-rule-it-is-accessible-fromfind-current-apiyou-can-also-access-the-state-history-withfind-history-apia-rule-defines-the-conditions-under-which-a-target-becomes-in-alert-or-notthis-is-a-complete-representation-of-an-alertruletargettype-name-message-stateful-truefalseactive-truefalseemails-notifmode-conditions-operator-operands-attributeid-targetid-name-filter---function-functionparam-valuestr-valuenum-valuesstr-readonly-truefalsefielddescriptiontypetargettypethe-type-of-target-for-which-the-rule-applies-system--offerstringnamethe-name-of-the-rulestringmessagethe-message-used-in-the-alert-event-in-case-of-alertstringstatefulindicates-if-the-rule-is-stateful-ie-generates-and-maintains-states-or-not-ie-only-generates-events-true--false-default-value-to-truebooleanactiveindicates-if-the-rule-is-enabled-or-not-true--falsebooleanemailsthe-list-of-emails-to-send-notifications-tostring-arraynotifmodeevery_time-every-time-an-alert-is-generatedwhen_state_changes-default-only-when-the-state-of-an-alertstate-changeswhen_state_true-only-when-the-state-of-an-alertstate-changes-from-false-to-truewhen_state_false-only-when-the-state-of-an-alertstate-changes-from-true-to-falsein_all_cases-either-when-an-alert-is-generated-or-when-the-state-changesstringconditionsthe-list-of-conditions-to-be-checkedarray-of-conditionsconditionsoperatorthe-operatorstringconditionsoperandsfunctions-of-the-chosen-operator-you-have-to-define-one-or-more-operandsarray-of-operandsconditionsoperandsattributeidan-attributeid-is-composed-of-a-targetid-and-an-attribute-nameattributeidconditionsoperandsattributeidtargetidthe-id-of-the-target-systemid-companyid-or-null-to-consider-the-current-target-the-one-responsible-for-the-rule-evaluationstringconditionsoperandsattributeidnamethe-name-of-theattributeto-considerstringconditionsoperandsattributeidfilterthe-criteria-to-filter-the-data-for-aggregationcriteria-to-select-a-sub-set-of-usage-recordsinofferzone-iftrueonly-the-usages-occured-in-the-offer-zone-will-be-selectedfalsemeans-outside-the-offer-zone-otherwise-nullvalue-no-filter-on-zone-will-be-appliedpartial-iftrueonly-the-partial-usage-sessions-will-be-selectedfalsemeans-only-the-complete-usage-sessions-will-be-selected-otherwise-nullvalue-all-usages-sessions-will-be-selectedmapconditionsoperandsfunctionthe-aggregation-function-to-use-in-case-of-an-aggregated-attributeid-for-instance-aggroomtempdminmaxmeansumcntstringconditionsoperandsvaluestra-string-value-to-compare-with-the-attribute-value-functions-of-the-selected-operatorstringconditionsoperandsvaluenuma-numeric-value-to-compare-with-the-attribute-value-functions-of-the-selected-operatornumberconditionsoperandsvaluesstran-array-of-strings-to-compare-with-the-attribute-value-functions-of-the-selected-operatorarray-of-stringsreadonlyindicates-if-the-rule-is-read-only-or-not-true--falsebooleanhere-is-a-picture-explaining-how-the-notification-mode-worksan-attributeid-is-made-up-of-a-name-and-an-optional-targetid-if-targetid-is-set-the-condition-only-apply-on-the-corresponding-target-if-not-the-conditions-applies-on-all-targets-of-the-companyattributeid-targetid-name-here-is-the-list-of-all-attribute-names-available-when-creating-alert-rules-some-names-are-dynamic-and-use-the-following-parametersdataid-the-id-of-the-data-sent-by-the-system-or-a-data-generated-by-the-platformtimescale-for-aggregated-data-h-hourly-d-daily-m-monthlysystem-attributessystemidsystemnamesystemlabelssystemstatesystemactivitystatesystemlifecyclestatesystemcommstatussystemcommstatuschangedatesystemlastcommdatesystemheartbeatstatesystemheartbeatperiodsystemheartbeaterrorslasystemheartbeatwarningslasystemofferidsystemdefaultstatusreportstatesystemdefaultstatusreportperiodgatewayidgatewayimeigatewaymacaddressgatewayserialnumbersubscriptionidsystem-communicationsystemcommprotocoldatadataid-raw-data-for-instancedataroomtempdatalon_lat-the-gps-position-of-the-system-used-by-geofencing-operatorsaggdataidtimescale-aggregated-data-for-instanceaggdataroomtempdoffer-attributesofferidofferpoolbyteslimit-the-pool-size-limit-of-the-offer-it-is-updated-every-month-according-to-the-current-number-of-active-systemsofferpoolwarnlimit-80-of-the-offer-pool-size-limit-by-defaultsystem-usage-attributessystemusagestatussystemusagerecordvoiceinphonenumbersystemusagerecordvoiceoutphonenumbersystemusagerecordsmssentphonenumbersystemusagerecordsmsreceivedphonenumbersystemusagerecordvisitedcountrysystemusagerecordimeiaggregated-usage-dataaggusagedataidtimescale-see-description-of-theusage-dataaggvoice-attributes-only-available-for-monthly-timescale-because-voice-usages-are-received-from-carriers-few-days-after-consumption-aggvoice_maconditionis-built-with-anoperatorand-a-list-ofoperands-the-first-operand-of-all-operators-has-to-define-theattributeto-check-on-systems-details-about-attributes-can-be-foundherefor-each-operand-one-of-the-following-field-must-be-usedattributeid-valuestr-valuenum-valuesstr-geofencing-operators-use-well-known-text-format-to-define-shapes-polygon-or-pointhere-is-the-list-of-all-operators-with-the-operand-fields-availablename1st-operand2nd-operand3rd-operandchangeattributeidequalsattributeidattributeidvaluestrvaluenumnot_equalsattributeidattributeidvaluestrvaluenumgreater_thanattributeidattributeidvaluenumless_thanattributeidattributeidvaluenumexistsattributeidnot_existsattributeidinattributeidattributeidvaluesstrnot_inattributeidattributeidvaluesstrcontains1attributeidattributeidvaluestrnot_containsattributeidattributeidvaluestrstarts_withattributeidattributeidvaluestrends_withattributeidattributeidvaluestrgeo_withinattributeidnamedata_lon_latvaluestr-a-polygon-described-with-wkt-formatgeo_not_withinattributeidnamedata_lon_latvaluestr-a-polygon-described-with-wkt-formatgeo_distance_too_farattributeidnamedata_lon_latattributeidnamedata_lon_lat-or-a-valuestr-containing-a-point-in-wkt-formatvaluenum-corresponding-to-the-distance-in-kmgeo_distance_too_closeattributeidnamedata_lon_latattributeidnamedata_lon_lat-or-a-valuestr-containing-a-point-in-wkt-formatvaluenum-corresponding-to-the-distance-in-km1the-value-of-the-right-operand-must-be-contained-in-the-value-of-the-left-operand-for-the-rule-to-trigger-this-is-to-support-cases-like-the-left-operand-being-systemattribute-labels-and-the-right-operand-being-the-string-value-of-the-label-that-the-rule-is-checking-fornotethis-differs-from-other-containment-operators-such-as-in-or-geo_within-where-the-spaceset-that-must-contain-the-value-is-specified-as-a-left-operand-insteadan-alert-gathers-all-the-information-required-to-understand-what-happened-on-a-target-for-a-specific-rulethis-is-a-complete-representation-of-an-alertcompanyid-targetid-targettype-ruleid-state-statechangets-attributes-id-name---the-name-of-the-attributevalue---the-value-of-the-attributevaluestr-valuesstr-valuenum-valueagg-min-max-cnt-sum-meanreftimefielddescriptiontypecompanyidthe-id-of-the-company-the-target-belongs-tostringtargetidthe-id-of-the-targetstringtargettypethe-type-of-the-target-system--offerstringruleidthe-id-of-the-rulestringstatetruefalse-to-indicate-if-the-specified-target-is-in-alert-for-the-specified-sateful-rule-or-null-if-the-rule-is-statelessbooleanstatechangetsthe-timestamp-when-the-state-changestimestampattributesthe-list-of-attributes-that-brought-to-the-current-alert-statelist-of-attributeattributesidnamethe-name-of-the-checked-attributestringattributesvaluethe-value-of-the-attribute-that-triggered-the-alert-the-value-depends-on-the-type-it-can-be-a-string-a-list-of-string-a-number-or-an-aggregated-value-when-it-is-an-aggregated-value-only-the-function-used-to-generate-the-value-is-provided-for-instance-if-the-min-function-has-been-used-then-only-the-min-attribute-value-is-returnedattribute-valueapi-methodsalert-rulecreateretrieve-allget-detailsupdatedeletealertfind-currentfind-historynotificationsconfigure-web-hooksget-web-hooksdelete-a-web-hookcreate-ruleapiv2alertrulescreates-a-new-alert-rulesampleparametersexceptionsadditional-informationrequestpost-httpsnaairvantagenetapiv2alertrulescompany74e52f0379ec3b4e75f91b4750824c22content-type-applicationjsontargettype-systemname-daily-usage-exceededmessage-daily-usage-exceededactive-trueemails-machintruccomconditions-operator-greater_thanoperands-attributeidname-agg_data_bytes_total_deltadfunction-sumvaluenum-1024response200-okhttp11-200-okcontent-type-applicationjsonid-0f3919fd1ac0403ab9e70ae2c3729a21targettype-systemname-daily-usage-exceededmessage-daily-usage-exceededactive-trueemails-machintruccomconditions-operator-greater_thanoperands-attributeidname-agg_data_bytes_total_deltadfunction-sumvaluenum-1024readonly-falsenamedescriptionusedefaulttypecompanyset-the-context-companyoptionalcallers-companyuidnamedescriptionalertrulemissingoperatora-condition-must-have-an-operatoralertrulemultipleoperandtypean-operand-can-only-be-one-of-attributeidvaluestrvaluenumvaluesstralertruleinvalidnumberofoperandswrong-number-of-operands-for-the-chosen-operatoralertruleinvalidoperandtypean-operand-is-not-using-the-proper-value-for-the-chosen-operatoralertrulegeoinvalidwktthe-given-wkt-is-not-validalertrulegeobadattributeidthe-geofencing-rule-is-not-using-the-right-attributeid-datalon_latalertruleinvalidfunctionthe-given-function-is-not-availablealertrulemissingattroperandfirst-operand-must-be-an-attributeidalertruletoomanythe-number-of-rules-per-company-is-greater-than-75alertruleconditiontoomanythe-number-of-conditions-per-rule-is-greather-than-10alertruleincorrecttargettypethe-target-type-is-missing-or-invalidalertrulebadvoiceaggusageaggvoice-attributes-can-only-be-used-with-monthly-timescalehttp-methodpostrequires-authenticationyesrate-limitedyesheadersnonepermissionsentitiesalertsrulecreateeditdeleteretrieve-all-rulesapiv2alertrulesretrieves-all-rules-of-your-company-sorted-by-namesampleparametersadditional-informationrequestget-httpsnaairvantagenetapiv2alertrulescompany74e52f0379ec3b4e75f91b4750824c22response200-okhttp11-200-okcontent-type-applicationjsonid-0f3919fd1ac0403ab9e70ae2c3729a21targettype-systemname-daily-usage-exceededmessage-daily-usage-exceededactive-trueemails-machintruccomconditions-operator-greater_thanoperands-attributeidname-agg_data_bytes_total_deltadfunction-sumvaluenum-1024readonly-falsenamedescriptionusedefaulttypecompanyset-the-context-companyoptionalcallers-companyuidhttp-methodgetrequires-authenticationyesrate-limitedyesheadersnonepermissionsentitiesalertsruleviewget-rule-detailsapiv2alertrulesuidreturns-detailed-information-about-the-specified-rulesampleparametersadditional-informationrequestget-httpsnaairvantagenetapiv2alertrules0f3919fd1ac0403ab9e70ae2c3729a21company74e52f0379ec3b4e75f91b4750824c22response200-okhttp11-200-okcontent-type-applicationjsonid-0f3919fd1ac0403ab9e70ae2c3729a21targettype-systemname-daily-usage-exceededmessage-daily-usage-exceededactive-trueemails-machintruccomconditions-operator-greater_thanoperands-attributeidname-agg_data_bytes_total_deltadfunction-sumvaluenum-1024readonly-falsenamedescriptionusedefaulttypecompanyset-the-context-companyoptionalcallers-companyuidhttp-methodgetrequires-authenticationyesrate-limitedyesheadersnonepermissionsentitiesalertsruleviewupdate-ruleapiv2alertrulesuidupdates-the-specified-alert-rule-all-alert-rule-fields-are-exepected-in-the-body-not-only-the-ones-you-want-to-modifysampleparametersexceptionsadditional-informationrequestput-httpsnaairvantagenetapiv2alertrules0f3919fd1ac0403ab9e70ae2c3729a21company74e52f0379ec3b4e75f91b4750824c22content-type-applicationjsontargettype-systemname-temperature-exceededmessage-temperature-exceededactive-trueemails-machintruccomconditions-operator-greater_thanoperands-attributeidname-dataroomtempvaluenum-38readonly-falseresponse200-okhttp11-200-okcontent-type-applicationjsonid-0f3919fd1ac0403ab9e70ae2c3729a21targettype-systemname-temperature-exceededmessage-temperature-exceededactive-trueemails-machintruccomconditions-operator-greater_thanoperands-attributeidname-dataroomtempvaluenum-38readonly-falsenamedescriptionusedefaulttypecompanyset-the-context-companyoptionalcallers-companyuidnamedescriptionalertrulemissingida-rule-id-must-be-specifiedalertruleunknownidthe-specified-rule-is-unknownalertrulemissingoperatora-condition-must-have-an-operatoralertrulemultipleoperandtypean-operand-can-only-be-one-of-attributeidvaluestrvaluenumvaluesstralertruleinvalidnumberofoperandswrong-number-of-operands-for-the-chosen-operatoralertruleinvalidoperandtypean-operand-is-not-using-the-proper-value-for-the-chosen-operatoralertrulegeoinvalidwktthe-given-wkt-is-not-validalertrulegeobadattributeidthe-geofencing-rule-is-not-using-the-right-attributeid-datalon_latalertruleinvalidfunctionthe-given-function-is-not-availablealertrulemissingattroperandfirst-operand-must-be-an-attributeidalertruletoomanythe-number-of-rules-per-company-is-greater-than-75alertruleconditiontoomanythe-number-of-conditions-per-rule-is-greather-than-10alertruleincorrecttargettypethe-target-type-is-missing-or-invalidalertrulebadvoiceaggusageaggvoice-attributes-can-only-be-used-with-monthly-timescalealertruleinvalidoperationforreadonlyoperation-is-invalid-for-read-only-rulehttp-methodputrequires-authenticationyesrate-limitedyesheadersnonepermissionsentitiesalertsrulecreateeditdeletedelete-ruleapiv2alertrulesuiddeletes-the-specified-alert-rulesampleparametersexceptionsadditional-informationrequestdelete-httpsnaairvantagenetapiv2alertrules0f3919fd1ac0403ab9e70ae2c3729a21company74e52f0379ec3b4e75f91b4750824c22response200-okhttp11-200-okcontent-type-applicationjsonsuccessnamedescriptionusedefaulttypecompanyset-the-context-companyoptionalcallers-companyuidnamedescriptionalertrulemissingida-rule-id-must-be-specifiedalertruleunknownidthe-specified-rule-is-unknown-or-read-onlyhttp-methoddeleterequires-authenticationyesrate-limitedyesheadersnonepermissionsentitiesalertsrulecreateeditdeletefind-current-alertsapiv3alertscurrentfinds-current-alertsreturns-a-paginated-list-of-alerts-sorted-by-statechangets-fieldit-is-possible-to-filter-out-the-result-list-using-criteria-parameters-note-that-all-combinations-of-criteria-are-not-possible-here-are-all-the-possible-combinationsby-target-get-apiv3alertscurrentcompany-targetid-offset-sizeby-target-and-rule-get-apiv3alertscurrentcompany-targetid-ruleid-offset-sizeby-state-get-apiv3alertscurrentcompany-state-offset-sizeby-state-and-targettype-get-apiv3alertscurrentcompany-state-targettype-offset-sizeby-state-targettype-and-rule-get-apiv3alertscurrentcompany-state-targettype-ruleid-offset-sizemore-information-about-pagingheresampleparametersadditional-informationrequestget-httpsnaairvantagenetapiv3alertscurrenttargetid91b74e52f04750824c22379ec3b4e75foffset0size100company74e52f0379ec3b4e75f91b4750824c22response200-okhttp11-200-okcontent-type-applicationjsonitems-companyid-74e52f0379ec3b4e75f91b4750824c22targetid-91b74e52f04750824c22379ec3b4e75ftargettype-systemruleid-e52237824c29ecf003b4e7745f91b475state-truestatechangets-1469446036000attributes-id-name-dataroomtempvalue-valuenum-45reftime-1466859976000count-1namedescriptionusedefaulttypetargetidsearch-alert-states-by-target-idoptionalnullstringruleidsearch-alert-states-by-rule-id-must-be-used-together-with-targetid-or-targettype-filteroptionalnullstringstatesearch-alert-states-by-stateoptionalnullbooleantargettypesearch-alert-states-by-target-type-must-be-used-together-with-state-filteroptionalnullstringcompanyset-the-context-companyoptionalcallers-companystringhttp-methodgetrequires-authenticationyesrate-limitedyesheadersnonepermissionsentitiesalertsviewfind-alerts-historyapiv3alertshistoryfinds-stateful-and-stateless-alerts-between-two-datesreturns-a-maxium-of-500-alerts-sorted-by-ts-fieldsampleparametersexceptionsadditional-informationrequestget-httpsnaairvantagenetapiv3alertshistorytargetid91b74e52f04750824c22379ec3b4e75fto1469451977000company74e52f0379ec3b4e75f91b4750824c22response200-okhttp11-200-okcontent-type-applicationjsonitems-companyid-74e52f0379ec3b4e75f91b4750824c22targetid-91b74e52f04750824c22379ec3b4e75ftargettype-systemts-1466859977000ruleid-0f3919fd1ac0403ab9e70ae2c3729a21state-null--null-because-the-rule-is-statelessattributes-id-name-dataroomdooropenedvalue-valuestr-truereftime-1466859976000companyid-74e52f0379ec3b4e75f91b4750824c22targetid-91b74e52f04750824c22379ec3b4e75ftargettype-systemts-1466859967000ruleid-04e70a0fb9ace2c3729a3919fd103a21state-true--not-null-because-the-rule-is-stateful-can-be-true-or-falseattributes-id-name-dataroomtempvalue-valuenum-45reftime-1466859966000namedescriptionusedefaulttypetargetidsearch-alerts-for-the-specified-target-idoptionalstringruleidssearch-alerts-for-the-specified-rule-idsoptionalstring-ruleid-separated-by-fromtosearch-alerts-whose-timestamp-is-between-from-and-toif-asc-is-true-----from---------to------if-asc-is-false-----from---------to------optionalto-now-from-now---90-daystimestampascif-true-sort-alert-by-ts-in-ascending-order-otherwise-in-descending-orderoptionalfalsebooleansizepage-sizeoptional100numbercompanyset-the-context-companymandatorystringnamedescriptionmissingcompanycompany-parameter-is-mandatorysysteminvalidtimerangefrom-paramter-needs-to-be-lower-than-to-parameterhttp-methodgetrequires-authenticationyesrate-limitedyesheadersnonepermissionsentitiesalertsviewconfigure-notification-hooksapiv1alertsrulesuidhooksconfigures-notification-hooks-when-the-alert-rule-is-triggeredwhen-a-rule-get-trigged-a-callback-is-invoked-with-the-contentdescribed-in-subscriber-api-tab-belowsamplecontentsubscriber-apiexceptionsadditionalinformationrequestpost-httpsnaairvantagenetapiv1alertsrulesedcda0dce0fb47948d03fbec5350c18ehookscontent-type-applicationjsoncallback---httpwwwmysitecomcallbackresponse200-okuid--48d03fbec5350c18eedcda0dce0fb479callback---httpwwwmysitecomcallbackfielddescriptionusedefaulttypecallbackthe-url-that-will-be-called-when-the-alert-rule-gettriggerd-the-url-has-the-following-pattern-httpsuserwwwyourhostcomyour_rest_servicemandatory" translate=no>​</a></h2>
+<p>string
+The callback endpoint will be requested with a POST method. Its
+content body is like the content below (JSON format):
+Request
+POST <a href=http://www.yoursite.com/your_callback target=_blank rel="noopener noreferrer" class="">http://www.yoursite.com/your_callback</a>
+Content-Type: application/json
+...
+{
+"name":"event.alert.rule.triggered",
+"date":1385718100163,
+"content": {
+"alert.uid":"f04a77e306de463e919ec39c387fa016",
+"rule.uid":"7316ee643b17473381b61b8ac0afa824",
+"target.uid":"da687e2c39d54bc391633fa9c8d4c0da"
+}
+}
+Response
+The response will not be parsed interpreted. If the
+http status is different from 2xx or 3xx, or if the callback
+takes more that 10 seconds to answer, the endpoint might be
+disactivated.
+Name
+Description
+alert.rule.unknown
+The specified uid does not match with any alert rule.
+notification.endpoint.missing.uri
+The callback url was missing.
+notification.endpoint.invalid.uri
+The callback url format isn't well formed or invalid.
+notification.endpoint.unsupported.protocol
+Only HTTP protocols are supported.
+notification.endpoint.unauthorized.for.readonly.alert.rule
+Notification hooks cannot be configured for read only alert rule.
+HTTP Method
+POST
+Requires Authentication
+Yes
+Rate Limited
+Yes
+Headers
+Content-type: application/json
+Permissions
+entities.alerts.rule.subscribe or entities.alerts.rule.create.edit.delete
+Get Notification Hooks
+/api/v1/alerts/rules/{uid}/hooks
+Gets the list of all notification hooks
+configured for a specific alert rule.
+Sample
+Exceptions
+Additional information
+Request
+GET <a href=https://na.airvantage.net/api/v1/alerts/rules/edcda0dce0fb47948d03fbec5350c18e/hooks target=_blank rel="noopener noreferrer" class="">https://na.airvantage.net/api/v1/alerts/rules/edcda0dce0fb47948d03fbec5350c18e/hooks</a>
+Response
+200 OK
+HTTP/1.1 200 OK
+[
+{
+"callback" : "<a href=http://www.mysite.com/callback target=_blank rel="noopener noreferrer" class="">http://www.mysite.com/callback</a>",
+"uid" : "b88c03b43db74cacaab266e5c4481559"
+},
+{
+"callback" : "<a href=http://www.myothersite.com/callback target=_blank rel="noopener noreferrer" class="">http://www.myothersite.com/callback</a>",
+"uid" : "68c2bf58c6ee4484a92927c7afa9aaf5"
+},
+...
+]
+Name
+Description
+alert.rule.unknown
+The specified uid does not match with any alert rule.
+HTTP Method
+GET
+Requires Authentication
+Yes
+Rate Limited
+Yes
+Headers
+Content-type: application/json
+Permissions
+entities.alerts.rule.subscribe or entities.alerts.rule.view
+Delete Notification Hooks
+/api/v1/alerts/rules/{uid}/hooks/{uid}
+Removes a specific notification hook
+for an operation.
+Sample
+Exceptions
+Additional information
+Request
+DELETE <a href=https://na.airvantage.net/api/v1/alerts/rules/edcda0dce0fb47948d03fbec5350c18e/hooks/4693044f8abc4b078d9fd65a9a3e45d9 target=_blank rel="noopener noreferrer" class="">https://na.airvantage.net/api/v1/alerts/rules/edcda0dce0fb47948d03fbec5350c18e/hooks/4693044f8abc4b078d9fd65a9a3e45d9</a>
+Response
+200 OK
+HTTP/1.1 200 OK
+Content-Length: 0
+Name
+Description
+alert.rule.unknown
+The specified uid does not match with any alert rule.
+HTTP Method
+DELETE
+Requires Authentication
+Yes
+Rate Limited
+Yes
+Headers
+Content-type: application/json
+Permissions
+entities.alerts.rule.subscribe or entities.alerts.rule.create.edit.delete</div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href=https://github.com/andreyjv/personal-av/tree/docs/documentation-revamp/PRD_documentation-revamp/website/docs/reference/api/API-Alert-v2.md target=_blank rel="noopener noreferrer" class=theme-edit-this-page><svg fill=currentColor height=20 width=20 viewBox="0 0 40 40" class=iconEdit_Z9Sw aria-hidden=true><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"/></g></svg>Edit this page</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href=#alertgeneralfgeneral-informationoperationsfsystemoperationsalertapplicationgatewaysettingsdatasetlabelzoneoperatoroffer--optionssystem-configurationsadministrationfcompanypartnerprofileusersubscriptionfsubscriptionorderingfcontactorderproduct-referencealertoverviewoperatorsattributesalert-rulealertwith-airvantage-alert-features-you-can-monitor-all-your-systems-by-definingrulestheserulesare-made-up-ofconditionswhich-checkattributesof-your-systemsaconditionis-built-with-anoperatorand-a-list-ofoperands-details-can-be-foundhereattributesare-information-related-to-your-systemssystem-attributes-like-the-name-the-communication-status-the-gateway-serial-number-etcsystem-data-coming-from-the-device-communicationsand-usage-data-coming-from-the-operatorthe-complete-list-of-attributes-are-availableherewhen-all-the-conditions-of-aruleare-met-for-a-specific-systemif-the-rule-isstateless-analertis-generated-it-is-accessible-from-thefind-history-apiif-the-rule-isstatefulandthe-state-changed-analert-stateis-createdupdated-it-gives-you-the-current-state-true-or-false-of-a-system-against-a-rule-it-is-accessible-fromfind-current-apiyou-can-also-access-the-state-history-withfind-history-apia-rule-defines-the-conditions-under-which-a-target-becomes-in-alert-or-notthis-is-a-complete-representation-of-an-alertruletargettype-name-message-stateful-truefalseactive-truefalseemails-notifmode-conditions-operator-operands-attributeid-targetid-name-filter---function-functionparam-valuestr-valuenum-valuesstr-readonly-truefalsefielddescriptiontypetargettypethe-type-of-target-for-which-the-rule-applies-system--offerstringnamethe-name-of-the-rulestringmessagethe-message-used-in-the-alert-event-in-case-of-alertstringstatefulindicates-if-the-rule-is-stateful-ie-generates-and-maintains-states-or-not-ie-only-generates-events-true--false-default-value-to-truebooleanactiveindicates-if-the-rule-is-enabled-or-not-true--falsebooleanemailsthe-list-of-emails-to-send-notifications-tostring-arraynotifmodeevery_time-every-time-an-alert-is-generatedwhen_state_changes-default-only-when-the-state-of-an-alertstate-changeswhen_state_true-only-when-the-state-of-an-alertstate-changes-from-false-to-truewhen_state_false-only-when-the-state-of-an-alertstate-changes-from-true-to-falsein_all_cases-either-when-an-alert-is-generated-or-when-the-state-changesstringconditionsthe-list-of-conditions-to-be-checkedarray-of-conditionsconditionsoperatorthe-operatorstringconditionsoperandsfunctions-of-the-chosen-operator-you-have-to-define-one-or-more-operandsarray-of-operandsconditionsoperandsattributeidan-attributeid-is-composed-of-a-targetid-and-an-attribute-nameattributeidconditionsoperandsattributeidtargetidthe-id-of-the-target-systemid-companyid-or-null-to-consider-the-current-target-the-one-responsible-for-the-rule-evaluationstringconditionsoperandsattributeidnamethe-name-of-theattributeto-considerstringconditionsoperandsattributeidfilterthe-criteria-to-filter-the-data-for-aggregationcriteria-to-select-a-sub-set-of-usage-recordsinofferzone-iftrueonly-the-usages-occured-in-the-offer-zone-will-be-selectedfalsemeans-outside-the-offer-zone-otherwise-nullvalue-no-filter-on-zone-will-be-appliedpartial-iftrueonly-the-partial-usage-sessions-will-be-selectedfalsemeans-only-the-complete-usage-sessions-will-be-selected-otherwise-nullvalue-all-usages-sessions-will-be-selectedmapconditionsoperandsfunctionthe-aggregation-function-to-use-in-case-of-an-aggregated-attributeid-for-instance-aggroomtempdminmaxmeansumcntstringconditionsoperandsvaluestra-string-value-to-compare-with-the-attribute-value-functions-of-the-selected-operatorstringconditionsoperandsvaluenuma-numeric-value-to-compare-with-the-attribute-value-functions-of-the-selected-operatornumberconditionsoperandsvaluesstran-array-of-strings-to-compare-with-the-attribute-value-functions-of-the-selected-operatorarray-of-stringsreadonlyindicates-if-the-rule-is-read-only-or-not-true--falsebooleanhere-is-a-picture-explaining-how-the-notification-mode-worksan-attributeid-is-made-up-of-a-name-and-an-optional-targetid-if-targetid-is-set-the-condition-only-apply-on-the-corresponding-target-if-not-the-conditions-applies-on-all-targets-of-the-companyattributeid-targetid-name-here-is-the-list-of-all-attribute-names-available-when-creating-alert-rules-some-names-are-dynamic-and-use-the-following-parametersdataid-the-id-of-the-data-sent-by-the-system-or-a-data-generated-by-the-platformtimescale-for-aggregated-data-h-hourly-d-daily-m-monthlysystem-attributessystemidsystemnamesystemlabelssystemstatesystemactivitystatesystemlifecyclestatesystemcommstatussystemcommstatuschangedatesystemlastcommdatesystemheartbeatstatesystemheartbeatperiodsystemheartbeaterrorslasystemheartbeatwarningslasystemofferidsystemdefaultstatusreportstatesystemdefaultstatusreportperiodgatewayidgatewayimeigatewaymacaddressgatewayserialnumbersubscriptionidsystem-communicationsystemcommprotocoldatadataid-raw-data-for-instancedataroomtempdatalon_lat-the-gps-position-of-the-system-used-by-geofencing-operatorsaggdataidtimescale-aggregated-data-for-instanceaggdataroomtempdoffer-attributesofferidofferpoolbyteslimit-the-pool-size-limit-of-the-offer-it-is-updated-every-month-according-to-the-current-number-of-active-systemsofferpoolwarnlimit-80-of-the-offer-pool-size-limit-by-defaultsystem-usage-attributessystemusagestatussystemusagerecordvoiceinphonenumbersystemusagerecordvoiceoutphonenumbersystemusagerecordsmssentphonenumbersystemusagerecordsmsreceivedphonenumbersystemusagerecordvisitedcountrysystemusagerecordimeiaggregated-usage-dataaggusagedataidtimescale-see-description-of-theusage-dataaggvoice-attributes-only-available-for-monthly-timescale-because-voice-usages-are-received-from-carriers-few-days-after-consumption-aggvoice_maconditionis-built-with-anoperatorand-a-list-ofoperands-the-first-operand-of-all-operators-has-to-define-theattributeto-check-on-systems-details-about-attributes-can-be-foundherefor-each-operand-one-of-the-following-field-must-be-usedattributeid-valuestr-valuenum-valuesstr-geofencing-operators-use-well-known-text-format-to-define-shapes-polygon-or-pointhere-is-the-list-of-all-operators-with-the-operand-fields-availablename1st-operand2nd-operand3rd-operandchangeattributeidequalsattributeidattributeidvaluestrvaluenumnot_equalsattributeidattributeidvaluestrvaluenumgreater_thanattributeidattributeidvaluenumless_thanattributeidattributeidvaluenumexistsattributeidnot_existsattributeidinattributeidattributeidvaluesstrnot_inattributeidattributeidvaluesstrcontains1attributeidattributeidvaluestrnot_containsattributeidattributeidvaluestrstarts_withattributeidattributeidvaluestrends_withattributeidattributeidvaluestrgeo_withinattributeidnamedata_lon_latvaluestr-a-polygon-described-with-wkt-formatgeo_not_withinattributeidnamedata_lon_latvaluestr-a-polygon-described-with-wkt-formatgeo_distance_too_farattributeidnamedata_lon_latattributeidnamedata_lon_lat-or-a-valuestr-containing-a-point-in-wkt-formatvaluenum-corresponding-to-the-distance-in-kmgeo_distance_too_closeattributeidnamedata_lon_latattributeidnamedata_lon_lat-or-a-valuestr-containing-a-point-in-wkt-formatvaluenum-corresponding-to-the-distance-in-km1the-value-of-the-right-operand-must-be-contained-in-the-value-of-the-left-operand-for-the-rule-to-trigger-this-is-to-support-cases-like-the-left-operand-being-systemattribute-labels-and-the-right-operand-being-the-string-value-of-the-label-that-the-rule-is-checking-fornotethis-differs-from-other-containment-operators-such-as-in-or-geo_within-where-the-spaceset-that-must-contain-the-value-is-specified-as-a-left-operand-insteadan-alert-gathers-all-the-information-required-to-understand-what-happened-on-a-target-for-a-specific-rulethis-is-a-complete-representation-of-an-alertcompanyid-targetid-targettype-ruleid-state-statechangets-attributes-id-name---the-name-of-the-attributevalue---the-value-of-the-attributevaluestr-valuesstr-valuenum-valueagg-min-max-cnt-sum-meanreftimefielddescriptiontypecompanyidthe-id-of-the-company-the-target-belongs-tostringtargetidthe-id-of-the-targetstringtargettypethe-type-of-the-target-system--offerstringruleidthe-id-of-the-rulestringstatetruefalse-to-indicate-if-the-specified-target-is-in-alert-for-the-specified-sateful-rule-or-null-if-the-rule-is-statelessbooleanstatechangetsthe-timestamp-when-the-state-changestimestampattributesthe-list-of-attributes-that-brought-to-the-current-alert-statelist-of-attributeattributesidnamethe-name-of-the-checked-attributestringattributesvaluethe-value-of-the-attribute-that-triggered-the-alert-the-value-depends-on-the-type-it-can-be-a-string-a-list-of-string-a-number-or-an-aggregated-value-when-it-is-an-aggregated-value-only-the-function-used-to-generate-the-value-is-provided-for-instance-if-the-min-function-has-been-used-then-only-the-min-attribute-value-is-returnedattribute-valueapi-methodsalert-rulecreateretrieve-allget-detailsupdatedeletealertfind-currentfind-historynotificationsconfigure-web-hooksget-web-hooksdelete-a-web-hookcreate-ruleapiv2alertrulescreates-a-new-alert-rulesampleparametersexceptionsadditional-informationrequestpost-httpsnaairvantagenetapiv2alertrulescompany74e52f0379ec3b4e75f91b4750824c22content-type-applicationjsontargettype-systemname-daily-usage-exceededmessage-daily-usage-exceededactive-trueemails-machintruccomconditions-operator-greater_thanoperands-attributeidname-agg_data_bytes_total_deltadfunction-sumvaluenum-1024response200-okhttp11-200-okcontent-type-applicationjsonid-0f3919fd1ac0403ab9e70ae2c3729a21targettype-systemname-daily-usage-exceededmessage-daily-usage-exceededactive-trueemails-machintruccomconditions-operator-greater_thanoperands-attributeidname-agg_data_bytes_total_deltadfunction-sumvaluenum-1024readonly-falsenamedescriptionusedefaulttypecompanyset-the-context-companyoptionalcallers-companyuidnamedescriptionalertrulemissingoperatora-condition-must-have-an-operatoralertrulemultipleoperandtypean-operand-can-only-be-one-of-attributeidvaluestrvaluenumvaluesstralertruleinvalidnumberofoperandswrong-number-of-operands-for-the-chosen-operatoralertruleinvalidoperandtypean-operand-is-not-using-the-proper-value-for-the-chosen-operatoralertrulegeoinvalidwktthe-given-wkt-is-not-validalertrulegeobadattributeidthe-geofencing-rule-is-not-using-the-right-attributeid-datalon_latalertruleinvalidfunctionthe-given-function-is-not-availablealertrulemissingattroperandfirst-operand-must-be-an-attributeidalertruletoomanythe-number-of-rules-per-company-is-greater-than-75alertruleconditiontoomanythe-number-of-conditions-per-rule-is-greather-than-10alertruleincorrecttargettypethe-target-type-is-missing-or-invalidalertrulebadvoiceaggusageaggvoice-attributes-can-only-be-used-with-monthly-timescalehttp-methodpostrequires-authenticationyesrate-limitedyesheadersnonepermissionsentitiesalertsrulecreateeditdeleteretrieve-all-rulesapiv2alertrulesretrieves-all-rules-of-your-company-sorted-by-namesampleparametersadditional-informationrequestget-httpsnaairvantagenetapiv2alertrulescompany74e52f0379ec3b4e75f91b4750824c22response200-okhttp11-200-okcontent-type-applicationjsonid-0f3919fd1ac0403ab9e70ae2c3729a21targettype-systemname-daily-usage-exceededmessage-daily-usage-exceededactive-trueemails-machintruccomconditions-operator-greater_thanoperands-attributeidname-agg_data_bytes_total_deltadfunction-sumvaluenum-1024readonly-falsenamedescriptionusedefaulttypecompanyset-the-context-companyoptionalcallers-companyuidhttp-methodgetrequires-authenticationyesrate-limitedyesheadersnonepermissionsentitiesalertsruleviewget-rule-detailsapiv2alertrulesuidreturns-detailed-information-about-the-specified-rulesampleparametersadditional-informationrequestget-httpsnaairvantagenetapiv2alertrules0f3919fd1ac0403ab9e70ae2c3729a21company74e52f0379ec3b4e75f91b4750824c22response200-okhttp11-200-okcontent-type-applicationjsonid-0f3919fd1ac0403ab9e70ae2c3729a21targettype-systemname-daily-usage-exceededmessage-daily-usage-exceededactive-trueemails-machintruccomconditions-operator-greater_thanoperands-attributeidname-agg_data_bytes_total_deltadfunction-sumvaluenum-1024readonly-falsenamedescriptionusedefaulttypecompanyset-the-context-companyoptionalcallers-companyuidhttp-methodgetrequires-authenticationyesrate-limitedyesheadersnonepermissionsentitiesalertsruleviewupdate-ruleapiv2alertrulesuidupdates-the-specified-alert-rule-all-alert-rule-fields-are-exepected-in-the-body-not-only-the-ones-you-want-to-modifysampleparametersexceptionsadditional-informationrequestput-httpsnaairvantagenetapiv2alertrules0f3919fd1ac0403ab9e70ae2c3729a21company74e52f0379ec3b4e75f91b4750824c22content-type-applicationjsontargettype-systemname-temperature-exceededmessage-temperature-exceededactive-trueemails-machintruccomconditions-operator-greater_thanoperands-attributeidname-dataroomtempvaluenum-38readonly-falseresponse200-okhttp11-200-okcontent-type-applicationjsonid-0f3919fd1ac0403ab9e70ae2c3729a21targettype-systemname-temperature-exceededmessage-temperature-exceededactive-trueemails-machintruccomconditions-operator-greater_thanoperands-attributeidname-dataroomtempvaluenum-38readonly-falsenamedescriptionusedefaulttypecompanyset-the-context-companyoptionalcallers-companyuidnamedescriptionalertrulemissingida-rule-id-must-be-specifiedalertruleunknownidthe-specified-rule-is-unknownalertrulemissingoperatora-condition-must-have-an-operatoralertrulemultipleoperandtypean-operand-can-only-be-one-of-attributeidvaluestrvaluenumvaluesstralertruleinvalidnumberofoperandswrong-number-of-operands-for-the-chosen-operatoralertruleinvalidoperandtypean-operand-is-not-using-the-proper-value-for-the-chosen-operatoralertrulegeoinvalidwktthe-given-wkt-is-not-validalertrulegeobadattributeidthe-geofencing-rule-is-not-using-the-right-attributeid-datalon_latalertruleinvalidfunctionthe-given-function-is-not-availablealertrulemissingattroperandfirst-operand-must-be-an-attributeidalertruletoomanythe-number-of-rules-per-company-is-greater-than-75alertruleconditiontoomanythe-number-of-conditions-per-rule-is-greather-than-10alertruleincorrecttargettypethe-target-type-is-missing-or-invalidalertrulebadvoiceaggusageaggvoice-attributes-can-only-be-used-with-monthly-timescalealertruleinvalidoperationforreadonlyoperation-is-invalid-for-read-only-rulehttp-methodputrequires-authenticationyesrate-limitedyesheadersnonepermissionsentitiesalertsrulecreateeditdeletedelete-ruleapiv2alertrulesuiddeletes-the-specified-alert-rulesampleparametersexceptionsadditional-informationrequestdelete-httpsnaairvantagenetapiv2alertrules0f3919fd1ac0403ab9e70ae2c3729a21company74e52f0379ec3b4e75f91b4750824c22response200-okhttp11-200-okcontent-type-applicationjsonsuccessnamedescriptionusedefaulttypecompanyset-the-context-companyoptionalcallers-companyuidnamedescriptionalertrulemissingida-rule-id-must-be-specifiedalertruleunknownidthe-specified-rule-is-unknown-or-read-onlyhttp-methoddeleterequires-authenticationyesrate-limitedyesheadersnonepermissionsentitiesalertsrulecreateeditdeletefind-current-alertsapiv3alertscurrentfinds-current-alertsreturns-a-paginated-list-of-alerts-sorted-by-statechangets-fieldit-is-possible-to-filter-out-the-result-list-using-criteria-parameters-note-that-all-combinations-of-criteria-are-not-possible-here-are-all-the-possible-combinationsby-target-get-apiv3alertscurrentcompany-targetid-offset-sizeby-target-and-rule-get-apiv3alertscurrentcompany-targetid-ruleid-offset-sizeby-state-get-apiv3alertscurrentcompany-state-offset-sizeby-state-and-targettype-get-apiv3alertscurrentcompany-state-targettype-offset-sizeby-state-targettype-and-rule-get-apiv3alertscurrentcompany-state-targettype-ruleid-offset-sizemore-information-about-pagingheresampleparametersadditional-informationrequestget-httpsnaairvantagenetapiv3alertscurrenttargetid91b74e52f04750824c22379ec3b4e75foffset0size100company74e52f0379ec3b4e75f91b4750824c22response200-okhttp11-200-okcontent-type-applicationjsonitems-companyid-74e52f0379ec3b4e75f91b4750824c22targetid-91b74e52f04750824c22379ec3b4e75ftargettype-systemruleid-e52237824c29ecf003b4e7745f91b475state-truestatechangets-1469446036000attributes-id-name-dataroomtempvalue-valuenum-45reftime-1466859976000count-1namedescriptionusedefaulttypetargetidsearch-alert-states-by-target-idoptionalnullstringruleidsearch-alert-states-by-rule-id-must-be-used-together-with-targetid-or-targettype-filteroptionalnullstringstatesearch-alert-states-by-stateoptionalnullbooleantargettypesearch-alert-states-by-target-type-must-be-used-together-with-state-filteroptionalnullstringcompanyset-the-context-companyoptionalcallers-companystringhttp-methodgetrequires-authenticationyesrate-limitedyesheadersnonepermissionsentitiesalertsviewfind-alerts-historyapiv3alertshistoryfinds-stateful-and-stateless-alerts-between-two-datesreturns-a-maxium-of-500-alerts-sorted-by-ts-fieldsampleparametersexceptionsadditional-informationrequestget-httpsnaairvantagenetapiv3alertshistorytargetid91b74e52f04750824c22379ec3b4e75fto1469451977000company74e52f0379ec3b4e75f91b4750824c22response200-okhttp11-200-okcontent-type-applicationjsonitems-companyid-74e52f0379ec3b4e75f91b4750824c22targetid-91b74e52f04750824c22379ec3b4e75ftargettype-systemts-1466859977000ruleid-0f3919fd1ac0403ab9e70ae2c3729a21state-null--null-because-the-rule-is-statelessattributes-id-name-dataroomdooropenedvalue-valuestr-truereftime-1466859976000companyid-74e52f0379ec3b4e75f91b4750824c22targetid-91b74e52f04750824c22379ec3b4e75ftargettype-systemts-1466859967000ruleid-04e70a0fb9ace2c3729a3919fd103a21state-true--not-null-because-the-rule-is-stateful-can-be-true-or-falseattributes-id-name-dataroomtempvalue-valuenum-45reftime-1466859966000namedescriptionusedefaulttypetargetidsearch-alerts-for-the-specified-target-idoptionalstringruleidssearch-alerts-for-the-specified-rule-idsoptionalstring-ruleid-separated-by-fromtosearch-alerts-whose-timestamp-is-between-from-and-toif-asc-is-true-----from---------to------if-asc-is-false-----from---------to------optionalto-now-from-now---90-daystimestampascif-true-sort-alert-by-ts-in-ascending-order-otherwise-in-descending-orderoptionalfalsebooleansizepage-sizeoptional100numbercompanyset-the-context-companymandatorystringnamedescriptionmissingcompanycompany-parameter-is-mandatorysysteminvalidtimerangefrom-paramter-needs-to-be-lower-than-to-parameterhttp-methodgetrequires-authenticationyesrate-limitedyesheadersnonepermissionsentitiesalertsviewconfigure-notification-hooksapiv1alertsrulesuidhooksconfigures-notification-hooks-when-the-alert-rule-is-triggeredwhen-a-rule-get-trigged-a-callback-is-invoked-with-the-contentdescribed-in-subscriber-api-tab-belowsamplecontentsubscriber-apiexceptionsadditionalinformationrequestpost-httpsnaairvantagenetapiv1alertsrulesedcda0dce0fb47948d03fbec5350c18ehookscontent-type-applicationjsoncallback---httpwwwmysitecomcallbackresponse200-okuid--48d03fbec5350c18eedcda0dce0fb479callback---httpwwwmysitecomcallbackfielddescriptionusedefaulttypecallbackthe-url-that-will-be-called-when-the-alert-rule-gettriggerd-the-url-has-the-following-pattern-httpsuserwwwyourhostcomyour_rest_servicemandatory class="table-of-contents__link toc-highlight">Alert
+General
+f
+General Information
+Operations
+f
+System
+Operations
+Alert
+Application
+Gateway
+Settings
+Dataset
+Label
+Zone
+Operator
+Offer & Options
+System Configurations
+Administration
+f
+Company
+Partner
+Profile
+User
+Subscription
+f
+Subscription
+Ordering
+f
+Contact
+Order
+Product Reference
+Alert
+Overview
+Operators
+Attributes
+Alert Rule
+Alert
+With AirVantage Alert features, you can monitor all your systems by defining
+rules
+.
+These
+rules
+are made up of
+conditions
+which check
+attributes
+of your systems.
+A
+condition
+is built with an
+operator
+and a list of
+operands
+. Details can be found
+here
+.
+Attributes
+are information related to your systems:
+system attributes like the name, the communication status, the gateway serial number, etc.
+system data coming from the device communications,
+and usage data coming from the operator.
+The complete list of attributes are available
+here
+When all the conditions of a
+rule
+are met for a specific system:
+If the rule is
+stateless
+, an
+alert
+is generated. It is accessible from the
+Find history API.
+If the rule is
+stateful
+and
+the state changed
+, an
+alert state
+is created/updated. It gives you the current state (true or false) of a system against a rule. It is accessible from
+Find current API.
+You can also access the state history with
+Find history API.
+A rule defines the conditions under which a target becomes in alert or not.
+This is a complete representation of an AlertRule.
+{
+"targetType": "",
+"name": "",
+"message": "",
+"stateful": true|false,
+"active": true|false,
+"emails": [""],
+"notifMode": "",
+"conditions": [{
+"operator": "",
+"operands": [{
+"attributeId": {
+"targetId": "",
+"name": "",
+"filter": { "": }
+},
+"function": "",
+"functionParam": "",
+"valueStr": "",
+"valueNum": ,
+"valuesStr": [""]
+}]
+}],
+"readOnly": true|false
+}
+Field
+Description
+Type
+targetType
+The type of target for which the rule applies: SYSTEM | OFFER
+string
+name
+The name of the rule
+string
+message
+The message used in the Alert event in case of alert.
+string
+stateful
+Indicates if the rule is stateful (ie. generates and maintains states) or not (ie. only generates events): true | false. Default value to true.
+boolean
+active
+Indicates if the rule is enabled or not: true | false
+boolean
+emails
+The list of emails to send notifications to.
+string array
+notifMode
+EVERY_TIME: every time an alert is generated.
+WHEN_STATE_CHANGES: default, only when the state of an AlertState changes.
+WHEN_STATE_TRUE: only when the state of an AlertState changes from false to true.
+WHEN_STATE_FALSE: only when the state of an AlertState changes from true to false.
+IN_ALL_CASES: either when an alert is generated or when the state changes.
+string
+conditions
+The list of conditions to be checked.
+array of conditions
+conditions.operator
+The operator.
+string
+conditions.operands
+Functions of the chosen operator, you have to define one or more operands.
+array of operands
+conditions.operands.attributeId
+An attributeId is composed of a targetId and an attribute name.
+attributeId
+conditions.operands.attributeId.targetId
+The id of the target: systemId, companyId or null to consider the current target (the one responsible for the rule evaluation)
+string
+conditions.operands.attributeId.name
+The name of the
+attribute
+to consider
+string
+conditions.operands.attributeId.filter
+The criteria to filter the data for aggregation.
+Criteria to select a sub-set of usage records:
+"inOfferZone": if
+true
+only the usages occured in the offer zone will be selected,
+false
+means outside the offer zone, otherwise (
+null
+value) no filter on zone will be applied.
+"partial": if
+true
+only the partial usage sessions will be selected,
+false
+means only the complete usage sessions will be selected, otherwise (
+null
+value) all usages sessions will be selected.
+map
+conditions.operands.function
+The aggregation function to use in case of an aggregated attributeId (for instance AGG.room.temp/D)
+MIN
+MAX
+MEAN
+SUM
+CNT
+string
+conditions.operands.valueStr
+A string value to compare with the attribute value functions of the selected operator.
+string
+conditions.operands.valueNum
+A numeric value to compare with the attribute value functions of the selected operator.
+number
+conditions.operands.valuesStr
+An array of strings to compare with the attribute value functions of the selected operator.
+array of strings
+readOnly
+Indicates if the rule is read only or not: true | false.
+boolean
+Here is a picture explaining how the notification mode works.
+An attributeId is made up of a name and an optional targetId. If targetId is set, the condition only apply on the corresponding target, if not, the conditions applies on all targets of the company.
+"attributeId": {
+"targetId": "",
+"name": ""
+}
+Here is the list of all attribute names available when creating alert rules. Some names are dynamic and use the following parameters:
+{dataId}
+: the id of the data sent by the system or a data generated by the platform.
+{timeScale}
+: for aggregated data, H (hourly), D (daily), M (monthly)
+System attributes:
+system.id
+system.name
+system.labels
+system.state
+system.activityState
+system.lifeCycleState
+system.commStatus
+system.commStatus.changeDate
+system.lastCommDate
+system.heartbeat.state
+system.heartbeat.period
+system.heartbeat.errorSLA
+system.heartbeat.warningSLA
+system.offerId
+system.defaultStatusReportState
+system.defaultStatusReportPeriod
+gateway.id
+gateway.imei
+gateway.mac.address
+gateway.serial.number
+subscription.id
+System communication:
+system.comm.protocol
+DATA.
+{dataId}
+: raw data, for instance
+DATA.room.temp
+DATA.<em>LON_LAT: the GPS position of the system, used by geofencing operators
+AGG.
+{dataId}
+/
+{timeScale}
+: aggregated data, for instance
+AGG.data.room.temp/D
+Offer attributes:
+offer.id
+offer.poolBytesLimit: the pool size limit of the offer. It is updated every month according to the current number of active systems.
+offer.poolWarnLimit: 80% of the offer pool size limit by default.
+System usage attributes:
+system.usage.status
+system.usage.record.voice.in.phone.number
+system.usage.record.voice.out.phone.number
+system.usage.record.sms.sent.phone.number
+system.usage.record.sms.received.phone.number
+system.usage.record.visited.country
+system.usage.record.imei
+Aggregated usage data:
+AGG.
+{usageDataId}
+/
+{timeScale}
+: see description of the
+usage data
+AGG.VOICE</em>* attributes, only available for monthly timescale because voice usages are received from carriers few days after consumption: AGG.VOICE_<em>/
+M
+.
+A
+condition
+is built with an
+operator
+and a list of
+operands
+. The first operand of all operators has to define the
+attribute
+to check on systems. Details about attributes can be found
+here
+For each operand, one of the following field must be used.
+{
+"attributeId": {},
+"valueStr": "",
+"valueNum": ,
+"valuesStr": [""]
+}
+Geofencing operators use Well-Known-Text format to define shapes (POLYGON or POINT).
+Here is the list of all operators with the operand fields available.
+Name
+1st operand
+2nd operand
+3rd operand
+CHANGE
+attributeId
+EQUALS
+attributeId
+attributeId/valueStr/valueNum
+NOT_EQUALS
+attributeId
+attributeId/valueStr/valueNum
+GREATER_THAN
+attributeId
+attributeId/valueNum
+LESS_THAN
+attributeId
+attributeId/valueNum
+EXISTS
+attributeId
+NOT_EXISTS
+attributeId
+IN
+attributeId
+attributeId/valuesStr
+NOT_IN
+attributeId
+attributeId/valuesStr
+CONTAINS
+1
+attributeId
+attributeId/valueStr
+NOT_CONTAINS
+attributeId
+attributeId/valueStr
+STARTS_WITH
+attributeId
+attributeId/valueStr
+ENDS_WITH
+attributeId
+attributeId/valueStr
+GEO_WITHIN
+attributeId(name=DATA._LON_LAT)
+valueStr: a POLYGON described with WKT format
+GEO_NOT_WITHIN
+attributeId(name=DATA._LON_LAT)
+valueStr: a POLYGON described with WKT format
+GEO_DISTANCE_TOO_FAR
+attributeId(name=DATA._LON_LAT)
+attributeId(name=DATA._LON_LAT) or a valueStr containing a POINT in WKT format
+valueNum corresponding to the distance in km
+GEO_DISTANCE_TOO_CLOSE
+attributeId(name=DATA._LON_LAT)
+attributeId(name=DATA._LON_LAT) or a valueStr containing a POINT in WKT format
+valueNum corresponding to the distance in km
+1
+The value of the right operand must be contained in the value of the left operand for the rule to trigger (this is to support cases like the left operand being “systemAttribute: labels” and the right operand being the string value of the label that the rule is checking for).
+Note:
+this differs from other containment operators such as IN or GEO_WITHIN where the space/set that must contain the value is specified as a left operand instead.
+An alert gathers all the information required to understand what happened on a target for a specific rule.
+This is a complete representation of an Alert
+{
+"companyId": "",
+"targetId": "",
+"targetType": "",
+"ruleId": ""
+"state": ,
+"stateChangeTs": ,
+"attributes": [{
+"id": {
+"name": "" // the name of the attribute
+},
+"value": { // the value of the attribute
+"valueStr": "",
+"valuesStr": [""],
+"valueNum": ,
+"valueAgg": {
+"min": ,
+"max": ,
+"cnt": ,
+"sum": ,
+"mean":
+}
+},
+"refTime":
+}]
+}
+Field
+Description
+Type
+companyId
+The id of the company the target belongs to
+string
+targetId
+The id of the target
+string
+targetType
+The type of the target: SYSTEM | OFFER
+string
+ruleId
+The id of the rule
+string
+state
+True/False to indicate if the specified target is in alert for the specified sateful rule, or null if the rule is stateless
+boolean
+stateChangeTs
+The timestamp when the state changes
+timestamp
+attributes
+The list of attributes that brought to the current alert state
+list of Attribute
+attributes.id.name
+The name of the checked attribute
+string
+attributes.value
+The value of the attribute that triggered the alert. The value depends on the type. It can be a string, a list of string, a number or an aggregated value. When it is an aggregated value only the function used to generate the value is provided. For instance if the 'min' function has been used then only the 'min' attribute value is returned.
+Attribute value
+API Methods
+Alert Rule
+Create
+Retrieve all
+Get details
+Update
+Delete
+Alert
+Find current
+Find history
+Notifications
+Configure Web hooks
+Get Web hooks
+Delete a Web hook
+Create rule
+/api/v2/alertrules
+Creates a new alert rule
+Sample
+Parameters
+Exceptions
+Additional Information
+Request
+POST https://na.airvantage.net/api/v2/alertrules?company=74e52f0379ec3b4e75f91b4750824c22
+Content-Type: application/json
+...
+{
+"targetType": "SYSTEM",
+"name": "Daily usage exceeded",
+"message": "Daily usage exceeded",
+"active": true,
+"emails": ["machin@truc.com"],
+"conditions": [{
+"operator": "GREATER_THAN",
+"operands": [
+{
+"attributeId":
+{
+"name": "AGG._DATA_BYTES_TOTAL_DELTA/D"
+},
+"function": "SUM"
+},
+{
+"valueNum": 1024
+}
+]
+}]
+}
+Response
+200 OK
+HTTP/1.1 200 OK
+Content-Type: application/json
+...
+{
+"id": "0f3919fd1ac0403ab9e70ae2c3729a21",
+"targetType": "SYSTEM",
+"name": "Daily usage exceeded",
+"message": "Daily usage exceeded",
+"active": true,
+"emails": ["machin@truc.com"],
+"conditions": [{
+"operator": "GREATER_THAN",
+"operands": [
+{
+"attributeId":
+{
+"name": "AGG._DATA_BYTES_TOTAL_DELTA/D"
+},
+"function": "SUM"
+},
+{
+"valueNum": 1024
+}
+]
+}],
+"readOnly": false
+}
+Name
+Description
+Use
+Default
+Type
+company
+Set the context company.
+optional
+caller's company
+uid
+Name
+Description
+alert.rule.missing.operator
+A condition must have an operator
+alert.rule.multiple.operand.type
+An operand can only be one of attributeId/valueStr/valueNum/valuesStr
+alert.rule.invalid.number.of.operands
+Wrong number of operands for the chosen operator
+alert.rule.invalid.operand.type
+An operand is not using the proper value for the chosen operator
+alert.rule.geo.invalid.wkt
+The given WKT is not valid
+alert.rule.geo.bad.attribute.id
+The geofencing rule is not using the right attributeId (DATA.<em>LON_LAT)
+alert.rule.invalid.function
+The given function is not available
+alert.rule.missing.attr.operand
+First operand must be an attributeId
+alert.rule.too.many
+The number of rules per company is greater than 75
+alert.rule.condition.too.many
+The number of conditions per rule is greather than 10
+alert.rule.incorrect.target.type
+The target type is missing or invalid
+alert.rule.bad.voice.agg.usage
+AGG.VOICE</em></em> attributes can only be used with monthly timescale
+HTTP Method
+POST
+Requires Authentication
+Yes
+Rate Limited
+Yes
+Headers
+None
+Permissions
+entities.alerts.rule.create.edit.delete
+Retrieve all rules
+/api/v2/alertrules
+Retrieves all rules of your company sorted by name.
+Sample
+Parameters
+Additional Information
+Request
+GET https://na.airvantage.net/api/v2/alertrules?company=74e52f0379ec3b4e75f91b4750824c22
+Response
+200 OK
+HTTP/1.1 200 OK
+Content-Type: application/json
+...
+[
+{
+"id": "0f3919fd1ac0403ab9e70ae2c3729a21",
+"targetType": "SYSTEM",
+"name": "Daily usage exceeded",
+"message": "Daily usage exceeded",
+"active": true,
+"emails": ["machin@truc.com"],
+"conditions": [{
+"operator": "GREATER_THAN",
+"operands": [
+{
+"attributeId":
+{
+"name": "AGG._DATA_BYTES_TOTAL_DELTA/D"
+},
+"function": "SUM"
+},
+{
+"valueNum": 1024
+}
+]
+}],
+"readOnly": false
+},
+...
+]
+Name
+Description
+Use
+Default
+Type
+company
+Set the context company.
+optional
+caller's company
+uid
+HTTP Method
+GET
+Requires Authentication
+Yes
+Rate Limited
+Yes
+Headers
+None
+Permissions
+entities.alerts.rule.view
+Get rule details
+/api/v2/alertrules/{uid}
+Returns detailed information about the specified rule.
+Sample
+Parameters
+Additional Information
+Request
+GET https://na.airvantage.net/api/v2/alertrules/0f3919fd1ac0403ab9e70ae2c3729a21?company=74e52f0379ec3b4e75f91b4750824c22
+Response
+200 OK
+HTTP/1.1 200 OK
+Content-Type: application/json
+...
+{
+"id": "0f3919fd1ac0403ab9e70ae2c3729a21",
+"targetType": "SYSTEM",
+"name": "Daily usage exceeded",
+"message": "Daily usage exceeded",
+"active": true,
+"emails": ["machin@truc.com"],
+"conditions": [{
+"operator": "GREATER_THAN",
+"operands": [
+{
+"attributeId":
+{
+"name": "AGG._DATA_BYTES_TOTAL_DELTA/D"
+},
+"function": "SUM"
+},
+{
+"valueNum": 1024
+}
+]
+}],
+"readOnly": false
+}
+Name
+Description
+Use
+Default
+Type
+company
+Set the context company.
+optional
+caller's company
+uid
+HTTP Method
+GET
+Requires Authentication
+Yes
+Rate Limited
+Yes
+Headers
+None
+Permissions
+entities.alerts.rule.view
+Update rule
+/api/v2/alertrules/{uid}
+Updates the specified alert rule. All alert rule fields are exepected in the body, not only the ones you want to modify.
+Sample
+Parameters
+Exceptions
+Additional Information
+Request
+PUT https://na.airvantage.net/api/v2/alertrules/0f3919fd1ac0403ab9e70ae2c3729a21?company=74e52f0379ec3b4e75f91b4750824c22
+Content-Type: application/json
+...
+{
+"targetType": "SYSTEM",
+"name": "Temperature exceeded",
+"message": "Temperature exceeded",
+"active": true,
+"emails": ["machin@truc.com"],
+"conditions": [{
+"operator": "GREATER_THAN",
+"operands": [
+{
+"attributeId":
+{
+"name": "DATA.room.temp"
+}
+},
+{
+"valueNum": 38
+}
+]
+}],
+"readOnly": false
+}
+Response
+200 OK
+HTTP/1.1 200 OK
+Content-Type: application/json
+...
+{
+"id": "0f3919fd1ac0403ab9e70ae2c3729a21",
+"targetType": "SYSTEM",
+"name": "Temperature exceeded",
+"message": "Temperature exceeded",
+"active": true,
+"emails": ["machin@truc.com"],
+"conditions": [{
+"operator": "GREATER_THAN",
+"operands": [
+{
+"attributeId":
+{
+"name": "DATA.room.temp"
+}
+},
+{
+"valueNum": 38
+}
+]
+}],
+"readOnly": false
+}
+Name
+Description
+Use
+Default
+Type
+company
+Set the context company.
+optional
+caller's company
+uid
+Name
+Description
+alert.rule.missing.id
+A rule id must be specified.
+alert.rule.unknown.id
+The specified rule is unknown.
+alert.rule.missing.operator
+A condition must have an operator
+alert.rule.multiple.operand.type
+An operand can only be one of attributeId/valueStr/valueNum/valuesStr
+alert.rule.invalid.number.of.operands
+Wrong number of operands for the chosen operator
+alert.rule.invalid.operand.type
+An operand is not using the proper value for the chosen operator
+alert.rule.geo.invalid.wkt
+The given WKT is not valid
+alert.rule.geo.bad.attribute.id
+The geofencing rule is not using the right attributeId (DATA.<em>LON_LAT)
+alert.rule.invalid.function
+The given function is not available
+alert.rule.missing.attr.operand
+First operand must be an attributeId
+alert.rule.too.many
+The number of rules per company is greater than 75
+alert.rule.condition.too.many
+The number of conditions per rule is greather than 10
+alert.rule.incorrect.target.type
+The target type is missing or invalid
+alert.rule.bad.voice.agg.usage
+AGG.VOICE</em>* attributes can only be used with monthly timescale
+alert.rule.invalid.operation.for.readonly
+Operation is invalid for read only rule
+HTTP Method
+PUT
+Requires Authentication
+Yes
+Rate Limited
+Yes
+Headers
+None
+Permissions
+entities.alerts.rule.create.edit.delete
+Delete rule
+/api/v2/alertrules/{uid}
+Deletes the specified alert rule
+Sample
+Parameters
+Exceptions
+Additional Information
+Request
+DELETE https://na.airvantage.net/api/v2/alertrules/0f3919fd1ac0403ab9e70ae2c3729a21?company=74e52f0379ec3b4e75f91b4750824c22
+Response
+200 OK
+HTTP/1.1 200 OK
+Content-Type: application/json
+"success"
+Name
+Description
+Use
+Default
+Type
+company
+Set the context company.
+optional
+caller's company
+uid
+Name
+Description
+alert.rule.missing.id
+A rule id must be specified.
+alert.rule.unknown.id
+The specified rule is unknown or read only.
+HTTP Method
+DELETE
+Requires Authentication
+Yes
+Rate Limited
+Yes
+Headers
+None
+Permissions
+entities.alerts.rule.create.edit.delete
+Find current alerts
+/api/v3/alerts/current
+Finds current alerts
+Returns a paginated list of alerts sorted by 'stateChangeTs' field.
+It is possible to filter out the result list using criteria parameters. Note that all combinations of criteria are not possible. Here are all the possible combinations:
+by target: GET /api/v3/alerts/current?company= &targetId= &offset= &size=
+by target and rule: GET /api/v3/alerts/current?company= &targetId= &ruleId= &offset= &size=
+by state: GET /api/v3/alerts/current?company= &state= &offset= &size=
+by state and targetType: GET /api/v3/alerts/current?company= &state= &targetType= &offset= &size=
+by state, targetType and rule: GET /api/v3/alerts/current?company= &state= &targetType= &ruleId= &offset= &size=
+More information about paging
+here
+Sample
+Parameters
+Additional Information
+Request
+GET https://na.airvantage.net/api/v3/alerts/current?targetId=91b74e52f04750824c22379ec3b4e75f&offset=0&size=100&company=74e52f0379ec3b4e75f91b4750824c22
+Response
+200 OK
+HTTP/1.1 200 OK
+Content-Type: application/json
+...
+{
+"items": [{
+"companyId": "74e52f0379ec3b4e75f91b4750824c22",
+"targetId": "91b74e52f04750824c22379ec3b4e75f",
+"targetType": "SYSTEM",
+"ruleId": "e52237824c29ecf003b4e7745f91b475"
+"state": true,
+"stateChangeTs": 1469446036000,
+"attributes": [{
+"id": {
+"name": "DATA.room.temp"
+},
+"value": {
+"valueNum": 45
+},
+"refTime": 1466859976000
+}]
+}],
+"count": 1
+}
+Name
+Description
+Use
+Default
+Type
+targetId
+Search alert states by target id.
+optional
+null
+string
+ruleId
+Search alert states by rule id. Must be used together with targetId or targetType filter.
+optional
+null
+string
+state
+Search alert states by state.
+optional
+null
+boolean
+targetType
+Search alert states by target type. Must be used together with state filter.
+optional
+null
+string
+company
+Set the context company.
+optional
+caller's company
+string
+HTTP Method
+GET
+Requires Authentication
+Yes
+Rate Limited
+Yes
+Headers
+None
+Permissions
+entities.alerts.view
+Find alerts history
+/api/v3/alerts/history
+Finds stateful and stateless alerts between two dates.
+Returns a maxium of 500 alerts sorted by 'ts' field.
+Sample
+Parameters
+Exceptions
+Additional Information
+Request
+GET https://na.airvantage.net/api/v3/alerts/history?targetId=91b74e52f04750824c22379ec3b4e75f&to=1469451977000&company=74e52f0379ec3b4e75f91b4750824c22
+Response
+200 OK
+HTTP/1.1 200 OK
+Content-Type: application/json
+...
+{
+"items": [{
+"companyId": "74e52f0379ec3b4e75f91b4750824c22",
+"targetId": "91b74e52f04750824c22379ec3b4e75f",
+"targetType": "SYSTEM",
+"ts": 1466859977000,
+"ruleId": "0f3919fd1ac0403ab9e70ae2c3729a21",
+"state": null, // null because the rule is stateless
+"attributes": [{
+"id": {
+"name": "DATA.room.door.opened"
+},
+"value": {
+"valueStr": "true"
+},
+"refTime": 1466859976000
+}]
+},{
+"companyId": "74e52f0379ec3b4e75f91b4750824c22",
+"targetId": "91b74e52f04750824c22379ec3b4e75f",
+"targetType": "SYSTEM",
+"ts": 1466859967000,
+"ruleId": "04e70a0fb9ace2c3729a3919fd103a21",
+"state": true, // not null because the rule is stateful (can be true or false)
+"attributes": [{
+"id": {
+"name": "DATA.room.temp"
+},
+"value": {
+"valueNum": 45
+},
+"refTime": 1466859966000
+}]
+}
+]
+}
+Name
+Description
+Use
+Default
+Type
+targetId
+Search alerts for the specified target id.
+optional
+string
+ruleIds
+Search alerts for the specified rule ids.
+optional
+string (ruleId separated by ",")
+from/to
+Search alerts whose timestamp is between 'from' and 'to'.
+if asc is true: ----from-[--------to-[----->
+if asc is false: ----from-]--------to-]----->
+optional
+to: now, from: now - 90 days
+timestamp
+asc
+If true, sort alert by ts in ascending order, otherwise in descending order.
+optional
+false
+boolean
+size
+Page size
+optional
+100
+number
+company
+Set the context company.
+mandatory
+string
+Name
+Description
+missing.company
+'company' parameter is mandatory.
+system.invalid.timerange
+'from' paramter needs to be lower than 'to' parameter.
+HTTP Method
+GET
+Requires Authentication
+Yes
+Rate Limited
+Yes
+Headers
+None
+Permissions
+entities.alerts.view
+Configure Notification Hooks
+/api/v1/alerts/rules/{uid}/hooks
+Configures notification hooks when the alert rule is triggered.
+When a rule get trigged, a callback is invoked with the content
+described in Subscriber API tab below
+Sample
+Content
+Subscriber API
+Exceptions
+Additional
+information
+Request
+POST https://na.airvantage.net/api/v1/alerts/rules/edcda0dce0fb47948d03fbec5350c18e/hooks
+Content-Type: application/json
+...
+{
+"callback" :  "http://www.mysite.com/callback"
+}
+Response
+200 OK
+{
+"uid" : "48d03fbec5350c18eedcda0dce0fb479"
+"callback" :  "http://www.mysite.com/callback"
+}
+Field
+Description
+Use
+Default
+Type
+callback
+The url that will be called when the alert rule get
+triggerd. The url has the following pattern :
+http(s)://(user@)www.yourhost.com/your_rest_service
+mandatory</a></ul></div></div></div></div></main></div></div></div></div></div><footer class="theme-layout-footer footer"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class=footer__title>Jobs</div><ul class="footer__items clean-list"><li class=footer__item><a class=footer__link-item href=/personal-av-docs/docs/how-to/activate-sims>Activate SIMs</a><li class=footer__item><a class=footer__link-item href=/personal-av-docs/docs/how-to/order-sims>Order SIMs</a><li class=footer__item><a class=footer__link-item href=/personal-av-docs/api>Call the API</a><li class=footer__item><a class=footer__link-item href=/personal-av-docs/docs/how-to/register-routers>Register routers</a></ul></div><div class="theme-layout-footer-column col footer__col"><div class=footer__title>Reference</div><ul class="footer__items clean-list"><li class=footer__item><a class=footer__link-item href=/personal-av-docs/docs/reference/api>API HTML chapters</a><li class=footer__item><a class=footer__link-item href=/personal-av-docs/docs/reference/apn>APN table</a><li class=footer__item><a class=footer__link-item href=/personal-av-docs/docs/changelog>Changelog</a></ul></div><div class="theme-layout-footer-column col footer__col"><div class=footer__title>Preview</div><ul class="footer__items clean-list"><li class=footer__item><a href=https://doc.airvantage.net/ target=_blank rel="noopener noreferrer" class=footer__link-item>Live Hugo (canonical until cutover)<svg width=13.5 height=13.5 aria-label="(opens in new tab)" class=iconExternalLink_nPIU><use href=#theme-svg-external-link /></svg></a><li class=footer__item><a class=footer__link-item href=/personal-av-docs/docs/ui-library>UI library</a><li class=footer__item><a class=footer__link-item href=/personal-av-docs/docs/copy-library>Copy library</a></ul></div></div><div class="footer__bottom text--center"><div class=footer__copyright>Sierra Wireless / AirVantage documentation preview. Live doc.airvantage.net stays Hugo until cutover. Built with Docusaurus.</div></div></div></footer></div></body>

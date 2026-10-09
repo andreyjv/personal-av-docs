@@ -1,0 +1,2436 @@
+<!doctype html><html lang=en dir=ltr class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-reference/api/API-Application-v1" data-has-hydrated=false><head><meta charset=UTF-8><meta name=generator content="Docusaurus v3.10.2"><title data-rh=true>Application | AirVantage documentation</title><meta data-rh=true name=viewport content="width=device-width, initial-scale=1.0"/><meta data-rh=true name=twitter:card content=summary_large_image /><meta data-rh=true property=og:image content=https://andreyjv.github.io/personal-av-docs/img/favicon.svg /><meta data-rh=true name=twitter:image content=https://andreyjv.github.io/personal-av-docs/img/favicon.svg /><meta data-rh=true property=og:url content=https://andreyjv.github.io/personal-av-docs/docs/reference/api/API-Application-v1 /><meta data-rh=true property=og:locale content=en /><meta data-rh=true name=docusaurus_locale content=en /><meta data-rh=true name=docsearch:language content=en /><meta data-rh=true name=docusaurus_version content=current /><meta data-rh=true name=docusaurus_tag content=docs-default-current /><meta data-rh=true name=docsearch:version content=current /><meta data-rh=true name=docsearch:docusaurus_tag content=docs-default-current /><meta data-rh=true property=og:title content="Application | AirVantage documentation"/><meta data-rh=true name=description content="connectivity · imported from live Hugo on 2026-10-07. Guides stay latest. Original page."/><meta data-rh=true property=og:description content="connectivity · imported from live Hugo on 2026-10-07. Guides stay latest. Original page."/><link data-rh=true rel=icon href=/personal-av-docs/img/favicon.svg /><link data-rh=true rel=canonical href=https://andreyjv.github.io/personal-av-docs/docs/reference/api/API-Application-v1 /><link data-rh=true rel=alternate href=https://andreyjv.github.io/personal-av-docs/docs/reference/api/API-Application-v1 hreflang=en /><link data-rh=true rel=alternate href=https://andreyjv.github.io/personal-av-docs/docs/reference/api/API-Application-v1 hreflang=x-default /><link rel=stylesheet href=/personal-av-docs/assets/css/styles.1e3041e1.css /><script src=/personal-av-docs/assets/js/runtime~main.bbef5b78.js defer></script><script src=/personal-av-docs/assets/js/main.443f591d.js defer></script></head><body><svg style="display: none;"><defs>
+<symbol id=theme-svg-external-link viewBox="0 0 24 24"><path fill=currentColor d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme-deb")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||(window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light")),document.documentElement.setAttribute("data-theme-choice",t||"system")}(),function(){try{for(var[t,e]of new URLSearchParams(window.location.search).entries())if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id=__docusaurus><link rel=preload as=image href=/personal-av-docs/img/favicon.svg /><div role=region aria-label="Skip to main content"><a class=skipToContent_fXgn href=#__docusaurus_skipToContent_fallback>Skip to main content</a></div><nav aria-label=Main class="theme-layout-navbar navbar navbar--fixed-top"><div class=navbar__inner><div class="theme-layout-navbar-left navbar__items"><button aria-label="Toggle navigation bar" aria-expanded=false class="navbar__toggle clean-btn" type=button><svg width=30 height=30 viewBox="0 0 30 30" aria-hidden=true><path stroke=currentColor stroke-linecap=round stroke-miterlimit=10 stroke-width=2 d="M4 7h22M4 15h22M4 23h22"/></svg></button><a class=navbar__brand href=/personal-av-docs/><div class=navbar__logo><img src=/personal-av-docs/img/favicon.svg alt=AirVantage class="themedComponent_mlkZ themedComponent--light_NVdE"/><img src=/personal-av-docs/img/favicon.svg alt=AirVantage class="themedComponent_mlkZ themedComponent--dark_xIcU"/></div><b class="navbar__title text--truncate">AirVantage Docs</b></a><a class="navbar__item navbar__link navbar__guides" href=/personal-av-docs/docs/how-to/activate-sims>Guides</a><a class="navbar__item navbar__link" href=/personal-av-docs/api>API reference</a><a class="navbar__item navbar__link" href=/personal-av-docs/docs/changelog>Changelog</a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type=button disabled title="system mode" aria-label="Switch between dark and light mode (currently system mode)"><svg viewBox="0 0 24 24" width=24 height=24 aria-hidden=true class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill=currentColor d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"/></svg><svg viewBox="0 0 24 24" width=24 height=24 aria-hidden=true class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill=currentColor d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"/></svg><svg viewBox="0 0 24 24" width=24 height=24 aria-hidden=true class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill=currentColor d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"/></svg></button></div><div class=navbarSearchContainer_Bca1><div class="navbar__search searchBarContainer_NW3z" dir=ltr><svg aria-hidden=true class=searchIcon_T3tP focusable=false viewBox="0 0 16 16"><path fill=currentColor d="M6.02945 10.20327a4.17382 4.17382 0 1 1 4.17382-4.17382 4.15609 4.15609 0 0 1-4.17382 4.17382Zm9.69195 4.2199-4.8225-4.82338A5.88021 5.88021 0 0 0 12.058 6.02856 6.00467 6.00467 0 1 0 9.59979 10.8989l4.82338 4.82338a.89729.89729 0 0 0 1.29912 0 .89749.89749 0 0 0-.00087-1.29909Z"/></svg><input placeholder=Search aria-label=Search class="navbar__search-input searchInput_YFbd" value="" /><div class="loadingRing_RJI3 searchBarLoadingRing_YnHq"><div></div><div></div><div></div><div></div></div></div></div></div></div><div role=presentation class=navbar-sidebar__backdrop></div></nav><div id=__docusaurus_skipToContent_fallback class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class=av-shell><nav class=av-rail aria-label=Guides><p class=av-rail-kicker>Guides<ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class=menu__list-item-collapsible><span class="menu__link menu__link--sublist menu__link--sublist-caret av-rail-heading">Quick start</span></div><ul class=menu__list><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link href=/personal-av-docs/docs/how-to/activate-sims>Activate SIMs</a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link href=/personal-av-docs/docs/how-to/order-sims>Order SIMs</a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link href=/personal-av-docs/api>Call the API</a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link href=/personal-av-docs/docs/how-to/register-routers>Register routers</a></ul><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class=menu__list-item-collapsible><span class="menu__link menu__link--sublist menu__link--sublist-caret av-rail-heading">Browse by product</span></div><ul class=menu__list><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link href=/personal-av-docs/docs/how-to/activate-sims>Connectivity</a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link href=/personal-av-docs/docs/how-to/register-routers>Router management</a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link href=/personal-av-docs/docs/explain/states>States and operations</a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link href=/personal-av-docs/api>Developer platform</a></ul><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class=menu__list-item-collapsible><span class="menu__link menu__link--sublist menu__link--sublist-caret av-rail-heading">Keep building</span></div><ul class=menu__list><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link href=/personal-av-docs/docs/explain/states>States and operations</a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link href=/personal-av-docs/docs/reference/apn>APN table</a></ul><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class=menu__link href=/personal-av-docs/docs/get-started/first-sim>Get started</a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class=menu__link href=/personal-av-docs/docs/reference/api>Reference</a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class=menu__link href=/personal-av-docs/docs/changelog>Changelog</a></ul></nav><div class=av-shell-main><div class=docsWrapper_hBAB><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type=button></button><div class=docRoot_UBD9><main class="docMainContainer_TBSr docMainContainerEnhanced_lQrH"><div class="container padding-top--md padding-bottom--lg"><div class=row><div class="col docItemCol_VOVn"><div class=docItemContainer_Djhp><article><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type=button class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><div class="theme-doc-markdown markdown"><header><h1>Application</h1></header><p>:::note Edition
+<strong>connectivity</strong> · imported from live Hugo on 2026-10-07. Guides stay latest. <a href=https://doc.airvantage.net/connectivity/reference/cloud/API/API-Application-v1 target=_blank rel="noopener noreferrer" class="">Original page</a>.
+:::</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=applicationgeneralfgeneral-informationoperationsfsystemoperationsalertapplicationgatewaysettingsdatasetlabelzoneoperatoroffer--optionssystem-configurationsadministrationfcompanypartnerprofileusersubscriptionfsubscriptionorderingfcontactorderproduct-referenceapplicationoverviewfieldsjsonthe-embedded-application-model-defines-how-airvantagecan-interact-with-an-embedded-application-deployed-on-asystem-it-can-be-seen-as-a-contract-defining-the-general-termsof-communication-between-the-embedded-application-and-theairvantage-which-data-am-i-supposed-to-send-you-howwhenread-only-fields-are-computed-by-airvantage-and-canonly-be-seen-on-response-fragments-sent-byfindrequestfielddescriptionread-onlytypeuidapplications-uidtrueuidnameapplications-name-the-couple-name-revision-has-tobe-unique-within-same-companytruestringrevisionapplications-revisiontruestringtypeapplications-type-the-couple-type-revision-has-tobe-unique-throughout-airvantagetruestringcategoryapplications-category-possible-values-areapplication-or-firmwaretrueenumstateapplications-state-possible-values-are-releasedpublished-or-deprecatedtrueenumreleaseddate-time-when-application-was-releasedtruetimestamppublisheddate-time-when-application-was-publishedtruetimestampdeprecateddate-time-when-application-was-deprecatedtruetimestampownercompanydeprecatedthe-uid-of-the-company-who-has-develop-this-applicationthis-field-is-deprecated-and-replaced-by-ownertruestringownerthecompanywho-has-develop-this-applicationfalseobjectlabelsapplications-can-be-labeled-with-a-list-oflabelstruestring-arrayisreferenceis-the-application-the-reference-application-for-theapplication-typefalsebooleaniscompanyreferenceis-the-application-the-reference-application-for-theapplication-type-and-the-context-companyfalsebooleanispublicis-the-application-publicfalsebooleanapplicationmanagerdefine-the-application-manager-in-charge-of-thelifecycle-of-this-application-install-start-stop-theseapplicationmanagers-are-predefined-in-airvantageknown-applications-managers-are-aleos_nucleus-aleos_linuxaleos_linux_with_rm-firm_ids-soft_ids-readyagent_appconmihini_appcon-mihini_asset_install-aircard_fw-unknownfalseenumthis-is-a-complete-representation-of-an-applicationuid-name-revision-type-category-state-released-published-deprecated-isreference-iscompanyreference-ispublic--labels-applicationmanager-owner--uid-name-api-methodsapplicationcreatefindfind-publiceditdetailsedit-communicationedit-dataedit-actionsdeletevalidategetpublished-partnersgetapplication-modelget-protocolsgetdata-configurationget-actionsset-company-referencedelete-company-referenceoperationsreleasepublishshareadddeprecatechange-labelscreateapiv1applicationscreates-a-new-application-definition-with-general-informationnamerevisionandtypeare-required-fieldssampleparameterscontentexceptionsadditional-informationrequestpost-httpsnaairvantagenetapiv1applicationscontent-type-applicationjson-with-contentname-application_namerevision-application_revtype-testlabels-applicationmanager-firm_idsresponse200-okuid649ce921536043cd96c538c36367e017nameapplication_namerevisionapplication_revtypeapplication_typecategoryfirmwarestatereleasedreleased1366031971065publisheddeprecatedlabelsapplicationmanagerfirm_idsisreferenceispublicowner--uid1namesierra-wirelessnamedescriptionusedefaulttypecompanythe-owner-companyoptionalcallers-companyuidthe-content-must-looks-like-the-one-specified-in-theoverviewhowever-some-fields-have-specific-behaviors-here-you-canfind-the-list-of-these-fields-with-detailed-informationfielddescriptionusedefaulttypenamethe-name-of-the-applicationrequiredstringrevisionthe-revision-of-the-applicationrequiredstringtypethe-type-of-the-applicationrequiredstringlabelsthe-labels-to-link-ot-the-applicationoptional>Application
+General
+f
+General Information
+Operations
+f
+System
+Operations
+Alert
+Application
+Gateway
+Settings
+Dataset
+Label
+Zone
+Operator
+Offer & Options
+System Configurations
+Administration
+f
+Company
+Partner
+Profile
+User
+Subscription
+f
+Subscription
+Ordering
+f
+Contact
+Order
+Product Reference
+Application
+Overview
+Fields
+JSON
+The embedded application model defines how AirVantage
+can interact with an embedded application deployed on a
+system. It can be seen as a "contract" defining the general terms
+of communication between the embedded application and the
+AirVantage: which data am I supposed to send you, how,
+when
+Read only fields are computed by AirVantage and can
+only be seen on response fragments sent by
+find
+request.
+Field
+Description
+Read Only
+Type
+uid
+Application's uid
+true
+uid
+name
+Application's name. The couple (name, revision) has to
+be unique within same company.
+true
+string
+revision
+Application's revision
+true
+string
+type
+Application's type. The couple (type, revision) has to
+be unique throughout AirVantage.
+true
+string
+category
+Application's category. Possible values are:
+APPLICATION or FIRMWARE
+true
+enum
+state
+Application's state. Possible values are: RELEASED,
+PUBLISHED, or DEPRECATED
+true
+enum
+released
+Date time when application was released
+true
+timestamp
+published
+Date time when application was published
+true
+timestamp
+deprecated
+Date time when application was deprecated
+true
+timestamp
+ownerCompany
+[DEPRECATED]
+The uid of the company who has develop this application.
+This field is deprecated and replaced by 'owner'.
+true
+string
+owner
+The
+company
+who has develop this application.
+false
+object
+labels
+Applications can be labeled with a list of
+labels.
+true
+string array
+isReference
+Is the application the reference application for the
+application type.
+false
+boolean
+isCompanyReference
+Is the application the reference application for the
+application type and the context company.
+false
+boolean
+isPublic
+Is the application public
+false
+boolean
+applicationManager
+Define the application manager in charge of the
+lifecycle of this application (install, start, stop...). These
+ApplicationManagers are predefined in AirVantage.
+Known applications managers are: ALEOS_NUCLEUS, ALEOS_LINUX,
+ALEOS_LINUX_WITH_RM, FIRM_IDS, SOFT_IDS, READYAGENT_APPCON,
+MIHINI_APPCON, MIHINI_ASSET_INSTALL, AIRCARD_FW, UNKNOWN.
+false
+enum
+This is a complete representation of an Application.
+{
+"uid": "",
+"name": "",
+"revision": "",
+"type": "",
+"category": "",
+"state": "",
+"released": ,
+"published": ,
+"deprecated": ,
+"isReference": ,
+"isCompanyReference": ,
+"isPublic" : ,
+"labels": [],
+"applicationManager": "",
+"owner" : {
+"uid": "",
+"name": "",
+}
+}
+API Methods
+Application
+Create
+Find
+Find public
+Edit
+Details
+Edit communication
+Edit data
+Edit actions
+Delete
+Validate
+Get
+published partners
+Get
+application model
+Get protocols
+Get
+data configuration
+Get actions
+Set company reference
+Delete company reference
+Operations
+Release
+Publish
+Share
+Add
+Deprecate
+Change labels
+Create
+/api/v1/applications
+Creates a new application definition with general information.
+Name
+,
+revision
+and
+type
+are required fields
+Sample
+Parameters
+Content
+Exceptions
+Additional information
+Request
+POST <a href=https://na.airvantage.net/api/v1/applications target=_blank rel="noopener noreferrer" class="">https://na.airvantage.net/api/v1/applications</a>
+Content-Type: application/json
+...
+// With content:
+{
+"name": "APPLICATION_NAME",
+"revision": "APPLICATION_REV",
+"type": "test",
+"labels": [],
+"applicationManager": "FIRM_IDS"
+}
+Response
+200 OK
+{
+"uid":"649ce921536043cd96c538c36367e017",
+"name":"APPLICATION_NAME",
+"revision":"APPLICATION_REV",
+"type":"APPLICATION_TYPE",
+"category":"FIRMWARE",
+"state":"RELEASED",
+"released":1366031971065,
+"published":false,
+"deprecated":false,
+"labels":[],
+"applicationManager":"FIRM_IDS",
+"isReference":false,
+"isPublic":false,
+"owner" : {
+"uid":"1",
+"name":"Sierra Wireless"
+}
+}
+Name
+Description
+Use
+Default
+Type
+company
+The owner company.
+optional
+caller's company
+uid
+The content must looks like the one specified in the
+overview
+.
+However, some fields have specific behaviors. Here you can
+find the list of these fields with detailed information.
+Field
+Description
+Use
+Default
+Type
+name
+The name of the application.
+required
+string
+revision
+The revision of the application.
+required
+string
+type
+The type of the application.
+required
+string
+labels
+The labels to link ot the application
+optional<a href=#applicationgeneralfgeneral-informationoperationsfsystemoperationsalertapplicationgatewaysettingsdatasetlabelzoneoperatoroffer--optionssystem-configurationsadministrationfcompanypartnerprofileusersubscriptionfsubscriptionorderingfcontactorderproduct-referenceapplicationoverviewfieldsjsonthe-embedded-application-model-defines-how-airvantagecan-interact-with-an-embedded-application-deployed-on-asystem-it-can-be-seen-as-a-contract-defining-the-general-termsof-communication-between-the-embedded-application-and-theairvantage-which-data-am-i-supposed-to-send-you-howwhenread-only-fields-are-computed-by-airvantage-and-canonly-be-seen-on-response-fragments-sent-byfindrequestfielddescriptionread-onlytypeuidapplications-uidtrueuidnameapplications-name-the-couple-name-revision-has-tobe-unique-within-same-companytruestringrevisionapplications-revisiontruestringtypeapplications-type-the-couple-type-revision-has-tobe-unique-throughout-airvantagetruestringcategoryapplications-category-possible-values-areapplication-or-firmwaretrueenumstateapplications-state-possible-values-are-releasedpublished-or-deprecatedtrueenumreleaseddate-time-when-application-was-releasedtruetimestamppublisheddate-time-when-application-was-publishedtruetimestampdeprecateddate-time-when-application-was-deprecatedtruetimestampownercompanydeprecatedthe-uid-of-the-company-who-has-develop-this-applicationthis-field-is-deprecated-and-replaced-by-ownertruestringownerthecompanywho-has-develop-this-applicationfalseobjectlabelsapplications-can-be-labeled-with-a-list-oflabelstruestring-arrayisreferenceis-the-application-the-reference-application-for-theapplication-typefalsebooleaniscompanyreferenceis-the-application-the-reference-application-for-theapplication-type-and-the-context-companyfalsebooleanispublicis-the-application-publicfalsebooleanapplicationmanagerdefine-the-application-manager-in-charge-of-thelifecycle-of-this-application-install-start-stop-theseapplicationmanagers-are-predefined-in-airvantageknown-applications-managers-are-aleos_nucleus-aleos_linuxaleos_linux_with_rm-firm_ids-soft_ids-readyagent_appconmihini_appcon-mihini_asset_install-aircard_fw-unknownfalseenumthis-is-a-complete-representation-of-an-applicationuid-name-revision-type-category-state-released-published-deprecated-isreference-iscompanyreference-ispublic--labels-applicationmanager-owner--uid-name-api-methodsapplicationcreatefindfind-publiceditdetailsedit-communicationedit-dataedit-actionsdeletevalidategetpublished-partnersgetapplication-modelget-protocolsgetdata-configurationget-actionsset-company-referencedelete-company-referenceoperationsreleasepublishshareadddeprecatechange-labelscreateapiv1applicationscreates-a-new-application-definition-with-general-informationnamerevisionandtypeare-required-fieldssampleparameterscontentexceptionsadditional-informationrequestpost-httpsnaairvantagenetapiv1applicationscontent-type-applicationjson-with-contentname-application_namerevision-application_revtype-testlabels-applicationmanager-firm_idsresponse200-okuid649ce921536043cd96c538c36367e017nameapplication_namerevisionapplication_revtypeapplication_typecategoryfirmwarestatereleasedreleased1366031971065publisheddeprecatedlabelsapplicationmanagerfirm_idsisreferenceispublicowner--uid1namesierra-wirelessnamedescriptionusedefaulttypecompanythe-owner-companyoptionalcallers-companyuidthe-content-must-looks-like-the-one-specified-in-theoverviewhowever-some-fields-have-specific-behaviors-here-you-canfind-the-list-of-these-fields-with-detailed-informationfielddescriptionusedefaulttypenamethe-name-of-the-applicationrequiredstringrevisionthe-revision-of-the-applicationrequiredstringtypethe-type-of-the-applicationrequiredstringlabelsthe-labels-to-link-ot-the-applicationoptional class=hash-link aria-label="Direct link to applicationgeneralfgeneral-informationoperationsfsystemoperationsalertapplicationgatewaysettingsdatasetlabelzoneoperatoroffer--optionssystem-configurationsadministrationfcompanypartnerprofileusersubscriptionfsubscriptionorderingfcontactorderproduct-referenceapplicationoverviewfieldsjsonthe-embedded-application-model-defines-how-airvantagecan-interact-with-an-embedded-application-deployed-on-asystem-it-can-be-seen-as-a-contract-defining-the-general-termsof-communication-between-the-embedded-application-and-theairvantage-which-data-am-i-supposed-to-send-you-howwhenread-only-fields-are-computed-by-airvantage-and-canonly-be-seen-on-response-fragments-sent-byfindrequestfielddescriptionread-onlytypeuidapplications-uidtrueuidnameapplications-name-the-couple-name-revision-has-tobe-unique-within-same-companytruestringrevisionapplications-revisiontruestringtypeapplications-type-the-couple-type-revision-has-tobe-unique-throughout-airvantagetruestringcategoryapplications-category-possible-values-areapplication-or-firmwaretrueenumstateapplications-state-possible-values-are-releasedpublished-or-deprecatedtrueenumreleaseddate-time-when-application-was-releasedtruetimestamppublisheddate-time-when-application-was-publishedtruetimestampdeprecateddate-time-when-application-was-deprecatedtruetimestampownercompanydeprecatedthe-uid-of-the-company-who-has-develop-this-applicationthis-field-is-deprecated-and-replaced-by-ownertruestringownerthecompanywho-has-develop-this-applicationfalseobjectlabelsapplications-can-be-labeled-with-a-list-oflabelstruestring-arrayisreferenceis-the-application-the-reference-application-for-theapplication-typefalsebooleaniscompanyreferenceis-the-application-the-reference-application-for-theapplication-type-and-the-context-companyfalsebooleanispublicis-the-application-publicfalsebooleanapplicationmanagerdefine-the-application-manager-in-charge-of-thelifecycle-of-this-application-install-start-stop-theseapplicationmanagers-are-predefined-in-airvantageknown-applications-managers-are-aleos_nucleus-aleos_linuxaleos_linux_with_rm-firm_ids-soft_ids-readyagent_appconmihini_appcon-mihini_asset_install-aircard_fw-unknownfalseenumthis-is-a-complete-representation-of-an-applicationuid-name-revision-type-category-state-released-published-deprecated-isreference-iscompanyreference-ispublic--labels-applicationmanager-owner--uid-name-api-methodsapplicationcreatefindfind-publiceditdetailsedit-communicationedit-dataedit-actionsdeletevalidategetpublished-partnersgetapplication-modelget-protocolsgetdata-configurationget-actionsset-company-referencedelete-company-referenceoperationsreleasepublishshareadddeprecatechange-labelscreateapiv1applicationscreates-a-new-application-definition-with-general-informationnamerevisionandtypeare-required-fieldssampleparameterscontentexceptionsadditional-informationrequestpost-httpsnaairvantagenetapiv1applicationscontent-type-applicationjson-with-contentname-application_namerevision-application_revtype-testlabels-applicationmanager-firm_idsresponse200-okuid649ce921536043cd96c538c36367e017nameapplication_namerevisionapplication_revtypeapplication_typecategoryfirmwarestatereleasedreleased1366031971065publisheddeprecatedlabelsapplicationmanagerfirm_idsisreferenceispublicowner--uid1namesierra-wirelessnamedescriptionusedefaulttypecompanythe-owner-companyoptionalcallers-companyuidthe-content-must-looks-like-the-one-specified-in-theoverviewhowever-some-fields-have-specific-behaviors-here-you-canfind-the-list-of-these-fields-with-detailed-informationfielddescriptionusedefaulttypenamethe-name-of-the-applicationrequiredstringrevisionthe-revision-of-the-applicationrequiredstringtypethe-type-of-the-applicationrequiredstringlabelsthe-labels-to-link-ot-the-applicationoptional" title="Direct link to applicationgeneralfgeneral-informationoperationsfsystemoperationsalertapplicationgatewaysettingsdatasetlabelzoneoperatoroffer--optionssystem-configurationsadministrationfcompanypartnerprofileusersubscriptionfsubscriptionorderingfcontactorderproduct-referenceapplicationoverviewfieldsjsonthe-embedded-application-model-defines-how-airvantagecan-interact-with-an-embedded-application-deployed-on-asystem-it-can-be-seen-as-a-contract-defining-the-general-termsof-communication-between-the-embedded-application-and-theairvantage-which-data-am-i-supposed-to-send-you-howwhenread-only-fields-are-computed-by-airvantage-and-canonly-be-seen-on-response-fragments-sent-byfindrequestfielddescriptionread-onlytypeuidapplications-uidtrueuidnameapplications-name-the-couple-name-revision-has-tobe-unique-within-same-companytruestringrevisionapplications-revisiontruestringtypeapplications-type-the-couple-type-revision-has-tobe-unique-throughout-airvantagetruestringcategoryapplications-category-possible-values-areapplication-or-firmwaretrueenumstateapplications-state-possible-values-are-releasedpublished-or-deprecatedtrueenumreleaseddate-time-when-application-was-releasedtruetimestamppublisheddate-time-when-application-was-publishedtruetimestampdeprecateddate-time-when-application-was-deprecatedtruetimestampownercompanydeprecatedthe-uid-of-the-company-who-has-develop-this-applicationthis-field-is-deprecated-and-replaced-by-ownertruestringownerthecompanywho-has-develop-this-applicationfalseobjectlabelsapplications-can-be-labeled-with-a-list-oflabelstruestring-arrayisreferenceis-the-application-the-reference-application-for-theapplication-typefalsebooleaniscompanyreferenceis-the-application-the-reference-application-for-theapplication-type-and-the-context-companyfalsebooleanispublicis-the-application-publicfalsebooleanapplicationmanagerdefine-the-application-manager-in-charge-of-thelifecycle-of-this-application-install-start-stop-theseapplicationmanagers-are-predefined-in-airvantageknown-applications-managers-are-aleos_nucleus-aleos_linuxaleos_linux_with_rm-firm_ids-soft_ids-readyagent_appconmihini_appcon-mihini_asset_install-aircard_fw-unknownfalseenumthis-is-a-complete-representation-of-an-applicationuid-name-revision-type-category-state-released-published-deprecated-isreference-iscompanyreference-ispublic--labels-applicationmanager-owner--uid-name-api-methodsapplicationcreatefindfind-publiceditdetailsedit-communicationedit-dataedit-actionsdeletevalidategetpublished-partnersgetapplication-modelget-protocolsgetdata-configurationget-actionsset-company-referencedelete-company-referenceoperationsreleasepublishshareadddeprecatechange-labelscreateapiv1applicationscreates-a-new-application-definition-with-general-informationnamerevisionandtypeare-required-fieldssampleparameterscontentexceptionsadditional-informationrequestpost-httpsnaairvantagenetapiv1applicationscontent-type-applicationjson-with-contentname-application_namerevision-application_revtype-testlabels-applicationmanager-firm_idsresponse200-okuid649ce921536043cd96c538c36367e017nameapplication_namerevisionapplication_revtypeapplication_typecategoryfirmwarestatereleasedreleased1366031971065publisheddeprecatedlabelsapplicationmanagerfirm_idsisreferenceispublicowner--uid1namesierra-wirelessnamedescriptionusedefaulttypecompanythe-owner-companyoptionalcallers-companyuidthe-content-must-looks-like-the-one-specified-in-theoverviewhowever-some-fields-have-specific-behaviors-here-you-canfind-the-list-of-these-fields-with-detailed-informationfielddescriptionusedefaulttypenamethe-name-of-the-applicationrequiredstringrevisionthe-revision-of-the-applicationrequiredstringtypethe-type-of-the-applicationrequiredstringlabelsthe-labels-to-link-ot-the-applicationoptional" translate=no>​</a></h2>
+<h1>applicationManager
+The application manager of the application.
+optional
+UNKNOWN
+string
+Name
+Description
+application.missing.name
+Raised when no name has been specified.
+application.missing.type
+Raised when no type has been specified.
+application.missing.revision
+Raised when no revision has been specified.
+application.type.already.used
+Raised when application type has been already declared in another company.
+application.type.revision.not.unique
+Raised when application type/revision already already exists.
+application.name.revision.not.unique
+Raised when application name/revision already exist in the current company
+HTTP Method
+POST
+Requires Authentication
+Yes
+Rate Limited
+Yes
+Headers
+None
+Permissions
+entities.applications.create
+Find
+/api/v1/applications
+Returns a paginated list of
+application with their complete details.
+It is possible to restrain the result list using criteria
+parameters.
+The
+fields
+parameter has to be defined in order to specify
+the attributes of the application that will be returned.
+If
+fields
+parameter is missing, only the following attributes of the
+application are returned :
+uid, name, revision, type,
+category, state, released, published, deprecated
+.
+More information about paging, filtering, and sorting
+here
+Sample
+Parameters
+Additional information
+Request
+GET <a href="https://na.airvantage.net/api/v1/applications?fields=uid,name,revision,type,category,state" target=_blank rel="noopener noreferrer" class="">https://na.airvantage.net/api/v1/applications?fields=uid,name,revision,type,category,state</a>
+Response
+200 OK
+{
+"items": [   {
+"uid": "08fc7db9841945df8ffa647165bb57e6",
+"name": "ALEOS GX400",
+"revision": "4.2.5.005",
+"type": "ALEOS.PROD.12",
+"category": "FIRMWARE",
+"state": "RELEASED"
+}],
+"count": 1,
+"size": 1,
+"offset": 0
+}
+Name
+Description
+Use
+Default
+Type
+Operand
+uid
+Return application whose uid match with the specified
+id.
+optional
+null
+uid</h1>
+<h1>state
+Returns all applications in a given state. States are
+RELEASED, PUBLISHED, DEPRECATED
+optional
+null
+string</h1>
+<h1>revision
+Return all applications whose revision contains the
+given string.
+optional
+null
+string
+like
+type
+Return all applications whose type equals the given
+string.
+optional
+null
+string
+like
+name
+Return all applications whose name contains the given
+string.
+optional
+null
+string
+like
+category
+[DEPRECATED] Use 'categories' instead.
+Return all applications whose category matches the
+given string. Categories are : APPLICATION, FIRMWARE, FIRMWARE_COMPONENT, BUNDLE
+optional
+null
+string
+equals ignore case
+categories
+Return all applications whose category matches the
+given strings. Categories are : APPLICATION, FIRMWARE, FIRMWARE_COMPONENT, BUNDLE
+optional
+null
+string array
+in ignore case
+labels
+Return all applications labeled as the specified
+string. Several labels can be set.
+optional
+null
+string array
+in
+releasedAfter
+Return all applications released after the given date.
+The specified date is included.
+optional
+null
+timestamp
+>=
+releasedBefore
+Return all applications released before the given
+date. The specified date is included.
+optional
+null
+timestamp
+&lt;=
+applicationManager
+Return applications related to a specific application
+manager.
+optional
+null
+string</h1>
+<h1>company
+Set the context company.
+optional
+caller's company
+uid</h1>
+<h1>isReference
+Return reference/not reference applications.
+optional
+null
+boolean</h1>
+<h1>isPublic
+Return public/not public applications added to the context company.
+optional
+null
+boolean</h1>
+<p>owner
+Returns all applications whose the owner company matches the specified criteria.
+The possible criteria are :
+uid (exact match)
+name (like)
+optional
+null
+string map with the following format:
+uid:xxx,name:xxx,...
+See description
+HTTP Method
+GET
+Requires Authentication
+Yes
+Rate Limited
+Yes
+Headers
+None
+Permissions
+entities.applications.view
+Order By
+name, revision
+Fields
+uid, name, revision, type, category, state, released,
+published, deprecated, owner, applicationManager,
+labels, isPublic, isReference, isCompanyReference
+Find Public
+/api/v1/applications/public
+Get the list of public applications. Please refer to
+Find.
+Notice that public applications cannot be found by label.
+Validate
+/api/v1/applications/{uid}/validation
+Validates the application model and
+configuration. Errors or warnings are raised if any.
+Sample
+Parameters
+Additional Information
+Request
+GET <a href=https://na.airvantage.net/api/v1/applications/6500ee29f8ed4e3991dff484b3ce3e73/validation target=_blank rel="noopener noreferrer" class="">https://na.airvantage.net/api/v1/applications/6500ee29f8ed4e3991dff484b3ce3e73/validation</a>
+Response
+200 OK
+HTTP/1.1 200 OK
+Content-Type: application/json
+...
+{
+"errors": [   {
+"message": "invalid.communicating.application.dependency",
+"params": ["unknonwAppName"]
+}],
+"warnings": []
+}
+Name
+Description
+Use
+Default
+Type
+company
+Set the context company.
+optional
+caller's company
+uid
+HTTP Method
+GET
+Requires Authentication
+Yes
+Rate Limited
+Yes
+Headers
+None
+Permissions
+entities.applications.view
+Get published partners
+/api/v1/applications/{uid}/partners
+Gets all partners who share the given
+application.
+Sample
+Parameters
+Exceptions
+Additional Information
+Request
+GET <a href=https://na.airvantage.net/api/v1/applications/app1/partners target=_blank rel="noopener noreferrer" class="">https://na.airvantage.net/api/v1/applications/app1/partners</a>
+...
+Response
+200 OK
+HTTP/1.1 200 OK
+Content-Type: application/json
+...
+{
+"size": 4,
+"offset": 0,
+"count": 4,
+"items":    [
+{
+"uid": "fa2cce1cf8c64f36a30112d3188e10df",
+"name": "gerg",
+"profile":          {
+"uid": "bca1a827a83b4c479d0bfd19682f2bc1",
+"name": "Admin"
+}
+},
+{
+"uid": "38f153bc47b84cae9c1adf5bdf11e373",
+"name": "Leo",
+"profile":          {
+"uid": "bca1a827a83b4c479d0bfd19682f2bc1",
+"name": "Admin"
+}
+},
+{
+"uid": "aae6b2e2612d49c792f2fd709c8e0f87",
+"name": "Leo3",
+"profile":          {
+"uid": "bca1a827a83b4c479d0bfd19682f2bc1",
+"name": "Admin"
+}
+},
+{
+"uid": "aa21a6bf75f94bbb8b902ac92c26d1b8",
+"name": "rerg",
+"profile":          {
+"uid": "bca1a827a83b4c479d0bfd19682f2bc1",
+"name": "Admin"
+}
+}
+]
+}
+Name
+Description
+Use
+Default
+Type
+company
+Set the context company.
+optional
+caller's company
+uid
+Name
+Description
+application.unknown
+The specified uid does not match with any application.
+HTTP Method
+GET
+Requires Authentication
+Yes
+Rate Limited
+Yes
+Headers
+None
+Permissions
+entities.applications.view
+Get application model
+/api/v1/applications/{uid}/model
+Gets the xml file describing the application. It is the
+.app
+file used in the release process. To read any
+.cpp
+files
+(include files) instead, caller has to specify it using the
+includeFile
+parameter. Works with public applications.
+Sample
+Parameters
+Exceptions
+Additional Information
+Request
+GET <a href=https://na.airvantage.net/api/v1/applications/6500ee29f8ed4e3991dff484b3ce3e73/model target=_blank rel="noopener noreferrer" class="">https://na.airvantage.net/api/v1/applications/6500ee29f8ed4e3991dff484b3ce3e73/model</a>
+...
+Response
+200 OK
+HTTP/1.1 200 OK
+Content-Type: application/xml
+...
+// (xml content)
+Name
+Description
+Use
+Default
+Type
+company
+Set the context company.
+optional
+caller's company
+uid
+includeFile
+Retrieve and include file. File name may be with or
+without file extension.
+optional
+null
+string
+Name
+Description
+application.missing
+Raised when application is missing.
+application.unknown
+The specified uid does not match with any application.
+application.file.not.found
+The requested file was not found
+HTTP Method
+GET
+Requires Authentication
+Yes
+Rate Limited
+Yes
+Headers
+None
+Permissions
+entities.applications.view
+Get protocols
+/api/v1/applications/{uid}/communication
+Gets all protocols defined in the
+communication part of an application model.
+Sample
+Parameters
+Exceptions
+Additional Information
+Request
+GET <a href=https://na.airvantage.net/api/v1/applications/6500ee29f8ed4e3991dff484b3ce3e73/communication target=_blank rel="noopener noreferrer" class="">https://na.airvantage.net/api/v1/applications/6500ee29f8ed4e3991dff484b3ce3e73/communication</a>
+...
+Response
+200 OK
+HTTP/1.1 200 OK
+Content-Type: application/json
+...
+[
+{
+"type": "M3DA",
+"commIdType" : "SERIAL",
+"parameters": {
+"security" : "hmac-md5"
+"cipher" : "aes-cbc-256"
+}
+},
+{
+"type": "OMADM",
+"commIdType" : "IMEI",
+"parameters": {
+"security": "auth_hmac"
+}
+}
+]
+Name
+Description
+Use
+Default
+Type
+company
+Set the context company.
+optional
+caller's company
+uid
+Name
+Description
+application.unknown
+The specified uid does not match with any application.
+HTTP Method
+GET
+Requires Authentication
+Yes
+Rate Limited
+Yes
+Headers
+None
+Permissions
+entities.applications.view
+Get Configuration Data
+/api/v1/applications/{uid}/data
+Gets the data definitions tree (settings,
+variables, commands, and events) of a given application.
+Sample
+Parameters
+Exceptions
+Additional Information
+Request
+GET <a href="https://na.airvantage.net/api/v1/applications/6500ee29f8ed4e3991dff484b3ce3e73/data?dataTypes=command,variable" target=_blank rel="noopener noreferrer" class="">https://na.airvantage.net/api/v1/applications/6500ee29f8ed4e3991dff484b3ce3e73/data?dataTypes=command,variable</a>
+Response
+200 OK
+[
+{
+"id": "0",
+"label": "Gateway",
+"description":"The node description",
+"elementType": "node",
+"encoding": "REST",
+"data": [
+{
+"id": "greenhouse.data.temperature",
+"label": "Temperature (°C)",
+"description":"The variable description",
+"elementType": "variable",
+"type": "double"
+},
+{
+"id": "greenhouse.data.servoCommand",
+"label": "Open",
+"description":"The command description",
+"elementType": "command",
+"parameters": [
+{
+"id": "servoCommand",
+"defaultValue": "0",
+"defaultLabel": "Requested state of roof.",
+"type": "int",
+"optional": false,
+"constraints": {
+"length": {
+"min": null,
+"max": null
+},
+"bounds": {
+"min": 0,
+"max": 100
+},
+"pattern": "[0-9]+",
+"enumeration": [
+{
+"value":"1",
+"label":"labe1"
+},
+{
+"value":"2",
+"label":"label2"
+}
+]
+}
+}
+]
+},
+{
+"id": "greenhouse.data.temperatureChanged",
+"label": "Temperature changed",
+"description":"The variable description",
+"elementType": "variable",
+"type": "string"
+}
+]
+}
+]
+Name
+Description
+Use
+Default
+Type
+elementType
+Result list will contain request element types : setting, variable,
+event, command, and/or node.
+optional
+null
+string array
+company
+Set the context company.
+optional
+caller's company
+uid
+Name
+Description
+application.unknown
+The specified uid does not match with any application.
+HTTP Method
+GET
+Requires Authentication
+Yes
+Rate Limited
+Yes
+Headers
+None
+Permissions
+entities.applications.view
+Get actions
+/api/v1/applications/{uid}/actions
+Gets available actions of an
+application. Results can be filtered by a given action type.
+Sample
+Parameters
+Exceptions
+Additional Information
+Request
+GET <a href=https://na.airvantage.net/api/v1/applications/6500ee29f8ed4e3991dff484b3ce3e73/actions target=_blank rel="noopener noreferrer" class="">https://na.airvantage.net/api/v1/applications/6500ee29f8ed4e3991dff484b3ce3e73/actions</a>
+...
+Response
+200 OK
+HTTP/1.1 200 OK
+Content-Type: application/json
+...
+[{
+"type": "INSTALL",
+"action": "ALEOS_LINUX_INSTALL"
+}]
+Name
+Description
+Use
+Default
+Type
+type
+Filter results by action type.
+optional
+null
+string
+company
+Set the context company.
+optional
+caller's company
+uid
+Name
+Description
+application.unknown
+The specified uid does not match with any application.
+HTTP Method
+GET
+Requires Authentication
+Yes
+Rate Limited
+Yes
+Headers
+None
+Permissions
+entities.applications.view
+Edit application
+/api/v1/applications/{uid}
+This service allows to configure an application. It
+can be set as a public application and/or mark is as the reference application from all applications of the same type.
+The application manager can also be edited.
+Sample
+Content
+Exceptions
+Additional Information
+Request
+PUT <a href=https://na.airvantage.net/api/v1/applications/6500ee29f8ed4e3991dff484b3ce3e73 target=_blank rel="noopener noreferrer" class="">https://na.airvantage.net/api/v1/applications/6500ee29f8ed4e3991dff484b3ce3e73</a>
+...
+// with the following content
+{
+"applicationManager": "FIRM_IDS"
+}</p>
+<p>...
+Response
+200 OK
+HTTP/1.1 200 OK
+Content-Type: application/json
+...
+{
+"uid":"649ce921536043cd96c538c36367e017",
+"name":"{APPLICATION_NAME}",
+"revision":"{APPLICATION_REV}",
+"type":"test","category":"FIRMWARE",
+"state":"RELEASED",
+"released":1366031971065,
+"published":null,
+"deprecated":null,
+"labels":["label1", "label2"],
+"applicationManager":"FIRM_IDS",
+"isReference":true,
+"isPublic":true,
+"owner" : {
+"uid":"1",
+"name":"Sierra Wireless"
+}
+}
+{
+"applicationManager": "FIRM_IDS"
+}
+Field
+Description
+Use
+Default
+Type
+applicationManager
+Set the application manager.
+optional
+null
+string
+Name
+Description
+application.unknown
+The specified uid does not match with any application.
+application.not.published
+Error raised trying to set a not published application as public or reference
+HTTP Method
+PUT
+Requires Authentication
+Yes
+Rate Limited
+Yes
+Headers
+None
+Permissions
+entities.applications.edit
+Details
+/api/v1/applications/{uid}
+Returns detailed information about the specified application.
+Sample
+Exceptions
+Additional Information
+Request
+GET <a href=https://na.airvantage.net/api/v1/applications/e061fff752704d23af80c63373631fba target=_blank rel="noopener noreferrer" class="">https://na.airvantage.net/api/v1/applications/e061fff752704d23af80c63373631fba</a>
+Response
+200 OK
+HTTP/1.1 200 OK
+Content-Type: application/json
+...
+{
+"deprecated": null,
+"released": 1385566672919,
+"published": 1385566701694,
+"category": "FIRMWARE",
+"applicationManager": "ALEOS_LINUX_WITH_RM",
+"isPublic": true,
+"isReference": true,
+"revision": "4.3.3b.014",
+"labels": [],
+"ownerCompany": "Sierra Wireless",
+"uid": "e061fff752704d23af80c63373631fba",
+"owner": {
+"uid": "1",
+"name": "Sierra Wireless"
+},
+"type": "ALEOS.PROD.15",
+"state": "PUBLISHED",
+"name": "ALEOS GX440"
+}
+Name
+Description
+application.unknown
+The specified uid does not match with any application.
+HTTP Method
+GET
+Requires Authentication
+Yes
+Rate Limited
+Yes
+Headers
+None
+Permissions
+entities.applications.view
+Edit commmunication capabilities
+/api/v1/applications/{uid}/communication
+Edits application's communication protocols that can be used through this application.
+Sample
+Content
+Exceptions
+Additional Information
+Request
+PUT <a href=https://na.airvantage.net/api/v1/applications/6500ee29f8ed4e3991dff484b3ce3e73/communication target=_blank rel="noopener noreferrer" class="">https://na.airvantage.net/api/v1/applications/6500ee29f8ed4e3991dff484b3ce3e73/communication</a>
+...
+// with the following content
+[
+{
+"type" : "OMADM",
+"commIdType" : "IMEI",
+"parameters" : {
+"security" : "auth_hmac"
+}
+},
+{
+"type" : "M3DA",
+"commIdType" : "SERIAL",
+"parameters" : {
+"authentication" : "none",
+"cipher": "aes-cbc-128"
+}
+}
+]
+Response
+200 OK
+HTTP/1.1 200 OK
+Content-Length: 0
+[
+{
+"type" : "MSCI"|"OMADM"|"AWTDA2"|"M3DA"|"REST",
+"commIdType" : "SERIAL"|"MAC"|"IMEI",
+"parameters" : {"name1" : "value1", "name2": "value2", ...}
+},
+...
+]
+Field
+Description
+Use
+Default
+Type
+type
+The supported protocol. Values can be: MSCI, OMADM, AWTDA2, M3DA, REST.
+required
+null
+string
+commIdType
+The communication identifier necessary to establish a connexion to the server. (SERIAL, MAC, IMEI, ...).
+required
+null
+string
+parameters
+see bellow
+see parameters description bellow
+null
+string
+Parameters
+Name
+Description
+Allowed values
+sms-binary
+Optional for all protocols
+true, false
+authentication
+Mandatory for M3DA
+none, hmac-md5, hmac-sha1
+cipher
+Mandatory for M3DA
+none, aes-ctr-256, aes-ctr-128, aes-cbc-256, aes-cbc-128
+security
+Mandatory for OMADM
+none, auth_hmac
+Name
+Description
+application.model.protocol.missing.param
+A required protocol parameter is missing.
+application.model.protocol.invalid.param.value
+A protocol parameter value is invalid.
+application.model.protocol.missing.type
+The type of a protocol is missing.
+application.model.protocol.missing.comm.id.type
+The commIdType of a protocol is missing.
+application.unknown
+The specified uid does not match with any application.
+application.linked.to.system
+The application communication can not be update because the specified application is used by one or more systems
+HTTP Method
+PUT
+Requires Authentication
+Yes
+Rate Limited
+Yes
+Headers
+None
+Permissions
+entities.applications.edit
+Edit application data
+/api/v1/applications/{uid}/data
+Edits data definitions for this application.
+Definitions have to be structued as a data tree using Node types as top level elements.
+In other words, the structure has to begin with a list of Node elements. Notice that encoding is required for those elements.
+Top level nodes then declare a list of data which can be of type Variable, Setting, Command, Event, and/or Node.
+Sample
+Content
+Exceptions
+Additional Information
+Request
+PUT <a href=https://na.airvantage.net/api/v1/applications/6500ee29f8ed4e3991dff484b3ce3e73/data target=_blank rel="noopener noreferrer" class="">https://na.airvantage.net/api/v1/applications/6500ee29f8ed4e3991dff484b3ce3e73/data</a>
+...
+// with the following content
+[
+{
+"id": "0",
+"label": "Gateway",
+"description": "The node description",
+"elementType": "node",
+"encoding": "REST",
+"data": [
+{
+"id": "greenhouse.data.temperature",
+"label": "Temperature (°C)",
+"description": "The variable description",
+"elementType": "variable",
+"type": "double"
+},
+{
+"id": "greenhouse.data.servoCommand",
+"label": "Open",
+"description":"The command description",
+"elementType": "command",
+"parameters": [
+{
+"id": "servoCommand",
+"defaultValue": "0",
+"defaultLabel": "Requested state of roof.",
+"type": "int",
+"optional": false,
+"constraints": {
+"length": {
+"min": null,
+"max": null
+},
+"bounds": {
+"min": 0,
+"max": 100
+},
+"pattern": "[0-9]+",
+"enumeration": [
+{
+"value":"1",
+"label":"labe1"
+},
+{
+"value":"2",
+"label":"label2"
+}
+]
+}
+}
+]
+},
+{
+"id": "greenhouse.data.temperatureChanged",
+"label": "Temperature changed",
+"description":"The event description",
+"elementType": "event",
+"type": "string"
+}
+]
+}
+]
+Response
+200 OK
+HTTP/1.1 200 OK
+Content-Length: 0
+[
+{
+"id": "data_identifier",
+"label": "human_readable_label",
+"elementType": "variable|setting|command|event",
+"encoding": "protocol_encoding",
+"type" : "value_data_type",
+"data": [ ... ],
+"parameters": [
+{
+"id": "parameter_id",
+"defaultValue": "0",
+"defaultLabel": "human_readable_label",
+"type": "value_data_type",
+"optional": false,
+"constraints": {
+"length": {
+"min": null,
+"max": null
+},
+"bounds": {
+"min": 0,
+"max": 100
+},
+"pattern": "any_pattern",
+"enumeration": [
+{
+"value":"1",
+"label":"labe1"
+},
+{
+"value":"2",
+"label":"label2"
+}
+]
+}
+}
+]
+}
+]
+Field
+Description
+Use
+Default
+Type
+id
+Identifies data.
+optional (id or path is required)
+string
+path
+Identifies data.
+optional (id or path is required)
+string
+label
+A human readable label.
+optional
+string
+elementType
+Data elements can be
+variable
+which are read only values,
+setting
+which are read-write values,
+command
+which are messages to be sent to the system,
+event
+which are read only values sent by the system and cannot be retrieved manually by the user, and
+node
+which group other data elements. If elementType is mising then the element block will be ignored.
+required
+string
+encoding
+The encoding protocol (MSCI, AWTDA2, M3DA, OMADM, REST). Required only for top level Nodes from the data tree.
+required
+string
+type
+DataType of values set on
+variables
+,
+settings
+, or
+events
+.
+required
+string
+data
+List of data elements contained by this node. It only make sense for Node elements.
+required
+list
+parameters
+List of command parameters to be sent to the system along with the command message. See example above for more details.
+required
+list
+Name
+Description
+application.unknown
+The specified uid does not match with any application.
+application.model.data.missing.id
+One of the nodes does not contain id attribute.
+application.model.data.missing.path
+One of the nodes does not contain path attribute.
+application.model.data.missing.encoding
+One of the root nodes does not contain encoding attribute.
+application.model.data.missing.parameter.id
+A command node does not contain parameter id.
+application.model.data.duplicated.id
+Two or more nodes have the same id.
+application.model.data.duplicated.path
+Two or more nodes have the same path.
+application.model.data.unwanted.id
+A root node having a path got one or more child with an id.
+application.model.data.unwanted.path
+A root node having an id got one or more child with a path.
+application.model.data.missing.id.or.path
+A root node does not contain id or path.
+application.model.data.invalid.id.and.path
+A root node contain id and path.
+application.model.invalid.description
+Raised when an element description is too long.
+HTTP Method
+PUT
+Requires Authentication
+Yes
+Rate Limited
+Yes
+Headers
+None
+Permissions
+entities.applications.edit
+Edit device management capabilities
+/api/v1/applications/{uid}/actions
+Edit application's actions.
+Sample
+Content
+Exceptions
+Additional Information
+Request
+PUT <a href=https://na.airvantage.net/api/v1/applications/6500ee29f8ed4e3991dff484b3ce3e73/actions target=_blank rel="noopener noreferrer" class="">https://na.airvantage.net/api/v1/applications/6500ee29f8ed4e3991dff484b3ce3e73/actions</a>
+...
+// with the following content
+[
+{
+"action": "ALEOS_LINUX_INSTALL"
+},
+{
+"action": "READYAGENT_DM_CONNECT"
+}
+]
+Response
+200 OK
+HTTP/1.1 200 OK
+Content-Length: 0
+[
+{
+"action": "ALEOS_LINUX_INSTALL|READYAGENT_DM_CONNECT|..."
+},
+...
+]
+Field
+Description
+Use
+Default
+Type
+action
+The device management action implementation.
+Values can be: ALEOS_LINUX_INSTALL, ALEOS_LINUX_INSTALL_WITH_RM,
+ALEOS_REBOOT, ALEOS_CONFIGURE_HEARTBEAT, ALEOS_SYNCHRONIZE, ALEOS_NUCLEUS_INSTALL,
+OPENAT_IDS_FW_INSTALL, OPENAT_IDS_SW_INSTALL, OPENAT_IDS_SW_UNINSTALL, OPENAT_IDS_SW_START, OPENAT_IDS_SW_STOP,
+OPENAT_IDS_CONNECT, OPENAT_CONFIGURE_HEARTBEAT, OPENAT_AT_COMMAND, OPENAT_SYNCHRONIZE, OPENAT_REBOOT,
+READYAGENT_APPCON_INSTALL, READYAGENT_APPCON_UNINSTALL, READYAGENT_APPCON_STOP,
+READYAGENT_APPCON_START, READYAGENT_APPCON_STATUS, READYAGENT_DM_CONNECT, READYAGENT_DM_REBOOT,
+READYAGENT_DM_SYNCHRONIZE, READYAGENT_CONFIGURE_HEARTBEAT,
+MIHINI_APPCON_INSTALL, MIHINI_ASSET_INSTALL, MIHINI_APPCON_UNINSTALL, MIHINI_APPCON_STOP,
+MIHINI_APPCON_START, MIHINI_APPCON_STATUS, MIHINI_DM_CONNECT, MIHINI_DM_REBOOT, MIHINI_DM_SYNCHRONIZE,
+MIHINI_DM_RESET, MIHINI_CONFIGURE_HEARTBEAT
+required
+null
+string
+Name
+Description
+application.unknown
+The specified uid does not match with any application.
+HTTP Method
+PUT
+Requires Authentication
+Yes
+Rate Limited
+Yes
+Headers
+None
+Permissions
+entities.applications.edit
+Delete application
+/api/v1/applications/{uid}
+Deletes an application owned by your company or remove from your repository if the application is owned by another company.
+This action can only be performed if the application is not used by any systems.
+Sample
+Parameters
+Exceptions
+Additional Information
+Request
+DELETE <a href=https://na.airvantage.net/api/v1/applications/6500ee29f8ed4e3991dff484b3ce3e73 target=_blank rel="noopener noreferrer" class="">https://na.airvantage.net/api/v1/applications/6500ee29f8ed4e3991dff484b3ce3e73</a>
+Response
+200 OK
+HTTP/1.1 200 OK Content-Length: 0
+Name
+Description
+Use
+Default
+Type
+company
+Set the context company.
+optional
+caller's company
+uid
+Name
+Description
+application.unknown
+The specified uid does not match with any application.
+application.linked.to.system
+The specified application can not be removed because it is used by one or more systems.
+HTTP Method
+DELETE
+Requires Authentication
+Yes
+Rate Limited
+Yes
+Headers
+None
+Permissions
+entities.applications.delete
+Set company reference
+/api/v1/applications/{uid}/reference
+Set an application as reference of a company.
+Sample
+Parameters
+Exceptions
+Additional Information
+Request
+POST <a href=https://na.airvantage.net/api/v1/applications/6500ee29f8ed4e3991dff484b3ce3e73/reference target=_blank rel="noopener noreferrer" class="">https://na.airvantage.net/api/v1/applications/6500ee29f8ed4e3991dff484b3ce3e73/reference</a>
+...
+Response
+200 OK
+HTTP/1.1 200 OK
+Name
+Description
+Use
+Default
+Type
+company
+the company on which to set reference
+optional
+caller's company
+uid
+Name
+Description
+application.unknown
+The specified uid does not match with any application.
+application.not.qualified
+Application has to be public and owned by Sierra Wireless
+to be set as company reference.
+application.not.shared
+Application has to be shared with the company to be
+set as company reference.
+application.not.published
+Application should be first published before being
+set as company reference.
+HTTP Method
+POST
+Requires Authentication
+Yes
+Rate Limited
+Yes
+Headers
+None
+Permissions
+entities.applications.edit
+Delete company reference
+/api/v1/applications/{uid}/reference
+Delete an application as reference of a company.
+Sample
+Parameters
+Exceptions
+Additional Information
+Request
+DELETE <a href=https://na.airvantage.net/api/v1/applications/6500ee29f8ed4e3991dff484b3ce3e73/reference target=_blank rel="noopener noreferrer" class="">https://na.airvantage.net/api/v1/applications/6500ee29f8ed4e3991dff484b3ce3e73/reference</a>
+...
+Response
+200 OK
+HTTP/1.1 200 OK
+Name
+Description
+Use
+Default
+Type
+company
+the company for which the reference is deleted
+optional
+caller's company
+uid
+Name
+Description
+application.unknown
+The specified uid does not match with any application.
+HTTP Method
+DELETE
+Requires Authentication
+Yes
+Rate Limited
+Yes
+Headers
+None
+Permissions
+entities.applications.edit
+Release
+/api/v1/operations/applications/release
+To release applications, the caller must provide a valid archive.
+It can contain one or several applications. Each application is composed of different files:</p>
+<ul>
+<li class="">1
+.app
+file. This file is mandatory. It describes the application.
+It must declare the name, revision, type, and the name of binary files that have to be read.
+Data model and communication capabilities can also be described here and/or reference include files.
+IMPORTANT: The couples name/revision have to be unique within a company.
+Couple type/revision has to be unique throughout AirVantage.</li>
+<li class="">0 or *
+.cpp
+files. These files are referenced by the
+.app
+file.
+They declare the data model and the communication capabilities of an application.</li>
+<li class="">1 or * binary files. The application itself.
+Files for a single release, can be placed at the top level without any directory.
+When releasing several applications, their files MUST be placed in different
+directories within the archive.
+The release process will launch an operation that is going to parse, read, save and eventually sign binary packages.
+Sample
+Parameters
+JSON Content
+Exceptions
+Additional Information
+Request
+POST <a href=https://na.airvantage.net/api/v1/operations/applications/release target=_blank rel="noopener noreferrer" class="">https://na.airvantage.net/api/v1/operations/applications/release</a>
+Content-type: multipart/mixed; boundary="BoundaryUgix6QHMxLwJ4siU"
+--BoundaryUgix6QHMxLwJ4siU
+Content-Disposition: form-data; name="file"; filename="file.zip"
+Content-Type: application/zip
+Content-Length: 284060
+// ZIP attached
+...
+--BoundaryUgix6QHMxLwJ4siU
+Content-Disposition: form-data; name="parameters"; filename="parameters.json"
+Content-Type: application/json
+// JSON attached
+{
+"notify" : true,
+"callback" : "callback_url"
+}
+--BoundaryUgix6QHMxLwJ4siU--
+Response
+200 OK
+HTTP/1.1 200 OK
+Content-Type: application/json
+...
+{
+"operation": "6c7e105443af4d8bbb1488974b73df37"
+}
+Name
+Description
+Use
+Default
+Type
+force
+If true, the user can re-release an already released
+application with the same name and revision.
+optional
+false
+boolean
+company
+Set the context company.
+optional
+caller's company
+uid
+{
+"notify" : true|false,
+"callback" : "callback_url"
+}
+Field
+Description
+Use
+Default
+Type
+notify
+Send an email notification to the user calling this method when the operation finishes.
+optional
+false
+boolean
+callback
+The endpoint URL to call when the operation state changes. The callback is done
+using HTTP 'POST' method
+.
+optional
+string
+Name
+Description
+application.invalid.archive.several.app.files
+Several files with extension ".app" were found in the
+given archive. Only one is expected.
+application.archive.binary.size.exceeds
+One of the binary files exceeds the maximum authorized
+size (100 Mo).
+application.archive.text.size.exceeds
+One of the text files (*.app, *.cp, *.json, *.js)
+exceeds the maximum authorized size (1 Mo).
+application.invalid.archive.missing.app.file
+No application file found.
+application.unreadable.archive
+Archive file was corrupted or it cannot be read.
+application.parsing.xsd.error
+Application model files contain some errors.
+application.missing.name
+Application's name was not specified.
+application.missing.revision
+Application's revision was not specified.
+application.missing.type
+Application's type was not specified.
+application.model.missing.identifier
+Raised when configuration elements were specified
+without any id or path.
+application.model.invalid.identifier
+Raised when configuration elements were specified with
+both id or path.
+application.model.not.unique.identifier
+Raised when configuration elements were specified with
+an id or a path already set.
+application.model.invalid.description
+Raised when an element description is too long.
+application.model.invalid.enum
+Raised when the given value did not match with the
+expected Enumeration.
+application.missing.or.empty.binary.package
+Expected binary packages were not found in the given
+archive
+application.type.revision.not.unique
+There is already an application with the same type and
+same revision in AirVantage.
+application.name.revision.not.unique
+There is already an application with the same name and
+revision within the company.
+application.unauthorized.execution.external.provider
+Impossible to force a re-release on an application
+that is not provided by the user's company.
+application.unauthorized.execution.mismatch.name.revision.type
+Impossible to force a re-release on an application
+whose name, type, or revision is not the same.
+file.too.large
+Archives cannot be more than 200MB.
+application.release.already.in.progress
+A re-release of the application is already in progress.
+HTTP Method
+POST
+Requires Authentication
+Yes
+Rate Limited
+Yes
+Headers
+Content-type: application/zip
+Permissions
+entities.applications.release
+Publish
+/api/v1/operations/applications/publish
+Publishes an application. An application
+marked as published can be shared with partners or/and can be
+completely public.
+Sample
+Content
+Parameters
+Exceptions
+Additional Information
+Request
+POST <a href=https://na.airvantage.net/api/v1/operations/applications/publish target=_blank rel="noopener noreferrer" class="">https://na.airvantage.net/api/v1/operations/applications/publish</a>
+Content-Type: application/json
+...</li>
+</ul>
+<p>{
+"application" : "1cb5e5fc9bc14fa567a35717a91e5672",
+}
+Response
+200 OK
+HTTP/1.1 200 OK
+Content-Type: application/json
+...
+{
+"operation":"4b89657f63aac4b299c1d46e98a495326"
+}
+{
+"application" : "uid",
+"applications" : {
+"criteria" : {
+"uids" : ["uid1", ...],
+"labels" : ["label1", ...],
+"name" :  "name",
+"revision" : "revision",
+"type" : "xxx",
+"categories" : ["xxx"],
+"state" : "xxx",
+"releasedBefore" : "timestamp",
+"releasedAfter" : "timestamp",
+"isReference" : true|false,
+"isPublic" : true|false,
+"applicationManager" : "xxx",
+"owner" : {
+"uid" : "xxx",
+"name" : "xxx"
+}
+}
+}
+}
+'application' or 'applications' should be set to select applications to publish
+Field
+Description
+Use
+Default
+Type
+application
+The unique identifier of the application to publish
+required
+uid
+applications.criteria.uids
+Selects all applications matching the specified identifiers.
+optional
+uid
+applications.criteria.labels
+Selects all applications having one of the specified
+label.
+optional
+string
+applications.criteria.name
+Selects all applications whose name contains the given
+string.
+optional
+string
+applications.criteria.revision
+Selects all applications whose revision contains the
+given string.
+optional
+string
+applications.criteria.type
+Selects all applications whose type contains the given string.
+optional
+string
+applications.criteria.categories
+Selects all applications whose category matches the
+given strings.
+Categories are : APPLICATION, FIRMWARE, FIRMWARE_COMPONENT, BUNDLE
+optional
+string array
+applications.criteria.state
+Selects all applications having the given state.
+States are RELEASED, PUBLISHED, DEPRECATED.
+optional
+string
+applications.criteria.releasedBefore
+Selects all applications released after the given date.
+The specified date is included.
+optional
+timestamp
+applications.criteria.releasedAfter
+Selects all applications released before the given date.
+The specified date is included.
+optional
+timestamp
+applications.criteria.applicationManager
+Selects all applications related to the specified
+application manager.
+optional
+string
+applications.criteria.isReference
+Selects reference/not reference applications
+optional
+boolean
+applications.criteria.isPublic
+Selects public/not public applications
+optional
+boolean
+applications.criteria.owner.uid
+Selects all applications whose the owner company UID matches the specified uid.
+optional
+string
+applications.criteria.owner.name
+Selects all applications whose the owner company name contains the given string.
+optional
+string
+isPublic
+[DEPRECATED]
+Specify if the given
+application is public or not. Set true if public
+This
+attribute is deprecated. Use
+edit application
+with
+'isPublic' attribute.
+optional
+false
+boolean
+Name
+Description
+Use
+Default
+Type
+company
+Set the context company.
+optional
+caller's company
+uid
+Name
+Description
+application.missing
+Raised when application is missing.
+application.unknown
+The specified uid does not match with any application.
+application.invalid.state
+Only application in RELEASED or DEPRECATED state can be published.
+application.already.published
+Cannot publish an application already published.
+selection.empty
+No application found for the specified criteria.
+HTTP Method
+POST
+Requires Authentication
+Yes
+Rate Limited
+Yes
+Headers
+Content-type: application/json
+Permissions
+entities.applications.publish
+Share
+/api/v1/operations/applications/share
+Shares an application with specific
+partners. The application must be published.
+Sample
+Content
+Parameters
+Exceptions
+Additional information
+Request
+POST <a href=https://na.airvantage.net/api/v1/operations/applications/share target=_blank rel="noopener noreferrer" class="">https://na.airvantage.net/api/v1/operations/applications/share</a>
+Content-Type: application/json
+...</p>
+<p>{
+"application" : "1cb5e5fc9bc14fa567a35717a91e5672",
+"partners" : ["7cb449f63aac4b299c1d46e23a495326", "cb6547f63aac4b299c1d46e23a495326"]
+}
+Response
+200 OK
+HTTP/1.1 200 OK
+Content-Type: application/json
+...
+{
+"operation":"4b89657f63aac4b299c1d46e98a495326"
+}
+{
+"application" : "uid",
+"partners" : ["uid1", "uid2", ...]
+}
+Field
+Description
+Use
+Default
+Type
+application
+The unique identifier of the application to publish
+required
+uid
+partners
+The list of partners uid where the application will be
+published
+required
+string
+Name
+Description
+Use
+Default
+Type
+company
+Set the context company.
+optional
+caller's company
+uid
+Name
+Description
+application.missing
+Raised when application is missing.
+application.unknown
+The specified uid does not match with any application.
+application.not.published
+Application should be first published before to be
+shared
+HTTP Method
+POST
+Requires Authentication
+Yes
+Rate Limited
+Yes
+Headers
+Content-type: application/json
+Permissions
+entities.applications.publish
+Add
+/api/v1/operations/applications/public/{uid}
+Adds a public application to the local
+inventory.
+Sample
+Parameters
+Exceptions
+Additional information
+Request
+GET <a href=https://na.airvantage.net/api/v1/operations/applications/public/1cb5e5fc9bc14fa567a35717a91e5672 target=_blank rel="noopener noreferrer" class="">https://na.airvantage.net/api/v1/operations/applications/public/1cb5e5fc9bc14fa567a35717a91e5672</a>
+...
+Response
+200 OK
+HTTP/1.1 200 OK
+Content-Type: application/json
+...
+{
+"operation":"4b89657f63aac4b299c1d46e98a495326"
+}
+Name
+Description
+Use
+Default
+Type
+company
+Set the context company.
+optional
+caller's company
+uid
+Name
+Description
+application.missing
+Raised when application is missing.
+application.unknown
+The specified uid does not match with any application.
+application.not.published
+Application should be first published before to be
+added
+application.name.revision.not.unique
+There is already an application with the same name and
+revision within the company.
+HTTP Method
+GET
+Requires Authentication
+Yes
+Rate Limited
+Yes
+Headers
+Content-type: application/json
+Permissions
+entities.applications.publish
+Deprecate
+/api/v1/operations/applications/deprecate
+Deprecates an application.
+Sample
+Content
+Parameters
+Exceptions
+Additional Information
+Request
+POST <a href=https://na.airvantage.net/api/v1/operations/applications/deprecate target=_blank rel="noopener noreferrer" class="">https://na.airvantage.net/api/v1/operations/applications/deprecate</a>
+Content-Type: application/json
+...</p>
+<p>{
+"application" : "1cb5e5fc9bc14fa567a35717a91e5672",
+}
+Response
+200 OK
+HTTP/1.1 200 OK
+Content-Type: application/json
+...
+{
+"operation":"4b89657f63aac4b299c1d46e98a495326"
+}
+{
+"application" : "uid"
+}
+Field
+Description
+Use
+Default
+Type
+application
+The unique identifier of the application to deprecate
+required
+uid
+Name
+Description
+Use
+Default
+Type
+company
+Set the context company.
+optional
+caller's company
+uid
+Name
+Description
+application.missing
+Raised when application is missing.
+application.unknown
+The specified uid does not match with any application.
+application.already.deprecated
+Application is alredy deprecated
+application.invalid.state
+Application should be first published to be deprecated
+application.unauthorized.execution.external.provider
+Impossible to deprecate an application that is not
+provided by the user's company.
+HTTP Method
+POST
+Requires Authentication
+Yes
+Rate Limited
+Yes
+Headers
+Content-type: application/json
+Permissions
+entities.applications.publish
+Change labels
+/api/v1/operations/applications/label
+Adds or removes labels to applications matching a given criteria. When no criteria are set, all applications in the company will be labelled.
+Sample
+Content
+Parameters
+Exceptions
+Additional Information
+Request
+POST <a href=https://na.airvantage.net/api/v1/operations/applications/label target=_blank rel="noopener noreferrer" class="">https://na.airvantage.net/api/v1/operations/applications/label</a>
+Content-Type: application/json
+...
+{
+"labels" : {
+"add" :  ["france"]
+},
+"criteria" : {
+"revision" : "1.0.1",
+"state" : "RELEASED"
+}
+}
+Response
+200 OK
+HTTP/1.1 200 OK
+Content-Type: application/json
+...
+{
+"operation":"4b89657f63aac4b299c1d46e98a495326"
+}
+{
+"notify" : true|false,
+"callback" : "callback URL",
+"labels" : {
+"add" : ["Label1", ...],
+"remove" : ["Label2", ...]
+},
+"criteria" : {
+"uids" : ["uid1", ...],
+"labels" : ["label1", ...],
+"name" :  "name",
+"revision" : "revision",
+"type" : "xxx",
+"categories" : ["xxx"],
+"state" : "xxx",
+"releasedBefore" : "timestamp",
+"releasedAfter" : "timestamp",
+"isReference" : true|false,
+"isPublic" : true|false,
+"applicationManager" : "xxx",
+"owner" : {
+"uid" : "xxx",
+"name" : "xxx"
+}
+},
+"dependsOn" : {
+"operation" : "uid",
+"states" : ["FAILURE"]
+}
+}
+Add or remove labels should be required
+Either 'criteria' or 'dependsOn' should be set.
+Field
+Description
+Use
+Default
+Type
+notify
+Send an email notification to the user calling this method when the operation finishes
+optional
+boolean
+callback
+The endpoint URL to call when the operation state changes. The callback is done
+using HTTP 'POST' method
+.
+optional
+string
+labels.add
+The list of labels to add
+required
+string
+labels.remove
+The list of labels to remove
+required
+string
+dependsOn.operation
+Identifier of the operation to be used to launch this operation
+In other words,
+the tasks of the new operation will start only when the tasks of specified operation will be finished.
+required if 'dependsOn' set
+uid
+dependsOn.states
+States of the tasks which will be used as input of this operation.
+Possible values are : SUCCESS, FAILURE and CANCELLED.
+If null or empty, all tasks from the parent operation will be used as input of this operation.
+optional
+SUCCESS,FAILURE,CANCELLED
+string array
+criteria.uids
+Can contain no more than 100 system unique identifier.
+optional
+uid
+criteria.labels
+Labels all systems having one of the specified
+label.
+optional
+string
+criteria.name
+Labels all systems whose name contains the given
+string.
+optional
+string
+criteria.revision
+Label all applications whose revision contains the
+given string.
+optional
+string
+criteria.type
+Label all applications whose type contains the given string.
+optional
+string
+criteria.category
+[DEPRECATED] Use 'categories' instead.
+Label all applications whose category matches the
+given string.
+Categories are : APPLICATION, FIRMWARE, FIRMWARE_COMPONENT, BUNDLE
+optional
+string
+criteria.categories
+Label all applications whose category matches the
+given strings.
+Categories are : APPLICATION, FIRMWARE, FIRMWARE_COMPONENT, BUNDLE
+optional
+string array
+criteria.state
+Label all applications having the given state.
+States are RELEASED, PUBLISHED, DEPRECATED.
+optional
+string
+criteria.releasedBefore
+Label all applications released after the given date.
+The specified date is included.
+optional
+timestamp
+criteria.releasedAfter
+Label all applications released before the given date.
+The specified date is included.
+optional
+timestamp
+criteria.applicationManager
+Label all applications related to the specified
+application manager.
+optional
+string
+criteria.isReference
+Label reference/not reference applications
+optional
+boolean
+criteria.isPublic
+Label public/not public applications
+optional
+boolean
+criteria.owner.uid
+Label all applications whose the owner company UID matches the specified uid.
+optional
+string
+criteria.owner.name
+Label all applications whose the owner company name contains the given string.
+optional
+string
+Name
+Description
+Use
+Default
+Type
+Operand
+company
+Set the context company.
+optional
+caller's company
+uid
+Name
+Description
+label.missing
+The list of label to add or remove is empty.
+label.amount.exceeded
+The number of labels to add or remove is greater than 100.
+selection.empty
+There is no application matching the given criteria.
+selection.invalid
+The selection is invalid. The possible causes are :
+Only one of the following attributes has to be set : criteria, dependsOn
+'dependsOn' is defined but 'dependsOn.operation' is not set
+HTTP Method
+POST
+Requires Authentication
+Yes
+Rate Limited
+Yes
+Headers
+Content-type: application/json
+Permissions
+entities.applications.edit</div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href=https://github.com/andreyjv/personal-av/tree/docs/documentation-revamp/PRD_documentation-revamp/website/docs/reference/api/API-Application-v1.md target=_blank rel="noopener noreferrer" class=theme-edit-this-page><svg fill=currentColor height=20 width=20 viewBox="0 0 40 40" class=iconEdit_Z9Sw aria-hidden=true><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"/></g></svg>Edit this page</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href=#applicationgeneralfgeneral-informationoperationsfsystemoperationsalertapplicationgatewaysettingsdatasetlabelzoneoperatoroffer--optionssystem-configurationsadministrationfcompanypartnerprofileusersubscriptionfsubscriptionorderingfcontactorderproduct-referenceapplicationoverviewfieldsjsonthe-embedded-application-model-defines-how-airvantagecan-interact-with-an-embedded-application-deployed-on-asystem-it-can-be-seen-as-a-contract-defining-the-general-termsof-communication-between-the-embedded-application-and-theairvantage-which-data-am-i-supposed-to-send-you-howwhenread-only-fields-are-computed-by-airvantage-and-canonly-be-seen-on-response-fragments-sent-byfindrequestfielddescriptionread-onlytypeuidapplications-uidtrueuidnameapplications-name-the-couple-name-revision-has-tobe-unique-within-same-companytruestringrevisionapplications-revisiontruestringtypeapplications-type-the-couple-type-revision-has-tobe-unique-throughout-airvantagetruestringcategoryapplications-category-possible-values-areapplication-or-firmwaretrueenumstateapplications-state-possible-values-are-releasedpublished-or-deprecatedtrueenumreleaseddate-time-when-application-was-releasedtruetimestamppublisheddate-time-when-application-was-publishedtruetimestampdeprecateddate-time-when-application-was-deprecatedtruetimestampownercompanydeprecatedthe-uid-of-the-company-who-has-develop-this-applicationthis-field-is-deprecated-and-replaced-by-ownertruestringownerthecompanywho-has-develop-this-applicationfalseobjectlabelsapplications-can-be-labeled-with-a-list-oflabelstruestring-arrayisreferenceis-the-application-the-reference-application-for-theapplication-typefalsebooleaniscompanyreferenceis-the-application-the-reference-application-for-theapplication-type-and-the-context-companyfalsebooleanispublicis-the-application-publicfalsebooleanapplicationmanagerdefine-the-application-manager-in-charge-of-thelifecycle-of-this-application-install-start-stop-theseapplicationmanagers-are-predefined-in-airvantageknown-applications-managers-are-aleos_nucleus-aleos_linuxaleos_linux_with_rm-firm_ids-soft_ids-readyagent_appconmihini_appcon-mihini_asset_install-aircard_fw-unknownfalseenumthis-is-a-complete-representation-of-an-applicationuid-name-revision-type-category-state-released-published-deprecated-isreference-iscompanyreference-ispublic--labels-applicationmanager-owner--uid-name-api-methodsapplicationcreatefindfind-publiceditdetailsedit-communicationedit-dataedit-actionsdeletevalidategetpublished-partnersgetapplication-modelget-protocolsgetdata-configurationget-actionsset-company-referencedelete-company-referenceoperationsreleasepublishshareadddeprecatechange-labelscreateapiv1applicationscreates-a-new-application-definition-with-general-informationnamerevisionandtypeare-required-fieldssampleparameterscontentexceptionsadditional-informationrequestpost-httpsnaairvantagenetapiv1applicationscontent-type-applicationjson-with-contentname-application_namerevision-application_revtype-testlabels-applicationmanager-firm_idsresponse200-okuid649ce921536043cd96c538c36367e017nameapplication_namerevisionapplication_revtypeapplication_typecategoryfirmwarestatereleasedreleased1366031971065publisheddeprecatedlabelsapplicationmanagerfirm_idsisreferenceispublicowner--uid1namesierra-wirelessnamedescriptionusedefaulttypecompanythe-owner-companyoptionalcallers-companyuidthe-content-must-looks-like-the-one-specified-in-theoverviewhowever-some-fields-have-specific-behaviors-here-you-canfind-the-list-of-these-fields-with-detailed-informationfielddescriptionusedefaulttypenamethe-name-of-the-applicationrequiredstringrevisionthe-revision-of-the-applicationrequiredstringtypethe-type-of-the-applicationrequiredstringlabelsthe-labels-to-link-ot-the-applicationoptional class="table-of-contents__link toc-highlight">Application
+General
+f
+General Information
+Operations
+f
+System
+Operations
+Alert
+Application
+Gateway
+Settings
+Dataset
+Label
+Zone
+Operator
+Offer & Options
+System Configurations
+Administration
+f
+Company
+Partner
+Profile
+User
+Subscription
+f
+Subscription
+Ordering
+f
+Contact
+Order
+Product Reference
+Application
+Overview
+Fields
+JSON
+The embedded application model defines how AirVantage
+can interact with an embedded application deployed on a
+system. It can be seen as a "contract" defining the general terms
+of communication between the embedded application and the
+AirVantage: which data am I supposed to send you, how,
+when
+Read only fields are computed by AirVantage and can
+only be seen on response fragments sent by
+find
+request.
+Field
+Description
+Read Only
+Type
+uid
+Application's uid
+true
+uid
+name
+Application's name. The couple (name, revision) has to
+be unique within same company.
+true
+string
+revision
+Application's revision
+true
+string
+type
+Application's type. The couple (type, revision) has to
+be unique throughout AirVantage.
+true
+string
+category
+Application's category. Possible values are:
+APPLICATION or FIRMWARE
+true
+enum
+state
+Application's state. Possible values are: RELEASED,
+PUBLISHED, or DEPRECATED
+true
+enum
+released
+Date time when application was released
+true
+timestamp
+published
+Date time when application was published
+true
+timestamp
+deprecated
+Date time when application was deprecated
+true
+timestamp
+ownerCompany
+[DEPRECATED]
+The uid of the company who has develop this application.
+This field is deprecated and replaced by 'owner'.
+true
+string
+owner
+The
+company
+who has develop this application.
+false
+object
+labels
+Applications can be labeled with a list of
+labels.
+true
+string array
+isReference
+Is the application the reference application for the
+application type.
+false
+boolean
+isCompanyReference
+Is the application the reference application for the
+application type and the context company.
+false
+boolean
+isPublic
+Is the application public
+false
+boolean
+applicationManager
+Define the application manager in charge of the
+lifecycle of this application (install, start, stop...). These
+ApplicationManagers are predefined in AirVantage.
+Known applications managers are: ALEOS_NUCLEUS, ALEOS_LINUX,
+ALEOS_LINUX_WITH_RM, FIRM_IDS, SOFT_IDS, READYAGENT_APPCON,
+MIHINI_APPCON, MIHINI_ASSET_INSTALL, AIRCARD_FW, UNKNOWN.
+false
+enum
+This is a complete representation of an Application.
+{
+"uid": "",
+"name": "",
+"revision": "",
+"type": "",
+"category": "",
+"state": "",
+"released": ,
+"published": ,
+"deprecated": ,
+"isReference": ,
+"isCompanyReference": ,
+"isPublic" : ,
+"labels": [],
+"applicationManager": "",
+"owner" : {
+"uid": "",
+"name": "",
+}
+}
+API Methods
+Application
+Create
+Find
+Find public
+Edit
+Details
+Edit communication
+Edit data
+Edit actions
+Delete
+Validate
+Get
+published partners
+Get
+application model
+Get protocols
+Get
+data configuration
+Get actions
+Set company reference
+Delete company reference
+Operations
+Release
+Publish
+Share
+Add
+Deprecate
+Change labels
+Create
+/api/v1/applications
+Creates a new application definition with general information.
+Name
+,
+revision
+and
+type
+are required fields
+Sample
+Parameters
+Content
+Exceptions
+Additional information
+Request
+POST https://na.airvantage.net/api/v1/applications
+Content-Type: application/json
+...
+// With content:
+{
+"name": "APPLICATION_NAME",
+"revision": "APPLICATION_REV",
+"type": "test",
+"labels": [],
+"applicationManager": "FIRM_IDS"
+}
+Response
+200 OK
+{
+"uid":"649ce921536043cd96c538c36367e017",
+"name":"APPLICATION_NAME",
+"revision":"APPLICATION_REV",
+"type":"APPLICATION_TYPE",
+"category":"FIRMWARE",
+"state":"RELEASED",
+"released":1366031971065,
+"published",
+"deprecated",
+"labels":[],
+"applicationManager":"FIRM_IDS",
+"isReference",
+"isPublic",
+"owner" : {
+"uid":"1",
+"name":"Sierra Wireless"
+}
+}
+Name
+Description
+Use
+Default
+Type
+company
+The owner company.
+optional
+caller's company
+uid
+The content must looks like the one specified in the
+overview
+.
+However, some fields have specific behaviors. Here you can
+find the list of these fields with detailed information.
+Field
+Description
+Use
+Default
+Type
+name
+The name of the application.
+required
+string
+revision
+The revision of the application.
+required
+string
+type
+The type of the application.
+required
+string
+labels
+The labels to link ot the application
+optional</a></ul></div></div></div></div></main></div></div></div></div></div><footer class="theme-layout-footer footer"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class=footer__title>Jobs</div><ul class="footer__items clean-list"><li class=footer__item><a class=footer__link-item href=/personal-av-docs/docs/how-to/activate-sims>Activate SIMs</a><li class=footer__item><a class=footer__link-item href=/personal-av-docs/docs/how-to/order-sims>Order SIMs</a><li class=footer__item><a class=footer__link-item href=/personal-av-docs/api>Call the API</a><li class=footer__item><a class=footer__link-item href=/personal-av-docs/docs/how-to/register-routers>Register routers</a></ul></div><div class="theme-layout-footer-column col footer__col"><div class=footer__title>Reference</div><ul class="footer__items clean-list"><li class=footer__item><a class=footer__link-item href=/personal-av-docs/docs/reference/api>API HTML chapters</a><li class=footer__item><a class=footer__link-item href=/personal-av-docs/docs/reference/apn>APN table</a><li class=footer__item><a class=footer__link-item href=/personal-av-docs/docs/changelog>Changelog</a></ul></div><div class="theme-layout-footer-column col footer__col"><div class=footer__title>Preview</div><ul class="footer__items clean-list"><li class=footer__item><a href=https://doc.airvantage.net/ target=_blank rel="noopener noreferrer" class=footer__link-item>Live Hugo (canonical until cutover)<svg width=13.5 height=13.5 aria-label="(opens in new tab)" class=iconExternalLink_nPIU><use href=#theme-svg-external-link /></svg></a><li class=footer__item><a class=footer__link-item href=/personal-av-docs/docs/ui-library>UI library</a><li class=footer__item><a class=footer__link-item href=/personal-av-docs/docs/copy-library>Copy library</a></ul></div></div><div class="footer__bottom text--center"><div class=footer__copyright>Sierra Wireless / AirVantage documentation preview. Live doc.airvantage.net stays Hugo until cutover. Built with Docusaurus.</div></div></div></footer></div></body>

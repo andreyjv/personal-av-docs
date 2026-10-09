@@ -1,0 +1,444 @@
+<!doctype html><html lang=en dir=ltr class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-reference/cloud/format" data-has-hydrated=false><head><meta charset=UTF-8><meta name=generator content="Docusaurus v3.10.2"><title data-rh=true>Cloud Connectors Format | AirVantage documentation</title><meta data-rh=true name=viewport content="width=device-width, initial-scale=1.0"/><meta data-rh=true name=twitter:card content=summary_large_image /><meta data-rh=true property=og:image content=https://andreyjv.github.io/personal-av-docs/img/favicon.svg /><meta data-rh=true name=twitter:image content=https://andreyjv.github.io/personal-av-docs/img/favicon.svg /><meta data-rh=true property=og:url content=https://andreyjv.github.io/personal-av-docs/docs/reference/cloud/format /><meta data-rh=true property=og:locale content=en /><meta data-rh=true name=docusaurus_locale content=en /><meta data-rh=true name=docsearch:language content=en /><meta data-rh=true name=docusaurus_version content=current /><meta data-rh=true name=docusaurus_tag content=docs-default-current /><meta data-rh=true name=docsearch:version content=current /><meta data-rh=true name=docsearch:docusaurus_tag content=docs-default-current /><meta data-rh=true property=og:title content="Cloud Connectors Format | AirVantage documentation"/><meta data-rh=true name=description content="connectivity · imported from live Hugo on 2026-10-07. Guides stay latest. Original page."/><meta data-rh=true property=og:description content="connectivity · imported from live Hugo on 2026-10-07. Guides stay latest. Original page."/><link data-rh=true rel=icon href=/personal-av-docs/img/favicon.svg /><link data-rh=true rel=canonical href=https://andreyjv.github.io/personal-av-docs/docs/reference/cloud/format /><link data-rh=true rel=alternate href=https://andreyjv.github.io/personal-av-docs/docs/reference/cloud/format hreflang=en /><link data-rh=true rel=alternate href=https://andreyjv.github.io/personal-av-docs/docs/reference/cloud/format hreflang=x-default /><link rel=stylesheet href=/personal-av-docs/assets/css/styles.1e3041e1.css /><script src=/personal-av-docs/assets/js/runtime~main.bbef5b78.js defer></script><script src=/personal-av-docs/assets/js/main.443f591d.js defer></script></head><body><svg style="display: none;"><defs>
+<symbol id=theme-svg-external-link viewBox="0 0 24 24"><path fill=currentColor d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme-deb")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||(window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light")),document.documentElement.setAttribute("data-theme-choice",t||"system")}(),function(){try{for(var[t,e]of new URLSearchParams(window.location.search).entries())if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id=__docusaurus><link rel=preload as=image href=/personal-av-docs/img/favicon.svg /><div role=region aria-label="Skip to main content"><a class=skipToContent_fXgn href=#__docusaurus_skipToContent_fallback>Skip to main content</a></div><nav aria-label=Main class="theme-layout-navbar navbar navbar--fixed-top"><div class=navbar__inner><div class="theme-layout-navbar-left navbar__items"><button aria-label="Toggle navigation bar" aria-expanded=false class="navbar__toggle clean-btn" type=button><svg width=30 height=30 viewBox="0 0 30 30" aria-hidden=true><path stroke=currentColor stroke-linecap=round stroke-miterlimit=10 stroke-width=2 d="M4 7h22M4 15h22M4 23h22"/></svg></button><a class=navbar__brand href=/personal-av-docs/><div class=navbar__logo><img src=/personal-av-docs/img/favicon.svg alt=AirVantage class="themedComponent_mlkZ themedComponent--light_NVdE"/><img src=/personal-av-docs/img/favicon.svg alt=AirVantage class="themedComponent_mlkZ themedComponent--dark_xIcU"/></div><b class="navbar__title text--truncate">AirVantage Docs</b></a><a class="navbar__item navbar__link navbar__guides" href=/personal-av-docs/docs/how-to/activate-sims>Guides</a><a class="navbar__item navbar__link" href=/personal-av-docs/api>API reference</a><a class="navbar__item navbar__link" href=/personal-av-docs/docs/changelog>Changelog</a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type=button disabled title="system mode" aria-label="Switch between dark and light mode (currently system mode)"><svg viewBox="0 0 24 24" width=24 height=24 aria-hidden=true class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill=currentColor d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"/></svg><svg viewBox="0 0 24 24" width=24 height=24 aria-hidden=true class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill=currentColor d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"/></svg><svg viewBox="0 0 24 24" width=24 height=24 aria-hidden=true class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill=currentColor d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"/></svg></button></div><div class=navbarSearchContainer_Bca1><div class="navbar__search searchBarContainer_NW3z" dir=ltr><svg aria-hidden=true class=searchIcon_T3tP focusable=false viewBox="0 0 16 16"><path fill=currentColor d="M6.02945 10.20327a4.17382 4.17382 0 1 1 4.17382-4.17382 4.15609 4.15609 0 0 1-4.17382 4.17382Zm9.69195 4.2199-4.8225-4.82338A5.88021 5.88021 0 0 0 12.058 6.02856 6.00467 6.00467 0 1 0 9.59979 10.8989l4.82338 4.82338a.89729.89729 0 0 0 1.29912 0 .89749.89749 0 0 0-.00087-1.29909Z"/></svg><input placeholder=Search aria-label=Search class="navbar__search-input searchInput_YFbd" value="" /><div class="loadingRing_RJI3 searchBarLoadingRing_YnHq"><div></div><div></div><div></div><div></div></div></div></div></div></div><div role=presentation class=navbar-sidebar__backdrop></div></nav><div id=__docusaurus_skipToContent_fallback class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class=av-shell><nav class=av-rail aria-label=Guides><p class=av-rail-kicker>Guides<ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class=menu__list-item-collapsible><span class="menu__link menu__link--sublist menu__link--sublist-caret av-rail-heading">Quick start</span></div><ul class=menu__list><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link href=/personal-av-docs/docs/how-to/activate-sims>Activate SIMs</a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link href=/personal-av-docs/docs/how-to/order-sims>Order SIMs</a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link href=/personal-av-docs/api>Call the API</a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link href=/personal-av-docs/docs/how-to/register-routers>Register routers</a></ul><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class=menu__list-item-collapsible><span class="menu__link menu__link--sublist menu__link--sublist-caret av-rail-heading">Browse by product</span></div><ul class=menu__list><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link href=/personal-av-docs/docs/how-to/activate-sims>Connectivity</a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link href=/personal-av-docs/docs/how-to/register-routers>Router management</a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link href=/personal-av-docs/docs/explain/states>States and operations</a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link href=/personal-av-docs/api>Developer platform</a></ul><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class=menu__list-item-collapsible><span class="menu__link menu__link--sublist menu__link--sublist-caret av-rail-heading">Keep building</span></div><ul class=menu__list><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link href=/personal-av-docs/docs/explain/states>States and operations</a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link href=/personal-av-docs/docs/reference/apn>APN table</a></ul><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class=menu__link href=/personal-av-docs/docs/get-started/first-sim>Get started</a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class=menu__link href=/personal-av-docs/docs/reference/api>Reference</a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class=menu__link href=/personal-av-docs/docs/changelog>Changelog</a></ul></nav><div class=av-shell-main><div class=docsWrapper_hBAB><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type=button></button><div class=docRoot_UBD9><main class="docMainContainer_TBSr docMainContainerEnhanced_lQrH"><div class="container padding-top--md padding-bottom--lg"><div class=row><div class="col docItemCol_VOVn"><div class=docItemContainer_Djhp><article><div class="theme-doc-markdown markdown"><header><h1>Cloud Connectors Format</h1></header><p>:::note Edition
+<strong>connectivity</strong> · imported from live Hugo on 2026-10-07. Guides stay latest. <a href=https://doc.airvantage.net/connectivity/reference/cloud/format target=_blank rel="noopener noreferrer" class="">Original page</a>.
+:::</p>
+<p>Cloud Connectors Format
+USSD Gateway
+More
+Product page
+Searching...
+Matching results
+Cloud Connectors Format
+This document describes the available connectors and specify the format of the Message Notification mechanism available on AirVantage.
+Initializing Table Of Contents...
+Message Format
+AirVantage generates constantly different kind events. This section presents the existing events and points out how binding can be done to be notified as soon as an event is raised.
+All
+events messages
+are formatted in
+JSON
+. They are composed by their binding name and the date time when they where raised. The content tag holds the event’s payload. This content varies depending on the event type.
+{
+"name" : "events.binding.name",
+"date" : 1403793930523,
+"content" : {
+...
+}
+}
+Overview
+‘Event’ is a readOnly entity that describes public events of AirVantage.
+There are 6 different server events. Take a look to the next sections to see the structure send for each event:
+Operation Events
+: Sent on every operation state change. Its type name is
+event.operation.state.change
+Operation Task Events
+: Sent on every operation task state change. Its type name is
+event.operation.task.state.change
+Alert Events
+: Sent every time an alert rule condition is verified. Its type name is
+event.alert.rule.triggered
+System Usage Record Events
+: Sent every time a usage record is imported. Its type name is
+event.system.usage.record
+.
+SMS MO Events
+: Sent every time an SMS Mobile Originated message is recieved from the device. Its type name is
+event.sms.mo
+.
+SMS MT Result Events
+: Sent every time an SMS Mobile Terminated message is completed. Its type name is
+event.sms.mt.result
+.
+Field
+Description
+Type
+name
+Events type name. There are four kind of events send by AirVantage.
+string
+date
+Date time when the event was raised.
+long
+contents
+A map with detailed information about the event. Common information than can be detailed here is the system id, the rule id, the operation id, the data sent by the system, etc.
+object
+Operation State Change
+During its execution, an operation goes through different states. Every time a new state is reached an event is raised. An operation is composed of one or several tasks, which will in turn follow different steps. In addition to the new operation state, this event shows the number of tasks in their different steps.
+All events of this kind are identified by its name:
+event.operation.state.change
+Its structure looks like the following:
+{
+"name" : "event.operation.state.change",
+"date" : 1403793930523,
+"content" : {
+"operation.uid" : "f89476adad3b4cad97b1ac0a8fe1bf44",
+"operation.state.old" : "IN_PROGRESS",
+"operation.state.new" : "FINISHED",
+"operation.counters" : {
+"init" : 0,
+"pending" : 0,
+"in.progress" : 0,
+"being.cancelled" : 0,
+"cancelled" : 2,
+"failure" : 2,
+"success" : 15
+}
+}
+}
+Content Description
+Name
+Description
+operation.uid
+Unique identifier of the operation
+operation.state.old
+Previous operation state
+operation.state.new
+The new state
+operation.counters
+Number of tasks on each state
+init
+: number of task initializing
+pending
+: number of tasks waiting to be executed
+being.cancelled
+: number of tasks being cancelled
+cancelled
+: number of tasks cancelled
+failure
+: number of tasks finished with errors
+success
+: number of successful tasks
+Operation Task State Change
+An operation is composed of one or several tasks. Each task is linked to an entity (a system, a subscription, …). During its execution, a task goes through different states. For each task, an event is raised when the execution is started and finished.
+All events of this kind are identified by its name:
+event.operation.task.state.change
+Its structure looks like the following:
+{
+"name" : "event.operation.task.state.change",
+"date" : 1403793930523,
+"content" : {
+"operation.uid" : "f89476adad3b4cad97b1ac0a8fe1bf44",
+"operation.type" : "SYSTEM_SEND_COMMAND",
+"task.uid" : "1aa6ef12bcfc423fb6fa6ae120af1beb",
+"target.uid" : "259255f88d3a320385ab5cc610d7f3b5",
+"state" : "SUCCESS"
+}
+}
+Content Description
+Name
+Description
+operation.uid
+Unique identifier of the operation
+operation.type
+Type of the operation
+task.uid
+Unique identifier of the task
+target.uid
+Unique identifier of the entity linked to the task
+state
+The state of the task. Possible values are: STARTED, SUCCESS, FAILED, CANCELLED
+Alert Triggered
+This is the new format for the alert message which comes with a new logic. You can still have a look to
+The Old alert message (deprecated)
+The Old alert message (deprecated)</p>
+<ol>
+<li class="">The temperature changes across the time.</li>
+<li class="">The device reads the sensor and sends the data regurlarly.</li>
+<li class="">Two alert rules are configured:
+Alert rule 1 is raised when the value received changes.
+Alert rule 2 is raised when the temperature value is greater than 15 (and cleared when below 15). In other words, this alert stays raised while temperature is greater than 15.</li>
+<li class="">The alert message for
+Alert rule 2
+is sent through the cloud connector when the condition is met.
+AirVantage features a mechanism to be alerted each time a specific rule is confirmed.
+All events of this kind are identified by its name:
+event.alert.rule.triggered
+Its structure looks like the following:
+{
+"name" : "event.alert.rule.triggered",
+"date" : 1403793930523,
+"content" : {
+"alert.uid" : "f89476adad3b4cad97b1ac0a8fe1bf44",
+"rule.uid" : "3355fd07d0314e8792015192271895e4",
+"target.uid" : "597320612062696e6172797472696e67"
+}
+}
+Content description
+Name
+Description
+alert.uid
+The unique identifier of the alert raised
+rule.uid
+The unique identifier of the rule having triggered the alert
+target.uid
+The unique identifier of the entity matching the conditions of the rule leading to the this alert. Most of the times it is the system’s uid
+Every time rule conditions are met, an alert’s message is pushed in the stream for the stateles rules.
+For the stateful rules, a message is sent only when the alert’s state changes. As a consequence, no message will be sent if the conditions are met but the state doesn’t change.</li>
+<li class="">The temperature changes across the time.</li>
+<li class="">The device reads the sensor and sends the data regurlarly.</li>
+<li class="">Two alert rules are configured:
+Alert rule 1 is raised when the value received changes.
+Alert rule 2 is raised when the temperature value is greater than 15 (and cleared when below 15). In other words, this alert stays raised while temperature is greater than 15.</li>
+<li class="">The alert message for
+Alert rule 2
+is sent through the cloud connector when the condition is met.
+The following format is used for stateful and stateless alert events.
+{
+"name" : "event.alert.rule.triggered",
+"date" : 1403793930523,
+"content" : {
+"rule.uid" : "3355fd07d0314e8792015192271895e4",
+"target.uid" : "597320612062696e6172797472696e67",
+"state" : "true|false|null",
+"attributes": [{
+"id": {
+"name": "DATA.room.temp"
+},
+"value": {
+"valueNum": 45
+},
+"refTime": 1466859976000
+}]
+}
+}
+Content description
+Name
+Description
+rule.uid
+The unique identifier of the rule having triggered the alert
+target.uid
+The unique identifier of the entity matching the conditions of the rule leading to the this alert. Most of the times it is the system’s uid
+state
+This defines the alert state:
+<ul>
+<li class="">true if the alert is raised</li>
+<li class="">false if the alert is cleaned</li>
+<li class="">null if the alert has no state
+attributes
+lists the parameters and the values used in the condition.
+Usage Record Imported
+This event is raised every time a usage record is imported to the server. This event exposes the information about each communication of a system.
+All events of this kind are identified by its name:
+event.system.usage.record
+Provided content depends on the type of usage ( DATA, VOICE, SMS, USSD MSU ):
+{
+"name" : "event.system.usage.record",
+"date" : 1403793930523,
+"content" : {
+"system.id" : "f89476adad3b4cad97b1ac0a8fe1bf44",
+"system.name" : "My System",
+"system.iccid" : "89240180000088709",
+"system.labels" : ["Label1", "Label2"],
+"usage.record.id" : "2c12547b613740adb686271bdc8f0978",
+"usage.type" : "DATA",
+...
+}
+}
+Content description
+Usage Type
+Name
+Description
+All
+system.id
+Unique identifier of the system responsible for the communication.
+All
+system.name
+The name of the communicating system.
+All
+system.iccid
+The unique identifier of the SIM binded to the communicating system.
+All
+system.labels
+The current labels name of the communicating system.
+All
+system.offer.id
+The unique identifier of the system offer.
+All
+system.offer.name
+The name of the system offer.
+All
+usage.record.id
+The unique identifier of the record. Record id shall be constant for a given session (same for all interim records).
+All
+usage.type
+The type of the usage : DATA, VOICE_IN, VOICE_OUT, SMS_SENT, SMS_RECEIVED, MSU.
+All
+usage.start.ts
+The start date of the communication session. It’s a timestamp in milliseconds.
+DATA, VOICE
+usage.end.ts
+The end date of the communication session. This date is equal to the start date if it’s an interim record. It’s a timestamp in milliseconds.
+DATA
+usage.partial
+Partial is true if it’s an interim record, false when the session has ended.
+All
+usage.serving.network.identity
+The visited mobile network operator.
+All
+usage.serving.network.country
+The visited mobile network operator country.
+All
+usage.serving.network.mnc
+The Mobile Network Code.
+All
+usage.serving.network.mcc
+The Mobile Country Code.
+All
+usage.served.imsi
+The IMSI of the device to which the record is attached.
+All
+usage.served.imei
+The IMEI of the subscriber.
+All
+usage.served.msisdn
+The MSISDN of the subscriber.
+DATA
+usage.data.volume.uplink
+The volume of data sent by the system in bytes.
+DATA
+usage.data.volume.downlink
+The volume of data received by the system in bytes.
+DATA
+usage.data.volume.total
+The total volume of data in bytes for the communication session.
+DATA
+usage.rounded.data.volume.total
+The total volume of data in bytes exchanged during the communication session, to which billing increments are applied.
+DATA
+usage.apn
+The access point name.
+DATA
+usage.pdp.address
+The PDP context IP address.
+DATA
+usage.rat.type
+The Radio Access Technology (RAT) at the session start.
+SMS, VOICE
+usage.peer.msisdn
+The MSISDN of the peer entity involved in the communication. For a call/SMS initiated by the subscriber (MO), the peer entitee will be the callee, for a call/SMS received by the subscriber (MT), the peer entity will be the caller.
+VOICE
+usage.rounded.call.duration
+The duration of the call to which the billing increments are applied.
+SMS MO
+An SMS MO (Mobile-Originated) message is a message that is initiated from the device to the server.  The ‘message’ field is encoded in BASE-64 format.
+All events of this kind are identified by its name:
+event.sms.mo
+Its structure looks like the following:
+{
+"name": "event.sms.mo",
+"date": 1576211024000,
+"content": {
+"source": "882350810180584",
+"company.id": "ab79046811b748ada6bbd1390970c830",
+"encoding": "EightBitASCII",
+"message": "4D4F2054657374203120546875204576656E696E67",
+"destination": "0000000000",
+"system.id": "0c8d4e97ba7b403aa7d1af92d31132ff"
+}
+}
+Content Description
+Name
+Description
+source
+MSISDN of the device that sent the message
+company.id
+Company ID to which the device belongs
+encoding
+Encoding of the message.  Can be ‘SevenBitPlain’, ‘SevenBitGSM’, ‘EightBitASCII’, or ‘PlainText’
+message
+BASE-64 encoded payload
+destination
+Will always be ‘0000000000’
+system.id
+AirVantage identifier for the device
+SMS MT Result
+The SMS MT (Mobile Terminated) Result is a message that has the result of a previously-sent MT message from the AirVantage website or the AirVantage API to a device.
+All events of this kind are identified by its name:
+event.sms.mt.result
+Its structure looks like the following:
+{
+"name": "event.sms.mt.result",
+"date": 1576210918000,
+"content": {
+"message.extid": "67d87978e6274e0fa722c4271f604e2d",
+"source": "0000000000",
+"result.code": 0,
+"company.id": "ab79046811b748ada6bbd1390970c830",
+"source.transaction.id": "none",
+"message": "4D4F2054657374203120546875204576656E696E67",
+"destination": "882350810180584",
+"system.id": "0c8d4e97ba7b403aa7d1af92d31132ff"
+}
+}
+Content Description
+Name
+Description
+message.extid
+The server-generated unique identifier for the message
+source
+Will always be “0000000000”
+result.code
+Conveys the result of the MT operation.  A zero indicates success.  See table below for possible error codes.
+company.id
+Company ID to which the device belongs
+source.transaction.id
+An optional identifier that can be supplied when the MT message is submitted.  It is reflected back in this field to allow the original message to be tied to this response.
+message
+BASE-64 encoded message text
+system.id
+AirVantage identifier for the device
+destination
+MSISDN of the device that received the message
+MT Result Codes
+Code
+Description
+0
+Message successfully delivered to the device
+1
+UNKNOWN_SUBSCRIBER - the system does not have any information about the device
+5
+UNIDENTIFIED_SUBSCRIBER - provisioning issue with the device on the HLR
+6
+ABSENT_SUBSCRIBER_SM - HLR indicated device was at a given MSC, but that MSC does not know about the device
+11
+TELESERVICE_NOT_PROVISIONED - device is not provisioned for SMS service
+27
+ABSENT_SUBSCRIBER - device is either powered off or out of service
+31
+SUBSCRIBER_BUSY_FOR_SMS - device may have been sending an MO when message delivery was attempted
+34
+SYSTEM_FAILURE - problem within the network trying to deliver the message
+51
+RESOURCE_LIMITATION - network issue/congestion
+502
+NO_RESPONSE - message was sent, but no response was received from the network
+Binding
+When requesting binding, remote services will be notified for every single event described above. However, it is possible to filter out those events using one of the following properties.
+Property
+Description
+name
+Event’s name. When a name is specified, clients are bound only to this event, otherwise any type of event will be received.
+entity
+Filter events for a given entity. An entity can be an rule uid, an operation uid, or a data path/id.
+system
+Filter events for a specific system.
+Important
+: once the binding done, it is not possible to filter events. A new binding has to be requested.
+Depending on the chosen protocol, the binding request is done differently. See the protocol section for more information.
+Data types
+The message contains elements which can be of different types. The two most used ones are INT and STRING.
+Each element either get a static type (i.e.: the “date” is an INT) or a dynamic type.
+Types
+INT
+LONG
+DOUBLE
+STRING
+BINARY (base64 encoded)
+BOOLEAN
+DATE
+Typing
+Most elements are statically typed, that is the JSON type is directly use (e.g. a String value will be a JSON String). For data send through communications, elements are typed depending the Application Model used by the current system.</li>
+</ul>
+</li>
+</ol></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href=https://github.com/andreyjv/personal-av/tree/docs/documentation-revamp/PRD_documentation-revamp/website/docs/reference/cloud/format.md target=_blank rel="noopener noreferrer" class=theme-edit-this-page><svg fill=currentColor height=20 width=20 viewBox="0 0 40 40" class=iconEdit_Z9Sw aria-hidden=true><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"/></g></svg>Edit this page</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"></nav></div></div></div></div></main></div></div></div></div></div><footer class="theme-layout-footer footer"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class=footer__title>Jobs</div><ul class="footer__items clean-list"><li class=footer__item><a class=footer__link-item href=/personal-av-docs/docs/how-to/activate-sims>Activate SIMs</a><li class=footer__item><a class=footer__link-item href=/personal-av-docs/docs/how-to/order-sims>Order SIMs</a><li class=footer__item><a class=footer__link-item href=/personal-av-docs/api>Call the API</a><li class=footer__item><a class=footer__link-item href=/personal-av-docs/docs/how-to/register-routers>Register routers</a></ul></div><div class="theme-layout-footer-column col footer__col"><div class=footer__title>Reference</div><ul class="footer__items clean-list"><li class=footer__item><a class=footer__link-item href=/personal-av-docs/docs/reference/api>API HTML chapters</a><li class=footer__item><a class=footer__link-item href=/personal-av-docs/docs/reference/apn>APN table</a><li class=footer__item><a class=footer__link-item href=/personal-av-docs/docs/changelog>Changelog</a></ul></div><div class="theme-layout-footer-column col footer__col"><div class=footer__title>Preview</div><ul class="footer__items clean-list"><li class=footer__item><a href=https://doc.airvantage.net/ target=_blank rel="noopener noreferrer" class=footer__link-item>Live Hugo (canonical until cutover)<svg width=13.5 height=13.5 aria-label="(opens in new tab)" class=iconExternalLink_nPIU><use href=#theme-svg-external-link /></svg></a><li class=footer__item><a class=footer__link-item href=/personal-av-docs/docs/ui-library>UI library</a><li class=footer__item><a class=footer__link-item href=/personal-av-docs/docs/copy-library>Copy library</a></ul></div></div><div class="footer__bottom text--center"><div class=footer__copyright>Sierra Wireless / AirVantage documentation preview. Live doc.airvantage.net stays Hugo until cutover. Built with Docusaurus.</div></div></div></footer></div></body>

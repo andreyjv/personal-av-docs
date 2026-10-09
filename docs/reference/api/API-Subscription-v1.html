@@ -1,0 +1,2944 @@
+<!doctype html><html lang=en dir=ltr class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-reference/api/API-Subscription-v1" data-has-hydrated=false><head><meta charset=UTF-8><meta name=generator content="Docusaurus v3.10.2"><title data-rh=true>Subscription | AirVantage documentation</title><meta data-rh=true name=viewport content="width=device-width, initial-scale=1.0"/><meta data-rh=true name=twitter:card content=summary_large_image /><meta data-rh=true property=og:image content=https://andreyjv.github.io/personal-av-docs/img/favicon.svg /><meta data-rh=true name=twitter:image content=https://andreyjv.github.io/personal-av-docs/img/favicon.svg /><meta data-rh=true property=og:url content=https://andreyjv.github.io/personal-av-docs/docs/reference/api/API-Subscription-v1 /><meta data-rh=true property=og:locale content=en /><meta data-rh=true name=docusaurus_locale content=en /><meta data-rh=true name=docsearch:language content=en /><meta data-rh=true name=docusaurus_version content=current /><meta data-rh=true name=docusaurus_tag content=docs-default-current /><meta data-rh=true name=docsearch:version content=current /><meta data-rh=true name=docsearch:docusaurus_tag content=docs-default-current /><meta data-rh=true property=og:title content="Subscription | AirVantage documentation"/><meta data-rh=true name=description content="connectivity · imported from live Hugo on 2026-10-07. Guides stay latest. Original page."/><meta data-rh=true property=og:description content="connectivity · imported from live Hugo on 2026-10-07. Guides stay latest. Original page."/><link data-rh=true rel=icon href=/personal-av-docs/img/favicon.svg /><link data-rh=true rel=canonical href=https://andreyjv.github.io/personal-av-docs/docs/reference/api/API-Subscription-v1 /><link data-rh=true rel=alternate href=https://andreyjv.github.io/personal-av-docs/docs/reference/api/API-Subscription-v1 hreflang=en /><link data-rh=true rel=alternate href=https://andreyjv.github.io/personal-av-docs/docs/reference/api/API-Subscription-v1 hreflang=x-default /><link rel=stylesheet href=/personal-av-docs/assets/css/styles.1e3041e1.css /><script src=/personal-av-docs/assets/js/runtime~main.bbef5b78.js defer></script><script src=/personal-av-docs/assets/js/main.443f591d.js defer></script></head><body><svg style="display: none;"><defs>
+<symbol id=theme-svg-external-link viewBox="0 0 24 24"><path fill=currentColor d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme-deb")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||(window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light")),document.documentElement.setAttribute("data-theme-choice",t||"system")}(),function(){try{for(var[t,e]of new URLSearchParams(window.location.search).entries())if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id=__docusaurus><link rel=preload as=image href=/personal-av-docs/img/favicon.svg /><div role=region aria-label="Skip to main content"><a class=skipToContent_fXgn href=#__docusaurus_skipToContent_fallback>Skip to main content</a></div><nav aria-label=Main class="theme-layout-navbar navbar navbar--fixed-top"><div class=navbar__inner><div class="theme-layout-navbar-left navbar__items"><button aria-label="Toggle navigation bar" aria-expanded=false class="navbar__toggle clean-btn" type=button><svg width=30 height=30 viewBox="0 0 30 30" aria-hidden=true><path stroke=currentColor stroke-linecap=round stroke-miterlimit=10 stroke-width=2 d="M4 7h22M4 15h22M4 23h22"/></svg></button><a class=navbar__brand href=/personal-av-docs/><div class=navbar__logo><img src=/personal-av-docs/img/favicon.svg alt=AirVantage class="themedComponent_mlkZ themedComponent--light_NVdE"/><img src=/personal-av-docs/img/favicon.svg alt=AirVantage class="themedComponent_mlkZ themedComponent--dark_xIcU"/></div><b class="navbar__title text--truncate">AirVantage Docs</b></a><a class="navbar__item navbar__link navbar__guides" href=/personal-av-docs/docs/how-to/activate-sims>Guides</a><a class="navbar__item navbar__link" href=/personal-av-docs/api>API reference</a><a class="navbar__item navbar__link" href=/personal-av-docs/docs/changelog>Changelog</a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type=button disabled title="system mode" aria-label="Switch between dark and light mode (currently system mode)"><svg viewBox="0 0 24 24" width=24 height=24 aria-hidden=true class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill=currentColor d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"/></svg><svg viewBox="0 0 24 24" width=24 height=24 aria-hidden=true class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill=currentColor d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"/></svg><svg viewBox="0 0 24 24" width=24 height=24 aria-hidden=true class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill=currentColor d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"/></svg></button></div><div class=navbarSearchContainer_Bca1><div class="navbar__search searchBarContainer_NW3z" dir=ltr><svg aria-hidden=true class=searchIcon_T3tP focusable=false viewBox="0 0 16 16"><path fill=currentColor d="M6.02945 10.20327a4.17382 4.17382 0 1 1 4.17382-4.17382 4.15609 4.15609 0 0 1-4.17382 4.17382Zm9.69195 4.2199-4.8225-4.82338A5.88021 5.88021 0 0 0 12.058 6.02856 6.00467 6.00467 0 1 0 9.59979 10.8989l4.82338 4.82338a.89729.89729 0 0 0 1.29912 0 .89749.89749 0 0 0-.00087-1.29909Z"/></svg><input placeholder=Search aria-label=Search class="navbar__search-input searchInput_YFbd" value="" /><div class="loadingRing_RJI3 searchBarLoadingRing_YnHq"><div></div><div></div><div></div><div></div></div></div></div></div></div><div role=presentation class=navbar-sidebar__backdrop></div></nav><div id=__docusaurus_skipToContent_fallback class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class=av-shell><nav class=av-rail aria-label=Guides><p class=av-rail-kicker>Guides<ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class=menu__list-item-collapsible><span class="menu__link menu__link--sublist menu__link--sublist-caret av-rail-heading">Quick start</span></div><ul class=menu__list><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link href=/personal-av-docs/docs/how-to/activate-sims>Activate SIMs</a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link href=/personal-av-docs/docs/how-to/order-sims>Order SIMs</a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link href=/personal-av-docs/api>Call the API</a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link href=/personal-av-docs/docs/how-to/register-routers>Register routers</a></ul><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class=menu__list-item-collapsible><span class="menu__link menu__link--sublist menu__link--sublist-caret av-rail-heading">Browse by product</span></div><ul class=menu__list><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link href=/personal-av-docs/docs/how-to/activate-sims>Connectivity</a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link href=/personal-av-docs/docs/how-to/register-routers>Router management</a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link href=/personal-av-docs/docs/explain/states>States and operations</a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link href=/personal-av-docs/api>Developer platform</a></ul><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class=menu__list-item-collapsible><span class="menu__link menu__link--sublist menu__link--sublist-caret av-rail-heading">Keep building</span></div><ul class=menu__list><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link href=/personal-av-docs/docs/explain/states>States and operations</a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link href=/personal-av-docs/docs/reference/apn>APN table</a></ul><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class=menu__link href=/personal-av-docs/docs/get-started/first-sim>Get started</a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class=menu__link href=/personal-av-docs/docs/reference/api>Reference</a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class=menu__link href=/personal-av-docs/docs/changelog>Changelog</a></ul></nav><div class=av-shell-main><div class=docsWrapper_hBAB><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type=button></button><div class=docRoot_UBD9><main class="docMainContainer_TBSr docMainContainerEnhanced_lQrH"><div class="container padding-top--md padding-bottom--lg"><div class=row><div class="col docItemCol_VOVn"><div class=docItemContainer_Djhp><article><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type=button class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><div class="theme-doc-markdown markdown"><p>:::note Edition
+<strong>connectivity</strong> · imported from live Hugo on 2026-10-07. Guides stay latest. <a href=https://doc.airvantage.net/connectivity/reference/cloud/API/API-Subscription-v1 target=_blank rel="noopener noreferrer" class="">Original page</a>.
+:::</p>
+<header><h1>Subscription
+General
+f
+General Information
+Operations
+f
+System
+Operations
+Alert
+Application
+Gateway
+Settings
+Dataset
+Label
+Zone
+Operator
+Offer & Options
+System Configurations
+Administration
+f
+Company
+Partner
+Profile
+User
+Subscription
+f
+Subscription
+Ordering
+f
+Contact
+Order
+Product Reference
+Subscription
+Overview
+Fields
+JSON
+Entity used in a system to manage the connectivity provided by an operator: a SIM or an ID for CDMA networks.
+Read only fields are computed by AirVantage and can only be seen on response fragments sent by
+find
+,
+create
+, or
+edit
+requests.
+Field
+Description
+Read Only
+Type
+uid
+Subscription's unique identifier.
+true
+uid
+identifier
+Identifier of the subscription.
+Integrated Circuit Card IDentifier (ICCID) for GSM network.
+Electronic Serial Number (ESN) or Mobile Equipment IDentifier (MEID) for CDMA network.
+false
+string
+mobileNumber
+Mobile number of the subscription.
+Mobile Station Integrated Services Digital Network-Number (MSISDN)
+for GSM network.
+Mobile Directory Number (MDN) for CDMA network.
+false
+string
+mobileNumber2
+[DEPRECATED] The secondary mobile number of the subscription.
+true
+string
+networkIdentifier
+Network identifier of the subscription.
+International Mobile Subscriber Identity (IMSI) for GSM
+network.
+Mobile Identification Number (MIN) for CDMA network.
+false
+string
+eid
+Embedded Universal Integrated Circuit Card IDentifier (eUICC-ID) of the subscription.
+false
+string
+ipAddress
+IP address of the subscription.
+false
+string
+requestedIp
+IP address that must be configured at the network level as static IP.
+false
+string
+state
+Shows the state of the subscription. Possible values can be INVENTORY, ACTIVE, INACTIVE, SUSPENDED, RETIRED,
+UNKNOWN.
+true
+string
+operator
+Operator
+of the subscription (mandatory).
+false
+string
+operatorAccount.uid
+UID of the
+Operator account
+related to the subscription.
+false
+uid
+metadata
+List of subscription metadata (name, type, value). Metadata types are : boolean, int, double, long, string,
+date, list, map.
+true
+string
+labels
+Subscriptions can be labeled with a list of
+labels
+.
+false
+string array
+appletGeneration
+The applet's version installed in the SIM card.
+Possible values: V1, V2, V3, V4.
+true
+string
+formFactor
+The SIM form factor.
+Possible values: 2FF, 3FF, 4FF, MFF, COMBO, WLCSP, DFN6.
+true
+string
+confType
+The SIM configuration type.
+Possible values: LITE, ADVANCED, ADVANCED_NODATA, TAILORED, BROADBAND, PASSIVE, MBQT_V1, MBQT_V2, MBQT_V3, LITE2, ADVANCED2, ADVANCED2_NODATA.
+true
+string
+technology
+The mobile technology supported by the SIM card.
+Possible values: 2G/3G, 4G.
+true
+string
+orderId
+The ID of the order made when this subscription was requested.
+true
+string
+productRefName
+The name of the Product reference.
+true
+string
+activationImei
+IMEI linked with the subscription.
+true
+string
+imeiLock.imeiLock
+Status of subscription imeiLock.
+true
+boolean
+imeiLock.imeiLockDate
+Date when the locking operation was performed.
+true
+timestamp
+imeiLock.imeiUnlockedDate
+Date when the unlocking operation was performed.
+true
+timestamp
+This is a complete representation of a Subscription. This fragment can be used for
+create
+or
+edit
+requests.
+Please refer to the fields section to know which fields can be modified.
+{
+"uid": "",
+"state": "",
+"identifier" : "",
+"mobileNumber" : "",
+"networkIdentifier" : "",
+"ipAddress" : "",
+"requestedIp" : "",
+"eid" : "",
+"operator" : "",
+"appletGeneration" : "",
+"formFactor" : "",
+"confType" : "",
+"technology" : "",
+"orderId" : "",
+"productRefName" : "",
+"metadata": [
+{
+"name" : "",
+"value" : "",
+"type" : ""
+}],
+"operatorAccount": {
+"uid" : ""
+}
+"labels": ["Label1", "Label2"],
+"activationImei" : "",
+"imeiLock" : {
+"imeiLock": "",
+"imeiLockDate": "",
+"imeiUnlockedDate": ""
+}
+}
+API Methods
+Subscription
+Find
+Create
+Edit
+Delete
+Details
+Operations
+Import
+Delete multiple subscriptions
+Activate
+Suspend
+Restore
+Terminate
+Synchronize
+Change labels
+IMEI Lock/Unlock
+Export
+Find
+/api/v1/subscriptions
+Returns a paginated list of subscriptions with their complete details.
+It is possible to restrain the result list using criteria parameters.
+The
+fields
+parameter has to be defined in order to specify the attributes of the subscription which will be returned.
+If
+fields
+parameter is missing, only the following attributes of the subscription are returned:
+uid, operator, identifier,
+mobileNumber, networkIdentifier, ipAddress, requestedIp, state, eid, appletGeneration, formFactor, confType, technology, productRefName, activationImei, imeiLock
+.
+More information about paging, filtering, and sorting
+here
+Sample
+Parameters
+Additional information
+Request
+GET <a href="https://na.airvantage.net/api/v1/subscriptions?fields=uid,operator,identifier,state" target=_blank rel="noopener noreferrer" class="">https://na.airvantage.net/api/v1/subscriptions?fields=uid,operator,identifier,state</a>
+...
+Response
+200 OK
+HTTP/1.1 200 OK
+Content-Type: application/json
+{
+"items":    [
+{
+"uid": "cbd1baff97a8444da6a887cefd1d14c6",
+"operator": "TELENOR",
+"identifier": "8023576088000004567",
+"state": "INVENTORY"
+},
+{
+"uid": "ed8e9c5466d447f79ac77701398d8fcb",
+"operator": "KPN",
+"identifier": "8023235373000004566",
+"state": "INVENTORY"
+}
+],
+"count": 2,
+"size": 2,
+"offset": 0
+}
+Name
+Description
+Use
+Default
+Type
+Operand
+uid
+Return subscription whose uid match with the specified id.
+optional
+null
+uid string</h1></header>
+<h1>company
+Return all subscriptions available for the company.
+optional
+caller's company
+uid string</h1>
+<h1>labels
+Return all subscriptions labeled as the specified string. Several labels can be set.
+optional
+null
+string list
+in
+operator
+Returns all subscriptions matching the given operator.
+optional
+null
+string</h1>
+<h1>identifier
+Returns all subscriptions whose identifier contains the given string.
+optional
+null
+string
+like
+mobileNumber
+Returns all subscriptions whose mobile number contains the given string.
+optional
+null
+string
+like
+networkIdentifier
+Returns all subscriptions whose network identifier contains the given string.
+optional
+null
+string
+like
+eid
+Returns all subscriptions whose eUICC-ID contains the given string.
+optional
+null
+string
+like
+ipAddress
+Returns all subscriptions whose IP address contains the given string.
+optional
+null
+string
+like
+assigned
+Return all subscriptions assigned (or not) to a system.
+optional
+null
+boolean</h1>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=statesreturns-all-subscriptions-whose-state-is-in-the-given-list-states-are-inventory-active-inactivesuspended-retired-unknownoptionalnullstring-listinoperatoraccountreturns-all-subscriptions-linked-to-a-operator-account-matching-the-specified-criteriathepossible-criteria-are-uid-exact-matchname-likeoptionalnullstring-map-with-the-following-format-uidnamesee-descriptionhttp-methodgetrequires-authenticationyesrate-limitedyesheadersnonepermissionsentitiessubscriptionsvieworder-byidentifierfieldsuid-operator-identifier-mobilenumber-networkidentifier-ipaddress-requestedip-state-metadata-operatoraccountlabels-eid-appletgeneration-formfactor-conftype-technology-productrefname-activationimei-imeilockcreateapiv1subscriptionscreates-a-new-subscription-the-result-returns-the-new-subscription-with-the-uidat-least-one-ofidentifiermobilenumberornetworkidentifiermust-be-setthese-fields-have-to-be-unique-read-only-fields-will-be-ignoredsampleparametersexceptionsadditional-informationrequestpost-httpsnaairvantagenetapiv1subscriptionscontent-type-applicationjsonidentifier-124578mobilenumber-1234567890networkidentifier-123456789ipaddress-19216801operator-vodafoneoperatoraccount-uid-1674675f1c464c489dd0c6daff0edad5labels-labelresponse200-okhttp11-200-okcontent-type-applicationjsonuid-1400a4079dea438b887c5817449c51e2puk1-nullpin2-nullpuk2-nullpin1-nulleid-nulllabels-labelidentifier-124578networkidentifier-123456789mobilenumber-1234567890ipaddress-19216801requestedip-nulloperator-vodafoneoperatoraccount-uid-1674675f1c464c489dd0c6daff0edad5name-myoperatoraccountconnection-uid-e9d97269a05b4ce091da20f5cbdda93aname-kpnproductrefname-nullappletgeneration-nullconftype-nullformfactor-nulltechnology-nullorderid-nullactivationimei-nullimeilock-nullserviceenddate-nullserviceofferid-nullmetadata-state-inventorynamedescriptionusedefaulttypecompanyset-the-context-where-the-new-subscription-will-be-created-mandatory-if-the-created-subscription-will-be-assigned-to-a-system-using-the-edit-system-apioptionalcallers-companyuid-stringnamedescriptionsubscriptionmissingidentifiersat-least-one-of-identifier-mobilenumber-or-networkidentifier-has-to-be-setraised-when-subscription-identifier-is-missingsubscriptionnotuniqueidentifiersone-of-identifier-mobilenumber-or-networkidentifier-is-not-unique-if-identifier-has-a-valid-value-mobilenumber-or-networkidentifier-cannot-be-set-to-null-if-they-have-no-value-otherwise-the-api-returns-an-error-when-identifier-has-a-valid-value-mobilenumber-or-networkidentifier-must-have-a-valid-value-or-be-emptysubscriptionmissingoperatorraised-when-operator-is-missingsubscriptionoperatornotauthorizedraised-when-operator-is-not-authorizedoperatoraccountunknownraised-when-operator-account-is-unknownsubscriptionoperatorandoperatoraccountincompatibleraised-when-operator-account-is-not-compatible-with-the-operator-of-the-subscriptioncompanyunknownthe-given-company-is-unkownsysteminvalidregistrationcoderaised-when-the-registration-code-is-invalidhttp-methodpostrequires-authenticationyesrate-limitedyesheaderscontent-type-applicationjsonpermissionsentitiessubscriptionscreateeditapiv1subscriptionsuidedits-the-subscription-identified-by-the-uid-of-the-request-if-the-subscription-is-not-in-inventory-stateor-if-the-subscription-is-linked-to-a-system-in-ready-deployed-or-being_transfered-state-then-only-the-labels-can-be-editedotherwise-you-can-edit-all-the-fieldsnb-it-is-not-necessary-to-send-the-whole-json-block-to-edit-fields-only-fields-sent-to-the-service-will-be-updatedsampleexceptionsadditional-informationrequestput-httpsnaairvantagenetapiv1subscriptionse810d8aff0bc46309cb3f1c7cd36c09dcontent-type-applicationjsonnetworkidentifier-333222111ipaddress-1921681100response200-okhttp11-200-okcontent-type-applicationjsonuid-1400a4079dea438b887c5817449c51e2puk1-nullpin2-nullpuk2-nullpin1-nulleid-nulllabels-labelidentifier-124578networkidentifier-333222111mobilenumber-1234567890ipaddress-1921681100requestedip-nulloperator-vodafoneoperatoraccount-uid-1674675f1c464c489dd0c6daff0edad5name-myoperatoraccountconnection-uid-e9d97269a05b4ce091da20f5cbdda93aname-kpnproductrefname-nullappletgeneration-nullconftype-nullformfactor-nulltechnology-nullorderid-nullactivationimei-nullimeilock-nullserviceenddate-nullserviceofferid-nullmetadata-state-inventorynamedescriptionsubscriptionmissingidentifiersat-least-one-of-identifier-mobilenumber-or-networkidentifier-has-to-be-setraised-when-subscription-identifier-is-missingsubscriptionnotuniqueidentifiersone-of-identifier-mobilenumber-or-networkidentifier-is-not-uniquesubscriptionunknownraised-when-the-uid-of-the-subscription-is-unknownsubscriptionmissingoperatorraised-when-operator-is-missingsubscriptioninvalidstateraised-when-subscription-is-in-a-state-which-does-not-allow-the-editionsubscriptionoperatornotauthorizedraised-when-operator-is-not-authorizedsysteminvalidstateraised-when-the-system-linked-to-the-subscription-is-in-a-state-which-does-not-allow-the-editionoperatoraccountunknownraised-when-operator-account-is-unknownsubscriptionoperatorandoperatoraccountincompatibleraised-when-operator-account-is-not-compatible-with-the-operator-of-the-subscriptionsubscriptioncannotupdateactivationimeilockexistsraised-when-activation-imei-is-updated-while-imei-lock-existshttp-methodputrequires-authenticationyesrate-limitedyesheaderscontent-type-applicationjsonpermissionsentitiessubscriptionseditdetailsapiv1subscriptionsuidgets-the-details-of-a-subscriptionsampleexceptionsadditional-informationrequestget-httpsnaairvantagenetapiv1subscriptions89f81f1c2f2f46a880faf5a28668309eresponse200-okhttp11-200-okcontent-type-applicationjsonstate-inventorymetadata-name--pin1value--5698type--string----possible-types-are--boolean-int-double-long-string-date-and-mapname--pin2value--3612type--stringuid-89f81f1c2f2f46a880faf5a28668309eidentifier-556985478521labels-operatoraccount----uid-1674675f1c464c489dd0c6daff0edad5name-myoperatoraccountconnection-name-kpnuid-e9d97269a05b4ce091da20f5cbdda93aoperator-vodafoneipaddress-19216801requestedip-nullmobilenumber-1234567890networkidentifier-123456789eid--nullappletgeneration--v4formfactor--2ffconftype--litetechnology--4gproductrefname--lite-2ffnamedescriptionsubscriptionunknownraised-when-the-uid-points-to-an-unknown-subscriptionhttp-methodgetrequires-authenticationyesrate-limitedyesheadersnonepermissionsentitiessubscriptionsviewdeleteapiv1subcriptionsuiddeletes-a-specific-subscription-from-airvantage-to-delete-a-subscription-it-does-not-have-tobe-assigned-to-any-systemsampleexceptionsadditional-informationrequestdelete-httpsnaairvantagenetapiv1subscriptionsd5e62f8ec1340e79214f2113db75e86response200-okhttp11-200-okcontent-length-0namedescriptionsubscriptionunknownraised-when-the-uid-points-to-an-unknown-subscriptionsubscriptionassignedraised-when-the-subscription-is-assigned-to-a-systemsubscriptionundeletableraised-when-the-subscription-manages-semtech-r2c-ready-to-connect-connectivityhttp-methoddeleterequires-authenticationyesrate-limitedyesheaders>states
+Returns all subscriptions whose state is in the given list. States are INVENTORY, ACTIVE, INACTIVE,
+SUSPENDED, RETIRED, UNKNOWN.
+optional
+null
+string list
+in
+operatorAccount
+Returns all subscriptions linked to a operator account matching the specified criteria.
+The
+possible criteria are :
+uid (exact match)
+name (like)
+optional
+null
+string map with the following format: uid:xxx,name:xxx,...
+See description
+HTTP Method
+GET
+Requires Authentication
+Yes
+Rate Limited
+Yes
+Headers
+None
+Permissions
+entities.subscriptions.view
+Order by
+identifier
+Fields
+uid, operator, identifier, mobileNumber, networkIdentifier, ipAddress, requestedIp, state, metadata, operatorAccount,
+labels, eid, appletGeneration, formFactor, confType, technology, productRefName, activationImei, imeiLock
+Create
+/api/v1/subscriptions
+Creates a new subscription. The result returns the new subscription with the uid.
+At least one of
+identifier
+,
+mobileNumber
+or
+networkIdentifier
+must be set.
+These fields have to be unique. Read only fields will be ignored.
+Sample
+Parameters
+Exceptions
+Additional information
+Request
+POST <a href=https://na.airvantage.net/api/v1/subscriptions target=_blank rel="noopener noreferrer" class="">https://na.airvantage.net/api/v1/subscriptions</a>
+Content-Type: application/json
+{
+"identifier": "124578",
+"mobileNumber": "1234567890",
+"networkIdentifier": "123456789",
+"ipAddress": "192.168.0.1",
+"operator": "VODAFONE",
+"operatorAccount": {
+"uid": "1674675f1c464c489dd0c6daff0edad5"
+},
+"labels": [
+"label"
+]
+}
+Response
+200 OK
+HTTP/1.1 200 OK
+Content-Type: application/json
+{
+"uid": "1400a4079dea438b887c5817449c51e2",
+"puk1": null,
+"pin2": null,
+"puk2": null,
+"pin1": null,
+"eid": null,
+"labels": [
+"label"
+],
+"identifier": "124578",
+"networkIdentifier": "123456789",
+"mobileNumber": "1234567890",
+"ipAddress": "192.168.0.1",
+"requestedIp": null,
+"operator": "VODAFONE",
+"operatorAccount": {
+"uid": "1674675f1c464c489dd0c6daff0edad5",
+"name": "MyOperatorAccount",
+"connection": {
+"uid": "e9d97269a05b4ce091da20f5cbdda93a",
+"name": "KPN"
+}
+},
+"productRefName": null,
+"appletGeneration": null,
+"confType": null,
+"formFactor": null,
+"technology": null,
+"orderId": null,
+"activationImei": null,
+"imeiLock": null,
+"serviceEndDate": null,
+"serviceOfferId": null,
+"metadata": [],
+"state": "INVENTORY"
+}
+Name
+Description
+Use
+Default
+Type
+company
+Set the context where the new subscription will be created. Mandatory if the created subscription will be assigned to a system using the "edit system" API
+optional
+caller's company
+uid string
+Name
+Description
+subscription.missing.identifiers
+At least one of 'identifier', 'mobileNumber' or 'networkIdentifier' has to be set.
+Raised when subscription identifier is missing.
+subscription.not.unique.identifiers
+One of 'identifier', 'mobileNumber' or 'networkIdentifier' is not unique. If 'identifier' has a valid value, 'mobileNumber' or 'networkIdentifier' cannot be set to 'null' if they have no value; otherwise the API returns an error. When 'identifier' has a valid value, 'mobileNumber' or 'networkIdentifier' must have a valid value or be empty.
+subscription.missing.operator
+Raised when operator is missing.
+subscription.operator.not.authorized
+Raised when operator is not authorized.
+operator.account.unknown
+Raised when operator account is unknown.
+subscription.operator.and.operator.account.incompatible
+Raised when operator account is not compatible with the operator of the subscription.
+company.unknown
+The given company is unkown.
+system.invalid.registration.code
+Raised when the registration code is invalid.
+HTTP Method
+POST
+Requires Authentication
+Yes
+Rate Limited
+Yes
+Headers
+Content-type: application/json
+Permissions
+entities.subscriptions.create
+Edit
+/api/v1/subscriptions/{uid}
+Edits the subscription identified by the uid of the request. If the subscription is not in 'INVENTORY' state
+or if the subscription is linked to a system in 'READY', 'DEPLOYED', or 'BEING_TRANSFERED' state, then only the labels can be edited.
+Otherwise, you can edit all the fields.
+NB: It is not necessary to send the whole JSON block to edit fields. Only fields sent to the service will be updated.
+Sample
+Exceptions
+Additional information
+Request
+PUT <a href=https://na.airvantage.net/api/v1/subscriptions/e810d8aff0bc46309cb3f1c7cd36c09d target=_blank rel="noopener noreferrer" class="">https://na.airvantage.net/api/v1/subscriptions/e810d8aff0bc46309cb3f1c7cd36c09d</a>
+Content-Type: application/json
+{
+"networkIdentifier": "333222111",
+"ipAddress": "192.168.1.100"
+}
+Response
+200 OK
+HTTP/1.1 200 OK
+Content-Type: application/json
+{
+"uid": "1400a4079dea438b887c5817449c51e2",
+"puk1": null,
+"pin2": null,
+"puk2": null,
+"pin1": null,
+"eid": null,
+"labels": [
+"label"
+],
+"identifier": "124578",
+"networkIdentifier": "333222111",
+"mobileNumber": "1234567890",
+"ipAddress": "192.168.1.100",
+"requestedIp": null,
+"operator": "VODAFONE",
+"operatorAccount": {
+"uid": "1674675f1c464c489dd0c6daff0edad5",
+"name": "MyOperatorAccount",
+"connection": {
+"uid": "e9d97269a05b4ce091da20f5cbdda93a",
+"name": "KPN"
+}
+},
+"productRefName": null,
+"appletGeneration": null,
+"confType": null,
+"formFactor": null,
+"technology": null,
+"orderId": null,
+"activationImei": null,
+"imeiLock": null,
+"serviceEndDate": null,
+"serviceOfferId": null,
+"metadata": [],
+"state": "INVENTORY"
+}
+Name
+Description
+subscription.missing.identifiers
+At least one of 'identifier', 'mobileNumber' or 'networkIdentifier' has to be set.
+Raised when subscription identifier is missing.
+subscription.not.unique.identifiers
+One of 'identifier', 'mobileNumber' or 'networkIdentifier' is not unique.
+subscription.unknown
+Raised when the uid of the subscription is unknown.
+subscription.missing.operator
+Raised when operator is missing.
+subscription.invalid.state
+Raised when subscription is in a state which does not allow the edition.
+subscription.operator.not.authorized
+Raised when operator is not authorized.
+system.invalid.state
+Raised when the system linked to the subscription is in a state which does not allow the edition.
+operator.account.unknown
+Raised when operator account is unknown.
+subscription.operator.and.operator.account.incompatible
+Raised when operator account is not compatible with the operator of the subscription.
+subscription.cannot.update.activation.imei.lock.exists
+Raised when activation imei is updated while imei lock exists.
+HTTP Method
+PUT
+Requires Authentication
+Yes
+Rate Limited
+Yes
+Headers
+Content-type: application/json
+Permissions
+entities.subscriptions.edit
+Details
+/api/v1/subscriptions/{uid}
+Gets the details of a subscription.
+Sample
+Exceptions
+Additional information
+Request
+GET <a href=https://na.airvantage.net/api/v1/subscriptions/89f81f1c2f2f46a880faf5a28668309e target=_blank rel="noopener noreferrer" class="">https://na.airvantage.net/api/v1/subscriptions/89f81f1c2f2f46a880faf5a28668309e</a>
+Response
+200 OK
+HTTP/1.1 200 OK
+Content-Type: application/json
+{
+"state": "INVENTORY",
+"metadata": [
+{
+"name" : "PIN1",
+"value" : "5698",
+"type" : "STRING"   // Possible types are : boolean, int, double, long, string, date and map
+},
+{
+"name" : "PIN2",
+"value" : "3612",
+"type" : "STRING"
+}
+],
+"uid": "89f81f1c2f2f46a880faf5a28668309e",
+"identifier": "556985478521",
+"labels": [],
+"operatorAccount":    {
+"uid": "1674675f1c464c489dd0c6daff0edad5",
+"name": "MyOperatorAccount",
+"connection": {
+"name": "KPN",
+"uid": "e9d97269a05b4ce091da20f5cbdda93a"
+}
+},
+"operator": "VODAFONE",
+"ipAddress": "192.168.0.1",
+"requestedIp": null,
+"mobileNumber": "1234567890",
+"networkIdentifier": "123456789",
+"eid" : null,
+"appletGeneration" : "V4",
+"formFactor" : "2FF",
+"confType" : "LITE",
+"technology" : "4G",
+"productRefName" : "LITE 2FF"
+}
+Name
+Description
+subscription.unknown
+Raised when the 'uid' points to an unknown subscription.
+HTTP Method
+GET
+Requires Authentication
+Yes
+Rate Limited
+Yes
+Headers
+None
+Permissions
+entities.subscriptions.view
+Delete
+/api/v1/subcriptions/{uid}
+Deletes a specific subscription from AirVantage. To delete a subscription it does not have to
+be assigned to any system.
+Sample
+Exceptions
+Additional Information
+Request
+DELETE <a href=https://na.airvantage.net/api/v1/subscriptions/d5e62f8ec1340e79214f2113db75e86 target=_blank rel="noopener noreferrer" class="">https://na.airvantage.net/api/v1/subscriptions/d5e62f8ec1340e79214f2113db75e86</a>
+Response
+200 OK
+HTTP/1.1 200 OK
+Content-Length: 0
+Name
+Description
+subscription.unknown
+Raised when the 'uid' points to an unknown subscription.
+subscription.assigned
+Raised when the subscription is assigned to a system.
+subscription.undeletable
+Raised when the subscription manages Semtech R2C (Ready-to-connect) connectivity.
+HTTP Method
+DELETE
+Requires Authentication
+Yes
+Rate Limited
+Yes
+Headers<a href=#statesreturns-all-subscriptions-whose-state-is-in-the-given-list-states-are-inventory-active-inactivesuspended-retired-unknownoptionalnullstring-listinoperatoraccountreturns-all-subscriptions-linked-to-a-operator-account-matching-the-specified-criteriathepossible-criteria-are-uid-exact-matchname-likeoptionalnullstring-map-with-the-following-format-uidnamesee-descriptionhttp-methodgetrequires-authenticationyesrate-limitedyesheadersnonepermissionsentitiessubscriptionsvieworder-byidentifierfieldsuid-operator-identifier-mobilenumber-networkidentifier-ipaddress-requestedip-state-metadata-operatoraccountlabels-eid-appletgeneration-formfactor-conftype-technology-productrefname-activationimei-imeilockcreateapiv1subscriptionscreates-a-new-subscription-the-result-returns-the-new-subscription-with-the-uidat-least-one-ofidentifiermobilenumberornetworkidentifiermust-be-setthese-fields-have-to-be-unique-read-only-fields-will-be-ignoredsampleparametersexceptionsadditional-informationrequestpost-httpsnaairvantagenetapiv1subscriptionscontent-type-applicationjsonidentifier-124578mobilenumber-1234567890networkidentifier-123456789ipaddress-19216801operator-vodafoneoperatoraccount-uid-1674675f1c464c489dd0c6daff0edad5labels-labelresponse200-okhttp11-200-okcontent-type-applicationjsonuid-1400a4079dea438b887c5817449c51e2puk1-nullpin2-nullpuk2-nullpin1-nulleid-nulllabels-labelidentifier-124578networkidentifier-123456789mobilenumber-1234567890ipaddress-19216801requestedip-nulloperator-vodafoneoperatoraccount-uid-1674675f1c464c489dd0c6daff0edad5name-myoperatoraccountconnection-uid-e9d97269a05b4ce091da20f5cbdda93aname-kpnproductrefname-nullappletgeneration-nullconftype-nullformfactor-nulltechnology-nullorderid-nullactivationimei-nullimeilock-nullserviceenddate-nullserviceofferid-nullmetadata-state-inventorynamedescriptionusedefaulttypecompanyset-the-context-where-the-new-subscription-will-be-created-mandatory-if-the-created-subscription-will-be-assigned-to-a-system-using-the-edit-system-apioptionalcallers-companyuid-stringnamedescriptionsubscriptionmissingidentifiersat-least-one-of-identifier-mobilenumber-or-networkidentifier-has-to-be-setraised-when-subscription-identifier-is-missingsubscriptionnotuniqueidentifiersone-of-identifier-mobilenumber-or-networkidentifier-is-not-unique-if-identifier-has-a-valid-value-mobilenumber-or-networkidentifier-cannot-be-set-to-null-if-they-have-no-value-otherwise-the-api-returns-an-error-when-identifier-has-a-valid-value-mobilenumber-or-networkidentifier-must-have-a-valid-value-or-be-emptysubscriptionmissingoperatorraised-when-operator-is-missingsubscriptionoperatornotauthorizedraised-when-operator-is-not-authorizedoperatoraccountunknownraised-when-operator-account-is-unknownsubscriptionoperatorandoperatoraccountincompatibleraised-when-operator-account-is-not-compatible-with-the-operator-of-the-subscriptioncompanyunknownthe-given-company-is-unkownsysteminvalidregistrationcoderaised-when-the-registration-code-is-invalidhttp-methodpostrequires-authenticationyesrate-limitedyesheaderscontent-type-applicationjsonpermissionsentitiessubscriptionscreateeditapiv1subscriptionsuidedits-the-subscription-identified-by-the-uid-of-the-request-if-the-subscription-is-not-in-inventory-stateor-if-the-subscription-is-linked-to-a-system-in-ready-deployed-or-being_transfered-state-then-only-the-labels-can-be-editedotherwise-you-can-edit-all-the-fieldsnb-it-is-not-necessary-to-send-the-whole-json-block-to-edit-fields-only-fields-sent-to-the-service-will-be-updatedsampleexceptionsadditional-informationrequestput-httpsnaairvantagenetapiv1subscriptionse810d8aff0bc46309cb3f1c7cd36c09dcontent-type-applicationjsonnetworkidentifier-333222111ipaddress-1921681100response200-okhttp11-200-okcontent-type-applicationjsonuid-1400a4079dea438b887c5817449c51e2puk1-nullpin2-nullpuk2-nullpin1-nulleid-nulllabels-labelidentifier-124578networkidentifier-333222111mobilenumber-1234567890ipaddress-1921681100requestedip-nulloperator-vodafoneoperatoraccount-uid-1674675f1c464c489dd0c6daff0edad5name-myoperatoraccountconnection-uid-e9d97269a05b4ce091da20f5cbdda93aname-kpnproductrefname-nullappletgeneration-nullconftype-nullformfactor-nulltechnology-nullorderid-nullactivationimei-nullimeilock-nullserviceenddate-nullserviceofferid-nullmetadata-state-inventorynamedescriptionsubscriptionmissingidentifiersat-least-one-of-identifier-mobilenumber-or-networkidentifier-has-to-be-setraised-when-subscription-identifier-is-missingsubscriptionnotuniqueidentifiersone-of-identifier-mobilenumber-or-networkidentifier-is-not-uniquesubscriptionunknownraised-when-the-uid-of-the-subscription-is-unknownsubscriptionmissingoperatorraised-when-operator-is-missingsubscriptioninvalidstateraised-when-subscription-is-in-a-state-which-does-not-allow-the-editionsubscriptionoperatornotauthorizedraised-when-operator-is-not-authorizedsysteminvalidstateraised-when-the-system-linked-to-the-subscription-is-in-a-state-which-does-not-allow-the-editionoperatoraccountunknownraised-when-operator-account-is-unknownsubscriptionoperatorandoperatoraccountincompatibleraised-when-operator-account-is-not-compatible-with-the-operator-of-the-subscriptionsubscriptioncannotupdateactivationimeilockexistsraised-when-activation-imei-is-updated-while-imei-lock-existshttp-methodputrequires-authenticationyesrate-limitedyesheaderscontent-type-applicationjsonpermissionsentitiessubscriptionseditdetailsapiv1subscriptionsuidgets-the-details-of-a-subscriptionsampleexceptionsadditional-informationrequestget-httpsnaairvantagenetapiv1subscriptions89f81f1c2f2f46a880faf5a28668309eresponse200-okhttp11-200-okcontent-type-applicationjsonstate-inventorymetadata-name--pin1value--5698type--string----possible-types-are--boolean-int-double-long-string-date-and-mapname--pin2value--3612type--stringuid-89f81f1c2f2f46a880faf5a28668309eidentifier-556985478521labels-operatoraccount----uid-1674675f1c464c489dd0c6daff0edad5name-myoperatoraccountconnection-name-kpnuid-e9d97269a05b4ce091da20f5cbdda93aoperator-vodafoneipaddress-19216801requestedip-nullmobilenumber-1234567890networkidentifier-123456789eid--nullappletgeneration--v4formfactor--2ffconftype--litetechnology--4gproductrefname--lite-2ffnamedescriptionsubscriptionunknownraised-when-the-uid-points-to-an-unknown-subscriptionhttp-methodgetrequires-authenticationyesrate-limitedyesheadersnonepermissionsentitiessubscriptionsviewdeleteapiv1subcriptionsuiddeletes-a-specific-subscription-from-airvantage-to-delete-a-subscription-it-does-not-have-tobe-assigned-to-any-systemsampleexceptionsadditional-informationrequestdelete-httpsnaairvantagenetapiv1subscriptionsd5e62f8ec1340e79214f2113db75e86response200-okhttp11-200-okcontent-length-0namedescriptionsubscriptionunknownraised-when-the-uid-points-to-an-unknown-subscriptionsubscriptionassignedraised-when-the-subscription-is-assigned-to-a-systemsubscriptionundeletableraised-when-the-subscription-manages-semtech-r2c-ready-to-connect-connectivityhttp-methoddeleterequires-authenticationyesrate-limitedyesheaders class=hash-link aria-label="Direct link to statesreturns-all-subscriptions-whose-state-is-in-the-given-list-states-are-inventory-active-inactivesuspended-retired-unknownoptionalnullstring-listinoperatoraccountreturns-all-subscriptions-linked-to-a-operator-account-matching-the-specified-criteriathepossible-criteria-are-uid-exact-matchname-likeoptionalnullstring-map-with-the-following-format-uidnamesee-descriptionhttp-methodgetrequires-authenticationyesrate-limitedyesheadersnonepermissionsentitiessubscriptionsvieworder-byidentifierfieldsuid-operator-identifier-mobilenumber-networkidentifier-ipaddress-requestedip-state-metadata-operatoraccountlabels-eid-appletgeneration-formfactor-conftype-technology-productrefname-activationimei-imeilockcreateapiv1subscriptionscreates-a-new-subscription-the-result-returns-the-new-subscription-with-the-uidat-least-one-ofidentifiermobilenumberornetworkidentifiermust-be-setthese-fields-have-to-be-unique-read-only-fields-will-be-ignoredsampleparametersexceptionsadditional-informationrequestpost-httpsnaairvantagenetapiv1subscriptionscontent-type-applicationjsonidentifier-124578mobilenumber-1234567890networkidentifier-123456789ipaddress-19216801operator-vodafoneoperatoraccount-uid-1674675f1c464c489dd0c6daff0edad5labels-labelresponse200-okhttp11-200-okcontent-type-applicationjsonuid-1400a4079dea438b887c5817449c51e2puk1-nullpin2-nullpuk2-nullpin1-nulleid-nulllabels-labelidentifier-124578networkidentifier-123456789mobilenumber-1234567890ipaddress-19216801requestedip-nulloperator-vodafoneoperatoraccount-uid-1674675f1c464c489dd0c6daff0edad5name-myoperatoraccountconnection-uid-e9d97269a05b4ce091da20f5cbdda93aname-kpnproductrefname-nullappletgeneration-nullconftype-nullformfactor-nulltechnology-nullorderid-nullactivationimei-nullimeilock-nullserviceenddate-nullserviceofferid-nullmetadata-state-inventorynamedescriptionusedefaulttypecompanyset-the-context-where-the-new-subscription-will-be-created-mandatory-if-the-created-subscription-will-be-assigned-to-a-system-using-the-edit-system-apioptionalcallers-companyuid-stringnamedescriptionsubscriptionmissingidentifiersat-least-one-of-identifier-mobilenumber-or-networkidentifier-has-to-be-setraised-when-subscription-identifier-is-missingsubscriptionnotuniqueidentifiersone-of-identifier-mobilenumber-or-networkidentifier-is-not-unique-if-identifier-has-a-valid-value-mobilenumber-or-networkidentifier-cannot-be-set-to-null-if-they-have-no-value-otherwise-the-api-returns-an-error-when-identifier-has-a-valid-value-mobilenumber-or-networkidentifier-must-have-a-valid-value-or-be-emptysubscriptionmissingoperatorraised-when-operator-is-missingsubscriptionoperatornotauthorizedraised-when-operator-is-not-authorizedoperatoraccountunknownraised-when-operator-account-is-unknownsubscriptionoperatorandoperatoraccountincompatibleraised-when-operator-account-is-not-compatible-with-the-operator-of-the-subscriptioncompanyunknownthe-given-company-is-unkownsysteminvalidregistrationcoderaised-when-the-registration-code-is-invalidhttp-methodpostrequires-authenticationyesrate-limitedyesheaderscontent-type-applicationjsonpermissionsentitiessubscriptionscreateeditapiv1subscriptionsuidedits-the-subscription-identified-by-the-uid-of-the-request-if-the-subscription-is-not-in-inventory-stateor-if-the-subscription-is-linked-to-a-system-in-ready-deployed-or-being_transfered-state-then-only-the-labels-can-be-editedotherwise-you-can-edit-all-the-fieldsnb-it-is-not-necessary-to-send-the-whole-json-block-to-edit-fields-only-fields-sent-to-the-service-will-be-updatedsampleexceptionsadditional-informationrequestput-httpsnaairvantagenetapiv1subscriptionse810d8aff0bc46309cb3f1c7cd36c09dcontent-type-applicationjsonnetworkidentifier-333222111ipaddress-1921681100response200-okhttp11-200-okcontent-type-applicationjsonuid-1400a4079dea438b887c5817449c51e2puk1-nullpin2-nullpuk2-nullpin1-nulleid-nulllabels-labelidentifier-124578networkidentifier-333222111mobilenumber-1234567890ipaddress-1921681100requestedip-nulloperator-vodafoneoperatoraccount-uid-1674675f1c464c489dd0c6daff0edad5name-myoperatoraccountconnection-uid-e9d97269a05b4ce091da20f5cbdda93aname-kpnproductrefname-nullappletgeneration-nullconftype-nullformfactor-nulltechnology-nullorderid-nullactivationimei-nullimeilock-nullserviceenddate-nullserviceofferid-nullmetadata-state-inventorynamedescriptionsubscriptionmissingidentifiersat-least-one-of-identifier-mobilenumber-or-networkidentifier-has-to-be-setraised-when-subscription-identifier-is-missingsubscriptionnotuniqueidentifiersone-of-identifier-mobilenumber-or-networkidentifier-is-not-uniquesubscriptionunknownraised-when-the-uid-of-the-subscription-is-unknownsubscriptionmissingoperatorraised-when-operator-is-missingsubscriptioninvalidstateraised-when-subscription-is-in-a-state-which-does-not-allow-the-editionsubscriptionoperatornotauthorizedraised-when-operator-is-not-authorizedsysteminvalidstateraised-when-the-system-linked-to-the-subscription-is-in-a-state-which-does-not-allow-the-editionoperatoraccountunknownraised-when-operator-account-is-unknownsubscriptionoperatorandoperatoraccountincompatibleraised-when-operator-account-is-not-compatible-with-the-operator-of-the-subscriptionsubscriptioncannotupdateactivationimeilockexistsraised-when-activation-imei-is-updated-while-imei-lock-existshttp-methodputrequires-authenticationyesrate-limitedyesheaderscontent-type-applicationjsonpermissionsentitiessubscriptionseditdetailsapiv1subscriptionsuidgets-the-details-of-a-subscriptionsampleexceptionsadditional-informationrequestget-httpsnaairvantagenetapiv1subscriptions89f81f1c2f2f46a880faf5a28668309eresponse200-okhttp11-200-okcontent-type-applicationjsonstate-inventorymetadata-name--pin1value--5698type--string----possible-types-are--boolean-int-double-long-string-date-and-mapname--pin2value--3612type--stringuid-89f81f1c2f2f46a880faf5a28668309eidentifier-556985478521labels-operatoraccount----uid-1674675f1c464c489dd0c6daff0edad5name-myoperatoraccountconnection-name-kpnuid-e9d97269a05b4ce091da20f5cbdda93aoperator-vodafoneipaddress-19216801requestedip-nullmobilenumber-1234567890networkidentifier-123456789eid--nullappletgeneration--v4formfactor--2ffconftype--litetechnology--4gproductrefname--lite-2ffnamedescriptionsubscriptionunknownraised-when-the-uid-points-to-an-unknown-subscriptionhttp-methodgetrequires-authenticationyesrate-limitedyesheadersnonepermissionsentitiessubscriptionsviewdeleteapiv1subcriptionsuiddeletes-a-specific-subscription-from-airvantage-to-delete-a-subscription-it-does-not-have-tobe-assigned-to-any-systemsampleexceptionsadditional-informationrequestdelete-httpsnaairvantagenetapiv1subscriptionsd5e62f8ec1340e79214f2113db75e86response200-okhttp11-200-okcontent-length-0namedescriptionsubscriptionunknownraised-when-the-uid-points-to-an-unknown-subscriptionsubscriptionassignedraised-when-the-subscription-is-assigned-to-a-systemsubscriptionundeletableraised-when-the-subscription-manages-semtech-r2c-ready-to-connect-connectivityhttp-methoddeleterequires-authenticationyesrate-limitedyesheaders" title="Direct link to statesreturns-all-subscriptions-whose-state-is-in-the-given-list-states-are-inventory-active-inactivesuspended-retired-unknownoptionalnullstring-listinoperatoraccountreturns-all-subscriptions-linked-to-a-operator-account-matching-the-specified-criteriathepossible-criteria-are-uid-exact-matchname-likeoptionalnullstring-map-with-the-following-format-uidnamesee-descriptionhttp-methodgetrequires-authenticationyesrate-limitedyesheadersnonepermissionsentitiessubscriptionsvieworder-byidentifierfieldsuid-operator-identifier-mobilenumber-networkidentifier-ipaddress-requestedip-state-metadata-operatoraccountlabels-eid-appletgeneration-formfactor-conftype-technology-productrefname-activationimei-imeilockcreateapiv1subscriptionscreates-a-new-subscription-the-result-returns-the-new-subscription-with-the-uidat-least-one-ofidentifiermobilenumberornetworkidentifiermust-be-setthese-fields-have-to-be-unique-read-only-fields-will-be-ignoredsampleparametersexceptionsadditional-informationrequestpost-httpsnaairvantagenetapiv1subscriptionscontent-type-applicationjsonidentifier-124578mobilenumber-1234567890networkidentifier-123456789ipaddress-19216801operator-vodafoneoperatoraccount-uid-1674675f1c464c489dd0c6daff0edad5labels-labelresponse200-okhttp11-200-okcontent-type-applicationjsonuid-1400a4079dea438b887c5817449c51e2puk1-nullpin2-nullpuk2-nullpin1-nulleid-nulllabels-labelidentifier-124578networkidentifier-123456789mobilenumber-1234567890ipaddress-19216801requestedip-nulloperator-vodafoneoperatoraccount-uid-1674675f1c464c489dd0c6daff0edad5name-myoperatoraccountconnection-uid-e9d97269a05b4ce091da20f5cbdda93aname-kpnproductrefname-nullappletgeneration-nullconftype-nullformfactor-nulltechnology-nullorderid-nullactivationimei-nullimeilock-nullserviceenddate-nullserviceofferid-nullmetadata-state-inventorynamedescriptionusedefaulttypecompanyset-the-context-where-the-new-subscription-will-be-created-mandatory-if-the-created-subscription-will-be-assigned-to-a-system-using-the-edit-system-apioptionalcallers-companyuid-stringnamedescriptionsubscriptionmissingidentifiersat-least-one-of-identifier-mobilenumber-or-networkidentifier-has-to-be-setraised-when-subscription-identifier-is-missingsubscriptionnotuniqueidentifiersone-of-identifier-mobilenumber-or-networkidentifier-is-not-unique-if-identifier-has-a-valid-value-mobilenumber-or-networkidentifier-cannot-be-set-to-null-if-they-have-no-value-otherwise-the-api-returns-an-error-when-identifier-has-a-valid-value-mobilenumber-or-networkidentifier-must-have-a-valid-value-or-be-emptysubscriptionmissingoperatorraised-when-operator-is-missingsubscriptionoperatornotauthorizedraised-when-operator-is-not-authorizedoperatoraccountunknownraised-when-operator-account-is-unknownsubscriptionoperatorandoperatoraccountincompatibleraised-when-operator-account-is-not-compatible-with-the-operator-of-the-subscriptioncompanyunknownthe-given-company-is-unkownsysteminvalidregistrationcoderaised-when-the-registration-code-is-invalidhttp-methodpostrequires-authenticationyesrate-limitedyesheaderscontent-type-applicationjsonpermissionsentitiessubscriptionscreateeditapiv1subscriptionsuidedits-the-subscription-identified-by-the-uid-of-the-request-if-the-subscription-is-not-in-inventory-stateor-if-the-subscription-is-linked-to-a-system-in-ready-deployed-or-being_transfered-state-then-only-the-labels-can-be-editedotherwise-you-can-edit-all-the-fieldsnb-it-is-not-necessary-to-send-the-whole-json-block-to-edit-fields-only-fields-sent-to-the-service-will-be-updatedsampleexceptionsadditional-informationrequestput-httpsnaairvantagenetapiv1subscriptionse810d8aff0bc46309cb3f1c7cd36c09dcontent-type-applicationjsonnetworkidentifier-333222111ipaddress-1921681100response200-okhttp11-200-okcontent-type-applicationjsonuid-1400a4079dea438b887c5817449c51e2puk1-nullpin2-nullpuk2-nullpin1-nulleid-nulllabels-labelidentifier-124578networkidentifier-333222111mobilenumber-1234567890ipaddress-1921681100requestedip-nulloperator-vodafoneoperatoraccount-uid-1674675f1c464c489dd0c6daff0edad5name-myoperatoraccountconnection-uid-e9d97269a05b4ce091da20f5cbdda93aname-kpnproductrefname-nullappletgeneration-nullconftype-nullformfactor-nulltechnology-nullorderid-nullactivationimei-nullimeilock-nullserviceenddate-nullserviceofferid-nullmetadata-state-inventorynamedescriptionsubscriptionmissingidentifiersat-least-one-of-identifier-mobilenumber-or-networkidentifier-has-to-be-setraised-when-subscription-identifier-is-missingsubscriptionnotuniqueidentifiersone-of-identifier-mobilenumber-or-networkidentifier-is-not-uniquesubscriptionunknownraised-when-the-uid-of-the-subscription-is-unknownsubscriptionmissingoperatorraised-when-operator-is-missingsubscriptioninvalidstateraised-when-subscription-is-in-a-state-which-does-not-allow-the-editionsubscriptionoperatornotauthorizedraised-when-operator-is-not-authorizedsysteminvalidstateraised-when-the-system-linked-to-the-subscription-is-in-a-state-which-does-not-allow-the-editionoperatoraccountunknownraised-when-operator-account-is-unknownsubscriptionoperatorandoperatoraccountincompatibleraised-when-operator-account-is-not-compatible-with-the-operator-of-the-subscriptionsubscriptioncannotupdateactivationimeilockexistsraised-when-activation-imei-is-updated-while-imei-lock-existshttp-methodputrequires-authenticationyesrate-limitedyesheaderscontent-type-applicationjsonpermissionsentitiessubscriptionseditdetailsapiv1subscriptionsuidgets-the-details-of-a-subscriptionsampleexceptionsadditional-informationrequestget-httpsnaairvantagenetapiv1subscriptions89f81f1c2f2f46a880faf5a28668309eresponse200-okhttp11-200-okcontent-type-applicationjsonstate-inventorymetadata-name--pin1value--5698type--string----possible-types-are--boolean-int-double-long-string-date-and-mapname--pin2value--3612type--stringuid-89f81f1c2f2f46a880faf5a28668309eidentifier-556985478521labels-operatoraccount----uid-1674675f1c464c489dd0c6daff0edad5name-myoperatoraccountconnection-name-kpnuid-e9d97269a05b4ce091da20f5cbdda93aoperator-vodafoneipaddress-19216801requestedip-nullmobilenumber-1234567890networkidentifier-123456789eid--nullappletgeneration--v4formfactor--2ffconftype--litetechnology--4gproductrefname--lite-2ffnamedescriptionsubscriptionunknownraised-when-the-uid-points-to-an-unknown-subscriptionhttp-methodgetrequires-authenticationyesrate-limitedyesheadersnonepermissionsentitiessubscriptionsviewdeleteapiv1subcriptionsuiddeletes-a-specific-subscription-from-airvantage-to-delete-a-subscription-it-does-not-have-tobe-assigned-to-any-systemsampleexceptionsadditional-informationrequestdelete-httpsnaairvantagenetapiv1subscriptionsd5e62f8ec1340e79214f2113db75e86response200-okhttp11-200-okcontent-length-0namedescriptionsubscriptionunknownraised-when-the-uid-points-to-an-unknown-subscriptionsubscriptionassignedraised-when-the-subscription-is-assigned-to-a-systemsubscriptionundeletableraised-when-the-subscription-manages-semtech-r2c-ready-to-connect-connectivityhttp-methoddeleterequires-authenticationyesrate-limitedyesheaders" translate=no>​</a></h2>
+<p>Permissions
+entities.subscriptions.delete
+Change labels
+/api/v1/operations/subscriptions/label
+Adds or removes labels to subscriptions matching a given criteria. When no criteria are set, all subscriptions in the company will be labelled.
+Sample
+Content
+Parameters
+Exceptions
+Additional information
+Request
+POST <a href=https://na.airvantage.net/api/v1/operations/subscriptions/label target=_blank rel="noopener noreferrer" class="">https://na.airvantage.net/api/v1/operations/subscriptions/label</a>
+Content-Type: application/json
+{
+"labels" : {
+"add" : ["france"]
+},
+"criteria" : {
+"operator" : "CARRIER",
+"labels" : ["test"]
+},
+"identifiers" : {
+"identifier": ["sub1", "sub2", "sub3"]</p>
+<h1>}
+}
+Response
+200 OK
+HTTP/1.1 200 OK
+Content-Type: application/json
+...
+{
+"operation":"4b89657f63aac4b299c1d46e98a495326"
+}
+{
+"notify" : true|false,
+"callback" : "callback URL",
+"labels" : {
+"add" : ["Label1", ...],
+"remove" : ["Label2", ...]
+},
+"criteria" : {
+"uids" : []
+"labels" : [],
+"identifier" : ,
+"mobileNumber" : ,
+"networkIdentifier" : ,
+"eid" : ,
+"ipAddress" : ,
+"operator" : ,
+"assigned" : ,
+"states" : [],
+"operatorAccount" : {
+"uid" : ,
+"name" :
+}
+},
+"dependsOn" : {
+"operation" : "uid",
+"states" : ["FAILURE"]
+},
+"identifiers": {
+"identifier" : ["iccid1", "iccid2"],
+"networkIdentifier" : ["imsi1", "imsi2"],
+"ipAddress" : ["ipAddr1", "ipAddr2"]
+}
+}
+Add or remove labels should be required
+Either 'criteria' or 'dependsOn' should be set.
+Field
+Description
+Use
+Default
+Type
+notify
+Send an email notification to the user calling this method when the operation finishes
+optional
+boolean
+callback
+The endpoint URL to call when the operation state changes. The callback is done
+using HTTP 'POST' method
+.
+optional
+string
+labels.add
+The list of labels to add
+required
+string
+labels.remove
+The list of labels to remove
+required
+string
+dependsOn.operation
+Identifier of the operation to be used to launch this operation
+In other words,
+the tasks of the new operation will start only when the tasks of specified operation will be finished.
+required if 'dependsOn' set
+uid
+dependsOn.states
+States of the tasks which will be used as input of this operation.
+Possible values are : SUCCESS, FAILURE and CANCELLED.
+If null or empty, all tasks from the parent operation will be used as input of this operation.
+optional
+SUCCESS,FAILURE,CANCELLED
+string array
+identifiers
+List of identifiers to be used to identify systems. The understandable identifiers are :
+ICCID, IMSI and IP address.
+A maximum of 5000 identifiers can be provided.
+optional
+string
+identifiers.identifier
+List of subscription identifier (ICCID / ESN) to be used to identify subscriptions.
+A maximum of 5000 subscription identifiers can be provided.
+optional
+string
+identifiers.networkIdentifier
+List of subscription network identifier (IMSI / MIN) to be used to identify subscriptions.
+A maximum of 5000 subscription network identifiers can be provided.
+optional
+string
+identifiers.ipAddress
+List of subscription IP address to be used to identify subscriptions.
+A maximum of 5000 subscription IP addresses can be provided.
+optional
+string
+criteria.uids
+Labels all subscriptions whose uid matches with the specified ids.
+optional
+uid
+criteria.labels
+Labels all subscriptions which have one of the specified label.
+optional
+string
+criteria.identifier
+Labels all subscriptions whose identifier contains the given string.
+optional
+string
+criteria.mobileNumber
+Labels all subscriptions whose mobileNumber contains the given string.
+optional
+string
+criteria.networkIdentifier
+Labels all subscriptions whose networkIdentifier contains the given string.
+optional
+string
+criteria.eid
+Labels all subscriptions whose eUICC-ID contains the given string.
+optional
+string
+criteria.ipAddress
+Labels all subscriptions whose ipAddress contains the given string.
+optional
+string
+criteria.operator
+Labels all subscriptions matching the given operator.
+optional
+string
+criteria.assigned
+Labels all subscriptions assigned (or not) to a system. Expected value : true/false.
+optional
+boolean
+criteria.states
+Labels all subscriptions matching the specified states.
+States are : INVENTORY, ACTIVE, INACTIVE,
+SUSPENDED, RETIRED, UNKNOWN
+optional
+string
+criteria.operatorAccount.uid
+Labels all subscriptions linked to the operator account having the specified uid.
+optional
+string
+criteria.operatorAccount.name
+Labels all subscriptions linked to a operator account whose name contains the given string.
+optional
+string
+Name
+Description
+Use
+Default
+Type
+Operand
+company
+Labels all subscriptions available for the company
+optional
+caller's company
+uid string</h1>
+<p>Name
+Description
+label.missing
+The list of label to add or remove is empty.
+label.amount.exceeded
+The number of labels to add or remove is greater than 100.
+selection.empty
+There is no subscription matching the given criteria.
+selection.invalid
+The selection is invalid. The possible causes are :
+Only one of the following attributes has to be set : criteria, dependsOn
+'dependsOn' is defined but 'dependsOn.operation' is not set
+HTTP Method
+POST
+Requires Authentication
+Yes
+Rate Limited
+Yes
+Headers
+Content-type: application/json
+Permissions
+entities.subscriptions.edit
+Import
+/api/v1/operations/subscriptions/import
+Imports and creates subscriptions from a CSV file.
+Sample
+Parameters
+CSV Header
+JSON Content
+Exceptions
+Additional information
+Request
+POST <a href=https://na.airvantage.net/api/v1/operations/subscriptions/import target=_blank rel="noopener noreferrer" class="">https://na.airvantage.net/api/v1/operations/subscriptions/import</a>
+Content-type: multipart/mixed; boundary="BoundaryUgix6QHMxLwJ4siU"
+--BoundaryUgix6QHMxLwJ4siU
+Content-Disposition: form-data; name="file"; filename="file.csv"
+Content-Type: text/csv
+// CSV attached
+...
+--BoundaryUgix6QHMxLwJ4siU
+Content-Disposition: form-data; name="parameters"; filename="parameters.json"
+Content-Type: application/json
+// JSON attached
+{
+"notify" : true,
+"callback" : "callback_url"
+}
+--BoundaryUgix6QHMxLwJ4siU--
+Response
+200 OK
+HTTP/1.1 200 OK
+Content-Type: application/json
+...
+{
+"operation":"4b89657f63aac4b299c1d46e98a495326"
+}
+Name
+Description
+Use
+Default
+Type
+company
+Set the context where the new subscriptions will be created.
+optional
+caller's company
+uid string
+Header
+Description
+Use
+OPERATOR
+The operator of the new subscription.
+required
+IDENTIFIER
+The identifier (ICCID, ESN or MEID) of the new subscription.
+optional
+NETWORK IDENTIFIER
+The network identifier (IMSI or MIN) of the new subscription.
+optional
+MOBILE NUMBER
+The mobile number (MSISDN or MDN) of the new subscription.
+optional
+IP
+The IP address of the new subscription.
+optional
+REQUESTED IP
+The requested IP address that must be configured at the network level as static IP.
+optional
+OPERATOR ACCOUNT
+The operator account id for the new subscription.
+optional
+LABELS
+The labels of the new subscription, separated by a '|' character.
+optional
+At least one of the subscription identifiers (Identifier, Mobile Number, Network Identifier) is expected.
+{
+"notify" : true|false,
+"callback" : "callback_url"
+}
+Field
+Description
+Use
+Default
+Type
+notify
+Send an email notification to the user calling this method when the operation finishes.
+optional
+false
+boolean
+callback
+The endpoint URL to call when the operation state changes. The callback is done
+using HTTP 'POST' method
+.
+optional
+string
+Name
+Description
+file.unreadable
+File is unreadable
+file.header.missing
+CSV header is missing
+csv.header.unknown.column
+CSV header column is unknown
+file.missing.data
+File contains no data
+file.too.large
+Files cannot be more than 10MB
+HTTP Method
+POST
+Requires Authentication
+Yes
+Rate Limited
+Yes
+Headers
+Content-type: application/octet-stream
+Permissions
+entities.subscriptions.create
+Delete multiple subscriptions
+/api/v1/operations/subscriptions/delete
+Deletes several subscriptions. As this operation may be long, depending on the number of subscriptions to
+delete, it is done asynchronously. Subscriptions linked to a system will not be deleted and the task associated to these subscriptions
+will fail.
+Sample
+Parameters
+Contents
+Exceptions
+Additional Information
+Request
+POST <a href=https://na.airvantage.net/api/v1/operations/subscriptions/delete target=_blank rel="noopener noreferrer" class="">https://na.airvantage.net/api/v1/operations/subscriptions/delete</a>
+Content-Type: application/json
+...
+{
+"subscriptions" : {
+"uids" : ["16199496f6d24f0691fa006ef53e5592"]
+}
+}
+Response
+200 OK
+HTTP/1.1 200 OK
+Content-Type: application/json
+...
+{
+"operation":"4b89657f63aac4b299c1d46e98a495326"
+}
+Name
+Description
+Use
+Default
+Type
+company
+Set the context company.
+optional
+caller's company
+uid
+{
+"notify" : true|false,
+"callback" : "callback URL",
+"subscriptions" : {
+"label" : "label",
+"uids" : ["uid1", ...],
+"dependsOn" : {
+"operation" : "uid",
+"states" : ["FAILURE"]
+},
+"criteria" : {
+"uids" : []
+"labels" : [],
+"identifier" : ,
+"mobileNumber" : ,
+"networkIdentifier" : ,
+"eid" : ,
+"ipAddress" : ,
+"operator" : ,
+"assigned" : ,
+"states" : [],
+"operatorAccount" : {
+"uid" : ,
+"name" :
+}
+}
+}
+}
+Field
+Description
+Use
+Default
+Type
+notify
+Send an email notification to the user calling this method when the operation finishes.
+optional
+false
+boolean
+callback
+The endpoint URL to call when the operation state changes. The callback is done
+using HTTP 'POST' method
+.
+optional
+string
+subscriptions.label
+Label name. All subscriptions linked to the label will be incorporated to the operation
+required
+string
+subscriptions.uids
+List of subscription uids to be used to launch the operation
+required
+uid
+subscriptions.dependsOn.operation
+Identifier of the operation to be used to launch this operation
+In other words,
+the tasks of the new operation will start only when the tasks of specified operation will be finished.
+required if 'dependsOn' set
+uid
+subscriptions.dependsOn.states
+States of the tasks which will be used as input of this operation.
+Possible values are : SUCCESS, FAILURE and CANCELLED.
+If null or empty, all tasks from the parent operation will be used as input of this operation.
+optional
+SUCCESS,FAILURE,CANCELLED
+string array
+subscriptions.criteria.uids
+Selects all subscriptions whose uid matches with the specified ids.
+optional
+uid
+subscriptions.criteria.labels
+Selects all subscriptions which have one of the specified label.
+optional
+string
+subscriptions.criteria.identifier
+Selects all subscriptions whose identifier contains the given string.
+optional
+string
+subscriptions.criteria.mobileNumber
+Selects all subscriptions whose mobileNumber contains the given string.
+optional
+string
+subscriptions.criteria.networkIdentifier
+Selects all subscriptions whose networkIdentifier contains the given string.
+optional
+string
+subscriptions.criteria.eid
+Selects all subscriptions whose eUICC-ID contains the given string.
+optional
+string
+subscriptions.criteria.ipAddress
+Selects all subscriptions whose ipAddress contains the given string.
+optional
+string
+subscriptions.criteria.operator
+Selects all subscriptions matching the given operator.
+optional
+string
+subscriptions.criteria.assigned
+Selects all subscriptions assigned (or not) to a system. Expected value : true/false.
+optional
+boolean
+subscriptions.criteria.states
+Selects all subscriptions matching the specified states.
+States are : INVENTORY, ACTIVE, INACTIVE,
+SUSPENDED, RETIRED, UNKNOWN
+optional
+string
+subscriptions.criteria.operatorAccount.uid
+Selects all subscriptions linked to the operator account having the specified uid.
+optional
+string
+subscriptions.criteria.operatorAccount.name
+Selects all subscriptions linked to a operator account whose name contains the given string.
+optional
+string
+Name
+Description
+selection.empty
+The list of subscription uids is empty or no subscription found for the specified label or criteria.
+selection.invalid
+The selection is invalid. Only one of the following attributes has to be set : label, uids, dependsOn, or criteria.
+selection.max.uid.reached
+The list of subscription uids contains more than 100 distinct uids.
+label.unknown
+The specified label is unknown
+operation.unknown
+The specified 'dependsOn' operation is unknown
+subscription.assigned
+Shown in the operation task. Raised when the subscription cannot be deleted because it is still
+assigned to a system.
+subscription.unknown
+Shown in the operation task. Raised when the subscription cannot be found in AirVantage.
+HTTP Method
+POST
+Requires Authentication
+Yes
+Rate Limited
+Yes
+Headers
+Content-type: application/json
+Permissions
+entities.subscriptions.delete
+Activate
+/api/v1/operations/subscriptions/activate
+Launches an operation to activate a set of subscriptions defined by a list of uids, a label, or criteria.
+Sample
+Content
+Parameters
+Exceptions
+Additional information
+Request
+POST <a href=https://na.airvantage.net/api/v1/operations/subscriptions/activate target=_blank rel="noopener noreferrer" class="">https://na.airvantage.net/api/v1/operations/subscriptions/activate</a>
+Content-Type: application/json
+...
+{
+"subscriptions" : {
+"uids" : ["b0e44f9ef19a475ca237aeeeef92998a"]
+},
+"accountParameters" : [
+{
+"account" : "5c3a642f60514e01a9a4b4734ff60dde",
+"parameters" : {
+"PricePlan" : ["Primary"]
+}
+}
+]
+}
+Response
+200 OK
+HTTP/1.1 200 OK
+Content-Type: application/json
+...
+{
+"operation":"4b89657f63aac4b299c1d46e98a495326"
+}
+{
+"notify" : true|false,
+"callback" : "callback URL",
+"scheduledTime": "scheduled_time",
+"subscriptions" : {
+"label" : "label",
+"uids" : ["uid1", ...],
+"dependsOn" : {
+"operation" : "uid",
+"states" : ["FAILURE"]
+},
+"criteria" : {
+"uids" : []
+"labels" : [],
+"identifier" : ,
+"mobileNumber" : ,
+"networkIdentifier" : ,
+"eid" : ,
+"ipAddress" : ,
+"operator" : ,
+"assigned" : ,
+"states" : [],
+"operatorAccount" : {
+"uid" : ,
+"name" :
+}
+}
+},
+"accountParameters" : [
+{
+"account" : "operator_account_uid",
+"parameters" : {
+"key1" : ["value1"],
+"key2" : ["value2", "value3"]
+}
+}
+],
+"offerId" : "offer_uid"
+}
+'label' or 'uids' or 'criteria' should be set to activate subscriptions
+Field
+Description
+Use
+Default
+Type
+notify
+Send an email notification to the user calling this method when the operation finishes.
+optional
+caller's company
+boolean
+callback
+The endpoint URL to call when the operation state changes. The callback is done
+using HTTP 'POST' method
+.
+optional
+string
+scheduledTime
+Date time when the operation will be launched.
+If null, the operation starts immediately.
+The date must be lower than 90 days.
+optional
+null
+timestamp
+timeout
+The date for which the operation is considered as expired.
+If null, the operation will expire in 7 days.
+optional
+null
+timestamp
+subscriptions.label
+Label name. All subscriptions linked to the label will be incorporated to the operation
+required
+string
+subscriptions.uids
+List of subscription uids to be used to launch the operation
+required
+uid
+subscriptions.dependsOn.operation
+Identifier of the operation to be used to launch this operation
+In other words,
+the tasks of the new operation will start only when the tasks of specified operation will be finished.
+required if 'dependsOn' set
+uid
+subscriptions.dependsOn.states
+States of the tasks which will be used as input of this operation.
+Possible values are : SUCCESS, FAILURE and CANCELLED.
+If null or empty, all tasks from the parent operation will be used as input of this operation.
+optional
+SUCCESS,FAILURE,CANCELLED
+string array
+subscriptions.criteria.uids
+Selects all subscriptions whose uid matches with the specified ids.
+optional
+uid
+subscriptions.criteria.labels
+Selects all subscriptions which have one of the specified label.
+optional
+string
+subscriptions.criteria.identifier
+Selects all subscriptions whose identifier contains the given string.
+optional
+string
+subscriptions.criteria.mobileNumber
+Selects all subscriptions whose mobileNumber contains the given string.
+optional
+string
+subscriptions.criteria.networkIdentifier
+Selects all subscriptions whose networkIdentifier contains the given string.
+optional
+string
+subscriptions.criteria.eid
+Selects all subscriptions whose eUICC-ID contains the given string.
+optional
+string
+subscriptions.criteria.ipAddress
+Selects all subscriptions whose ipAddress contains the given string.
+optional
+string
+subscriptions.criteria.operator
+Selects all subscriptions matching the given operator.
+optional
+string
+subscriptions.criteria.assigned
+Selects all subscriptions assigned (or not) to a system. Expected value : true/false.
+optional
+boolean
+subscriptions.criteria.states
+Selects all subscriptions matching the specified states.
+States are : INVENTORY, ACTIVE, INACTIVE,
+SUSPENDED, RETIRED, UNKNOWN
+optional
+string
+subscriptions.criteria.operatorAccount.uid
+Selects all subscriptions linked to the operator account having the specified uid.
+optional
+string
+subscriptions.criteria.operatorAccount.name
+Selects all subscriptions linked to a operator account whose name contains the given string.
+optional
+string
+accountParameters.account
+Uid of the
+Operator account
+for which operation
+parameters are set
+optional
+uid
+accountParameters.parameters
+List of parameters (key/value) to be used with all subscription linked to the defined operator account.
+The operation parameters to be set for an operator account are described by the
+Operator connection
+linked to this account.
+optional
+string
+offerId
+The unique identifier of the
+Offer
+to be used to activate the systems.
+optional
+uid
+Name
+Description
+Use
+Default
+Type
+company
+Set the context where the operation has to be executed.
+optional
+caller's company
+uid string
+Name
+Description
+operation.invalid.schedule.date
+The specified schedule date is invalid (greater than 90 days).
+operation.invalid.timeout.date
+The specified timeout is less than schedule date.
+selection.empty
+The list of subscription uids is empty or no subscription found for the specified label or criteria.
+selection.invalid
+The selection is invalid. Only one of the following attributes has to be set : label, uids, dependsOn, or criteria.
+selection.max.uid.reached
+The list of subscription uids contains more than 100 distinct uids.
+label.unknown
+The specified label is unknown
+operation.unknown
+The specified 'dependsOn' operation is unknown
+operation.subscription.prov.operator.account.unknown.connection
+The operator associated to the operator account is unknown.
+operation.subscription.prov.operator.account.unsupported.operation
+The operation is not supported by the operator associated to the operator account.
+operator.connection.account.parameters.invalid.type
+The type of the parameter value is invalid. See the description of the operator connection.
+operator.connection.account.parameters.invalid.constraint
+The constaints of the parameter value are invalid. See the description of the operator connection.
+operator.connection.account.parameters.invalid.cardinality
+The cardinality of the parameter value is invalid. See the description of the operator connection.
+operator.connection.account.parameters.missing
+A required provisioning parameter is missing. See the description of the operator connection.
+operation.subscription.prov.missing.operator.account
+No operator account is defined for the subscription.
+operation.subscription.prov.unknown.operator.connection
+The operator linked to the subscription is unknown.
+operation.subscription.prov.unsupported.operation
+The operation is not supported by the operator of the subscription.
+operation.subscription.prov.invalid.subscription.state
+The state of the subscription does not allow to launch the provisioning action.
+operation.subscription.prov.missing.communication.id
+The communication identifier (Identifier, MobileNumber or NetworkIdentifier) is not set on the
+subscription.
+operation.subscription.prov.unknown.offer
+The specified offer does not exist.
+HTTP Method
+POST
+Requires Authentication
+Yes
+Rate Limited
+Yes
+Headers
+Content-type: application/json
+Permissions
+entities.subscriptions.operations.launch
+Suspend
+/api/v1/operations/subscriptions/suspend
+Launches an operation to suspend a set of subscriptions defined by a list of uids, a label, or criteria.
+Sample
+Content
+Parameters
+Exceptions
+Additional information
+Request
+POST <a href=https://na.airvantage.net/api/v1/operations/subscriptions/suspend target=_blank rel="noopener noreferrer" class="">https://na.airvantage.net/api/v1/operations/subscriptions/suspend</a>
+Content-Type: application/json
+...
+{
+"subscriptions" : {
+"uids" : ["b0e44f9ef19a475ca237aeeeef92998a"]
+},
+"accountParameters" : [
+{
+"account" : "5c3a642f60514e01a9a4b4734ff60dde",
+"parameters" : {
+"name1" : ["value1"],
+"name2" : ["value2", "value3"]
+}
+}
+]
+}
+Response
+200 OK
+HTTP/1.1 200 OK
+Content-Type: application/json
+...
+{
+"operation":"4b89657f63aac4b299c1d46e98a495326"
+}
+{
+"notify" : true|false,
+"callback" : "callback URL",
+"scheduledTime": "scheduled_time",
+"subscriptions" : {
+"label" : "label",
+"uids" : ["uid1", ...],
+"dependsOn" : {
+"operation" : "uid",
+"states" : ["FAILURE"]
+},
+"criteria" : {
+"uids" : []
+"labels" : [],
+"identifier" : ,
+"mobileNumber" : ,
+"networkIdentifier" : ,
+"eid" : ,
+"ipAddress" : ,
+"operator" : ,
+"assigned" : ,
+"states" : [],
+"operatorAccount" : {
+"uid" : ,
+"name" :
+}
+}
+},
+"accountParameters" : [
+{
+"account" : "operator_account_uid",
+"parameters" : {
+"key1" : ["value1"],
+"key2" : ["value2", "value3"]
+}
+}
+]
+}
+'label' or 'uids' or 'criteria' should be set to suspend subscriptions
+Field
+Description
+Use
+Default
+Type
+notify
+Send an email notification to the user calling this method when the operation finishes.
+optional
+caller's company
+boolean
+callback
+The endpoint URL to call when the operation state changes. The callback is done
+using HTTP 'POST' method
+.
+optional
+string
+scheduledTime
+Date time when the operation will be launched.
+If null, the operation starts immediately.
+The date must be lower than 90 days.
+optional
+null
+timestamp
+timeout
+The date for which the operation is considered as expired.
+If null, the operation will expire in 7 days.
+optional
+null
+timestamp
+subscriptions.label
+Label name. All subscriptions linked to the label will be incorporated to the operation
+required
+string
+subscriptions.uids
+List of subscription uids to be used to launch the operation
+required
+uid
+subscriptions.dependsOn.operation
+Identifier of the operation to be used to launch this operation
+In other words,
+the tasks of the new operation will start only when the tasks of specified operation will be finished.
+required if 'dependsOn' set
+uid
+subscriptions.dependsOn.states
+States of the tasks which will be used as input of this operation.
+Possible values are : SUCCESS, FAILURE and CANCELLED.
+If null or empty, all tasks from the parent operation will be used as input of this operation.
+optional
+SUCCESS,FAILURE,CANCELLED
+string array
+subscriptions.criteria.uids
+Selects all subscriptions whose uid matches with the specified ids.
+optional
+uid
+subscriptions.criteria.labels
+Selects all subscriptions which have one of the specified label.
+optional
+string
+subscriptions.criteria.identifier
+Selects all subscriptions whose identifier contains the given string.
+optional
+string
+subscriptions.criteria.mobileNumber
+Selects all subscriptions whose mobileNumber contains the given string.
+optional
+string
+subscriptions.criteria.networkIdentifier
+Selects all subscriptions whose networkIdentifier contains the given string.
+optional
+string
+subscriptions.criteria.eid
+Selects all subscriptions whose eUICC-ID contains the given string.
+optional
+string
+subscriptions.criteria.ipAddress
+Selects all subscriptions whose ipAddress contains the given string.
+optional
+string
+subscriptions.criteria.operator
+Selects all subscriptions matching the given operator.
+optional
+string
+subscriptions.criteria.assigned
+Selects all subscriptions assigned (or not) to a system. Expected value : true/false.
+optional
+boolean
+subscriptions.criteria.states
+Selects all subscriptions matching the specified states.
+States are : INVENTORY, ACTIVE, INACTIVE,
+SUSPENDED, RETIRED, UNKNOWN
+optional
+string
+subscriptions.criteria.operatorAccount.uid
+Selects all subscriptions linked to the operator account having the specified uid.
+optional
+string
+subscriptions.criteria.operatorAccount.name
+Selects all subscriptions linked to a operator account whose name contains the given string.
+optional
+string
+accountParameters.account
+Uid of the
+Operator account
+for which operation
+parameters are set
+optional
+uid
+accountParameters.parameters
+List of parameters (key/value) to be used with all subscription linked to the defined operator account.
+The operation parameters to be set for an operator account are described by the
+Operator connection
+linked to this account.
+optional
+string
+Name
+Description
+Use
+Default
+Type
+company
+Set the context where the operation has to be executed.
+optional
+caller's company
+uid string
+Name
+Description
+operation.invalid.schedule.date
+The specified schedule date is invalid (greater than 90 days).
+operation.invalid.timeout.date
+The specified timeout is less than schedule date.
+selection.empty
+The list of subscription uids is empty or no subscription found for the specified label or criteria.
+selection.invalid
+The selection is invalid. Only one of the following attributes has to be set : label, uids, dependsOn, or criteria.
+selection.max.uid.reached
+The list of subscription uids contains more than 100 distinct uids.
+label.unknown
+The specified label is unknown
+operation.unknown
+The specified 'dependsOn' operation is unknown
+operation.subscription.prov.operator.account.unknown.connection
+The operator associated to the operator account is unknown.
+operation.subscription.prov.operator.account.unsupported.operation
+The operation is not supported by the operator associated to the operator account.
+operator.connection.account.parameters.invalid.type
+The type of the parameter value is invalid. See the description of the operator connection.
+operator.connection.account.parameters.invalid.constraint
+The constaints of the parameter value are invalid. See the description of the operator connection.
+operator.connection.account.parameters.invalid.cardinality
+The cardinality of the parameter value is invalid. See the description of the operator connection.
+operator.connection.account.parameters.missing
+A required provisioning parameter is missing. See the description of the operator connection.
+operation.subscription.prov.missing.operator.account
+No operator account is defined for the subscription.
+operation.subscription.prov.unknown.operator.connection
+The operator linked to the subscription is unknown.
+operation.subscription.prov.unsupported.operation
+The operation is not supported by the operator of the subscription.
+operation.subscription.prov.invalid.subscription.state
+The state of the subscription does not allow to launch the provisioning action.
+operation.subscription.prov.missing.communication.id
+The communication identifier (Identifier, MobileNumber or NetworkIdentifier) is not set on the
+subscription.
+HTTP Method
+POST
+Requires Authentication
+Yes
+Rate Limited
+Yes
+Headers
+Content-type: application/json
+Permissions
+entities.subscriptions.operations.launch
+Restore
+/api/v1/operations/subscriptions/restore
+Launches an operation to restore a set of subscriptions defined by a list of uids, a label, or criteria.
+Sample
+Content
+Parameters
+Exceptions
+Additional information
+Request
+POST <a href=https://na.airvantage.net/api/v1/operations/subscriptions/restore target=_blank rel="noopener noreferrer" class="">https://na.airvantage.net/api/v1/operations/subscriptions/restore</a>
+Content-Type: application/json
+...
+{
+"scheduledTime" : "1335279732093",
+"subscriptions" : {
+"uids" : ["b0e44f9ef19a475ca237aeeeef92998a"]
+},
+"accountParameters" : [
+{
+"account" : "5c3a642f60514e01a9a4b4734ff60dde",
+"parameters" : {
+"name1" : ["value1"],
+"name2" : ["value2", "value3"]
+}
+}
+]
+}
+Response
+200 OK
+HTTP/1.1 200 OK
+Content-Type: application/json
+...
+{
+"operation":"4b89657f63aac4b299c1d46e98a495326"
+}
+{
+"notify" : true|false,
+"callback" : "callback URL",
+"scheduledTime": "scheduled_time",
+"subscriptions" : {
+"label" : "label",
+"uids" : ["uid1", ...],
+"dependsOn" : {
+"operation" : "uid",
+"states" : ["FAILURE"]
+},
+"criteria" : {
+"uids" : []
+"labels" : [],
+"identifier" : ,
+"mobileNumber" : ,
+"networkIdentifier" : ,
+"eid" : ,
+"ipAddress" : ,
+"operator" : ,
+"assigned" : ,
+"states" : [],
+"operatorAccount" : {
+"uid" : ,
+"name" :
+}
+}
+},
+"accountParameters" : [
+{
+"account" : "operator_account_uid",
+"parameters" : {
+"key1" : ["value1"],
+"key2" : ["value2", "value3"]
+}
+}
+]
+}
+'label' or 'uids' or 'criteria' should be set to restore subscriptions
+Field
+Description
+Use
+Default
+Type
+notify
+Send an email notification to the user calling this method when the operation finishes.
+optional
+caller's company
+boolean
+callback
+The endpoint URL to call when the operation state changes. The callback is done
+using HTTP 'POST' method
+.
+optional
+string
+scheduledTime
+Date time when the operation will be launched.
+If null, the operation starts immediately.
+The date must be lower than 90 days.
+optional
+null
+timestamp
+timeout
+The date for which the operation is considered as expired.
+If null, the operation will expire in 7 days.
+optional
+null
+timestamp
+subscriptions.label
+Label name. All subscriptions linked to the label will be incorporated to the operation
+required
+string
+subscriptions.uids
+List of subscription uids to be used to launch the operation
+required
+uid
+subscriptions.dependsOn.operation
+Identifier of the operation to be used to launch this operation
+In other words,
+the tasks of the new operation will start only when the tasks of specified operation will be finished.
+required if 'dependsOn' set
+uid
+subscriptions.dependsOn.states
+States of the tasks which will be used as input of this operation.
+Possible values are : SUCCESS, FAILURE and CANCELLED.
+If null or empty, all tasks from the parent operation will be used as input of this operation.
+optional
+SUCCESS,FAILURE,CANCELLED
+string array
+subscriptions.criteria.uids
+Selects all subscriptions whose uid matches with the specified ids.
+optional
+uid
+subscriptions.criteria.labels
+Selects all subscriptions which have one of the specified label.
+optional
+string
+subscriptions.criteria.identifier
+Selects all subscriptions whose identifier contains the given string.
+optional
+string
+subscriptions.criteria.mobileNumber
+Selects all subscriptions whose mobileNumber contains the given string.
+optional
+string
+subscriptions.criteria.networkIdentifier
+Selects all subscriptions whose networkIdentifier contains the given string.
+optional
+string
+subscriptions.criteria.eid
+Selects all subscriptions whose eUICC-ID contains the given string.
+optional
+string
+subscriptions.criteria.ipAddress
+Selects all subscriptions whose ipAddress contains the given string.
+optional
+string
+subscriptions.criteria.operator
+Selects all subscriptions matching the given operator.
+optional
+string
+subscriptions.criteria.assigned
+Selects all subscriptions assigned (or not) to a system. Expected value : true/false.
+optional
+boolean
+subscriptions.criteria.states
+Selects all subscriptions matching the specified states.
+States are : INVENTORY, ACTIVE, INACTIVE,
+SUSPENDED, RETIRED, UNKNOWN
+optional
+string
+subscriptions.criteria.operatorAccount.uid
+Selects all subscriptions linked to the operator account having the specified uid.
+optional
+string
+subscriptions.criteria.operatorAccount.name
+Selects all subscriptions linked to a operator account whose name contains the given string.
+optional
+string
+accountParameters.account
+Uid of the
+Operator account
+for which operation
+parameters are set
+optional
+uid
+accountParameters.parameters
+List of parameters (key/value) to be used with all subscription linked to the defined operator account.
+The operation parameters to be set for an operator account are described by the
+Operator connection
+linked to this account.
+optional
+string
+Name
+Description
+Use
+Default
+Type
+company
+Set the context where the operation has to be executed.
+optional
+caller's company
+uid string
+Name
+Description
+operation.invalid.schedule.date
+The specified schedule date is invalid (greater than 90 days).
+operation.invalid.timeout.date
+The specified timeout is less than schedule date.
+selection.empty
+The list of subscription uids is empty or no subscription found for the specified label or criteria.
+selection.invalid
+The selection is invalid. Only one of the following attributes has to be set : label, uids, dependsOn, or criteria.
+selection.max.uid.reached
+The list of subscription uids contains more than 100 distinct uids.
+label.unknown
+The specified label is unknown
+operation.unknown
+The specified 'dependsOn' operation is unknown
+operation.subscription.prov.operator.account.unknown.connection
+The operator associated to the operator account is unknown.
+operation.subscription.prov.operator.account.unsupported.operation
+The operation is not supported by the operator associated to the operator account.
+operator.connection.account.parameters.invalid.type
+The type of the parameter value is invalid. See the description of the operator connection.
+operator.connection.account.parameters.invalid.constraint
+The constaints of the parameter value are invalid. See the description of the operator connection.
+operator.connection.account.parameters.invalid.cardinality
+The cardinality of the parameter value is invalid. See the description of the operator connection.
+operator.connection.account.parameters.missing
+A required provisioning parameter is missing. See the description of the operator connection.
+operation.subscription.prov.missing.operator.account
+No operator account is defined for the subscription.
+operation.subscription.prov.unknown.operator.connection
+The operator linked to the subscription is unknown.
+operation.subscription.prov.unsupported.operation
+The operation is not supported by the operator of the subscription.
+operation.subscription.prov.invalid.subscription.state
+The state of the subscription does not allow to launch the provisioning action.
+operation.subscription.prov.missing.communication.id
+The communication identifier (Identifier, MobileNumber or NetworkIdentifier) is not set on the
+subscription.
+HTTP Method
+POST
+Requires Authentication
+Yes
+Rate Limited
+Yes
+Headers
+Content-type: application/json
+Permissions
+entities.subscriptions.operations.launch
+Terminate
+/api/v1/operations/subscriptions/terminate
+Launches an operation to terminate a set of subscriptions defined by a list of uids, a label, or criteria.
+Sample
+Content
+Parameters
+Exceptions
+Additional information
+Request
+POST <a href=https://na.airvantage.net/api/v1/operations/subscriptions/terminate target=_blank rel="noopener noreferrer" class="">https://na.airvantage.net/api/v1/operations/subscriptions/terminate</a>
+Content-Type: application/json
+...
+{
+"scheduledTime" : "1335279732093",
+"subscriptions" : {
+"uids" : ["b0e44f9ef19a475ca237aeeeef92998a"]
+},
+"accountParameters" : [
+{
+"account" : "5c3a642f60514e01a9a4b4734ff60dde",
+"parameters" : {
+"name1" : ["value1"],
+"name2" : ["value2", "value3"]
+}
+}
+]
+}
+Response
+200 OK
+HTTP/1.1 200 OK
+Content-Type: application/json
+...
+{
+"operation":"4b89657f63aac4b299c1d46e98a495326"
+}
+{
+"notify" : true|false,
+"callback" : "callback URL",
+"scheduledTime": "scheduled_time",
+"subscriptions" : {
+"label" : "label",
+"uids" : ["uid1", ...],
+"dependsOn" : {
+"operation" : "uid",
+"states" : ["FAILURE"]
+},
+"criteria" : {
+"uids" : []
+"labels" : [],
+"identifier" : ,
+"mobileNumber" : ,
+"networkIdentifier" : ,
+"eid" : ,
+"ipAddress" : ,
+"operator" : ,
+"assigned" : ,
+"states" : [],
+"operatorAccount" : {
+"uid" : ,
+"name" :
+}
+}
+},
+"accountParameters" : [
+{
+"account" : "operator_account_uid",
+"parameters" : {
+"key1" : ["value1"],
+"key2" : ["value2", "value3"]
+}
+}
+]
+}
+'label' or 'uids' or 'criteria' should be set to terminate subscriptions
+Field
+Description
+Use
+Default
+Type
+notify
+Send an email notification to the user calling this method when the operation finishes.
+optional
+caller's company
+boolean
+callback
+The endpoint URL to call when the operation state changes. The callback is done
+using HTTP 'POST' method
+.
+optional
+string
+scheduledTime
+Date time when the operation will be launched.
+If null, the operation starts immediately.
+The date must be lower than 90 days.
+optional
+null
+timestamp
+timeout
+The date for which the operation is considered as expired.
+If null, the operation will expire in 7 days.
+optional
+null
+timestamp
+subscriptions.label
+Label name. All subscriptions linked to the label will be incorporated to the operation
+required
+string
+subscriptions.uids
+List of subscription uids to be used to launch the operation
+required
+uid
+subscriptions.dependsOn.operation
+Identifier of the operation to be used to launch this operation
+In other words,
+the tasks of the new operation will start only when the tasks of specified operation will be finished.
+required if 'dependsOn' set
+uid
+subscriptions.dependsOn.states
+States of the tasks which will be used as input of this operation.
+Possible values are : SUCCESS, FAILURE and CANCELLED.
+If null or empty, all tasks from the parent operation will be used as input of this operation.
+optional
+SUCCESS,FAILURE,CANCELLED
+string array
+subscriptions.criteria.uids
+Selects all subscriptions whose uid matches with the specified ids.
+optional
+uid
+subscriptions.criteria.labels
+Selects all subscriptions which have one of the specified label.
+optional
+string
+subscriptions.criteria.identifier
+Selects all subscriptions whose identifier contains the given string.
+optional
+string
+subscriptions.criteria.mobileNumber
+Selects all subscriptions whose mobileNumber contains the given string.
+optional
+string
+subscriptions.criteria.networkIdentifier
+Selects all subscriptions whose networkIdentifier contains the given string.
+optional
+string
+subscriptions.criteria.eid
+Selects all subscriptions whose eUICC-ID contains the given string.
+optional
+string
+subscriptions.criteria.ipAddress
+Selects all subscriptions whose ipAddress contains the given string.
+optional
+string
+subscriptions.criteria.operator
+Selects all subscriptions matching the given operator.
+optional
+string
+subscriptions.criteria.assigned
+Selects all subscriptions assigned (or not) to a system. Expected value : true/false.
+optional
+boolean
+subscriptions.criteria.states
+Selects all subscriptions matching the specified states.
+States are : INVENTORY, ACTIVE, INACTIVE,
+SUSPENDED, RETIRED, UNKNOWN
+optional
+string
+subscriptions.criteria.operatorAccount.uid
+Selects all subscriptions linked to the operator account having the specified uid.
+optional
+string
+subscriptions.criteria.operatorAccount.name
+Selects all subscriptions linked to a operator account whose name contains the given string.
+optional
+string
+accountParameters.account
+Uid of the
+Operator account
+for which operation
+parameters are set
+optional
+uid
+accountParameters.parameters
+List of parameters (key/value) to be used with all subscription linked to the defined operator account.
+The operation parameters to be set for an operator account are described by the
+Operator connection
+linked to this account.
+optional
+string
+Name
+Description
+Use
+Default
+Type
+company
+Set the context where the operation has to be executed.
+optional
+caller's company
+uid string
+Name
+Description
+operation.invalid.schedule.date
+The specified schedule date is invalid (greater than 90 days).
+operation.invalid.timeout.date
+The specified timeout is less than schedule date.
+selection.empty
+The list of subscription uids is empty or no subscription found for the specified label or criteria.
+selection.invalid
+The selection is invalid. Only one of the following attributes has to be set : label, uids, dependsOn, or criteria.
+selection.max.uid.reached
+The list of subscription uids contains more than 100 distinct uids.
+label.unknown
+The specified label is unknown
+operation.unknown
+The specified 'dependsOn' operation is unknown
+operation.subscription.prov.operator.account.unknown.connection
+The operator associated to the operator account is unknown.
+operation.subscription.prov.operator.account.unsupported.operation
+The operation is not supported by the operator associated to the operator account.
+operator.connection.account.parameters.invalid.type
+The type of the parameter value is invalid. See the description of the operator connection.
+operator.connection.account.parameters.invalid.constraint
+The constaints of the parameter value are invalid. See the description of the operator connection.
+operator.connection.account.parameters.invalid.cardinality
+The cardinality of the parameter value is invalid. See the description of the operator connection.
+operator.connection.account.parameters.missing
+A required provisioning parameter is missing. See the description of the operator connection.
+operation.subscription.prov.missing.operator.account
+No operator account is defined for the subscription.
+operation.subscription.prov.unknown.operator.connection
+The operator linked to the subscription is unknown.
+operation.subscription.prov.unsupported.operation
+The operation is not supported by the operator of the subscription.
+operation.subscription.prov.invalid.subscription.state
+The state of the subscription does not allow to launch the provisioning action.
+operation.subscription.prov.missing.communication.id
+The communication identifier (Identifier, MobileNumber or NetworkIdentifier) is not set on the subscription.
+operation.subscription.prov.under.contract
+Termination is not allowed until contract period is over.
+HTTP Method
+POST
+Requires Authentication
+Yes
+Rate Limited
+Yes
+Headers
+Content-type: application/json
+Permissions
+entities.subscriptions.operations.launch
+Synchronize
+/api/v1/operations/subscriptions/synchronize
+Launches an operation to synchronize a set of subscriptions defined by a list of uids, a label, or criteria.
+Sample
+Content
+Parameters
+Exceptions
+Additional information
+Request
+POST <a href=https://na.airvantage.net/api/v1/operations/subscriptions/synchronize target=_blank rel="noopener noreferrer" class="">https://na.airvantage.net/api/v1/operations/subscriptions/synchronize</a>
+Content-Type: application/json
+...
+{
+"scheduledTime" : "1335279732093",
+"subscriptions" : {
+"uids" : ["b0e44f9ef19a475ca237aeeeef92998a"]
+},
+"accountParameters" : [
+{
+"account" : "5c3a642f60514e01a9a4b4734ff60dde",
+"parameters" : {
+"name1" : ["value1"],
+"name2" : ["value2", "value3"]
+}
+}
+]
+}
+Response
+200 OK
+HTTP/1.1 200 OK
+Content-Type: application/json
+...
+{
+"operation":"4b89657f63aac4b299c1d46e98a495326"
+}
+{
+"notify" : true|false,
+"callback" : "callback URL",
+"scheduledTime": "scheduled_time",
+"subscriptions" : {
+"label" : "label",
+"uids" : ["uid1", ...],
+"dependsOn" : {
+"operation" : "uid",
+"states" : ["FAILURE"]
+},
+"criteria" : {
+"uids" : []
+"labels" : [],
+"identifier" : ,
+"mobileNumber" : ,
+"networkIdentifier" : ,
+"eid" : ,
+"ipAddress" : ,
+"operator" : ,
+"assigned" : ,
+"states" : [],
+"operatorAccount" : {
+"uid" : ,
+"name" :
+}
+}
+},
+"accountParameters" : [
+{
+"account" : "operator_account_uid",
+"parameters" : {
+"key1" : ["value1"],
+"key2" : ["value2", "value3"]
+}
+}
+]
+}
+'label' or 'uids' or 'criteria' should be set to synchronize subscriptions
+Field
+Description
+Use
+Default
+Type
+notify
+Send an email notification to the user calling this method when the operation finishes.
+optional
+caller's company
+boolean
+callback
+The endpoint URL to call when the operation state changes. The callback is done
+using HTTP 'POST' method
+.
+optional
+string
+scheduledTime
+Date time when the operation will be launched.
+If null, the operation starts immediately.
+The date must be lower than 90 days.
+optional
+null
+timestamp
+timeout
+The date for which the operation is considered as expired.
+If null, the operation will expire in 7 days.
+optional
+null
+timestamp
+subscriptions.label
+Label name. All subscriptions linked to the label will be incorporated to the operation
+required
+string
+subscriptions.uids
+List of subscription uids to be used to launch the operation
+required
+uid
+subscriptions.dependsOn.operation
+Identifier of the operation to be used to launch this operation
+In other words,
+the tasks of the new operation will start only when the tasks of specified operation will be finished.
+required if 'dependsOn' set
+uid
+subscriptions.dependsOn.states
+States of the tasks which will be used as input of this operation.
+Possible values are : SUCCESS, FAILURE and CANCELLED.
+If null or empty, all tasks from the parent operation will be used as input of this operation.
+optional
+SUCCESS,FAILURE,CANCELLED
+string array
+subscriptions.criteria.uids
+Selects all subscriptions whose uid matches with the specified ids.
+optional
+uid
+subscriptions.criteria.labels
+Selects all subscriptions which have one of the specified label.
+optional
+string
+subscriptions.criteria.identifier
+Selects all subscriptions whose identifier contains the given string.
+optional
+string
+subscriptions.criteria.mobileNumber
+Selects all subscriptions whose mobileNumber contains the given string.
+optional
+string
+subscriptions.criteria.networkIdentifier
+Selects all subscriptions whose networkIdentifier contains the given string.
+optional
+string
+subscriptions.criteria.eid
+Selects all subscriptions whose eUICC-ID contains the given string.
+optional
+string
+subscriptions.criteria.ipAddress
+Selects all subscriptions whose ipAddress contains the given string.
+optional
+string
+subscriptions.criteria.operator
+Selects all subscriptions matching the given operator.
+optional
+string
+subscriptions.criteria.assigned
+Selects all subscriptions assigned (or not) to a system. Expected value : true/false.
+optional
+boolean
+subscriptions.criteria.states
+Selects all subscriptions matching the specified states.
+States are : INVENTORY, ACTIVE, INACTIVE,
+SUSPENDED, RETIRED, UNKNOWN
+optional
+string
+subscriptions.criteria.operatorAccount.uid
+Selects all subscriptions linked to the operator account having the specified uid.
+optional
+string
+subscriptions.criteria.operatorAccount.name
+Selects all subscriptions linked to a operator account whose name contains the given string.
+optional
+string
+accountParameters.account
+Uid of the
+Operator account
+for which operation
+parameters are set
+optional
+uid
+accountParameters.parameters
+List of parameters (key/value) to be used with all subscription linked to the defined operator account.
+The operation parameters to be set for an operator account are described by the
+Operator connection
+linked to this account.
+optional
+string
+Name
+Description
+Use
+Default
+Type
+company
+Set the context where the operation has to be executed.
+optional
+caller's company
+uid string
+Name
+Description
+operation.invalid.schedule.date
+The specified schedule date is invalid (greater than 90 days).
+operation.invalid.timeout.date
+The specified timeout is less than schedule date.
+selection.empty
+The list of subscription uids is empty or no subscription found for the specified label or criteria.
+selection.invalid
+The selection is invalid. Only one of the following attributes has to be set : label, uids, dependsOn, or criteria.
+selection.max.uid.reached
+The list of subscription uids contains more than 100 distinct uids.
+label.unknown
+The specified label is unknown
+operation.unknown
+The specified 'dependsOn' operation is unknown
+operation.subscription.prov.operator.account.unknown.connection
+The operator associated to the operator account is unknown.
+operation.subscription.prov.operator.account.unsupported.operation
+The operation is not supported by the operator associated to the operator account.
+operator.connection.account.parameters.invalid.type
+The type of the parameter value is invalid. See the description of the operator connection.
+operator.connection.account.parameters.invalid.constraint
+The constaints of the parameter value are invalid. See the description of the operator connection.
+operator.connection.account.parameters.invalid.cardinality
+The cardinality of the parameter value is invalid. See the description of the operator connection.
+operator.connection.account.parameters.missing
+A required provisioning parameter is missing. See the description of the operator connection.
+operation.subscription.prov.missing.operator.account
+No operator account is defined for the subscription.
+operation.subscription.prov.unknown.operator.connection
+The operator linked to the subscription is unknown.
+operation.subscription.prov.unsupported.operation
+The operation is not supported by the operator of the subscription.
+operation.subscription.prov.invalid.subscription.state
+The state of the subscription does not allow to launch the provisioning action.
+operation.subscription.prov.missing.communication.id
+The communication identifier (Identifier, MobileNumber or NetworkIdentifier) is not set on the
+subscription.
+HTTP Method
+POST
+Requires Authentication
+Yes
+Rate Limited
+Yes
+Headers
+Content-type: application/json
+Permissions
+entities.subscriptions.operations.launch
+IMEI Lock/Unlock
+/api/v1/operations/subscriptions/imei/lock
+Launches an operation to lock or unlock an ICCID with IMEI from a CSV file
+Sample
+Parameters
+CSV Header
+JSON Content
+Exceptions
+Additional information
+Request
+POST <a href=https://na.airvantage.net/api/v1/operations/subscriptions/imei/lock target=_blank rel="noopener noreferrer" class="">https://na.airvantage.net/api/v1/operations/subscriptions/imei/lock</a>
+Content-type: multipart/mixed; boundary="BoundaryUgix6QHMxLwJ4siU"
+--BoundaryUgix6QHMxLwJ4siU
+Content-Disposition: form-data; name="file"; filename="file.csv"
+Content-Type: text/csv
+// CSV attached
+...
+--BoundaryUgix6QHMxLwJ4siU
+Content-Disposition: form-data; name="parameters"; filename="parameters.json"
+Content-Type: application/json
+// JSON attached
+{
+"notify" : false,
+"callback" : "callback_url"
+}
+--BoundaryUgix6QHMxLwJ4siU--
+Response
+200 OK
+HTTP/1.1 200 OK
+Content-Type: application/json
+...
+{
+"operation":"4b89657f63aac4b299c1d46e98a495326"
+}
+Name
+Description
+Use
+Default
+Type
+company
+Set the context where the locking or unlocking operation will be performed.
+optional
+caller's company
+uid string
+Header
+Description
+Use
+IDENTIFIER
+The identifier (aka ICCID) used to identify subscription info.
+required
+IMEI
+The IMEI to pair and lock. This value is required when IMEI_LOCK is true.
+optional*
+IMEI_LOCK
+The IMEI lock state. The state can be either true or false.
+required
+{
+"notify" : true|false,
+"callback" : "callback_url"
+}
+Field
+Description
+Use
+Default
+Type
+notify
+Send an email notification to the user calling this method when the operation finishes.
+optional
+false
+boolean
+callback
+The endpoint URL to call when the operation state changes. The callback is done
+using HTTP 'POST' method
+.
+optional
+string
+Name
+Description
+file.unreadable
+File is unreadable
+file.header.missing
+CSV header is missing
+csv.header.unknown.column
+CSV header column is unknown
+csv.missing.required.columns
+CSV required columns are missing
+file.missing.data
+File contains no data
+file.too.large
+Files cannot be more than 100MB
+subscription.missing
+No subscription was found for the provided identifier
+subscription.invalid.imei
+The imei is invalid. The possible causes are :
+IMEI_LOCK is set to true, but no IMEI value has been provided
+IMEI length cannot be greater than 20
+subscription.lock.already.exists.on.iccid
+The ICCID is already in locked state when lock operation is requested
+subscription.no.lock.exists.on.iccid
+The ICCID is already in unlocked state when unlock operation is requested
+HTTP Method
+POST
+Requires Authentication
+Yes
+Rate Limited
+Yes
+Headers
+Content-type: multipart/mixed
+Permissions
+entities.subscriptions.imeiLock
+Export
+/api/v1/operations/subscriptions/export
+Export a set of subscriptions to a CSV file.
+Sample
+Parameters
+JSON Content
+Exceptions
+Additional information
+Request
+POST <a href=https://na.airvantage.net/api/v1/operations/subscriptions/export target=_blank rel="noopener noreferrer" class="">https://na.airvantage.net/api/v1/operations/subscriptions/export</a>
+Content-Type: application/json
+{
+"subscriptions": {
+"uids": [
+"4dc392f5da3a4e89a3003b704a408eb6"
+]
+},
+"fields": [
+"Identifier",
+"ActivationImei",
+"ImeiLock"
+]
+}
+Response
+200 OK
+HTTP/1.1 200 OK
+Content-Type: application/json
+...
+{
+"operation":"4b89657f63aac4b299c1d46e98a495326"
+}
+Name
+Description
+Use
+Default
+Type
+company
+Set the context where the export subscriptions operation will be performed.
+optional
+caller's company
+uid string
+{
+"notify" : true|false,
+"callback" : "callback_url",
+"subscriptions": {</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style=--prism-color:#393A34;--prism-background-color:#f6f8fa><div class=codeBlockContent_QJqH><pre tabindex=0 class="prism-code language-text codeBlock_bY9V thin-scrollbar" style=color:#393A34;background-color:#f6f8fa><code class=codeBlockLines_e6Vv><div class=token-line style=color:#393A34><span class="token plain">    "uids": [</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">    "4dc392f5da3a4e89a3003b704a408eb6"</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">    ]</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">},</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">"fields": [</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">    "Identifier",</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">    "ActivationImei",</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">    "ImeiLock",</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">    "NetworkIdentifier",</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">    "MobileNumber",</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">    "IpAddress",</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">    "RequestedIp",</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">    "Operator",</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">    "SubscriptionEid",</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">    "FormFactor",</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">    "Technology",</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">    "ConfigurationType",</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">    "AppletGeneration",</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">    "ProductRefProfile",</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">    "SubscriptionPuk1",</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">    "SubscriptionPuk2",</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">    "SubscriptionEndDate"</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">]</span><br/></div></code></pre></div></div>
+<p>}
+Field
+Description
+Use
+Default
+Type
+notify
+Send an email notification to the user calling this method when the operation finishes.
+optional
+false
+boolean
+callback
+The endpoint URL to call when the operation state changes. The callback is done
+using HTTP 'POST' method
+.
+optional
+string
+subscriptions.label
+Label name. All subscriptions linked to the label will be incorporated to the operation
+.
+optional
+string
+subscriptions.uids
+List of subscription uids to be used to launch the operation
+.
+required
+uid array
+fields
+The list of fields to export
+.
+optional
+string
+List of Exportable fields:
+Uid
+Identifier
+State
+ActivationImei
+ImeiLock
+NetworkIdentifier
+MobileNumber
+IpAddress
+RequestedIp
+Operator
+SubscriptionEid
+FormFactor
+Technology
+ConfigurationType
+AppletGeneration
+ProductRefProfile
+SubscriptionPuk1
+SubscriptionPuk2
+SubscriptionEndDate
+Name
+Description
+selection.empty
+The list of subscription uids is empty or no subscription found for the specified label or uids.
+selection.invalid
+The selection is invalid. Only one of the following attributes has to be set : label, uids.
+label.unknown
+The specified label is unknown
+HTTP Method
+POST
+Requires Authentication
+Yes
+Rate Limited
+Yes
+Headers
+Content-type: application/json
+Permissions
+entities.subscription.export</div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href=https://github.com/andreyjv/personal-av/tree/docs/documentation-revamp/PRD_documentation-revamp/website/docs/reference/api/API-Subscription-v1.md target=_blank rel="noopener noreferrer" class=theme-edit-this-page><svg fill=currentColor height=20 width=20 viewBox="0 0 40 40" class=iconEdit_Z9Sw aria-hidden=true><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"/></g></svg>Edit this page</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href=#statesreturns-all-subscriptions-whose-state-is-in-the-given-list-states-are-inventory-active-inactivesuspended-retired-unknownoptionalnullstring-listinoperatoraccountreturns-all-subscriptions-linked-to-a-operator-account-matching-the-specified-criteriathepossible-criteria-are-uid-exact-matchname-likeoptionalnullstring-map-with-the-following-format-uidnamesee-descriptionhttp-methodgetrequires-authenticationyesrate-limitedyesheadersnonepermissionsentitiessubscriptionsvieworder-byidentifierfieldsuid-operator-identifier-mobilenumber-networkidentifier-ipaddress-requestedip-state-metadata-operatoraccountlabels-eid-appletgeneration-formfactor-conftype-technology-productrefname-activationimei-imeilockcreateapiv1subscriptionscreates-a-new-subscription-the-result-returns-the-new-subscription-with-the-uidat-least-one-ofidentifiermobilenumberornetworkidentifiermust-be-setthese-fields-have-to-be-unique-read-only-fields-will-be-ignoredsampleparametersexceptionsadditional-informationrequestpost-httpsnaairvantagenetapiv1subscriptionscontent-type-applicationjsonidentifier-124578mobilenumber-1234567890networkidentifier-123456789ipaddress-19216801operator-vodafoneoperatoraccount-uid-1674675f1c464c489dd0c6daff0edad5labels-labelresponse200-okhttp11-200-okcontent-type-applicationjsonuid-1400a4079dea438b887c5817449c51e2puk1-nullpin2-nullpuk2-nullpin1-nulleid-nulllabels-labelidentifier-124578networkidentifier-123456789mobilenumber-1234567890ipaddress-19216801requestedip-nulloperator-vodafoneoperatoraccount-uid-1674675f1c464c489dd0c6daff0edad5name-myoperatoraccountconnection-uid-e9d97269a05b4ce091da20f5cbdda93aname-kpnproductrefname-nullappletgeneration-nullconftype-nullformfactor-nulltechnology-nullorderid-nullactivationimei-nullimeilock-nullserviceenddate-nullserviceofferid-nullmetadata-state-inventorynamedescriptionusedefaulttypecompanyset-the-context-where-the-new-subscription-will-be-created-mandatory-if-the-created-subscription-will-be-assigned-to-a-system-using-the-edit-system-apioptionalcallers-companyuid-stringnamedescriptionsubscriptionmissingidentifiersat-least-one-of-identifier-mobilenumber-or-networkidentifier-has-to-be-setraised-when-subscription-identifier-is-missingsubscriptionnotuniqueidentifiersone-of-identifier-mobilenumber-or-networkidentifier-is-not-unique-if-identifier-has-a-valid-value-mobilenumber-or-networkidentifier-cannot-be-set-to-null-if-they-have-no-value-otherwise-the-api-returns-an-error-when-identifier-has-a-valid-value-mobilenumber-or-networkidentifier-must-have-a-valid-value-or-be-emptysubscriptionmissingoperatorraised-when-operator-is-missingsubscriptionoperatornotauthorizedraised-when-operator-is-not-authorizedoperatoraccountunknownraised-when-operator-account-is-unknownsubscriptionoperatorandoperatoraccountincompatibleraised-when-operator-account-is-not-compatible-with-the-operator-of-the-subscriptioncompanyunknownthe-given-company-is-unkownsysteminvalidregistrationcoderaised-when-the-registration-code-is-invalidhttp-methodpostrequires-authenticationyesrate-limitedyesheaderscontent-type-applicationjsonpermissionsentitiessubscriptionscreateeditapiv1subscriptionsuidedits-the-subscription-identified-by-the-uid-of-the-request-if-the-subscription-is-not-in-inventory-stateor-if-the-subscription-is-linked-to-a-system-in-ready-deployed-or-being_transfered-state-then-only-the-labels-can-be-editedotherwise-you-can-edit-all-the-fieldsnb-it-is-not-necessary-to-send-the-whole-json-block-to-edit-fields-only-fields-sent-to-the-service-will-be-updatedsampleexceptionsadditional-informationrequestput-httpsnaairvantagenetapiv1subscriptionse810d8aff0bc46309cb3f1c7cd36c09dcontent-type-applicationjsonnetworkidentifier-333222111ipaddress-1921681100response200-okhttp11-200-okcontent-type-applicationjsonuid-1400a4079dea438b887c5817449c51e2puk1-nullpin2-nullpuk2-nullpin1-nulleid-nulllabels-labelidentifier-124578networkidentifier-333222111mobilenumber-1234567890ipaddress-1921681100requestedip-nulloperator-vodafoneoperatoraccount-uid-1674675f1c464c489dd0c6daff0edad5name-myoperatoraccountconnection-uid-e9d97269a05b4ce091da20f5cbdda93aname-kpnproductrefname-nullappletgeneration-nullconftype-nullformfactor-nulltechnology-nullorderid-nullactivationimei-nullimeilock-nullserviceenddate-nullserviceofferid-nullmetadata-state-inventorynamedescriptionsubscriptionmissingidentifiersat-least-one-of-identifier-mobilenumber-or-networkidentifier-has-to-be-setraised-when-subscription-identifier-is-missingsubscriptionnotuniqueidentifiersone-of-identifier-mobilenumber-or-networkidentifier-is-not-uniquesubscriptionunknownraised-when-the-uid-of-the-subscription-is-unknownsubscriptionmissingoperatorraised-when-operator-is-missingsubscriptioninvalidstateraised-when-subscription-is-in-a-state-which-does-not-allow-the-editionsubscriptionoperatornotauthorizedraised-when-operator-is-not-authorizedsysteminvalidstateraised-when-the-system-linked-to-the-subscription-is-in-a-state-which-does-not-allow-the-editionoperatoraccountunknownraised-when-operator-account-is-unknownsubscriptionoperatorandoperatoraccountincompatibleraised-when-operator-account-is-not-compatible-with-the-operator-of-the-subscriptionsubscriptioncannotupdateactivationimeilockexistsraised-when-activation-imei-is-updated-while-imei-lock-existshttp-methodputrequires-authenticationyesrate-limitedyesheaderscontent-type-applicationjsonpermissionsentitiessubscriptionseditdetailsapiv1subscriptionsuidgets-the-details-of-a-subscriptionsampleexceptionsadditional-informationrequestget-httpsnaairvantagenetapiv1subscriptions89f81f1c2f2f46a880faf5a28668309eresponse200-okhttp11-200-okcontent-type-applicationjsonstate-inventorymetadata-name--pin1value--5698type--string----possible-types-are--boolean-int-double-long-string-date-and-mapname--pin2value--3612type--stringuid-89f81f1c2f2f46a880faf5a28668309eidentifier-556985478521labels-operatoraccount----uid-1674675f1c464c489dd0c6daff0edad5name-myoperatoraccountconnection-name-kpnuid-e9d97269a05b4ce091da20f5cbdda93aoperator-vodafoneipaddress-19216801requestedip-nullmobilenumber-1234567890networkidentifier-123456789eid--nullappletgeneration--v4formfactor--2ffconftype--litetechnology--4gproductrefname--lite-2ffnamedescriptionsubscriptionunknownraised-when-the-uid-points-to-an-unknown-subscriptionhttp-methodgetrequires-authenticationyesrate-limitedyesheadersnonepermissionsentitiessubscriptionsviewdeleteapiv1subcriptionsuiddeletes-a-specific-subscription-from-airvantage-to-delete-a-subscription-it-does-not-have-tobe-assigned-to-any-systemsampleexceptionsadditional-informationrequestdelete-httpsnaairvantagenetapiv1subscriptionsd5e62f8ec1340e79214f2113db75e86response200-okhttp11-200-okcontent-length-0namedescriptionsubscriptionunknownraised-when-the-uid-points-to-an-unknown-subscriptionsubscriptionassignedraised-when-the-subscription-is-assigned-to-a-systemsubscriptionundeletableraised-when-the-subscription-manages-semtech-r2c-ready-to-connect-connectivityhttp-methoddeleterequires-authenticationyesrate-limitedyesheaders class="table-of-contents__link toc-highlight">states
+Returns all subscriptions whose state is in the given list. States are INVENTORY, ACTIVE, INACTIVE,
+SUSPENDED, RETIRED, UNKNOWN.
+optional
+null
+string list
+in
+operatorAccount
+Returns all subscriptions linked to a operator account matching the specified criteria.
+The
+possible criteria are :
+uid (exact match)
+name (like)
+optional
+null
+string map with the following format: uid,name,...
+See description
+HTTP Method
+GET
+Requires Authentication
+Yes
+Rate Limited
+Yes
+Headers
+None
+Permissions
+entities.subscriptions.view
+Order by
+identifier
+Fields
+uid, operator, identifier, mobileNumber, networkIdentifier, ipAddress, requestedIp, state, metadata, operatorAccount,
+labels, eid, appletGeneration, formFactor, confType, technology, productRefName, activationImei, imeiLock
+Create
+/api/v1/subscriptions
+Creates a new subscription. The result returns the new subscription with the uid.
+At least one of
+identifier
+,
+mobileNumber
+or
+networkIdentifier
+must be set.
+These fields have to be unique. Read only fields will be ignored.
+Sample
+Parameters
+Exceptions
+Additional information
+Request
+POST https://na.airvantage.net/api/v1/subscriptions
+Content-Type: application/json
+{
+"identifier": "124578",
+"mobileNumber": "1234567890",
+"networkIdentifier": "123456789",
+"ipAddress": "192.168.0.1",
+"operator": "VODAFONE",
+"operatorAccount": {
+"uid": "1674675f1c464c489dd0c6daff0edad5"
+},
+"labels": [
+"label"
+]
+}
+Response
+200 OK
+HTTP/1.1 200 OK
+Content-Type: application/json
+{
+"uid": "1400a4079dea438b887c5817449c51e2",
+"puk1": null,
+"pin2": null,
+"puk2": null,
+"pin1": null,
+"eid": null,
+"labels": [
+"label"
+],
+"identifier": "124578",
+"networkIdentifier": "123456789",
+"mobileNumber": "1234567890",
+"ipAddress": "192.168.0.1",
+"requestedIp": null,
+"operator": "VODAFONE",
+"operatorAccount": {
+"uid": "1674675f1c464c489dd0c6daff0edad5",
+"name": "MyOperatorAccount",
+"connection": {
+"uid": "e9d97269a05b4ce091da20f5cbdda93a",
+"name": "KPN"
+}
+},
+"productRefName": null,
+"appletGeneration": null,
+"confType": null,
+"formFactor": null,
+"technology": null,
+"orderId": null,
+"activationImei": null,
+"imeiLock": null,
+"serviceEndDate": null,
+"serviceOfferId": null,
+"metadata": [],
+"state": "INVENTORY"
+}
+Name
+Description
+Use
+Default
+Type
+company
+Set the context where the new subscription will be created. Mandatory if the created subscription will be assigned to a system using the "edit system" API
+optional
+caller's company
+uid string
+Name
+Description
+subscription.missing.identifiers
+At least one of 'identifier', 'mobileNumber' or 'networkIdentifier' has to be set.
+Raised when subscription identifier is missing.
+subscription.not.unique.identifiers
+One of 'identifier', 'mobileNumber' or 'networkIdentifier' is not unique. If 'identifier' has a valid value, 'mobileNumber' or 'networkIdentifier' cannot be set to 'null' if they have no value; otherwise the API returns an error. When 'identifier' has a valid value, 'mobileNumber' or 'networkIdentifier' must have a valid value or be empty.
+subscription.missing.operator
+Raised when operator is missing.
+subscription.operator.not.authorized
+Raised when operator is not authorized.
+operator.account.unknown
+Raised when operator account is unknown.
+subscription.operator.and.operator.account.incompatible
+Raised when operator account is not compatible with the operator of the subscription.
+company.unknown
+The given company is unkown.
+system.invalid.registration.code
+Raised when the registration code is invalid.
+HTTP Method
+POST
+Requires Authentication
+Yes
+Rate Limited
+Yes
+Headers
+Content-type: application/json
+Permissions
+entities.subscriptions.create
+Edit
+/api/v1/subscriptions/{uid}
+Edits the subscription identified by the uid of the request. If the subscription is not in 'INVENTORY' state
+or if the subscription is linked to a system in 'READY', 'DEPLOYED', or 'BEING_TRANSFERED' state, then only the labels can be edited.
+Otherwise, you can edit all the fields.
+NB: It is not necessary to send the whole JSON block to edit fields. Only fields sent to the service will be updated.
+Sample
+Exceptions
+Additional information
+Request
+PUT https://na.airvantage.net/api/v1/subscriptions/e810d8aff0bc46309cb3f1c7cd36c09d
+Content-Type: application/json
+{
+"networkIdentifier": "333222111",
+"ipAddress": "192.168.1.100"
+}
+Response
+200 OK
+HTTP/1.1 200 OK
+Content-Type: application/json
+{
+"uid": "1400a4079dea438b887c5817449c51e2",
+"puk1": null,
+"pin2": null,
+"puk2": null,
+"pin1": null,
+"eid": null,
+"labels": [
+"label"
+],
+"identifier": "124578",
+"networkIdentifier": "333222111",
+"mobileNumber": "1234567890",
+"ipAddress": "192.168.1.100",
+"requestedIp": null,
+"operator": "VODAFONE",
+"operatorAccount": {
+"uid": "1674675f1c464c489dd0c6daff0edad5",
+"name": "MyOperatorAccount",
+"connection": {
+"uid": "e9d97269a05b4ce091da20f5cbdda93a",
+"name": "KPN"
+}
+},
+"productRefName": null,
+"appletGeneration": null,
+"confType": null,
+"formFactor": null,
+"technology": null,
+"orderId": null,
+"activationImei": null,
+"imeiLock": null,
+"serviceEndDate": null,
+"serviceOfferId": null,
+"metadata": [],
+"state": "INVENTORY"
+}
+Name
+Description
+subscription.missing.identifiers
+At least one of 'identifier', 'mobileNumber' or 'networkIdentifier' has to be set.
+Raised when subscription identifier is missing.
+subscription.not.unique.identifiers
+One of 'identifier', 'mobileNumber' or 'networkIdentifier' is not unique.
+subscription.unknown
+Raised when the uid of the subscription is unknown.
+subscription.missing.operator
+Raised when operator is missing.
+subscription.invalid.state
+Raised when subscription is in a state which does not allow the edition.
+subscription.operator.not.authorized
+Raised when operator is not authorized.
+system.invalid.state
+Raised when the system linked to the subscription is in a state which does not allow the edition.
+operator.account.unknown
+Raised when operator account is unknown.
+subscription.operator.and.operator.account.incompatible
+Raised when operator account is not compatible with the operator of the subscription.
+subscription.cannot.update.activation.imei.lock.exists
+Raised when activation imei is updated while imei lock exists.
+HTTP Method
+PUT
+Requires Authentication
+Yes
+Rate Limited
+Yes
+Headers
+Content-type: application/json
+Permissions
+entities.subscriptions.edit
+Details
+/api/v1/subscriptions/{uid}
+Gets the details of a subscription.
+Sample
+Exceptions
+Additional information
+Request
+GET https://na.airvantage.net/api/v1/subscriptions/89f81f1c2f2f46a880faf5a28668309e
+Response
+200 OK
+HTTP/1.1 200 OK
+Content-Type: application/json
+{
+"state": "INVENTORY",
+"metadata": [
+{
+"name" : "PIN1",
+"value" : "5698",
+"type" : "STRING"   // Possible types are : boolean, int, double, long, string, date and map
+},
+{
+"name" : "PIN2",
+"value" : "3612",
+"type" : "STRING"
+}
+],
+"uid": "89f81f1c2f2f46a880faf5a28668309e",
+"identifier": "556985478521",
+"labels": [],
+"operatorAccount":    {
+"uid": "1674675f1c464c489dd0c6daff0edad5",
+"name": "MyOperatorAccount",
+"connection": {
+"name": "KPN",
+"uid": "e9d97269a05b4ce091da20f5cbdda93a"
+}
+},
+"operator": "VODAFONE",
+"ipAddress": "192.168.0.1",
+"requestedIp": null,
+"mobileNumber": "1234567890",
+"networkIdentifier": "123456789",
+"eid" : null,
+"appletGeneration" : "V4",
+"formFactor" : "2FF",
+"confType" : "LITE",
+"technology" : "4G",
+"productRefName" : "LITE 2FF"
+}
+Name
+Description
+subscription.unknown
+Raised when the 'uid' points to an unknown subscription.
+HTTP Method
+GET
+Requires Authentication
+Yes
+Rate Limited
+Yes
+Headers
+None
+Permissions
+entities.subscriptions.view
+Delete
+/api/v1/subcriptions/{uid}
+Deletes a specific subscription from AirVantage. To delete a subscription it does not have to
+be assigned to any system.
+Sample
+Exceptions
+Additional Information
+Request
+DELETE https://na.airvantage.net/api/v1/subscriptions/d5e62f8ec1340e79214f2113db75e86
+Response
+200 OK
+HTTP/1.1 200 OK
+Content-Length: 0
+Name
+Description
+subscription.unknown
+Raised when the 'uid' points to an unknown subscription.
+subscription.assigned
+Raised when the subscription is assigned to a system.
+subscription.undeletable
+Raised when the subscription manages Semtech R2C (Ready-to-connect) connectivity.
+HTTP Method
+DELETE
+Requires Authentication
+Yes
+Rate Limited
+Yes
+Headers</a></ul></div></div></div></div></main></div></div></div></div></div><footer class="theme-layout-footer footer"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class=footer__title>Jobs</div><ul class="footer__items clean-list"><li class=footer__item><a class=footer__link-item href=/personal-av-docs/docs/how-to/activate-sims>Activate SIMs</a><li class=footer__item><a class=footer__link-item href=/personal-av-docs/docs/how-to/order-sims>Order SIMs</a><li class=footer__item><a class=footer__link-item href=/personal-av-docs/api>Call the API</a><li class=footer__item><a class=footer__link-item href=/personal-av-docs/docs/how-to/register-routers>Register routers</a></ul></div><div class="theme-layout-footer-column col footer__col"><div class=footer__title>Reference</div><ul class="footer__items clean-list"><li class=footer__item><a class=footer__link-item href=/personal-av-docs/docs/reference/api>API HTML chapters</a><li class=footer__item><a class=footer__link-item href=/personal-av-docs/docs/reference/apn>APN table</a><li class=footer__item><a class=footer__link-item href=/personal-av-docs/docs/changelog>Changelog</a></ul></div><div class="theme-layout-footer-column col footer__col"><div class=footer__title>Preview</div><ul class="footer__items clean-list"><li class=footer__item><a href=https://doc.airvantage.net/ target=_blank rel="noopener noreferrer" class=footer__link-item>Live Hugo (canonical until cutover)<svg width=13.5 height=13.5 aria-label="(opens in new tab)" class=iconExternalLink_nPIU><use href=#theme-svg-external-link /></svg></a><li class=footer__item><a class=footer__link-item href=/personal-av-docs/docs/ui-library>UI library</a><li class=footer__item><a class=footer__link-item href=/personal-av-docs/docs/copy-library>Copy library</a></ul></div></div><div class="footer__bottom text--center"><div class=footer__copyright>Sierra Wireless / AirVantage documentation preview. Live doc.airvantage.net stays Hugo until cutover. Built with Docusaurus.</div></div></div></footer></div></body>

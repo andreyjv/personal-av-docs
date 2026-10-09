@@ -1,0 +1,313 @@
+<!doctype html><html lang=en dir=ltr class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-how-to/cloud/gettingstarted_api" data-has-hydrated=false><head><meta charset=UTF-8><meta name=generator content="Docusaurus v3.10.2"><title data-rh=true>Getting Started with the AirVantage API | AirVantage documentation</title><meta data-rh=true name=viewport content="width=device-width, initial-scale=1.0"/><meta data-rh=true name=twitter:card content=summary_large_image /><meta data-rh=true property=og:image content=https://andreyjv.github.io/personal-av-docs/img/favicon.svg /><meta data-rh=true name=twitter:image content=https://andreyjv.github.io/personal-av-docs/img/favicon.svg /><meta data-rh=true property=og:url content=https://andreyjv.github.io/personal-av-docs/docs/how-to/cloud/gettingstarted_api /><meta data-rh=true property=og:locale content=en /><meta data-rh=true name=docusaurus_locale content=en /><meta data-rh=true name=docsearch:language content=en /><meta data-rh=true name=docusaurus_version content=current /><meta data-rh=true name=docusaurus_tag content=docs-default-current /><meta data-rh=true name=docsearch:version content=current /><meta data-rh=true name=docsearch:docusaurus_tag content=docs-default-current /><meta data-rh=true property=og:title content="Getting Started with the AirVantage API | AirVantage documentation"/><meta data-rh=true name=description content="connectivity · imported from live Hugo on 2026-10-07. Guides stay latest. Original page."/><meta data-rh=true property=og:description content="connectivity · imported from live Hugo on 2026-10-07. Guides stay latest. Original page."/><link data-rh=true rel=icon href=/personal-av-docs/img/favicon.svg /><link data-rh=true rel=canonical href=https://andreyjv.github.io/personal-av-docs/docs/how-to/cloud/gettingstarted_api /><link data-rh=true rel=alternate href=https://andreyjv.github.io/personal-av-docs/docs/how-to/cloud/gettingstarted_api hreflang=en /><link data-rh=true rel=alternate href=https://andreyjv.github.io/personal-av-docs/docs/how-to/cloud/gettingstarted_api hreflang=x-default /><link rel=stylesheet href=/personal-av-docs/assets/css/styles.1e3041e1.css /><script src=/personal-av-docs/assets/js/runtime~main.bbef5b78.js defer></script><script src=/personal-av-docs/assets/js/main.443f591d.js defer></script></head><body><svg style="display: none;"><defs>
+<symbol id=theme-svg-external-link viewBox="0 0 24 24"><path fill=currentColor d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme-deb")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||(window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light")),document.documentElement.setAttribute("data-theme-choice",t||"system")}(),function(){try{for(var[t,e]of new URLSearchParams(window.location.search).entries())if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id=__docusaurus><link rel=preload as=image href=/personal-av-docs/img/favicon.svg /><div role=region aria-label="Skip to main content"><a class=skipToContent_fXgn href=#__docusaurus_skipToContent_fallback>Skip to main content</a></div><nav aria-label=Main class="theme-layout-navbar navbar navbar--fixed-top"><div class=navbar__inner><div class="theme-layout-navbar-left navbar__items"><button aria-label="Toggle navigation bar" aria-expanded=false class="navbar__toggle clean-btn" type=button><svg width=30 height=30 viewBox="0 0 30 30" aria-hidden=true><path stroke=currentColor stroke-linecap=round stroke-miterlimit=10 stroke-width=2 d="M4 7h22M4 15h22M4 23h22"/></svg></button><a class=navbar__brand href=/personal-av-docs/><div class=navbar__logo><img src=/personal-av-docs/img/favicon.svg alt=AirVantage class="themedComponent_mlkZ themedComponent--light_NVdE"/><img src=/personal-av-docs/img/favicon.svg alt=AirVantage class="themedComponent_mlkZ themedComponent--dark_xIcU"/></div><b class="navbar__title text--truncate">AirVantage Docs</b></a><a class="navbar__item navbar__link navbar__guides" href=/personal-av-docs/docs/how-to/activate-sims>Guides</a><a class="navbar__item navbar__link" href=/personal-av-docs/api>API reference</a><a class="navbar__item navbar__link" href=/personal-av-docs/docs/changelog>Changelog</a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type=button disabled title="system mode" aria-label="Switch between dark and light mode (currently system mode)"><svg viewBox="0 0 24 24" width=24 height=24 aria-hidden=true class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill=currentColor d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"/></svg><svg viewBox="0 0 24 24" width=24 height=24 aria-hidden=true class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill=currentColor d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"/></svg><svg viewBox="0 0 24 24" width=24 height=24 aria-hidden=true class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill=currentColor d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"/></svg></button></div><div class=navbarSearchContainer_Bca1><div class="navbar__search searchBarContainer_NW3z" dir=ltr><svg aria-hidden=true class=searchIcon_T3tP focusable=false viewBox="0 0 16 16"><path fill=currentColor d="M6.02945 10.20327a4.17382 4.17382 0 1 1 4.17382-4.17382 4.15609 4.15609 0 0 1-4.17382 4.17382Zm9.69195 4.2199-4.8225-4.82338A5.88021 5.88021 0 0 0 12.058 6.02856 6.00467 6.00467 0 1 0 9.59979 10.8989l4.82338 4.82338a.89729.89729 0 0 0 1.29912 0 .89749.89749 0 0 0-.00087-1.29909Z"/></svg><input placeholder=Search aria-label=Search class="navbar__search-input searchInput_YFbd" value="" /><div class="loadingRing_RJI3 searchBarLoadingRing_YnHq"><div></div><div></div><div></div><div></div></div></div></div></div></div><div role=presentation class=navbar-sidebar__backdrop></div></nav><div id=__docusaurus_skipToContent_fallback class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class=av-shell><nav class=av-rail aria-label=Guides><p class=av-rail-kicker>Guides<ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class=menu__list-item-collapsible><span class="menu__link menu__link--sublist menu__link--sublist-caret av-rail-heading">Quick start</span></div><ul class=menu__list><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link href=/personal-av-docs/docs/how-to/activate-sims>Activate SIMs</a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link href=/personal-av-docs/docs/how-to/order-sims>Order SIMs</a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link href=/personal-av-docs/api>Call the API</a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link href=/personal-av-docs/docs/how-to/register-routers>Register routers</a></ul><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class=menu__list-item-collapsible><span class="menu__link menu__link--sublist menu__link--sublist-caret av-rail-heading">Browse by product</span></div><ul class=menu__list><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link href=/personal-av-docs/docs/how-to/activate-sims>Connectivity</a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link href=/personal-av-docs/docs/how-to/register-routers>Router management</a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link href=/personal-av-docs/docs/explain/states>States and operations</a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link href=/personal-av-docs/api>Developer platform</a></ul><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class=menu__list-item-collapsible><span class="menu__link menu__link--sublist menu__link--sublist-caret av-rail-heading">Keep building</span></div><ul class=menu__list><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link href=/personal-av-docs/docs/explain/states>States and operations</a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link href=/personal-av-docs/docs/reference/apn>APN table</a></ul><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class=menu__link href=/personal-av-docs/docs/get-started/first-sim>Get started</a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class=menu__link href=/personal-av-docs/docs/reference/api>Reference</a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class=menu__link href=/personal-av-docs/docs/changelog>Changelog</a></ul></nav><div class=av-shell-main><div class=docsWrapper_hBAB><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type=button></button><div class=docRoot_UBD9><main class="docMainContainer_TBSr docMainContainerEnhanced_lQrH"><div class="container padding-top--md padding-bottom--lg"><div class=row><div class="col docItemCol_VOVn"><div class=docItemContainer_Djhp><article><div class="theme-doc-markdown markdown"><header><h1>Getting Started with the AirVantage API</h1></header><p>:::note Edition
+<strong>connectivity</strong> · imported from live Hugo on 2026-10-07. Guides stay latest. <a href=https://doc.airvantage.net/connectivity/howto/cloud/gettingstarted_api target=_blank rel="noopener noreferrer" class="">Original page</a>.
+:::</p>
+<p>Getting Started with the AirVantage API
+Integrate with AirVantage API
+Here we give you an overview of what you can do with the AirVantage API via a simple use case: retrieve the system with a given ICCID and activate it.
+We’ll explain all the technical aspects needed:
+basic API syntax,
+authentication,
+AirVantage integration,
+how to do simple GET calls.
+1 /
+Basics
+2 /
+Authenticate
+3 /
+Develop
+4 /
+Test
+Basics
+What can you do with the API?
+The AirVantage API provides a powerful and flexible interface between deployed devices and AirVantage. You can use it to develop custom applications for your business needs, whatever the domain: smart Phone, CRM, ERP…
+For example, you can use the API to:
+Exploit raw applicative data and aggregated fleet data.
+Create script-based Firmware Upgrade campaigns
+Remotely monitor and manage devices to avoid field intervention.
+Which tool can you use?
+Start by installing a REST Client like:
+Postman
+can be used to test your API calls with AirVantage
+cURL
+can be used as well as command line tools to transfer data (not described in this tutorial).
+Or use a browser-specific client:
+Chrome:
+Postman
+Firefox:
+RESTClient
+For more details, see the API documentation:
+<a href=https://doc.airvantage.net/av/reference/cloud/API/ target=_blank rel="noopener noreferrer" class="">https://doc.airvantage.net/av/reference/cloud/API/</a>
+What are REST APIs?
+This is the typical format of our REST API
+Request:
+GET https://{server}/api/v1/users/current
+Authorization: Bearer {token}
+HTTP verb
+Base URI
+Resource Path
+Parameters
+GET
+https://{server}/api/v1
+/users/current
+?param={value}
+Response:
+{
+uid: "81210eca05484d34a29bc6c34dc31bf7",
+email: "<a href=mailto:dsciamma@sierrawireless.com target=_blank rel="noopener noreferrer" class="">dsciamma@sierrawireless.com</a>",
+name: "David Sciamma",
+company: {
+uid: "97ba9e22078548a2847912a87152e3f4",
+name: "Sierra Wireless"
+},
+profile: {
+uid: "df1c0f7d5f8c4db2b45978f98e1093ad",
+name: "Manager"
+}
+}
+REST (Representational state transfer)
+HTTP based RESTful APIs are defined with these aspects:
+Base URI, such as
+<a href=http://example.com/resources/ target=_blank rel="noopener noreferrer" class="">http://example.com/resources/</a>
+An Internet media type (JSON, XML, RSS, CSV …) must be defined. Most of the time,
+application/json
+is used.
+Standard HTTP methods:
+GET - Used for retrieving resources,
+POST - Used for creating resources, performing custom actions,
+PUT - Used for updating resources or collections.
+DELETE - Used for deleting resources
+Hypertext links
+(src:
+Wikipedia
+)
+JSON (JavaScript Object Notation)
+JSON stands for JavaScript Object Notation, is an open standard format that uses human-readable text to transmit data objects consisting of attribute-value
+pairs. It is used primarily to transmit data between a server and web application, as an alternative to XML.
+(src:
+Wikipedia
+)
+Widely adopted
+Language independent
+Simple (set of attribute-value pairs)
+Types
+Number, String, Boolean, Array, Object, null
+Use API with authentication
+To integrate to AirVantage APIs, you will first need to authenticate. This requires:
+An
+API Client identifier
+Support for one of the
+OAuth Flow
+methods described below
+Implement authentication
+AirVantage uses the OAuth 2.0 protocol for authentication. AirVantage supports three ways of getting an access token. Select the flow that best suits your application:
+The
+Authorization Code Flow
+: This should be the preferred flow for
+server-side applications
+. This flow is great if your code can keep a secret. The application will get an access token and a refresh token. The refresh token can then be stored by the application and used later to get a new access token without asking the user again for credentials. For native applications such as mobile apps or applications who cannot keep secrets you MUST use the PCKE (RFC 7636) extension to the Authorization Code flow to prevent CSRF and authorization code injection attacks. PKCE is not a replacement for a client secret, and PKCE is recommended even if a client is using a client secret.
+The
+Client Credentials Flow
+: This flow can be used for
+server-to-server
+authentication where the application acts on its own behalf rather than on behalf of a user, e.g. you’re developing a backend service that needs to access APIs independently without user interaction.
+The
+Resource Owner Flow
+:
+Deprecated
+This flow can be used if the user
+trusts
+the application e.g. you’re a company and you’re developing an application only used by your employees then they don’t need to give their credentials to the application.
+You can find more details about how authentication works as well as sample API calls in this
+AirVantage API documentation section
+.
+Note: Postman supports the Authorization code!
+Specs:
+rfc6749
+Create an API Client
+The first step in order to use AirVantage API is to create an API Client. The API Client represents the identity of the application that needs to connect to AirVantage API. All the API calls will be traced and related to an API Client.
+An API Client consists in:
+Go to
+Develop > API Clients
+Click on the
+Create
+action
+In the
+Create API Client
+modal:
+Provide a
+Name
+A
+Client ID
+and a
+Secret Key
+: Both are generated by AirVantage
+Redirect URIs
+in case of Authorization code flow and
+Profiles
+in case of Client credentials flow
+The following chapter of the User Guide explains the
+steps to create an API Client
+.
+Get an Access Token
+The method depends on which Oauth flow method your application uses. Here are three examples:
+Get an access token using
+Authorization Code flow
+Authorize url: https//eu.airvantage.net/api/oauth/authorize
+Token url: https//eu.airvantage.net/api/oauth/token
+Client-id: 46147801a4af4432a5a45dfb68db927a
+Client secret: 6fff692d93494e39ba511d5a099ba352
+Save the token: demoToken
+Tokens are your own property and responsibility: Never share a token with anyone or between two applications. For example, don’t share it in a public source repository.
+OR
+Get an access token using
+Client credentials flow
+Existing API clients in the AirVantage platform do not support this flow type by default.
+To use the Client Credentials Flow, you will need an API client specifically configured with “Client Credentials” as the flow type.
+Token url:
+<a href=https://eu.airvantage.net/api/oauth/token target=_blank rel="noopener noreferrer" class="">https://eu.airvantage.net/api/oauth/token</a>
+Use provided API clients credentials (
+client_id
+and
+client_secret
+)
+HTTP Method: POST
+Header: content-type: application/x-www-form-urlencoded
+Here’s the full URL to complete:
+<a href=https://eu.airvantage.net/api/oauth/token target=_blank rel="noopener noreferrer" class="">https://eu.airvantage.net/api/oauth/token</a></p>
+<p>Content-Type: application/x-www-form-urlencoded
+grant_type=client_credentials&client_id={client_id}&client_secret={client_secret}
+This is how it looks in Postman:
+OR
+Get an access token using
+Resource owner flow
+The resource owner flow is being deprecated due to security risks, as it involves directly sharing passwords with applications. Support for this flow will end by the end of the year. If your API client was using the authorization code flow, that’s perfectly fine. However, if your setup relied on the resource owner flow, it’s recommended to switch to the client credentials flow instead.
+Token url:
+<a href=https://eu.airvantage.net/api/oauth/token target=_blank rel="noopener noreferrer" class="">https://eu.airvantage.net/api/oauth/token</a>
+Use provided API clients credentials (
+client_id
+and
+client_secret
+) and your user credentials (
+username
+and
+password
+)
+HTTP Method: POST
+Header: content-type: application/x-www-form-urlencoded
+Here’s the full URL to complete:
+<a href=https://eu.airvantage.net/api/oauth/token target=_blank rel="noopener noreferrer" class="">https://eu.airvantage.net/api/oauth/token</a></p>
+<p>Content-Type: application/x-www-form-urlencoded
+grant_type=password&username={username}&password={password}&client_id={client_id}&client_secret={client_secret}
+This is how it looks in Postman:
+Access Token Usage
+The client accesses protected resources in AirVantage by presenting the access token.
+The method in which the client utilizes the access token to authenticate with the AirVantage involves using the HTTP “Authorization” request header field RFC2617.
+For example, replace {accessToken} by your access token in the Authorization header:
+GET <a href=https://eu.airvantage.net/api/v1/systems target=_blank rel="noopener noreferrer" class="">https://eu.airvantage.net/api/v1/systems</a>
+Authorization: Bearer {accessToken}
+Why you must not use a token as a parameter...
+Another possibility is to send the access token in the HTTP request URI, the client adds the access token to the request URI query component. However,
+its use is not recommended, due to its security deficiencies
+.
+For example:
+<a href="https://eu.airvantage.net/api/v1/systems?access_token=%7BaccessToken%7D&name=xxx" target=_blank rel="noopener noreferrer" class="">https://eu.airvantage.net/api/v1/systems?access_token={accessToken}&name=xxx</a>
+Because of the security weaknesses associated with the URI method, including the high likelihood that the URL containing the access token will be logged, it SHOULD NOT be used unless it is impossible to transport the access token in the “Authorization” request header field.
+Develop an application
+Once you created the API Client and picked the best OAuth2 flow depending on your application, you can start calling the AirVantage API using the language of your choice (Java, Javascript, Ruby, Python…).
+AirVantage provides all the features in its API. Then it’s really easy to integrate with your backend to automate your flows.
+Have a look on the
+API & Examples page
+to find API Libraries in several languages to illustrate what will be described below.
+We will now see in more details the use of AirVantage APIs via a simple use case: retrieve the system with a given ICCID and activate it.
+Getting your system from its ICCID
+In AirVantage, the main entity is the system. For connectivity, the system is simply composed of one subscription only, for which the ICCID is a unique identifier.
+First, you will want to get the system that correspond to a specific ICCID and its information. One of the most important field is the system
+uid
+which is used by API to identify your system and that you will need to use later for activation.
+Search a system and get its information, using the API:
+> GET <a href="https://eu.airvantage.net/api/v1/systems?subscription=identifier:89332401000003052210&fields=name,uid,subscription,lifeCycleState&access_token=%7Btoken%7D" target=_blank rel="noopener noreferrer" class="">https://eu.airvantage.net/api/v1/systems?subscription=identifier:89332401000003052210&fields=name,uid,subscription,lifeCycleState&access_token={token}</a>
+Copy the system uid field from the response below:
+{
+"items": [
+{
+"uid": "07620b74710042818257687443aea4e1",
+"lifeCycleState": "INVENTORY",
+"subscription": {
+"state": "INVENTORY",
+"identifier": "89332401000002977052",
+"uid": "a222db5b2c104fd6b7de09323b591839",
+"mobileNumber": null,
+"networkIdentifier": null,
+"ipAddress": null,
+"technology": "4G",
+"operator": "SIERRA_WIRELESS",
+"appletGeneration": "V4",
+"confType": "LITE",
+"formFactor": "2FF"
+},
+"name": "SIM 89332401000002977052"
+}
+],
+"count": 1,
+"size": 1,
+"offset": 0
+}
+Activating the System
+Now that you can identify your system, let’s see how you can activate it.
+When you activate, you will need to pass the offer on which to activate as a parameter of the activation API call. Let’s first see how to retrieve this offer.
+Offer uid
+To list all offers available to you along with their uid, use the following API call:
+> GET <a href="https://eu.airvantage.net/api/v1/offers?access_token=%7Btoken%7D" target=_blank rel="noopener noreferrer" class="">https://eu.airvantage.net/api/v1/offers?access_token={token}</a>
+Copy the uid corresponding to the offer on which you want to activate the system in the response:
+[
+{
+"limit": 10485760,
+"uid": "a11eb95b4e734058919b0f212eefc5e9",
+"types": [],
+"name": "10MB EU Bundle"
+},
+{
+"limit": 1048576,
+"uid": "7edaf87c9c414325859f8e1923c0a2cd",
+"types": [],
+"name": "1MB EU Test Ready Bundle"
+},
+{
+"limit": 2097152,
+"uid": "6b9a3055c4cc468f9c72c0213dc4fe32",
+"types": [],
+"name": "2MB EU Bundle"
+}
+]
+Activation launch
+Now you have all the information to effectively activate your system. Let’s assume you want to activate the system on the
+10MB EU Bundle
+offer, the activation API call to be done is the following:
+> POST <a href="https://eu.airvantage.net/api/v1/operations/systems/activate&access_token=%7Btoken%7D" target=_blank rel="noopener noreferrer" class="">https://eu.airvantage.net/api/v1/operations/systems/activate&access_token={token}</a>
+Content-Type: application/json
+...
+{
+"systems" : {
+"uids" : ["07620b74710042818257687443aea4e1"]
+},
+"offerId" :"a11eb95b4e734058919b0f212eefc5e9"
+}
+You have now triggered the activation on the targetted SIM!
+Test your application
+OK! So now you have a running application, don’t forget to deploy it on a web server that can be accessed by AirVantage. For a better integration with AirVantage, HTTPS access to your application is recommended.
+All set!
+Now that you can activate your SIMs using the APIs, you can also implement other processes to fully integrate AirVantage to your IT. Take a look at the
+AirVantage API Reference
+to go beyond this example.
+Have a look to the
+API Libraries & Examples
+to find more sample applications!
+You can also go further and for instance create:
+Web applications to display your business data
+Mobile applications to control your SIMs from your smartphone
+Your own business dashboards using existing tools
+Integrate in your IT
+Integrations with other online services like Salesforce, Zoho, Zapier, etc</div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href=https://github.com/andreyjv/personal-av/tree/docs/documentation-revamp/PRD_documentation-revamp/website/docs/how-to/cloud/gettingstarted_api.md target=_blank rel="noopener noreferrer" class=theme-edit-this-page><svg fill=currentColor height=20 width=20 viewBox="0 0 40 40" class=iconEdit_Z9Sw aria-hidden=true><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"/></g></svg>Edit this page</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"></nav></div></div></div></div></main></div></div></div></div></div><footer class="theme-layout-footer footer"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class=footer__title>Jobs</div><ul class="footer__items clean-list"><li class=footer__item><a class=footer__link-item href=/personal-av-docs/docs/how-to/activate-sims>Activate SIMs</a><li class=footer__item><a class=footer__link-item href=/personal-av-docs/docs/how-to/order-sims>Order SIMs</a><li class=footer__item><a class=footer__link-item href=/personal-av-docs/api>Call the API</a><li class=footer__item><a class=footer__link-item href=/personal-av-docs/docs/how-to/register-routers>Register routers</a></ul></div><div class="theme-layout-footer-column col footer__col"><div class=footer__title>Reference</div><ul class="footer__items clean-list"><li class=footer__item><a class=footer__link-item href=/personal-av-docs/docs/reference/api>API HTML chapters</a><li class=footer__item><a class=footer__link-item href=/personal-av-docs/docs/reference/apn>APN table</a><li class=footer__item><a class=footer__link-item href=/personal-av-docs/docs/changelog>Changelog</a></ul></div><div class="theme-layout-footer-column col footer__col"><div class=footer__title>Preview</div><ul class="footer__items clean-list"><li class=footer__item><a href=https://doc.airvantage.net/ target=_blank rel="noopener noreferrer" class=footer__link-item>Live Hugo (canonical until cutover)<svg width=13.5 height=13.5 aria-label="(opens in new tab)" class=iconExternalLink_nPIU><use href=#theme-svg-external-link /></svg></a><li class=footer__item><a class=footer__link-item href=/personal-av-docs/docs/ui-library>UI library</a><li class=footer__item><a class=footer__link-item href=/personal-av-docs/docs/copy-library>Copy library</a></ul></div></div><div class="footer__bottom text--center"><div class=footer__copyright>Sierra Wireless / AirVantage documentation preview. Live doc.airvantage.net stays Hugo until cutover. Built with Docusaurus.</div></div></div></footer></div></body>

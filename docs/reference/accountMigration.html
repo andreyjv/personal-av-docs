@@ -1,0 +1,263 @@
+<!doctype html><html lang=en dir=ltr class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-reference/accountMigration" data-has-hydrated=false><head><meta charset=UTF-8><meta name=generator content="Docusaurus v3.10.2"><title data-rh=true>ALMS Account Migration Overview | AirVantage documentation</title><meta data-rh=true name=viewport content="width=device-width, initial-scale=1.0"/><meta data-rh=true name=twitter:card content=summary_large_image /><meta data-rh=true property=og:image content=https://andreyjv.github.io/personal-av-docs/img/favicon.svg /><meta data-rh=true name=twitter:image content=https://andreyjv.github.io/personal-av-docs/img/favicon.svg /><meta data-rh=true property=og:url content=https://andreyjv.github.io/personal-av-docs/docs/reference/accountMigration /><meta data-rh=true property=og:locale content=en /><meta data-rh=true name=docusaurus_locale content=en /><meta data-rh=true name=docsearch:language content=en /><meta data-rh=true name=docusaurus_version content=current /><meta data-rh=true name=docusaurus_tag content=docs-default-current /><meta data-rh=true name=docsearch:version content=current /><meta data-rh=true name=docsearch:docusaurus_tag content=docs-default-current /><meta data-rh=true property=og:title content="ALMS Account Migration Overview | AirVantage documentation"/><meta data-rh=true name=description content="almsc · imported from live Hugo on 2026-10-07. Guides stay latest. Original page."/><meta data-rh=true property=og:description content="almsc · imported from live Hugo on 2026-10-07. Guides stay latest. Original page."/><link data-rh=true rel=icon href=/personal-av-docs/img/favicon.svg /><link data-rh=true rel=canonical href=https://andreyjv.github.io/personal-av-docs/docs/reference/accountMigration /><link data-rh=true rel=alternate href=https://andreyjv.github.io/personal-av-docs/docs/reference/accountMigration hreflang=en /><link data-rh=true rel=alternate href=https://andreyjv.github.io/personal-av-docs/docs/reference/accountMigration hreflang=x-default /><link rel=stylesheet href=/personal-av-docs/assets/css/styles.1e3041e1.css /><script src=/personal-av-docs/assets/js/runtime~main.bbef5b78.js defer></script><script src=/personal-av-docs/assets/js/main.443f591d.js defer></script></head><body><svg style="display: none;"><defs>
+<symbol id=theme-svg-external-link viewBox="0 0 24 24"><path fill=currentColor d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme-deb")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||(window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light")),document.documentElement.setAttribute("data-theme-choice",t||"system")}(),function(){try{for(var[t,e]of new URLSearchParams(window.location.search).entries())if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id=__docusaurus><link rel=preload as=image href=/personal-av-docs/img/favicon.svg /><div role=region aria-label="Skip to main content"><a class=skipToContent_fXgn href=#__docusaurus_skipToContent_fallback>Skip to main content</a></div><nav aria-label=Main class="theme-layout-navbar navbar navbar--fixed-top"><div class=navbar__inner><div class="theme-layout-navbar-left navbar__items"><button aria-label="Toggle navigation bar" aria-expanded=false class="navbar__toggle clean-btn" type=button><svg width=30 height=30 viewBox="0 0 30 30" aria-hidden=true><path stroke=currentColor stroke-linecap=round stroke-miterlimit=10 stroke-width=2 d="M4 7h22M4 15h22M4 23h22"/></svg></button><a class=navbar__brand href=/personal-av-docs/><div class=navbar__logo><img src=/personal-av-docs/img/favicon.svg alt=AirVantage class="themedComponent_mlkZ themedComponent--light_NVdE"/><img src=/personal-av-docs/img/favicon.svg alt=AirVantage class="themedComponent_mlkZ themedComponent--dark_xIcU"/></div><b class="navbar__title text--truncate">AirVantage Docs</b></a><a class="navbar__item navbar__link navbar__guides" href=/personal-av-docs/docs/how-to/activate-sims>Guides</a><a class="navbar__item navbar__link" href=/personal-av-docs/api>API reference</a><a class="navbar__item navbar__link" href=/personal-av-docs/docs/changelog>Changelog</a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type=button disabled title="system mode" aria-label="Switch between dark and light mode (currently system mode)"><svg viewBox="0 0 24 24" width=24 height=24 aria-hidden=true class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill=currentColor d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"/></svg><svg viewBox="0 0 24 24" width=24 height=24 aria-hidden=true class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill=currentColor d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"/></svg><svg viewBox="0 0 24 24" width=24 height=24 aria-hidden=true class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill=currentColor d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"/></svg></button></div><div class=navbarSearchContainer_Bca1><div class="navbar__search searchBarContainer_NW3z" dir=ltr><svg aria-hidden=true class=searchIcon_T3tP focusable=false viewBox="0 0 16 16"><path fill=currentColor d="M6.02945 10.20327a4.17382 4.17382 0 1 1 4.17382-4.17382 4.15609 4.15609 0 0 1-4.17382 4.17382Zm9.69195 4.2199-4.8225-4.82338A5.88021 5.88021 0 0 0 12.058 6.02856 6.00467 6.00467 0 1 0 9.59979 10.8989l4.82338 4.82338a.89729.89729 0 0 0 1.29912 0 .89749.89749 0 0 0-.00087-1.29909Z"/></svg><input placeholder=Search aria-label=Search class="navbar__search-input searchInput_YFbd" value="" /><div class="loadingRing_RJI3 searchBarLoadingRing_YnHq"><div></div><div></div><div></div><div></div></div></div></div></div></div><div role=presentation class=navbar-sidebar__backdrop></div></nav><div id=__docusaurus_skipToContent_fallback class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class=av-shell><nav class=av-rail aria-label=Guides><p class=av-rail-kicker>Guides<ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class=menu__list-item-collapsible><span class="menu__link menu__link--sublist menu__link--sublist-caret av-rail-heading">Quick start</span></div><ul class=menu__list><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link href=/personal-av-docs/docs/how-to/activate-sims>Activate SIMs</a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link href=/personal-av-docs/docs/how-to/order-sims>Order SIMs</a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link href=/personal-av-docs/api>Call the API</a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link href=/personal-av-docs/docs/how-to/register-routers>Register routers</a></ul><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class=menu__list-item-collapsible><span class="menu__link menu__link--sublist menu__link--sublist-caret av-rail-heading">Browse by product</span></div><ul class=menu__list><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link href=/personal-av-docs/docs/how-to/activate-sims>Connectivity</a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link href=/personal-av-docs/docs/how-to/register-routers>Router management</a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link href=/personal-av-docs/docs/explain/states>States and operations</a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link href=/personal-av-docs/api>Developer platform</a></ul><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class=menu__list-item-collapsible><span class="menu__link menu__link--sublist menu__link--sublist-caret av-rail-heading">Keep building</span></div><ul class=menu__list><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link href=/personal-av-docs/docs/explain/states>States and operations</a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link href=/personal-av-docs/docs/reference/apn>APN table</a></ul><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class=menu__link href=/personal-av-docs/docs/get-started/first-sim>Get started</a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class=menu__link href=/personal-av-docs/docs/reference/api>Reference</a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class=menu__link href=/personal-av-docs/docs/changelog>Changelog</a></ul></nav><div class=av-shell-main><div class=docsWrapper_hBAB><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type=button></button><div class=docRoot_UBD9><main class="docMainContainer_TBSr docMainContainerEnhanced_lQrH"><div class="container padding-top--md padding-bottom--lg"><div class=row><div class="col docItemCol_VOVn"><div class=docItemContainer_Djhp><article><div class="theme-doc-markdown markdown"><header><h1>ALMS Account Migration Overview</h1></header><p>:::note Edition
+<strong>almsc</strong> · imported from live Hugo on 2026-10-07. Guides stay latest. <a href=https://doc.airvantage.net/almsc/reference/accountMigration target=_blank rel="noopener noreferrer" class="">Original page</a>.
+:::</p>
+<p>ALMS Account Migration Overview
+GDPR FAQ
+Searching...
+Matching results
+ALMS Account Migration Overview
+Overview
+Starting in late 2022, Semtech (formerly Sierra Wireless) began converting all customer ALMS accounts to the new ALMS account format. This new format:
+Supports the new XR Series AirLink routers and support for AirLink OS;
+Introduces many new features and capabilities that customers have been requesting; and
+Provides support for the deprecation of tokens as a licensing mechanism for ALMS, as we move to a device-level subscription model.
+Many customers have already started using the new account type, as all new accounts created since January 2022 are of this format.
+In late 2024 we are completing this process by converting our ALMS Reseller accounts to the new format.
+This documentation provides a detailed overview of the changes between the old and new formats, and a summary of the changes that will occur when the account migration takes place.
+As these changes can impact your ALMS account, it is critical that you review this documentation and take actions as needed to maintain any account history that may be lost during the migration process. If you have any questions or concerns, please open a support ticket with Semtech Customer Support.
+New ALMS Accounts
+Pre-Paid Offers
+Direct Billing Offers
+Introduction to Offers
+Account Changes Due to the Account Migrations
+License Management Changes
+Account Clean Up
+Account Migration Examples
+Partnerships
+Changes to the Primary ALMS User Interface
+Changes to the Administration ALMS User Interface
+Support for the XR Series Routers
+Considerations for European Customers
+ALMS Reseller Accounts
+New ALMS Accounts
+Our new ALMS accounts continue the evolution of the ALMS solution with several new capabilities:
+Support for the XR Series Routers:
+XR Series routers with their embedded out-of-band (OOBM) features require the new ALMS accounts to operate.
+License Management Change:
+Historically, we have used “tokens” as the licensing system for access to ALMS. Tokens were pooled in an account and often caused confusion for customers in managing their accounts. The new ALMS accounts use standard subscriptions for each device. This simplifies account management.
+Improved Renewal Notifications:
+For pre-paid offers, renewals are sent to Administrators of the ALMS account, the Semtech Partner of record, and the Semtech Renewals team at least 90 days before your first device is set to expire. This ensures sufficient time to manage the renewal process.
+Support for Sierra Wireless Connectivity:
+ALMS can provide a single pane of glass to support both Semtech routers and connectivity. This includes connectivity services using standard plastic SIMs as well as support for our Ready 2 Connect (R2C) routers and gateways with integrated eSIMs that can simplify your deployment processes. Support for connectivity services requires a Direct Billing account – please see
+Direct Billing Offers
+below.
+Within the new ALMS accounts, you have two options to pay for your subscriptions –
+Pre-Paid
+(through your Sierra Wireless Partner) or Direct Billing (direct with Sierra Wireless). The majority of accounts, and the default account configuration is Pre-Paid with your Partner. All new ALMS accounts only support one type of offer.
+Pre-Paid Offers
+Pre-paid Offers are the standard approach and allow you to manage your business and work with your Semtech Partner as you always have. When you need to renew your AirLink Complete services for your fleet of devices, you submit a purchase order (PO) for the fleet renewal and Semtech automatically updates the service details for the fleet in the background.
+Pre-Paid Offer Benefits
+No changes to your current processes, or how you work with your Semtech Partner (PO-based).
+You are in full control (and responsible for) the renewal process on your devices.
+Semtech manages the service on your devices and assigns the service based on the PO received from your Semtech Partner.
+Single pane of glass for all AirLink routers and gateways.
+Pre-paid Offer Limitations
+You cannot change offers from within ALMS. All changes need to be made by Semtech Customer Support, based on a PO for the new services.
+Does not support Semtech connectivity
+Renewal Example – Pre-paid Offers:
+You have a fleet of 10 AirLink RV55 devices that you purchased and registered in January 2023. As your devices include the first year of service for AirLink Complete, your devices will have full access to Semtech Customer Support, access to ALMS and full warranty coverage until January 2024 at no additional cost.
+In October 2023, you will receive a notification from ALMS that your service is due to expire in the next 90 days. You issue a PO to your Semtech Partner for three more years of AirLink Complete for your 10 devices. When Semtech receives the PO from your Partner, we will extend the AirLink Complete service until January 2027.
+If you fail to renew, service will be suspended on your devices as of January 2023. Those devices will be suspended in ALMS, you will no longer be able to contact Semtech Customer Support for those devices, and the warranty on your devices will expire. You will still have access to your account, and any devices can be reactivated by renewing your service.
+Direct Billing Offers
+Direct Billing Offers are an option available to customers who prefer to be directly billed for services and do not need to worry about renewals. Customers have the option to provide payment information (credit card in the USA; SEPA in Europe) at account creation, or you can speak with your Semtech Sales representative to arrange for direct invoicing
+1
+. When devices are activated under a direct billing Offer, you are invoiced in advance for the next month’s service. As a result, you are billed directly for all active devices, and your service is extended based on the terms of the offer (i.e., monthly, annually etc.).
+Direct Billing Offer Benefits
+Services are invoiced every month directly by Semtech based on actual active device usage.
+You can change offers on your devices as your business needs evolve.
+Supports Semtech connectivity services.
+Services automatically renew until explicitly canceled.
+Direct Billing Limitations
+You are billed automatically every month.
+You must maintain and update your billing information (e.g. replace credit cards when they expire).
+Your Semtech Partner is not involved in the process and will not be able to advise you.
+Once converted, you cannot switch back to a yearly subscription renewal (Pre-paid) billing model.
+Renewal Example – Direct Billing Offers:
+You have a fleet of 10 AirLink RV55 devices that you purchased and registered in January 2023. As your devices include the first year of service for AirLink Complete, your devices will have full access to Sierra Wireless Customer Support, access to ALMS, and full warranty until January 2024 at no additional cost.
+As of January 2024, your devices will move to direct billing, and you will be invoiced, and payment processed for the next month’s service of AirLink Complete. Your Customer Support and warranty dates will remain active if you maintain the service (to a maximum of five years for warranty). You do not need to issue POs or remember to renew services. You can only change offers, or terminate the service after the first year.
+Introduction to Offers
+Offers define the services that are available on an AirLink device. This includes access to ALMS, the level of Customer Support, and can also include connectivity or other services. The Offer includes a service term (typically one, three or, five years) and are often tied to specific device types. For example, the AirLink Complete (XR80) offer can only be used with AirLink XR80 devices. It will never be displayed as a valid offer for any other device type.
+When a new ALMS account is created, there are a minimum of four default offers in the account. These offers are tied to different devices, and include:
+AirLink Basic:
+Provides access to ALMS only. No Customer Support or warranty extension. Only available on AirLink LX, MP, and RV devices. AirLink Basic is not available for initial registration, only renewals.
+AirLink Complete:
+Provides access to ALMS, Customer Support, and hardware warranty extension (maximum five years) for as long as the subscription is renewed. Only available on AirLink LX, MP, RV, and RX devices.
+AirLink Complete (XR80):
+Provides access to ALMS, Customer Support, Out of Band Management (OOBM) connectivity, and hardware warranty extension (maximum five years) for as long as the subscription is renewed. Only available on the AirLink XR80.
+AirLink Premium:
+Provides access to ALMS, Customer Support, OOBM connectivity, Advanced Mobility Reporting (AMR), and hardware warranty extension (maximum five years) for as long as the subscription is renewed. Only available for registration on the AirLink XR90; available for upgrade on the AirLink XR80.
+Direct Billing Offers will have other
+default offers
+added to the account to support Semtech connectivity services. These offers vary depending on the location (EU versus NA) of the ALMS account. In addition, we can customize offers for customers that need a unique set of features.
+Account Changes Due to the Account Migrations
+The account migration process will result in a series of changes that will be noticeable in your account and include some account clean-up activities and minor changes to the user experience.
+License Management Changes
+Historically, we have used “tokens” as the licensing system for access to ALMS. Tokens were pooled in an account and often caused confusion for customers in managing their accounts. The new ALMS accounts use standard subscriptions for each device. This will simplify your license management.
+Devices and Current State:
+Your routers and gateways may be in different states. Devices that are
+Active
+will be moved to the appropriate Offer for that device. This will either be AirLink Basic or AirLink Complete depending on the state of the device. Any devices in
+Maintenance Mode
+when the account conversion takes place will be put into
+Inventory
+in the converted account. You will need to submit a purchase order to activate any devices in Inventory state.
+Offer Assignment:
+When the account is converted, the Offer that is applied to your devices is dependent on the original state of the device. For devices registered for AirLink Complete with valid support and warranty dates, those devices are converted to AirLink Complete Offers, and the dates will remain. Instead of having a token balance for the license, the renewal date for your service will be set based on the “Support Date”.
+For devices that are not on AirLink Complete, we will assign the AirLink Basic service to those devices. When migrating your account, we will need to convert your existing tokens to subscriptions for your devices. As tokens are a pool used across devices, when the conversion takes place, we will use the token balance to calculate the number of months of service (on average) per device in the account. We will use this information to set the Subscription renewal date for each device.
+Account Cleanup
+As many ALMS accounts have existed for a long time, there are a lot of devices in ALMS that are no longer active. As part of the account migration, we are going to perform some account cleanup.
+Old and Inactive Devices Deleted
+During the account migration, old and inactive devices will be removed from your account. We will delete:
+Systems that did not communicate with ALMS in the past year.
+Devices that have been registered but have never communicated with the platform.
+Suspend Accounts
+Any accounts with no active devices will be suspended and removed from ALMS. You will be able to create a new ALMS account from the
+account creation page
+.
+Please
+export
+any data from ALMS for these devices prior to the account conversion. You can use that data to re-register devices if required.
+Account Migration Examples
+We have provided two examples to help illustrate what will happen when the account migration occurs. These examples will illustrate both the token migration as well as the account clean-up activities.
+Customer without AirLink Complete
+Total Systems at Migration:
+41 – All have no Support Date; warranty expired on all devices
+Token Balance at Migration:
+261
+Migration Date:
+March 25, 2023
+Systems in Account Post-Migration:
+Active: 40
+Inventory:0
+Before Migration
+After Migration
+1 system that communicated more than 1 year ago
+Deleted from the account
+40 Systems without AirLink Complete
+AirLink Basic Offer assigned
+Renewal Date Calculation
+261 tokens/40 systems = 6.5 months of service
+Renewal Date = April 2022 + 7 months =>
+November 2023
+Customer with Mixed Services
+Total Systems at Migration:
+13
+Token Balance at Migration:
+60
+Migration Date:
+May 2023
+Systems in Account Post-Migration:
+Active: 11
+Inventory: 0
+Before Migration
+After Migration
+1 System in
+Maintenance Mode
+Inventory State
+AirLink Basic Offer assigned
+Note:
+To activate this device, the customer will need to submit a PO for service on this device.
+1 System that Never Communicated
+Deleted from the account
+1 System that Communicated more than 12 Months Ago
+Deleted from the account
+2 Systems with a Support End Date on Aug 2023
+AirLink Complete Offer assigned
+Renewal Date set to August 2024
+Tokens Consumed: 2 systems * 3 months = 6 tokens
+1 System with a Support End Date on January 2023
+Systems with expired support end dates are treated as systems without support end date
+AirLink Basic Offer assigned
+Renewal Date Calculation
+54 tokens (60 - 6 AirLink Complete tokens)
+54 tokens/8 systems = 6.75 months of service
+Renewal Date = Jun 2022 + 7 months =>
+January 2024
+7 Systems without Support End Date
+Partnerships
+All Partnerships between customer accounts and their Partners remain in place after the account migration. There should be no changes as a result of the migration process.
+Changes to the Primary ALMS User Interface
+Within the main ALMS user interface, there are some changes in the new ALMS accounts. Some are changes to support new features, while others come as a result of the account migration.
+Monitor > Systems Grid Reset
+: As a result of moving to a subscription-based approach, the details about your device’s support and warranty information is presented differently. As a result, we will reset the Monitor > Systems grid configuration to its default value. If you had previously created a custom layout, you would need to reset it.
+New Default Dashboards
+: The new ALMS account supports both device management and connectivity management features. The new accounts also have a series of new Dashboards available to you. As such, your Dashboards will be reset to the default dashboards. If you need a refresher on dashboards, please review the
+Dashboard documentation
+.
+Changes to the Action Buttons
+: The new ALMS account has a different layout on the Action buttons. There are a new set for Offer management. These buttons will only be active if you are on Direct Billing Offers.
+Changes to the Administration ALMS User Interface
+Within the ALMS Administration user interface, you will see many changes to support the new ALMS accounts.
+Account Page
+: The account page has been updated to provide better clarity on the type of account. In addition to the UID and account name, you have a clear indication if your account is set-up with pre-paid or direct billing Offers. In addition, renewal information and display anniversary date information on the account page.
+My Token Stock
+activity has been replaced by a new
+Renewals
+activity that lists all renewal operations. As part of the migration, we remove all information about tokens as they are no longer relevant to your account. This includes the transaction history for token purchases and adjustments. If you need any of this information for your records, please save the PDF records out of ALMS prior to your account conversion.
+Support for the XR Series Routers
+XR Series routers with their embedded out-of-band (OOBM) features require the new ALMS accounts to operate. As Semtech operates
+multiple instances of ALMS
+, it is important to understand that the SKU of the AirLink XR80 or XR90 device must align with the correct instance of ALMS, or it will not be able to activate.
+The “Global” SKU of the AirLink XR80 or XR90 can only be registered on the European (EU) instance of ALMS.
+The “NA” SKU of the AirLink XR80 or XR90 can only be registered on the North American (NA) instance of ALMS.
+Please be aware of the device that you have purchased and ensure that your ALMS account is on the correct instance before registering your XR Series routers.
+Considerations for European Customers
+Semtech operates
+multiple instances of ALMS
+. The North American (NA) instance has existed for longer than the European (EU) instance, and many of the accounts created for customers in Europe were originally created on the NA server. As a result, any devices in an account on the NA server will have their data reside in the United States. You can tell which server your account is resident on by examining the URL in the browser after logging into your ALMS account.
+For example, the following indicates an EU server and thus your data would reside in Europe:
+During the account migration process, we leave the account on its current server. We do have the option to move an account from the NA instance to the EU instance, but this process is manual and does have some potentially negative consequences. The following lists the pros and cons of migrating:
+Pros
+Data Residency
+: Your data will be stored on the EU instance of ALMS and no longer located in the United States.
+Compatibility with XR Series Routers
+: XR Series routers for the EU market can only operate with an account on the EU instance. Migrating the account ensures you can use this account with that class of devices without having to create a second account.
+Semtech Connectivity
+: If you want to use Semtech connectivity, you must have an account on the EU instance. By converting your ALMS account, you can combine router and connectivity management into a single account.
+Cons
+The main downside of migrating an account from the NA instance to the EU instance is that we need to delete the old account and re-create it on the EU instance (). The has the following implications:
+Loss of Device History
+: Devices are deleted and re-registered so they will be treated as new devices in the account and your data history for those devices will be lost.
+Loss of Account System Elements
+: Your account will be created as a new account, so any of the system elements (e.g., Templates. Alert Rules, Data Sets etc.) that you may have created will need to be re-created.
+Users Need to be Migrated
+: Users do not need to be deleted and re-created, but you will need to open a support ticket requesting that your users be re-assigned to the new account.
+If you would like to move your account from the NA instance to the EU instance, please contact Semtech Customer Support.
+ALMS Reseller Accounts
+ALMS Reseller accounts are special accounts that we provide to our Partner community to ensure that our Partners always have access to an ALMS account for demonstration purposes, to manage a fleet of demo devices, and to be able to help their customers.
+As part of the account migration program, we are making significant improvements to these accounts to provide even more capabilities for our Partners, and to make working with us easier. The new ALMS Reseller accounts will have the following features:
+Free AirLink Services for a Limited Number of Devices
+No cost for services on all devices for authorized Partners
+20-device limit
+Full access to all features and all device types, such as:
+AMR access
+Support for AirLink XR80/90
+Limitation—no support for Semtech connectivity (i.e. SIM cards)
+Multi-Company Registration
+Maintains the ability to register devices to any ALMS account. Supports multiple customers in single bulk registration (existing feature).
+New “Customer” Page
+Replaces the “Sub-account” page and provides a list of all partnered accounts
+Provides visibility into any account that have Partnerships, including subscription status information
+Insight into the state of partnered accounts (number of devices, renewal state, users)
+Account Lookup
+This new feature allows Partners to look up a Customer’s ALMS account
+The Partner can provide an email address to retrieve ALMS account name and account UID
+Request Partnership
+This new automated feature allows the Partner to request a partnership with any Customer’s ALMS account
+The Partner provides an account UID
+The Customer will need to approve and assign access rights to the Partner
+Create an ALMS Account
+This new feature allows a Partner to create an ALMS account for a Customer
+The Customer will need to approve and authorize the process
+It will automatically create the primary Admin User in the account and create a partnership with the originating Partner account
+We will be migrating all existing ALMS Reseller accounts to the new format. This is an automated process, much like the process that we went through with customer accounts. We do not expect that there will be any major changes to your account as a result. That said, there is likely to be some account cleanup that happens during this process, so please familiarize yourself with the process, as defined in this document.
+The Customer Support team will contact each Partner before we do the account migration to ensure that it is done at a time that does not cause any issues or inconvenience.
+Existing ALMS Accounts: With the launch of the XR Series routers, we know that many Partners created new-style ALMS accounts to work with the new devices, as their ALMS Reseller accounts did not support them. During this migration, we will merge any other accounts that you might have, including users, into your new ALMS Reseller account. When contacted by Customer Support, please advise of any additional accounts that need to be merged.
+Partners Outside the USA: We know that many ALMS Reseller accounts for Partners based outside the USA were created on the North American instance of ALMS. During this migration, we will be happy to move your account to the European, Canadian or Australian instances as desired.
+Some conditions apply.
+[return]
+How-Tos
+This section provides you with helpful procedures for common tasks.</div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href=https://github.com/andreyjv/personal-av/tree/docs/documentation-revamp/PRD_documentation-revamp/website/docs/reference/accountMigration.md target=_blank rel="noopener noreferrer" class=theme-edit-this-page><svg fill=currentColor height=20 width=20 viewBox="0 0 40 40" class=iconEdit_Z9Sw aria-hidden=true><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"/></g></svg>Edit this page</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"></nav></div></div></div></div></main></div></div></div></div></div><footer class="theme-layout-footer footer"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class=footer__title>Jobs</div><ul class="footer__items clean-list"><li class=footer__item><a class=footer__link-item href=/personal-av-docs/docs/how-to/activate-sims>Activate SIMs</a><li class=footer__item><a class=footer__link-item href=/personal-av-docs/docs/how-to/order-sims>Order SIMs</a><li class=footer__item><a class=footer__link-item href=/personal-av-docs/api>Call the API</a><li class=footer__item><a class=footer__link-item href=/personal-av-docs/docs/how-to/register-routers>Register routers</a></ul></div><div class="theme-layout-footer-column col footer__col"><div class=footer__title>Reference</div><ul class="footer__items clean-list"><li class=footer__item><a class=footer__link-item href=/personal-av-docs/docs/reference/api>API HTML chapters</a><li class=footer__item><a class=footer__link-item href=/personal-av-docs/docs/reference/apn>APN table</a><li class=footer__item><a class=footer__link-item href=/personal-av-docs/docs/changelog>Changelog</a></ul></div><div class="theme-layout-footer-column col footer__col"><div class=footer__title>Preview</div><ul class="footer__items clean-list"><li class=footer__item><a href=https://doc.airvantage.net/ target=_blank rel="noopener noreferrer" class=footer__link-item>Live Hugo (canonical until cutover)<svg width=13.5 height=13.5 aria-label="(opens in new tab)" class=iconExternalLink_nPIU><use href=#theme-svg-external-link /></svg></a><li class=footer__item><a class=footer__link-item href=/personal-av-docs/docs/ui-library>UI library</a><li class=footer__item><a class=footer__link-item href=/personal-av-docs/docs/copy-library>Copy library</a></ul></div></div><div class="footer__bottom text--center"><div class=footer__copyright>Sierra Wireless / AirVantage documentation preview. Live doc.airvantage.net stays Hugo until cutover. Built with Docusaurus.</div></div></div></footer></div></body>

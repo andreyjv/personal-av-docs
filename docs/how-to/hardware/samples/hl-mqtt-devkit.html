@@ -1,0 +1,491 @@
+<!doctype html><html lang=en dir=ltr class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-how-to/hardware/samples/hl-mqtt-devkit" data-has-hydrated=false><head><meta charset=UTF-8><meta name=generator content="Docusaurus v3.10.2"><title data-rh=true>Getting started with HL module on RaspberryPI or Linux-based system | AirVantage documentation</title><meta data-rh=true name=viewport content="width=device-width, initial-scale=1.0"/><meta data-rh=true name=twitter:card content=summary_large_image /><meta data-rh=true property=og:image content=https://andreyjv.github.io/personal-av-docs/img/favicon.svg /><meta data-rh=true name=twitter:image content=https://andreyjv.github.io/personal-av-docs/img/favicon.svg /><meta data-rh=true property=og:url content=https://andreyjv.github.io/personal-av-docs/docs/how-to/hardware/samples/hl-mqtt-devkit /><meta data-rh=true property=og:locale content=en /><meta data-rh=true name=docusaurus_locale content=en /><meta data-rh=true name=docsearch:language content=en /><meta data-rh=true name=docusaurus_version content=current /><meta data-rh=true name=docusaurus_tag content=docs-default-current /><meta data-rh=true name=docsearch:version content=current /><meta data-rh=true name=docsearch:docusaurus_tag content=docs-default-current /><meta data-rh=true property=og:title content="Getting started with HL module on RaspberryPI or Linux-based system | AirVantage documentation"/><meta data-rh=true name=description content="av · imported from live Hugo on 2026-10-07. Guides stay latest. Original page."/><meta data-rh=true property=og:description content="av · imported from live Hugo on 2026-10-07. Guides stay latest. Original page."/><link data-rh=true rel=icon href=/personal-av-docs/img/favicon.svg /><link data-rh=true rel=canonical href=https://andreyjv.github.io/personal-av-docs/docs/how-to/hardware/samples/hl-mqtt-devkit /><link data-rh=true rel=alternate href=https://andreyjv.github.io/personal-av-docs/docs/how-to/hardware/samples/hl-mqtt-devkit hreflang=en /><link data-rh=true rel=alternate href=https://andreyjv.github.io/personal-av-docs/docs/how-to/hardware/samples/hl-mqtt-devkit hreflang=x-default /><link rel=stylesheet href=/personal-av-docs/assets/css/styles.1e3041e1.css /><script src=/personal-av-docs/assets/js/runtime~main.bbef5b78.js defer></script><script src=/personal-av-docs/assets/js/main.443f591d.js defer></script></head><body><svg style="display: none;"><defs>
+<symbol id=theme-svg-external-link viewBox="0 0 24 24"><path fill=currentColor d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme-deb")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||(window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light")),document.documentElement.setAttribute("data-theme-choice",t||"system")}(),function(){try{for(var[t,e]of new URLSearchParams(window.location.search).entries())if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id=__docusaurus><link rel=preload as=image href=/personal-av-docs/img/favicon.svg /><div role=region aria-label="Skip to main content"><a class=skipToContent_fXgn href=#__docusaurus_skipToContent_fallback>Skip to main content</a></div><nav aria-label=Main class="theme-layout-navbar navbar navbar--fixed-top"><div class=navbar__inner><div class="theme-layout-navbar-left navbar__items"><button aria-label="Toggle navigation bar" aria-expanded=false class="navbar__toggle clean-btn" type=button><svg width=30 height=30 viewBox="0 0 30 30" aria-hidden=true><path stroke=currentColor stroke-linecap=round stroke-miterlimit=10 stroke-width=2 d="M4 7h22M4 15h22M4 23h22"/></svg></button><a class=navbar__brand href=/personal-av-docs/><div class=navbar__logo><img src=/personal-av-docs/img/favicon.svg alt=AirVantage class="themedComponent_mlkZ themedComponent--light_NVdE"/><img src=/personal-av-docs/img/favicon.svg alt=AirVantage class="themedComponent_mlkZ themedComponent--dark_xIcU"/></div><b class="navbar__title text--truncate">AirVantage Docs</b></a><a class="navbar__item navbar__link navbar__guides" href=/personal-av-docs/docs/how-to/activate-sims>Guides</a><a class="navbar__item navbar__link" href=/personal-av-docs/api>API reference</a><a class="navbar__item navbar__link" href=/personal-av-docs/docs/changelog>Changelog</a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type=button disabled title="system mode" aria-label="Switch between dark and light mode (currently system mode)"><svg viewBox="0 0 24 24" width=24 height=24 aria-hidden=true class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill=currentColor d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"/></svg><svg viewBox="0 0 24 24" width=24 height=24 aria-hidden=true class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill=currentColor d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"/></svg><svg viewBox="0 0 24 24" width=24 height=24 aria-hidden=true class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill=currentColor d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"/></svg></button></div><div class=navbarSearchContainer_Bca1><div class="navbar__search searchBarContainer_NW3z" dir=ltr><svg aria-hidden=true class=searchIcon_T3tP focusable=false viewBox="0 0 16 16"><path fill=currentColor d="M6.02945 10.20327a4.17382 4.17382 0 1 1 4.17382-4.17382 4.15609 4.15609 0 0 1-4.17382 4.17382Zm9.69195 4.2199-4.8225-4.82338A5.88021 5.88021 0 0 0 12.058 6.02856 6.00467 6.00467 0 1 0 9.59979 10.8989l4.82338 4.82338a.89729.89729 0 0 0 1.29912 0 .89749.89749 0 0 0-.00087-1.29909Z"/></svg><input placeholder=Search aria-label=Search class="navbar__search-input searchInput_YFbd" value="" /><div class="loadingRing_RJI3 searchBarLoadingRing_YnHq"><div></div><div></div><div></div><div></div></div></div></div></div></div><div role=presentation class=navbar-sidebar__backdrop></div></nav><div id=__docusaurus_skipToContent_fallback class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class=av-shell><nav class=av-rail aria-label=Guides><p class=av-rail-kicker>Guides<ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class=menu__list-item-collapsible><span class="menu__link menu__link--sublist menu__link--sublist-caret av-rail-heading">Quick start</span></div><ul class=menu__list><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link href=/personal-av-docs/docs/how-to/activate-sims>Activate SIMs</a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link href=/personal-av-docs/docs/how-to/order-sims>Order SIMs</a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link href=/personal-av-docs/api>Call the API</a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link href=/personal-av-docs/docs/how-to/register-routers>Register routers</a></ul><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class=menu__list-item-collapsible><span class="menu__link menu__link--sublist menu__link--sublist-caret av-rail-heading">Browse by product</span></div><ul class=menu__list><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link href=/personal-av-docs/docs/how-to/activate-sims>Connectivity</a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link href=/personal-av-docs/docs/how-to/register-routers>Router management</a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link href=/personal-av-docs/docs/explain/states>States and operations</a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link href=/personal-av-docs/api>Developer platform</a></ul><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class=menu__list-item-collapsible><span class="menu__link menu__link--sublist menu__link--sublist-caret av-rail-heading">Keep building</span></div><ul class=menu__list><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link href=/personal-av-docs/docs/explain/states>States and operations</a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link href=/personal-av-docs/docs/reference/apn>APN table</a></ul><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class=menu__link href=/personal-av-docs/docs/get-started/first-sim>Get started</a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class=menu__link href=/personal-av-docs/docs/reference/api>Reference</a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class=menu__link href=/personal-av-docs/docs/changelog>Changelog</a></ul></nav><div class=av-shell-main><div class=docsWrapper_hBAB><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type=button></button><div class=docRoot_UBD9><main class="docMainContainer_TBSr docMainContainerEnhanced_lQrH"><div class="container padding-top--md padding-bottom--lg"><div class=row><div class="col docItemCol_VOVn"><div class=docItemContainer_Djhp><article><div class="theme-doc-markdown markdown"><header><h1>Getting started with HL module on RaspberryPI or Linux-based system</h1></header><p>:::note Edition
+<strong>av</strong> · imported from live Hugo on 2026-10-07. Guides stay latest. <a href=https://doc.airvantage.net/av/howto/hardware/samples/hl-mqtt-devkit target=_blank rel="noopener noreferrer" class="">Original page</a>.
+:::</p>
+<p>Getting started with HL module on RaspberryPI or Linux-based system
+This tutorial describes how to create a communication with AirVantage Cloud from a
+Linux-based system
+equiped with a
+HL wireless module
+.
+The Linux-based system may be a RasberryPI or an Ubuntu PC.
+The following use cases are covered:
+Sending some custom data such as sensor value or application data from the Linux-based system to the AirVantage Cloud
+Sending some commands or configuration from AirVantage Cloud to the Linux-based system
+To implement this solution, MQTT protocol will be used
+To achieve the above objective, following main steps are covered:
+How to setup your device: Hardware connection, AT command interface and IP connectivity
+How to register your device on AirVantage
+How to communicate with AirVantage using MQTT
+Although, the guideline has been tested on Raspberry PI, it can easily be adapted to other Linux-based system.
+Prerequisite
+HL demo board + Antena + Power adaptor
+AirPrime HL series Module
+SIM card with data call plan
+USB-to-Serial Converter
+Host system with Linux-based OS (e.g. RaspberryPI/Raspian, PC/Ubuntu, Mac/MacOS, etc)
+Have an account on AirVantage server : eu.airvantage.net
+Part references used in this tutorial
+AirPrime HL6528 module
+RaspberryPI B+
+AirPrime HL Series DevKit
+USB-to-Serial cable
+1 /
+IP Connectivity
+2 /
+Server Application
+3 /
+MQTT data exchange
+Any issues ?
+If you encounter any issue to set up your device, don’t hesitate to use the
+developer forum
+to benefit from the developer community experience.
+Step 1: Setting the IP Connectivity
+This step starts with connecting the HL module to your Raspberry, and verify that it is attached to a Linux virtual serial device port (e.g. /dev/ttyUSB0).
+AT Command
+interface should then be in place to enable the host application to control the HL Module.
+Finally,
+IP Connectivity
+is created using PPP dial-up to enable host applications to communicate with remote servers.
+Connect Hardware
+Place the HL Module into the demo board’s module socket. To ensure the correct orientation of the HL Module, use the
+dot
+mark, printed on the top right corner, as reference. It should be aligned with the
+dot
+mark visible within the demo board socket. Then place the shielding cover on the module.
+Connect the “UART1_MAIN” port of the HL demo board to your RaspberryPI, using a USB-to-Serial converter cable.
+Connect the antenna to the “2G/3G/4G RF MAIN” connector.
+Insert a SIM card into the “SIM1” slot.
+Power-on the demo board with the power adaptor on “VBAT” jack
+Verify Hardware Connectivity
+Your USB-to-Serial adapter should be listed when entering “lsusb” linux command on your host system.
+Type in the “dmesg | grep tty” linux command. Check the log to identify the device port (e.g. /dev/ttyUSB0) that has been associated to the HL demo board
+Check AT-Command Interface
+Use a serial terminal (e.g. minicom) to make sure that the AT interface can be established. To install minicom proceed as follow (internet access required):
+sudo apt-get install minicom
+Initialize the serial terminal to open the device port (e.g. /dev/ttyUSB0) on which the HL module is attached to, for instance:
+sudo minicom -D
+/dev/ttyUSB0
+The following AT commands shall be entered within minicom to perform some sanity checking:
+AT
+: expected response
+OK
+. If not, make sure the board is powered on (the
+VBAT
+led should be on) and check minicom baudrate setting (default HL baudrate should be 115200), using
+minicom -s
+AT+CPIN?
+: expected response
+READY
+if not, SIM PIN may be entered using the
+AT+CPIN
+command. e.g.
+AT+CPIN=“1234”
+AT+IPR?
+: the operating baudrate should be returned, please use this baudrate in the remaining tutorial
+AT+CREG?
+: to check the network registration status, expected response +CREG:x,1 (registered, home network) or +CREG:x,5 (roaming)
+AT+CGREG?
+: to check the GPRS registration status, expected response +CGREG:x,1 (registered, home network) or +CGREG:x,5 (roaming)
+AT+CSQ
+: returns “RSSI”,“BER”. RSSI indicates the signal strength in dBm, a value of 99 reflects no signal detected or not known
+Issue
+AT+CGSN
+command to retrieve module’s IMEI, please note the IMEI, it will be used in upcoming tutorial steps
+Issue
+AT+KGSN=3
+command to retrieve module’s Serial Number, please note the S/N for future use
+AT Commands Integration in the Device
+In the above hands-on sections, we were able to manually send AT-Commands, using minicom. This sub-section aims to facilitate the AT-Command support within your device application.
+Integration Helper
+The aforementioned AT commands must be issued programmatically within your device application. And the response must be filtered and analyzed by the device application. For instance, the returned IMEI should be extracted from
+AT+CGSN
+response, IMEI is required to register the HL module on AirVantage platform.
+For your convenience, a
+sample AT command line tool
+can be adapted and integrated into your device application to rapidly gain AT-Command capabilities and to control the HL module.
+The provided sample AT command can also be used as is, as follow:
+./hl-atcmd   -d devicePort   -b baudrate   -f atcmd-filter   at-cmd
+For instance:
+./hl-atcmd   -d /dev/ttyUSB0   -b 115200    -f AT+CGSN    AT+CGSN
+will return the filtered response which is the IMEI. Full response will be returned if no filter is specified.
+./hl-atcmd   -d /dev/ttyUSB0   -b 115200    -f +KGSN:    ‘AT+KGSN=“3”’
+will return the filtered response which is the Serial Number. Full response will be returned if no filter is specified.
+SIM PIN may be entered as follow:
+./hl-atcmd   -d /dev/ttyUSB0   -b 115200    ‘AT+CPIN=“1234”’
+Any AT-commands as documented in the AT-command specification can be executed using this command line (shell scriptable)
+If the AT command is not responding, make sure that device port and the baudrate (
+AT+IPR?
+) are both correct.
+Setup PPP
+PPP daemon (pppd) is available on Linux-based system
+It can be installed on RaspberryPI as follow (internet access required):
+sudo apt-get install
+ppp
+PPP dial-up configuration is defined by a pppOptionFile, located in the /etc/ppp/peers directory. It is depending on a chatscript file (in /etc/chatscripts directory).
+The content of pppOptionFile is carrier specific and can be generated with pppconfig utility, refer to “man pppconfig” pages.
+Orange-France specific pppOptionFile and chatscript are provided
+here
+as example.
+Note that the device port and the baud rate are stated in the option file
+Launch PPP
+Start PPP daemon by specifying the filename of the pppOptionFile (located in
+/etc/ppp/peers
+directory) as follow
+sudo
+pppd
+call
+pppOptionFile
+&
+The following statements in the log indicate a successful outcome of the PPP daemon:
+“local IP address…”, “remote IP address…”, “ip-up finished”
+PPP interface (e.g. ppp0) should be listed with associated IP address upon ifconfig commmand
+IP connectivity can be assessed with a ping command (e.g. ping <a href=http://www.google.com target=_blank rel="noopener noreferrer" class="">www.google.com</a>)
+When you will need to close the IP connectivity later, it is highly recommended not to stop the PPP daemon with
+CTRL-C
+. Proceed as following to properly terminate the PPP session:
+Issue
+ps -ef | grep pppd
+in the console
+Identify the
+pid
+associated to the running
+pppd
+process
+Issue
+sudo kill -s SIGHUP pid
+so the pppd will have the modem to hangup properly the data call.
+Register System/Device (if not already done)
+At this point, if your device has not been registered on AirVantage server, please proceed as follow:
+Register System/Device
+For PC/Ubuntu users, your internet connection is now handled by the HL module. It is recommended to use another PC to access AirVantage Web Portal
+Log into
+AirVantage Web portal
+Go to Register activity
+Click on the “AirPrime HL Series” section
+Select your HL series module
+Fill the Serial Number field, as captured previously using AT+KGSN=3
+Fill the IMEI field, as captured previously using AT+CGSN
+Set a name and click on Register
+In Step 1, we’ve covered how to:
+Connect HL Module to RaspberryPI
+Send AT Commands to HL Module
+Retrieve HL Modules’s IMEI & Serial Number using AT+CGSN & AT+KGSN=3 commands
+Use PPP dial-up to obtain IP Connectivity
+Register the Device on AirVantage using HL Module’s IMEI as identifier
+Step 2: Design the Server Application
+An embedded application on device-side (e.g. RaspberryPI) is interfacing with a server-side application on AirVantage in order to exchange predefined data over a predefined communication protocol and authentication scheme.
+This step starts describing the Application Model concept which is used to define a server-side application.
+The Application Model XML file is customized to define the set data to be exchanged between the device and AirVantage.
+The finalized XML file is packaged as Application Package then released and published onto AirVantage, so that it can be associated to user-selected System/device(s).
+Define
+Server-side
+Application
+Server-side application is defined by an
+Application Model
+(a XML file)
+AirVantage uses this XML file to figure out how to deal with the device about
+Communication Protocol
+,
+Authentication
+and
+Data Exchange
+(e.g. variable, settings, commands)
+Create an Application Model XML file on your desktop/laptop (e.g. start with the example described below)
+Without Application Model, the server will ignore all communication from your device.
+Define Data Model
+Below is a sample Application Model XML file defining the server-side application for the
+Greenhouse
+embedded application:
+In the
+app:application
+tag, the
+type
+attribute defines the unique identifier (
+com.test.airvantage.app
+) of the application whose
+name
+is
+AirVantage Greenhouse
+with a
+revision
+number
+0.0.1
+The Device-Server communication protocol is MQTT, as defined by the
+Type
+attibute of the subsequent
+communication/protocol
+tag.
+The data model is described in the
+&lt;data>
+tag. It has an
+asset
+(“machine”) comprising two
+variables
+(“temperature” & “humidity”) of
+type
+double, and one “TurnOn”
+command
+to control a “Light”
+parameter
+of
+type
+boolean
+You can modify the content of
+&lt;data>
+to define a custom data model that your device application will be sending to or receiving from AirVantage.
+You’ll also have to define appropriate values for
+Type
+,
+name
+and
+revision
+attributes of
+app:application
+tag.
+&lt;?xml version="1.0" encoding="ISO-8859-1"?>
+&lt;app:application
+xmlns:app="<a href=http://www.sierrawireless.com/airvantage/application/1.0 target=_blank rel="noopener noreferrer" class="">http://www.sierrawireless.com/airvantage/application/1.0</a>"
+type="com.test.airvantage.app"
+name="AirVantage Greenhouse"
+revision="0.0.1">
+&lt;capabilities></p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style=--prism-color:#393A34;--prism-background-color:#f6f8fa><div class=codeBlockContent_QJqH><pre tabindex=0 class="prism-code language-text codeBlock_bY9V thin-scrollbar" style=color:#393A34;background-color:#f6f8fa><code class=codeBlockLines_e6Vv><div class=token-line style=color:#393A34><span class="token plain">&amp;lt;communication&amp;gt;</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">  &amp;lt;protocol comm-id="IMEI" type="MQTT" /&amp;gt;</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">&amp;lt;/communication&amp;gt;</span><br/></div><div class=token-line style=color:#393A34><span class="token plain" style=display:inline-block></span><br/></div><div class=token-line style=color:#393A34><span class="token plain">&amp;lt;data&amp;gt;</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">  &amp;lt;encoding type="MQTT"&amp;gt;</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">    &amp;lt;asset default-label="Greenhouse" id="machine"&amp;gt;</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">      &amp;lt;variable default-label="Temperature" path="temperature" type="double"/&amp;gt;</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">      &amp;lt;variable default-label="Humidity" path="humidty" type="double"/&amp;gt;</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">      &amp;lt;command path="TurnOn" default-label="Turn on"&amp;gt;</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">        &amp;lt;parameter id="Light" default-label="Light" type="boolean" /&amp;gt;</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">      &amp;lt;/command&amp;gt;</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">    &amp;lt;/asset&amp;gt;</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">  &amp;lt;/encoding&amp;gt;</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">&amp;lt;/data&amp;gt;</span><br/></div></code></pre></div></div>
+<p>&lt;/capabilities>
+&lt;/app:application>
+Create Application Package
+Save the the above Application Model to file with
+app
+file extension (e.g. appmodel.app)
+Zip the app file (e.g.
+appmodel.zip
+)
+The filename of this zip file is only used for uploading process. AirVantage does not keep track of this zip filename. Only the XML content will be tracked by AirVantage.
+Log into
+AirVantage Web portal
+Go on Develop Activity > My Apps
+Click on the Release button
+Release Application
+Select your zip file (e.g.
+appmodel.zip
+)
+Open Advanced settings and select
+I want to publish my application after releasing it
+Finally, click on Start
+Edit System/Device
+Go on Inventory > Systems
+Select your system and click on the Edit icon
+Search your Application
+Click on Search application
+In the new dialog box, select the My Application tab
+Search your application using its name (AirVantage Greenhouse)
+Associate Application to your System/Device
+Click on the application to select it
+Click on the padlock and configure the password
+Click on Save in the right top corner
+Click on the Monitor icon to monitor your system
+In the grid, select the newly created system and click on the “Activate” action
+In Step 2, we’ve covered how to:
+Define the server-side application using Application Model
+Customize Data Model that your device application will be sending to or receiving from AirVantage
+Create the Application Package
+Release and Publish the server-side application (package)
+Assign the server-side application to support the client-side application in the Device
+Step 3: MQTT data exchange with AirVantage Server
+MQTT
+is a lightweight publish/subscribe messaging protocol. A Device/Client application can
+publish
+a message to MQTT broker under a uniquely named
+topic
+. The server then instantly relays this message to other connected Device/Client applications having subscribed to the same named
+topic
+.
+One-to-one and one-to-many IoT messaging approaches mechanism can thus come to life.
+AirVantage server implements MQTT Broker functionalities. It has the ability to receive, to retain then to relay MQTT messages. AirVantage supports MQTT QoS Level 1 (messages delivered at least once with confirmation required).
+This section starts with hands-on steps showing you how to publish messages to and receive data from AirVantage, using Mosquitto command line tools. Key integration aspects of MQTT client into your device application is then highlighted.
+Any client implementing MQTT can be used to exchange data with AirVantage. In this tutorial, we will use
+Mosquitto
+, an open source solution implementing MQTT which can installed on the host (e.g. run the following command for RaspberryPI or PC running Ubuntu) as follow (internet access required):
+sudo apt-get install mosquitto-clients
+Publish MQTT Messages
+MQTT messaging content exchanged between the Device and AirVantage Server is defined by Application Model and the payload should be JSON encoded:
+Each sample of a
+variable
+has a timestamp (elapsed ms since Jan-1970) and a value. It is possible to send a collection (or array) of sample at once.
+The variable is identified by it’s asset id and the path
+For instance, the following MQTT message to be published contains 2 samples of
+Temperature
+and
+Humidity
+variable
+as defined in
+Step 2-“Define Data Model”
+:
+[
+{ "machine.temperature": [
+{"timestamp": 1425937636000, "value":"21"},
+{"timestamp": 1425939843000, "value":"20.9"} ]
+},
+{ "machine.humidity": [
+{"timestamp": 1425937636000, "value":"37"},
+{"timestamp": 1425939843000, "value":"38"} ]
+}
+]
+The above message shall be published to topic: “%IMEI/messages/json”, where %IMEI is the IMEI of the module as retrieved in Step 1
+Publish message to AirVantage, using Mosquitto command line:
+Save the above sample JSON message into a file (e.g. pub-msg.txt)
+Publish the file’s content to AirVantage, as follow
+mosquitto_pub -h eu.airvantage.net -t %IMEI/messages/json -f pub-msg.txt -u %IMEI -P %password
+(where %IMEI is the IMEI of the module as retrieved in Step 1, %password is the password defined in Step 2)
+View Pusblished data on Web portal
+Log into
+AirVantage Web portal
+Go to Monitor > Systems
+Search for your Systems/Device using filters (e.g. Label, IMEI)
+Click on your System/Device to view monitoring page
+Scroll down to “Last Communication” panel to view data published by the Device
+“Timeline” option can be used to view history events related to Device communication with AirVantage server
+Subscribing to MQTT topic
+In order to receive data from AirVantage, the device application must subscribe to the topic: “%IMEI/tasks/json”
+Let’s do this using Mosquitto command line as follow:
+mosquitto_sub -h eu.airvantage.net -t %IMEI/tasks/json -u %IMEI -P %password
+(where %IMEI is the IMEI of the module as retrieved in Step 1, %password is the password defined in Step 2)</p>
+<ul>
+<li class="">Incoming data will be displayed as they arrive… now let’s send some data
+Sending MQTT data to Device from Web portal
+Go to Monitor > Systems
+Search for your Device using filters (e.g. Label, IMEI)
+Click on your Device to view monitoring page
+Click on the “More” button
+(located on top right), then select “Custom Command”
+Base on the Greenhouse Application Model (excerpt below), the “Turn On” command can be sent to the Device from AirVantage Web portal:
+&lt;command path="TurnOn" default-label="Turn on">
+&lt;parameter id="Light" default-label="Light" type="boolean" />
+Select the action in the Command listbox and specify the corresponding parameters (e.g. Turn on Light)
+Click “Send Command” to fire the MQTT message to your Device
+Receiving MQTT Messages
+The incoming MQTT message should be displayed by the previous
+mosquitto_sub
+command as follow:
+[{
+"uid":"9142df4c0b884683993521a3d5cf97f1",
+"timestamp":1426022121930,
+"command":{"id":"machine.TurnOn","params":{"Light":true}}
+}]
+This message is JSON encoded and must be decoded by the Device (handled by the callback function) as follow:
+uid
+is the unique id of this MQTT message
+timestamp is the jan-1970 ms elapsed timestamp of this message
+command
+object is composed of :
+id:
+asset id
+(machine) and the
+command path
+(TurnOn)
+parameter id (Light) set to
+true
+Acknowledging incoming MQTT Messages
+Upon receiving an incoming MQTT command message (sent by AirVantage), the Device shall return an acknowledge message. This latter must enclose “uid” and “status” keys, the optional “message” key may be provided. Below is a sample ack message to the incoming message as shown in the previous section.
+[{
+"uid":"9142df4c0b884683993521a3d5cf97f1",
+"status":"OK"
+}]
+This ack message is JSON encoded and must be published to “%IMEI/acks/json” Topic:
+uid
+is the unique id of the incoming MQTT command message to be acknowledged
+status
+being OK or ERROR
+optional
+message
+key may be included to provided information on the error
+Publish ack message to AirVantage, using Mosquitto command line:
+Paste the above sample ACK JSON message to a text editor, and replace the uid value by the one located in the incoming message (displayed by mosquitto_sub)
+Save the ack message content a file (e.g. ack-msg.txt)
+Publish the file’s content to AirVantage, as follow
+mosquitto_pub -h eu.airvantage.net -t %IMEI/acks/json -f ack-msg.txt -u %IMEI -P %password
+(where %IMEI is the IMEI of the module as retrieved in Step 1, %password is the password defined in Step 2)
+MQTT Client Integration in the Device
+In the above hands-on steps, we were able to manually send messages to and receive data from AirVantage, using Mosquitto command line tools. This sub-section provides additional highlights on the integration of MQTT client into your device application. Addressing RaspberryPI’s GPIO is also briefly described.
+MQTT Client Integration in the Device
+The device application must implement MQTT Client functionalities in order to programmatically publish messages and to receive messages pertaining to subscribed topics. The specification can be found on
+<a href=http://mqtt.org target=_blank rel="noopener noreferrer" class="">http://mqtt.org</a>
+There are various MQTT libraries available on the web that can be leveraged to easily gain MQTT support in the device application.
+Most MQTT Client libraries expose 4 main functions:
+Open Connection
+The device application should call this function first with the following parameters:
+AirVantage MQTT server URL and port number: (eu.airvantage.net:1883)
+Device IMEI (retrieved in step 1,
+“Send AT commands”
+), for authentication purposes
+Password (as defined in step 2,
+“Associate your Application to your System/Device”
+)
+Message Publishing
+The device application calls this function to
+publish
+the provided MQTT message (to be formatted as shown in step 3.2) to the specified
+Topic
+(URI style)
+The publishing
+topic
+shall be “%IMEI/messages/json”, where %IMEI is the IMEI of the module as retrieved in Step 1
+Topic Subscription
+The device app calls this function along with a
+Topic
+to
+subscribe
+to and a callback function to decode and parse the incoming MQTT message pertaining to the
+topic
+The subscription
+topic
+shall be “%IMEI/tasks/json”, where %IMEI is the IMEI of the module as retrieved in Step 1
+Incoming message published to “%IMEI/tasks/json” topic, should be acknowledged by publishing an ack message to
+Topic
+“%IMEI/acks/json”
+Close Connection
+Note that, in the previous hands-on section, the publishing command (mosquitto_pub) and subscription command (mosquitto_sub), are both encapsulated by Open connection and Close connection operations
+Controlling RaspberryPI's GPIO
+Controlling RaspberryPI’s GPIO
+The
+wiringPI
+library can be easily integrated into the RaspberryPI in order to control GPIO.
+For instance, to turn on a LED wired to the GPIO-0 of the RaspberryPI when the device receives the above
+TurnOn Light
+command
+Below is the sample code:
+#include &lt;wiringPi.h>
+...
+wiringPiSetup();
+pinMode(0, OUTPUT);
+...
+if (turnOnLight)
+{
+digitalWrite(0, HIGH);
+}
+else
+{
+digitalWrite(0, LOW);
+}
+Troubleshooting & Testing
+Refer to this
+tutorial
+for further information on how to troubleshoot the connection and to interact with system/device
+In Step 3, we’ve covered how to:
+MQTT Client integration into device and connection with AirVantage
+Formatting, encoding and Publishing MQTT message
+Viewing and collecting posted data on AirVantage
+Sending MQTT data to Device from AirVantage
+Subscribing, receiving, decoding incoming MQTT messages
+Sending command to RaspberryPI’s GPIO port
+MQTT Sample Code
+As described in the previous steps, enabling MQTT support in the device application requires the integration of MQTT protocol (may leveraging existing libraries). It also requires the implementation of JSON payload encoding/decoding and parsing/mapping of sensor/actuator/application data to the data model as defined in the application model.
+Refer to below sample applications (C code) for integration reference.
+Greenhouse
+This sample (used in the above steps) publishes emulated Temperature and Humidity to AirVantage, and receives “TurnOn” command from AirVantage.
+You may adapt this code to fit your needs.
+MQTT Spooler
+This app automatically converts CVS data to MQTT messages prior publishing to server. It also automatically converts incoming MQTT messages (pertaining to a subscribed Topic) to CSV data. This app could be reused as a quick integration option (no need to deal with MQTT code) with your existing sensor/actuator based application.</li>
+</ul></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href=https://github.com/andreyjv/personal-av/tree/docs/documentation-revamp/PRD_documentation-revamp/website/docs/how-to/hardware/samples/hl-mqtt-devkit.md target=_blank rel="noopener noreferrer" class=theme-edit-this-page><svg fill=currentColor height=20 width=20 viewBox="0 0 40 40" class=iconEdit_Z9Sw aria-hidden=true><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"/></g></svg>Edit this page</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"></nav></div></div></div></div></main></div></div></div></div></div><footer class="theme-layout-footer footer"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class=footer__title>Jobs</div><ul class="footer__items clean-list"><li class=footer__item><a class=footer__link-item href=/personal-av-docs/docs/how-to/activate-sims>Activate SIMs</a><li class=footer__item><a class=footer__link-item href=/personal-av-docs/docs/how-to/order-sims>Order SIMs</a><li class=footer__item><a class=footer__link-item href=/personal-av-docs/api>Call the API</a><li class=footer__item><a class=footer__link-item href=/personal-av-docs/docs/how-to/register-routers>Register routers</a></ul></div><div class="theme-layout-footer-column col footer__col"><div class=footer__title>Reference</div><ul class="footer__items clean-list"><li class=footer__item><a class=footer__link-item href=/personal-av-docs/docs/reference/api>API HTML chapters</a><li class=footer__item><a class=footer__link-item href=/personal-av-docs/docs/reference/apn>APN table</a><li class=footer__item><a class=footer__link-item href=/personal-av-docs/docs/changelog>Changelog</a></ul></div><div class="theme-layout-footer-column col footer__col"><div class=footer__title>Preview</div><ul class="footer__items clean-list"><li class=footer__item><a href=https://doc.airvantage.net/ target=_blank rel="noopener noreferrer" class=footer__link-item>Live Hugo (canonical until cutover)<svg width=13.5 height=13.5 aria-label="(opens in new tab)" class=iconExternalLink_nPIU><use href=#theme-svg-external-link /></svg></a><li class=footer__item><a class=footer__link-item href=/personal-av-docs/docs/ui-library>UI library</a><li class=footer__item><a class=footer__link-item href=/personal-av-docs/docs/copy-library>Copy library</a></ul></div></div><div class="footer__bottom text--center"><div class=footer__copyright>Sierra Wireless / AirVantage documentation preview. Live doc.airvantage.net stays Hugo until cutover. Built with Docusaurus.</div></div></div></footer></div></body>

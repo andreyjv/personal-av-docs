@@ -1,0 +1,459 @@
+<!doctype html><html lang=en dir=ltr class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-reference/admin/profileManagement" data-has-hydrated=false><head><meta charset=UTF-8><meta name=generator content="Docusaurus v3.10.2"><title data-rh=true>Managing Profiles | AirVantage documentation</title><meta data-rh=true name=viewport content="width=device-width, initial-scale=1.0"/><meta data-rh=true name=twitter:card content=summary_large_image /><meta data-rh=true property=og:image content=https://andreyjv.github.io/personal-av-docs/img/favicon.svg /><meta data-rh=true name=twitter:image content=https://andreyjv.github.io/personal-av-docs/img/favicon.svg /><meta data-rh=true property=og:url content=https://andreyjv.github.io/personal-av-docs/docs/reference/admin/profileManagement /><meta data-rh=true property=og:locale content=en /><meta data-rh=true name=docusaurus_locale content=en /><meta data-rh=true name=docsearch:language content=en /><meta data-rh=true name=docusaurus_version content=current /><meta data-rh=true name=docusaurus_tag content=docs-default-current /><meta data-rh=true name=docsearch:version content=current /><meta data-rh=true name=docsearch:docusaurus_tag content=docs-default-current /><meta data-rh=true property=og:title content="Managing Profiles | AirVantage documentation"/><meta data-rh=true name=description content="connectivity · imported from live Hugo on 2026-10-07. Guides stay latest. Original page."/><meta data-rh=true property=og:description content="connectivity · imported from live Hugo on 2026-10-07. Guides stay latest. Original page."/><link data-rh=true rel=icon href=/personal-av-docs/img/favicon.svg /><link data-rh=true rel=canonical href=https://andreyjv.github.io/personal-av-docs/docs/reference/admin/profileManagement /><link data-rh=true rel=alternate href=https://andreyjv.github.io/personal-av-docs/docs/reference/admin/profileManagement hreflang=en /><link data-rh=true rel=alternate href=https://andreyjv.github.io/personal-av-docs/docs/reference/admin/profileManagement hreflang=x-default /><link rel=stylesheet href=/personal-av-docs/assets/css/styles.1e3041e1.css /><script src=/personal-av-docs/assets/js/runtime~main.bbef5b78.js defer></script><script src=/personal-av-docs/assets/js/main.443f591d.js defer></script></head><body><svg style="display: none;"><defs>
+<symbol id=theme-svg-external-link viewBox="0 0 24 24"><path fill=currentColor d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme-deb")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||(window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light")),document.documentElement.setAttribute("data-theme-choice",t||"system")}(),function(){try{for(var[t,e]of new URLSearchParams(window.location.search).entries())if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id=__docusaurus><link rel=preload as=image href=/personal-av-docs/img/favicon.svg /><div role=region aria-label="Skip to main content"><a class=skipToContent_fXgn href=#__docusaurus_skipToContent_fallback>Skip to main content</a></div><nav aria-label=Main class="theme-layout-navbar navbar navbar--fixed-top"><div class=navbar__inner><div class="theme-layout-navbar-left navbar__items"><button aria-label="Toggle navigation bar" aria-expanded=false class="navbar__toggle clean-btn" type=button><svg width=30 height=30 viewBox="0 0 30 30" aria-hidden=true><path stroke=currentColor stroke-linecap=round stroke-miterlimit=10 stroke-width=2 d="M4 7h22M4 15h22M4 23h22"/></svg></button><a class=navbar__brand href=/personal-av-docs/><div class=navbar__logo><img src=/personal-av-docs/img/favicon.svg alt=AirVantage class="themedComponent_mlkZ themedComponent--light_NVdE"/><img src=/personal-av-docs/img/favicon.svg alt=AirVantage class="themedComponent_mlkZ themedComponent--dark_xIcU"/></div><b class="navbar__title text--truncate">AirVantage Docs</b></a><a class="navbar__item navbar__link navbar__guides" href=/personal-av-docs/docs/how-to/activate-sims>Guides</a><a class="navbar__item navbar__link" href=/personal-av-docs/api>API reference</a><a class="navbar__item navbar__link" href=/personal-av-docs/docs/changelog>Changelog</a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type=button disabled title="system mode" aria-label="Switch between dark and light mode (currently system mode)"><svg viewBox="0 0 24 24" width=24 height=24 aria-hidden=true class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill=currentColor d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"/></svg><svg viewBox="0 0 24 24" width=24 height=24 aria-hidden=true class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill=currentColor d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"/></svg><svg viewBox="0 0 24 24" width=24 height=24 aria-hidden=true class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill=currentColor d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"/></svg></button></div><div class=navbarSearchContainer_Bca1><div class="navbar__search searchBarContainer_NW3z" dir=ltr><svg aria-hidden=true class=searchIcon_T3tP focusable=false viewBox="0 0 16 16"><path fill=currentColor d="M6.02945 10.20327a4.17382 4.17382 0 1 1 4.17382-4.17382 4.15609 4.15609 0 0 1-4.17382 4.17382Zm9.69195 4.2199-4.8225-4.82338A5.88021 5.88021 0 0 0 12.058 6.02856 6.00467 6.00467 0 1 0 9.59979 10.8989l4.82338 4.82338a.89729.89729 0 0 0 1.29912 0 .89749.89749 0 0 0-.00087-1.29909Z"/></svg><input placeholder=Search aria-label=Search class="navbar__search-input searchInput_YFbd" value="" /><div class="loadingRing_RJI3 searchBarLoadingRing_YnHq"><div></div><div></div><div></div><div></div></div></div></div></div></div><div role=presentation class=navbar-sidebar__backdrop></div></nav><div id=__docusaurus_skipToContent_fallback class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class=av-shell><nav class=av-rail aria-label=Guides><p class=av-rail-kicker>Guides<ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class=menu__list-item-collapsible><span class="menu__link menu__link--sublist menu__link--sublist-caret av-rail-heading">Quick start</span></div><ul class=menu__list><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link href=/personal-av-docs/docs/how-to/activate-sims>Activate SIMs</a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link href=/personal-av-docs/docs/how-to/order-sims>Order SIMs</a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link href=/personal-av-docs/api>Call the API</a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link href=/personal-av-docs/docs/how-to/register-routers>Register routers</a></ul><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class=menu__list-item-collapsible><span class="menu__link menu__link--sublist menu__link--sublist-caret av-rail-heading">Browse by product</span></div><ul class=menu__list><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link href=/personal-av-docs/docs/how-to/activate-sims>Connectivity</a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link href=/personal-av-docs/docs/how-to/register-routers>Router management</a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link href=/personal-av-docs/docs/explain/states>States and operations</a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link href=/personal-av-docs/api>Developer platform</a></ul><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class=menu__list-item-collapsible><span class="menu__link menu__link--sublist menu__link--sublist-caret av-rail-heading">Keep building</span></div><ul class=menu__list><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link href=/personal-av-docs/docs/explain/states>States and operations</a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link href=/personal-av-docs/docs/reference/apn>APN table</a></ul><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class=menu__link href=/personal-av-docs/docs/get-started/first-sim>Get started</a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class=menu__link href=/personal-av-docs/docs/reference/api>Reference</a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class=menu__link href=/personal-av-docs/docs/changelog>Changelog</a></ul></nav><div class=av-shell-main><div class=docsWrapper_hBAB><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type=button></button><div class=docRoot_UBD9><main class="docMainContainer_TBSr docMainContainerEnhanced_lQrH"><div class="container padding-top--md padding-bottom--lg"><div class=row><div class="col docItemCol_VOVn"><div class=docItemContainer_Djhp><article><div class="theme-doc-markdown markdown"><header><h1>Managing Profiles</h1></header><p>:::note Edition
+<strong>connectivity</strong> · imported from live Hugo on 2026-10-07. Guides stay latest. <a href=https://doc.airvantage.net/connectivity/reference/admin/profileManagement target=_blank rel="noopener noreferrer" class="">Original page</a>.
+:::</p>
+<p>Managing Profiles
+How to add new user and manage user profile?
+How to set up IMEI lock?
+FAQ
+References
+Account Management
+Orders
+Billing
+Administration
+Subaccounts
+Connectivity Management
+Dashboard
+Monitor
+Configure
+API, Connectors & Other Services
+Web Services API
+Cloud Connectors
+Cloud Connectors Format
+USSD Gateway
+More
+Product page
+Searching...
+Matching results
+Managing Profiles
+Profiles control which entities and features are accessible/available to a given user. Profiles apply to users within an account and how partners access an account when partnerships are defined.
+Pre-defined profiles are provided in the company, but an administrator can create additional profiles as required to define different access rights for their users. Profiles are listed in the
+Administration
+>
+Profiles
+section and can be reviewed and edited from the
+Profile Details
+page.
+Note:
+This section of the user interface is generated dynamically and not all features and settings will be displayed for all users.
+From the
+Profiles
+section you can:
+Create a profile (
+only administrators
+can create new profiles)
+View
+profile details
+Edit a profile
+Delete a profile
+Profile Details
+Profile details are divided into the following tabs which define access in AirVantage.
+Account Network
+Accounts
+Device
+Entities
+Server
+User Interface
+Account Network
+The
+Account Network
+tab defines which entities within the AirVantage account (e.g., company, labels, partners, users, etc.) can be administered.
+API Client
+API Clients provide API access to data in the Company. These settings determine what the user can do with APIs in the AirVantage account.
+Create
+: Create new API clients.
+Delete
+: Delete API clients.
+Edit
+: Edit existing API clients.
+View
+: View existing API clients.
+Company
+The
+Company
+rights enable users to see details about the Company.
+View Administrators
+: View details of the administrators of the account (
+Security
+section).
+View Details
+: View the details of the company itself.
+Labels
+Provides the ability to manage with labels in the Company.
+Create
+: Create new labels and edit existing labels.
+Delete
+: Delete labels.
+View
+: View existing labels.
+Operator
+Operator Account
+Provides the ability to manage Operator accounts, which are used for third-party subscription management.
+Create
+: Create a new Operator account.
+Edit
+: Edit existing Operator accounts.
+View
+: View existing Operator accounts.
+View Restricted Parameters
+: View parameters which are set as
+restricted
+in the original Operator account.
+Partners
+Provides the ability to manage the Partnerships with your Company. Partners are other companies which are connected to your Company account.
+Request partnership
+: Enables the user to request partnerships with other Companies.
+View
+: View existing Partners.
+Requests
+ALMS allows for Partners to register devices into a customer’s ALMS Company. This feature requires that the customer accept the Partnership request.
+Accept/Reject
+: Gives the user the rights to manage Partnership requests.
+Profiles
+Provides the ability to manage user profiles.
+View
+: View existing profiles.
+SMS
+SMS Account
+SMS accounts can be used to send SMS’s from AirVantage via an SMS gateway account. This profile enables the user to manage those SMS accounts.
+Create
+: Create an SMS account.
+Edit
+: Edit existing SMS accounts.
+View
+: View existing SMS accounts.
+View Restricted Parameters
+: View parameters which are set as
+restricted
+in the original SMS account.
+Users
+Provides the ability to manage user accounts.
+Read
+: View existing users and their associated profiles.
+Write
+: Access the
+Invite a User
+feature (create new users) and the ability to remove (delete) users.
+Accounts
+The
+Accounts
+tab defines account-related activities for the finance-oriented functions (ordering, invoicing) that can be performed in AirVantage.
+Invoicing
+If your account type supports invoicing, these rights control access to the invoicing details.
+Read
+: View invoices which were generated on the platform.
+Write
+: Update electronic payment methods and manage invoice recipients.
+Ordering
+If your account supports ordering directly for AirVantage,
+Ordering
+rights control access to ordering information and who can order products.
+Read
+: View orders, delivery contacts, and product references.
+Write
+: Place new orders and update order details and delivery contacts.
+Renewal
+If your account includes pre-paid offers,
+Renewal
+rights control access to creating renewal quotes for devices due for renewal in the next 12 months.
+Read
+: View renewal quotations.
+Write
+: Create new renewal quotations.
+SLA (Service Level Agreement)
+If your account has an SLA with Sierra Wireless, these rights control access to the information about the SLA.
+Read
+: View the metrics of the SLA performance.
+SSO (Single Sign-On)
+Sierra Wireless offers SSO capabilities which are activated at the account level. See
+How to configure SSO for my account
+for more information.
+Write
+: Configure SSO for the account.
+Device
+The
+Device
+tab defines whether or not a user can perform device-management operations.
+Device Management
+Actions
+: Defines whether a user can perform the following actions on their systems:
+reboot
+wakeup
+synchronize
+configure heartbeat.
+These features are managed through the
+Action
+buttons on the
+Monitor
+page.
+See
+Create system management operations
+in the
+Monitor
+documentation for full details.
+Entities
+The
+Entities
+sections define the operations which users can perform on entities. This section has the most commonly used system elements.
+Alerts
+AirVantage has powerful alerting capabilities. See
+Alerts
+in the in the
+Monitor
+documentation for full details.
+View
+: View alerts which have been triggered in AirVantage.
+Alert Rule
+The
+Alert Rule
+rights determine whether users can interact with the
+Alert Rule creation
+features in the
+Configure
+section of AirVantage. See
+How to create a new alert rule
+for more information.
+Create/Edit/Delete
+: Create, edit, and/or delete alert rules.
+Subscribe
+: Manage webhooks (external URLs) when used with Alerts. When you create an Alert Rule, you can configure webhooks to be invoked when an alert is raised.
+View
+: View (but not edit) the alert rules.
+Device Certificates
+The
+Device Certificates
+rights determine whether users can interact with the
+Certificates
+features in the
+Configure
+section of AirVantage. See
+How to manage certificates
+for more information.
+Read
+: View device certificates and certificate-related alert rules.
+Write
+: Regenerate or re-enroll certificates for multiple systems.
+Both Read and Write access allow these users to view the Certificates page under Configure > Certificates.
+Applications
+Firmware for devices which are managed by AirVantage are referred to as
+applications
+. In addition, for some systems managed in AirVantage, users can publish applications which can then be deployed to the devices in the field. see
+How to upgrade firmware on my ALEOS gateways
+for more information.
+Create
+: Create a new application in the company.
+Delete
+: Delete existing applications.
+Edit
+: Edit existing applications.
+Publish
+: Publish the selected application and make it available for use in your company. For example, this action is mandatory before you can perform a bulk installation.
+Release
+: Upload a new application or a new revision of an existing application.
+View
+: View the state and properties of existing applications. You can also download the application package used at the time the application has been released in AirVantage.
+Datasets
+A
+dataset
+is a list of device parameters which a user would like retrieved from their gateways. It’s used to collect data from the device that is not included in the
+Default Status Report
+. see
+How to retrieve device data in a dataset
+for more information.
+Create
+: Create a new dataset.
+Delete
+: Delete an existing dataset.
+View
+: View existing datasets.
+Groups
+Groups
+are collections of systems that share common attributes such as label, router model, firmware version, or any combination of these.
+Read
+: View groups and group details. To view the systems included in a group, the user needs the Systems View and Gateways View rights for that group. See
+Systems
+below.
+Write
+: Modify the group attributes and add other users to the group. To modify the systems included in a group, the user needs the rights related to the operations the user needs to perform at the device group level: Systems View, Gateways View and Operations, for example.
+Gateways
+A
+Gateway
+is a component of a System in AirVantage. It represents the physical device and is generally linked to a model of AirLink router or gateway (e.g., AirLink XR80). It’s important to give the same rights to Gateways, Subscriptions, and Systems so users have the complete range of rights needed to manage AirLink routers and gateways in ALMS.
+Create
+: Create a new gateway, as part of a System.
+Delete
+: Delete the gateway from a System.
+Edit
+: Edit an existing gateway.
+View
+: View an existing gateway.
+Transfers
+Accept/Reject
+: Accept or reject requests to transfer a gateway, either between Systems or companies.
+Create
+: Initiate the transfer of a gateway, either between Systems or between companies.
+Operations
+All actions performed on entities within an AirVantage company generate
+Operations
+. This includes actions such as firmware updates, reboots, or applying a template.
+Trigger
+: Trigger operations to occur on AirVantage. Include this right for any user who needs to perform actions on Systems in the company.
+Reports
+This set of profiles are dedicated to ALMS users who have access to
+Advanced Mobility Reporting
+(AMR). Any users who need to interact with reports in AMR must be provided with these privileges.
+Read
+: Open existing reports. Provide this right for users who only need to access reports, but do not need to create or edit reports.
+Write
+: Open existing reports. Provide this right for users who need to create or edit reports. A new report cannot be created without this privilege.
+Settings (Templates)
+Settings are used to define Templates in the ALMS user interface and contain the configuration for a router or gateway.
+Create
+: Create and edit a Template.
+Delete
+: Delete an existing Template.
+View
+: View an existing Template.
+Subscriptions
+A
+Subscription
+is a component of a System and contains the configuration of the connectivity defined with the cellular operator. Subscriptions may include Sierra Wireless or third-party cellular connectivity. It’s important to give the same rights to Gateways, Subscriptions, and Systems for users to have the complete range of rights needed to manage AirLink routers and gateways in ALMS.
+Create
+: Create a subscription for the System.
+Delete
+: Delete an existing subscription.
+Edit
+: Edit an existing subscription.
+View
+: View an existing subscription.
+IMEI lock
+: Lock/Unlock an existing subscription
+Export
+: Export an existing subscription
+Operations
+Launch
+: Launch Subscription operations such as
+Activate
+or
+Suspend
+.
+Usages
+The Usages right enables users to manage the importation of third-party operator data into their AirVantage account.
+Create
+: Create a connection to a third-party operator account to allow for usage data to be brought to the AirVantage account.
+Systems
+A
+System
+is the primary entity in AirVantage and the core representation used to define and interact with a real device. A system is composed of:
+Gateway
+: Physical device (router, gateway or module) enabling the connectivity of the System.
+Subscription
+: Configuration of the connectivity defined with the cellular operator. You can have one or more subscriptions.
+Applications
+: Define a piece of logic executing on the system. It can be the device’s firmware or a separate software application running on the device.
+It is important to give the same rights to Gateways, Subscriptions, and Systems for users to have the complete range of rights needed to manage AirLink routers and gateways in ALMS.
+Activate
+: Activate a new system. This is important for ALMS users who need to register and activate new routers and gateways and for Connectivity users that need to activate SIMs.
+Create
+: Create a new System. This could be manual or automated through the registration process.
+Delete
+: Delete an existing System.
+Edit
+: Edit an existing system. This could include adding or removing subscriptions or gateways as components of the system.
+Export
+: Export data about the Systems.
+Resume
+: Reactivate a system that was suspended.
+Suspend
+: Suspend Systems, preventing them from communicating with AirVantage. This feature may not be supported on your offer.
+Terminate
+: Terminate the system in the Company. As this feature can be harmful, it is recommended that most users are not provided this capability.
+View
+: View existing systems. Almost all AirVantage users should have this user right.
+Change
+These rights enable users to change the offer and its options on a System. An offer represents the entity used to define features of the service and to bill the airtime consumption of the Systems. An offer can have some options which can be added or removed on Systems.
+Offer
+: Change the Offer assigned to the system. In some cases, Offers cannot be changed by the users of the account and the customer must contact Sierra Wireless Customer Support.
+Options
+: Change options associated with the Offer. Not all Offers have options.
+Network
+For Systems which include Sierra Wireless connectivity, these permissions enable the user to manage the state of the Subscription.
+Detach
+: Detach Systems from the network. This operation is only possible on systems linked to a
+SIERRA WIRELESS
+subscription.
+Status
+: Obtain the network status of a selection of Systems. This operation is only possible on systems linked to a
+SIERRA WIRELESS
+subscription.
+Swap SIM
+: Swap SIMs between two Systems.
+Data
+Retrieve Data
+: Trigger a command to retrieve data from the System.
+Send
+For some classes of Systems, the user can trigger commands from AirVantage which are executed on the device.
+Command
+: Send a command to a system. Commands must be defined in one of the applications running on your system. For some models of AirLink routers and gateways, they can accept AT commands.
+Send File
+: Send files to supported System types.
+SMS
+: Send a text SMS to one or multiple systems.
+Settings
+Apply Settings
+: Access the
+Apply Settings
+feature. This feature enables the user to apply up to 15 settings to multiple systems. An example use for this feature is to update the login password on your devices and give each one a unique value. See
+How to change settings on multiple devices
+for more information
+Transfers
+The
+Transfer
+right allow for the transfer of a selection of Systems to a Partner Company.
+Create
+: Transfer Systems between the partnered accounts.
+Zones
+Zones
+are a feature of
+Advanced Mobility Reporting
+(AMR). A Zone is a geographic area that enables the user to include or exclude areas for reporting (also referred to as “geofencing”). Any users who need to interact with reports in AMR must be provided with these privileges.
+Create
+: Define a new Zone.
+Delete
+: Delete a Zone.
+View
+: View existing Zones.
+Server
+The
+Server
+tab configures server events for pop-up notifications on the bottom-right of the screen for operations, report completion, and alerts.
+Notifications
+Notifications
+: Enable or disable notifications. This right should be given to all users.
+User Interface
+Activities
+The
+User Interface
+tab defines which activities can be visible to the user in the primary AirVantage user interface. It determines which primary interface elements (“Activities”) are visible to the user.
+Configure
+: Create System elements such as Alert Rules, Templates and Datasets. Access should be provided to any user who needs to create these system elements.
+Develop
+: Manage applications and control access to API clients. This Activity is not needed by most users.
+Inventory
+: Provides access to Systems which are in
+Inventory
+or
+Maintenance
+mode. This Activity is disabled by default for ALMS users.
+Monitor
+: Primary Activity for managing Systems in AirVantage. All users need access to this Activity.
+Register
+: Register devices into a user’s Company. Any user who needs to register new Systems must be given access to this Activity.
+Dashboards
+AirVantage provides sophisticated dashboarding capabilities. See
+Dashboard
+for more information.
+Manage (Share & Transfer)
+: Create custom dashboards. This enables the user to share their dashboards within their Company and to transfer dashboards to partner organizations. This right must be given to any user who needs to create custom dashboard.</div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href=https://github.com/andreyjv/personal-av/tree/docs/documentation-revamp/PRD_documentation-revamp/website/docs/reference/admin/profileManagement.md target=_blank rel="noopener noreferrer" class=theme-edit-this-page><svg fill=currentColor height=20 width=20 viewBox="0 0 40 40" class=iconEdit_Z9Sw aria-hidden=true><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"/></g></svg>Edit this page</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"></nav></div></div></div></div></main></div></div></div></div></div><footer class="theme-layout-footer footer"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class=footer__title>Jobs</div><ul class="footer__items clean-list"><li class=footer__item><a class=footer__link-item href=/personal-av-docs/docs/how-to/activate-sims>Activate SIMs</a><li class=footer__item><a class=footer__link-item href=/personal-av-docs/docs/how-to/order-sims>Order SIMs</a><li class=footer__item><a class=footer__link-item href=/personal-av-docs/api>Call the API</a><li class=footer__item><a class=footer__link-item href=/personal-av-docs/docs/how-to/register-routers>Register routers</a></ul></div><div class="theme-layout-footer-column col footer__col"><div class=footer__title>Reference</div><ul class="footer__items clean-list"><li class=footer__item><a class=footer__link-item href=/personal-av-docs/docs/reference/api>API HTML chapters</a><li class=footer__item><a class=footer__link-item href=/personal-av-docs/docs/reference/apn>APN table</a><li class=footer__item><a class=footer__link-item href=/personal-av-docs/docs/changelog>Changelog</a></ul></div><div class="theme-layout-footer-column col footer__col"><div class=footer__title>Preview</div><ul class="footer__items clean-list"><li class=footer__item><a href=https://doc.airvantage.net/ target=_blank rel="noopener noreferrer" class=footer__link-item>Live Hugo (canonical until cutover)<svg width=13.5 height=13.5 aria-label="(opens in new tab)" class=iconExternalLink_nPIU><use href=#theme-svg-external-link /></svg></a><li class=footer__item><a class=footer__link-item href=/personal-av-docs/docs/ui-library>UI library</a><li class=footer__item><a class=footer__link-item href=/personal-av-docs/docs/copy-library>Copy library</a></ul></div></div><div class="footer__bottom text--center"><div class=footer__copyright>Sierra Wireless / AirVantage documentation preview. Live doc.airvantage.net stays Hugo until cutover. Built with Docusaurus.</div></div></div></footer></div></body>

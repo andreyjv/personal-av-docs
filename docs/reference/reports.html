@@ -1,0 +1,391 @@
+<!doctype html><html lang=en dir=ltr class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-reference/reports" data-has-hydrated=false><head><meta charset=UTF-8><meta name=generator content="Docusaurus v3.10.2"><title data-rh=true>Reporting | AirVantage documentation</title><meta data-rh=true name=viewport content="width=device-width, initial-scale=1.0"/><meta data-rh=true name=twitter:card content=summary_large_image /><meta data-rh=true property=og:image content=https://andreyjv.github.io/personal-av-docs/img/favicon.svg /><meta data-rh=true name=twitter:image content=https://andreyjv.github.io/personal-av-docs/img/favicon.svg /><meta data-rh=true property=og:url content=https://andreyjv.github.io/personal-av-docs/docs/reference/reports /><meta data-rh=true property=og:locale content=en /><meta data-rh=true name=docusaurus_locale content=en /><meta data-rh=true name=docsearch:language content=en /><meta data-rh=true name=docusaurus_version content=current /><meta data-rh=true name=docusaurus_tag content=docs-default-current /><meta data-rh=true name=docsearch:version content=current /><meta data-rh=true name=docsearch:docusaurus_tag content=docs-default-current /><meta data-rh=true property=og:title content="Reporting | AirVantage documentation"/><meta data-rh=true name=description content="alms · imported from live Hugo on 2026-10-07. Guides stay latest. Original page."/><meta data-rh=true property=og:description content="alms · imported from live Hugo on 2026-10-07. Guides stay latest. Original page."/><link data-rh=true rel=icon href=/personal-av-docs/img/favicon.svg /><link data-rh=true rel=canonical href=https://andreyjv.github.io/personal-av-docs/docs/reference/reports /><link data-rh=true rel=alternate href=https://andreyjv.github.io/personal-av-docs/docs/reference/reports hreflang=en /><link data-rh=true rel=alternate href=https://andreyjv.github.io/personal-av-docs/docs/reference/reports hreflang=x-default /><link rel=stylesheet href=/personal-av-docs/assets/css/styles.1e3041e1.css /><script src=/personal-av-docs/assets/js/runtime~main.bbef5b78.js defer></script><script src=/personal-av-docs/assets/js/main.443f591d.js defer></script></head><body><svg style="display: none;"><defs>
+<symbol id=theme-svg-external-link viewBox="0 0 24 24"><path fill=currentColor d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme-deb")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||(window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light")),document.documentElement.setAttribute("data-theme-choice",t||"system")}(),function(){try{for(var[t,e]of new URLSearchParams(window.location.search).entries())if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id=__docusaurus><link rel=preload as=image href=/personal-av-docs/img/favicon.svg /><div role=region aria-label="Skip to main content"><a class=skipToContent_fXgn href=#__docusaurus_skipToContent_fallback>Skip to main content</a></div><nav aria-label=Main class="theme-layout-navbar navbar navbar--fixed-top"><div class=navbar__inner><div class="theme-layout-navbar-left navbar__items"><button aria-label="Toggle navigation bar" aria-expanded=false class="navbar__toggle clean-btn" type=button><svg width=30 height=30 viewBox="0 0 30 30" aria-hidden=true><path stroke=currentColor stroke-linecap=round stroke-miterlimit=10 stroke-width=2 d="M4 7h22M4 15h22M4 23h22"/></svg></button><a class=navbar__brand href=/personal-av-docs/><div class=navbar__logo><img src=/personal-av-docs/img/favicon.svg alt=AirVantage class="themedComponent_mlkZ themedComponent--light_NVdE"/><img src=/personal-av-docs/img/favicon.svg alt=AirVantage class="themedComponent_mlkZ themedComponent--dark_xIcU"/></div><b class="navbar__title text--truncate">AirVantage Docs</b></a><a class="navbar__item navbar__link navbar__guides" href=/personal-av-docs/docs/how-to/activate-sims>Guides</a><a class="navbar__item navbar__link" href=/personal-av-docs/api>API reference</a><a class="navbar__item navbar__link" href=/personal-av-docs/docs/changelog>Changelog</a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type=button disabled title="system mode" aria-label="Switch between dark and light mode (currently system mode)"><svg viewBox="0 0 24 24" width=24 height=24 aria-hidden=true class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill=currentColor d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"/></svg><svg viewBox="0 0 24 24" width=24 height=24 aria-hidden=true class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill=currentColor d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"/></svg><svg viewBox="0 0 24 24" width=24 height=24 aria-hidden=true class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill=currentColor d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"/></svg></button></div><div class=navbarSearchContainer_Bca1><div class="navbar__search searchBarContainer_NW3z" dir=ltr><svg aria-hidden=true class=searchIcon_T3tP focusable=false viewBox="0 0 16 16"><path fill=currentColor d="M6.02945 10.20327a4.17382 4.17382 0 1 1 4.17382-4.17382 4.15609 4.15609 0 0 1-4.17382 4.17382Zm9.69195 4.2199-4.8225-4.82338A5.88021 5.88021 0 0 0 12.058 6.02856 6.00467 6.00467 0 1 0 9.59979 10.8989l4.82338 4.82338a.89729.89729 0 0 0 1.29912 0 .89749.89749 0 0 0-.00087-1.29909Z"/></svg><input placeholder=Search aria-label=Search class="navbar__search-input searchInput_YFbd" value="" /><div class="loadingRing_RJI3 searchBarLoadingRing_YnHq"><div></div><div></div><div></div><div></div></div></div></div></div></div><div role=presentation class=navbar-sidebar__backdrop></div></nav><div id=__docusaurus_skipToContent_fallback class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class=av-shell><nav class=av-rail aria-label=Guides><p class=av-rail-kicker>Guides<ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class=menu__list-item-collapsible><span class="menu__link menu__link--sublist menu__link--sublist-caret av-rail-heading">Quick start</span></div><ul class=menu__list><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link href=/personal-av-docs/docs/how-to/activate-sims>Activate SIMs</a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link href=/personal-av-docs/docs/how-to/order-sims>Order SIMs</a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link href=/personal-av-docs/api>Call the API</a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link href=/personal-av-docs/docs/how-to/register-routers>Register routers</a></ul><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class=menu__list-item-collapsible><span class="menu__link menu__link--sublist menu__link--sublist-caret av-rail-heading">Browse by product</span></div><ul class=menu__list><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link href=/personal-av-docs/docs/how-to/activate-sims>Connectivity</a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link href=/personal-av-docs/docs/how-to/register-routers>Router management</a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link href=/personal-av-docs/docs/explain/states>States and operations</a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link href=/personal-av-docs/api>Developer platform</a></ul><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class=menu__list-item-collapsible><span class="menu__link menu__link--sublist menu__link--sublist-caret av-rail-heading">Keep building</span></div><ul class=menu__list><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link href=/personal-av-docs/docs/explain/states>States and operations</a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link href=/personal-av-docs/docs/reference/apn>APN table</a></ul><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class=menu__link href=/personal-av-docs/docs/get-started/first-sim>Get started</a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class=menu__link href=/personal-av-docs/docs/reference/api>Reference</a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class=menu__link href=/personal-av-docs/docs/changelog>Changelog</a></ul></nav><div class=av-shell-main><div class=docsWrapper_hBAB><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type=button></button><div class=docRoot_UBD9><main class="docMainContainer_TBSr docMainContainerEnhanced_lQrH"><div class="container padding-top--md padding-bottom--lg"><div class=row><div class="col docItemCol_VOVn"><div class=docItemContainer_Djhp><article><div class="theme-doc-markdown markdown"><header><h1>Reporting</h1></header><p>:::note Edition
+<strong>alms</strong> · imported from live Hugo on 2026-10-07. Guides stay latest. <a href=https://doc.airvantage.net/alms/reference/reports target=_blank rel="noopener noreferrer" class="">Original page</a>.
+:::</p>
+<p>Reporting
+Develop
+AirLink Complete
+Account Management
+Managing Profiles
+Token Stock and ALMS Billing
+More
+FAQ
+Product page
+The Source
+ALMS EULA
+GDPR FAQ
+Searching...
+Matching results
+Reporting
+Advanced Mobility Reporting (AMR)
+is an ALMS offering that provides data analysis and historical reporting for your AirLink gateways and routers. AMR is available as part of AirLink Premium with supported devices.
+AMR provides lightweight AVL and fleet management capabilities with its extensive telemetry data collection and reporting features. For better insight into your device status and vehicle behavior, AMR is an ideal low-cost, cloud-based solution. The Reporting section of ALMS is currently available only to AMR users.
+Initializing Table Of Contents...
+Summary of Available Reports
+AMR offers historical reports for:
+Coverage Map
+Shows you system network connectivity status during trips within the reporting period. Supports single and multi-radio routers.
+Coverage Trails
+Shows you WAN signal strength during trips within the reporting period for routers with a single cellular radio.
+Multi-Radio Coverage Trails
+Shows you the specific connectivity status for multiple radios (cellular interfaces) during trips within the reporting period.
+For routers running AirLink OS only.
+Driver Behavior
+Help keep your drivers safe and manage performance, measuring driving habits such as hard acceleration, hard deceleration, cornering and speeding.
+Engine Fault Summary
+Schedule maintenance and repairs with a summary of engine faults detected, including time of fault, diagnostic code, total time and distance driven with the MIL activated.
+Requires an OBD-II connection to the vehicle.
+Link Utilization
+Provides a summary of device status and connectivity over time; ideal for identifying connectivity issues that occur at specific times of day.
+For routers running AirLink OS only.
+Odometer
+Retrieve the distance traveled for a vehicle during a specified period. You can also define a zone for odometer reports, so that any travel within a zone can be included or excluded from the report.
+Requires an OBD-II connection to the vehicle.
+Seat Belt
+Provides an indication of when the driver’s side seat belt is not engaged while the vehicle is moving. You can set a speed threshold for vehicles to be included.
+Requires an OBD-II connection to the vehicle.
+Trip Replay
+Shows you an animated view of a vehicle trip.
+Trips
+Know what your fleet of vehicles has been doing with a historical view of vehicle location, with stop locations, speeding relative to posted limits, and network connectivity status data. Supports single and multi-radio routers.
+Vehicle
+Save time in tracking which routers are installed in which vehicles with an inventory of all routers in vehicles, providing the device serial number, the vehicle’s VIN and the total miles driven for each vehicle.
+Requires an OBD-II connection to the vehicle.
+Vehicle Utilization
+Get a complete picture of vehicle utilization including total engine time, trip time, idle and PTO time.
+Requires proper vehicle installation of GPIO and an OBD-II connection to the vehicle.
+Zone Summary
+Provides a summary of time spent (in hours/minutes and as a percentage) and distance travelled in one or more Zones.
+Each pre-defined report contains unique content focused on a specific purpose. Each report contains tabular and/or map-based results. You can configure any report to schedule the report delivery (daily, weekly, monthly) or run reports on demand; confine the report to a pre-defined region with Zones (geofencing), export reports as PDF, Excel or KML files, and output reports for printing.
+Prerequisites: What you need to use AMR
+Because AMR is primarily focused on vehicle telemetry reporting, there are a number of hardware and software requirements you must have in place before you can use AMR features. Running reports on other AirLink routers may not yield expected results.
+AirLink Routers
+AMR reports vehicle data for AirLink routers connected to a vehicle. This includes ALEOS-based devices (AirLink GX450 gateways connected using a B&B OBD-II scanner, or MP70, LX60, XR90 and XR80 routers connected directly to a vehicle’s OBD-II or J1939 port) and AirLink XR60 and RX55 routers with vehicle telemetry features enabled.
+An OBD-II connection between the vehicle and the router is required to collect CAN bus data for the following reports:
+Engine Fault Summary
+Odometer
+Seat Belt
+Vehicle
+Vehicle Utilization
+AMR also reports routers’ WAN/Cellular usage and connection status, which can be displayed in the following reports:
+Coverage Trails
+Multi-Radio Coverage Trails
+Coverage Map
+Link Utilization
+Trips
+Trips Replay
+AMR supports an external modem connected to a router’s Ethernet port
+for AirLink OS routers only
+. Semtech has done a custom integration to support HPUE cellular modems. When the external modem is
+configured
+and active as the primary WAN interface, it can be displayed in the same way as regular cellular interface. The HPUE modem is considered  another cellular WAN interface to be reported upon in the same manner as the cellular interface(s) on the AirLink router. This provides the same set of link statistics that are currently reported for the cellular interface(s).
+ALEOS-based Devices
+AirLink MP70 or LX60
+The AirLink MP70 router, with its vehicle telemetry capability and inertial sensors, supports all features of AMR.
+Not all LX60 models support vehicle telemetry. Ensure that your LX60 supports Wi-Fi and GNSS and Telemetry before configuring vehicle telemetry and AMR.
+Driver behavior reports require inertial sensors on the router (as supported on the MP70), and will not be reported on an AirLink GX450 or LX60.
+For optimum reporting performance, connect the router’s ignition line (white wire on the power connector) to the vehicle ignition and connect the router to the vehicle bus as described in the
+MP70 Hardware User Guide
+. Many reports will not function correctly if the router is not wired correctly.
+In ALEOS, you must also enable:
+Vehicle Telemetry (by setting Direct Vehicle Bus Data Collection to
+Enabled: Connected to Ignition
+)
+Location Service
+Driver Behavior Detection (MP70 only)
+Dead Reckoning (MP70 only)
+ALEOS Application Framework
+For more information, see the
+ALEOS Software Configuration User Guide for MP70
+(for ALEOS 4.11.0 or later) or the
+ALEOS Software Configuration User Guide for LX60
+(for ALEOS 4.13.0 or later).
+MP70 and LX60 routers can collect CAN bus data through an OBD-II (J1979) or J1939 connection from the vehicle’s diagnostic port to the router’s Aux I/O port. See the
+MP70 Hardware User Guide
+and the
+LX60 Hardware User Guide
+for more information about cable connection and accessories. The OBD-II connection is required for the following reports:
+Engine Fault Summary
+Odometer
+Seat Belt
+Vehicle
+Vehicle Utilization
+GX450 Gateway
+The GX450 gateway supports some features of AMR. The gateway must be connected to the vehicle using a B&B OBD-II scanner and Vehicle Telemetry Kit, as described in the
+AirLink Vehicle Telemetry User Guide
+(AVTA 1.1.1 or later).
+Connect the GX450 ignition line (white wire on the power connector) to the vehicle ignition and connect the gateway to the vehicle bus as described in the
+GX450 Hardware User Guide
+.
+The GX450 supports the following types of reports when correctly installed and configured:
+Vehicle Reports
+Vehicle Utilization Reports
+Engine Fault Summary Reports
+Trips Reports
+Other ALEOS-based devices may work with some reports (such as Link Utilization), but results will vary. For GPS-based reports, devices with Dead Reckoning will provide the best location accuracy.
+AirLink OS-based Devices
+AirLink XR90, XR80 and RX55 (Wi-Fi and Wi-Fi Plus) Routers
+AirLink XR90 or XR80 routers, with their vehicle telemetry capability and inertial sensors, support all features of AMR.
+RX55 routers do not have inertial sensors; therefore Driver Behavior reports are not supported on the RX55.
+For optimum reporting performance, connect the router’s ignition line (white wire on the power connector) to the vehicle ignition and connect the router to the vehicle bus as described in the
+XR Series Hardware User Guide
+. Many reports will not function correctly if the router is not wired correctly.
+XR90, XR80 and RX55 (Wi-Fi and Wi-Fi Plus) routers can collect CAN bus data through an OBD-II (J1979) or J1939 connection from the vehicle’s diagnostic port to the router’s Aux I/O port. See the
+XR Series Hardware User Guide
+and
+RX55 Hardware Guide
+for more information about cable connection and accessories. The OBD-II connection is required for the following reports:
+Engine Fault Summary
+Odometer
+Seat Belt
+Vehicle
+Vehicle Utilization
+For instructions on how to enable reporting in AirLink OS, see the:
+XR90 AirLink OS documentation
+XR80 AirLink OS documentation
+RX55 AirLink OS documentation
+AirLink XR60 or RX55 (Base Model) Routers
+AirLink XR60 or RX55 Base Model routers, with their more limited vehicle telemetry features, support AMR reports that don’t require data from the vehicle bus, including:
+Trips
+Zone Summary
+Trip Replay
+Coverage Map
+Coverage Trails
+Link Utilization
+For optimum reporting performance, connect the router’s ignition line (white wire on the power connector) to the vehicle ignition as described in the
+RX55 Hardware User Guide
+and
+XR60 Hardware User Guide
+. Many reports will not function correctly if the router is not wired correctly.
+For instructions on how to enable reporting in AirLink OS, see the:
+XR60 AirLink OS documentation
+RX55 AirLink OS documentation
+Software and Applications
+ALEOS
+MP70 routers must be updated to
+ALEOS 4.11.0 or later
+.
+LX60 routers must be updated to
+ALEOS 4.13.0 or later
+.
+GX450 gateways must be updated to
+ALEOS 4.9.3 or later
+.
+The
+AirVantage Telemetry Application (AVTA) version 1.1.2 or later
+must be installed from ALMS. The AirLink GX450 with ALEOS 4.9.3 must be used with
+AVTA 1.1.1
+.
+AirLink OS
+For optimal performance, Semtech recommends upgrading your routers
+XR90, XR80, XR60 and RX55
+to AirLink OS 5.1.78 or later. For report compatibility, see the table below.
+Supported Versions by Report
+REPORT NAME
+SUPPORTS ALEOS
+AVTA VERSION
+SUPPORTS AIRLINK OS
+MINIMUM AIRLINK OS VERSION
+Coverage Map
+1.3.x or later
+4.1
+Coverage Trails
+1.4.2 or later
+4.1
+Driver Behavior
+1.3.x or later
+Excluding XR60
+4.1
+Engine Fault Summary
+1.3.x or later
+Excluding XR60
+5.0
+Link Utilization
+n/a
+4.1
+Odometer
+1.3.x or later
+Excluding XR60
+4.1
+Seat Belt
+1
+1.3.x or later
+Excluding XR60
+4.1
+Trip Replay
+1.3.x or later
+4.1
+Trips
+1.3.x or later
+4.1
+Vehicle
+1.3.x or later
+Excluding XR60
+4.1
+Vehicle Utilization
+1.3.x or later
+Excluding XR60
+4.1
+Zone Summary
+1.3.x or later
+4.1
+1
+Support is vehicle dependent
+Supported Router Models by Report
+REPORT NAME
+AirLink XR90
+AirLink XR80
+AirLink XR60
+AirLink RX55 Wi-Fi Plus
+AirLink MP70
+AirLink LX60 Wi-Fi+GNSS+Telemetry
+AirLink GX450
+Coverage Map
+Coverage Trails
+Driver Behavior
+Engine Fault Summary
+Link Utilization
+Odometer
+Seat Belt
+1
+Trip Replay
+Trips
+Vehicle
+Vehicle Utilization
+Zone Summary
+1
+Support is vehicle dependent
+Reporting Dashboard
+When you click
+Reporting
+on the top menu, the
+Report Templates
+page appears. This is your reporting dashboard, giving you access to all your reports.
+The layout of the Report Templates page is user configurable. You can add widgets (as available), move or remove widgets.
+See
+here
+for more information about ALMS dashboards in general.
+The
+Report Templates
+page is divided into three sections:
+The
+Recent Reports
+section. It provides access to the last 5 report instances along with their status, communications history, configuration and management.
+The
+Create Report
+button opens a blank report template. See
+here
+for more information about creating a new report.
+A list of
+Report Templates
+with additional information provided in columns. You can search for reports using filters.
+Recent Reports
+The Recent Reports widget shows you the last five reports that were run, along with their status and time of completion.
+To view a report, click the row for the desired report. See
+Viewing Reports
+below.
+Hovering your mouse over the
+Files
+column allows you to download the report in its available file format.
+Click the
+Refresh
+button on the top right to update the list
+Click
+All
+to show all the report instances on the
+Reports
+page
+Please note that event datapoints are pre-processed in AirVantage on an hourly schedule before becoming available for AMR report purposes. Because of this, events occurring within the hour before the report execution time (scheduled or on-demand) may not be included in the report.
+Report Status
+Each report status is indicated by color.
+Generated successfully.
+Failed to generate.
+Failed to export.
+Processing.
+Timeout.
+If you click a report that has failed to generate, a message will appear with a link that will take you to the report definition page, where you can edit the report if you wish. Error messages also appear when you click reports that have timed out or are still processing. If a report is still processing, wait until it has completed.
+Error messages also appear when you click reports that have timed out or are still processing. If a report is still processing, wait until it has completed.
+If you click an export file format icon, an error message appears if the file cannot be downloaded in the enabled formats (such as PDF/CSV/KML) because of a file export generation failure, timeout, cancellation, or report processing error. The example on the right shows a KML report generation/export error. Note that when a file export generation failure occurs (the report status is orange), you can still view the report in your browser, as described in
+Viewing Reports
+below.
+Create Report
+Click this widget to begin configuring a new report template. For more information, see
+How to create a new report
+.
+Report Templates List
+The Report Templates List shows you all the existing report templates for your selected company.
+The columns displayed can be organized, resized and configured to show the parameters you want to see:
+To view a report template and see any report instances that have been generated, click the row for the desired report template.
+Manage large deployments
+Finding a report or group of reports of interest is easy using filters. Filters can be applied for single or multiple variables: filter on report type, report name, creator, or scheduled (yes/no).
+The result of the filtered list is displayed on multiple pages if needed.
+See the example below:
+Perform Report Actions
+The icons along the top right of the Report Templates list and in the
+Actions
+column allow you to perform the actions described below:
+New Report
+Create a new report template
+Run
+Run the report, bypassing the report’s schedule
+View
+View the complete report
+Edit
+Edit the report template
+Delete
+Delete the report from the list
+Clone
+Duplicate the template of the selected report
+Refresh
+Update the reports list
+You can also perform actions (such as
+Delete
+) for a specific instance of a report in the
+Actions
+column, as shown below.
+Viewing Reports
+To view a report:
+Go to
+Reporting > Reports
+and then select a report from the table.
+On the
+Recent Reports
+widget, click the row for the desired report.
+On the list of report templates, click the row for the desired report template.
+If multiple instances of the report have been generated, an interim page appears. It displays a summary of the report template settings along with a list of recently generated reports.
+Click the row for the desired report instance to view the full report details.
+Perform Report Actions
+The icons along the top right of the report allow you to perform the actions described below:
+Run
+Run the report, bypassing the report’s schedule
+Clone
+Duplicate the template of the selected report
+Edit
+Edit the report template
+View raw data points
+View the raw data points used to generate the report. See
+this page
+for more information.
+For more information about reports, see the
+How-Tos
+section below.
+How-Tos
+This section provides you with helpful procedures for common tasks.
+How to Create a New Report
+How to View Raw Data Points
+How to View and Create Trip Replay Reports
+How to Work With and Create Coverage Map Reports
+How to Work With and Create Coverage Trails Reports
+How to Work With and Create Driver Behavior Reports
+How to Work With and Create Engine Fault Summary Reports
+How to Work With and Create Link Utilization Reports
+How to Work With and Create Multi-Radio Coverage Trails Reports
+How to Work With and Create Odometer Reports
+How to Work With and Create Seat Belt Reports
+How to Work With and Create Trips Reports
+How to Work With and Create Vehicle Reports
+How to Work With and Create Vehicle Utilization Reports
+How to Work With and Create Zone Summary Reports
+How to install and use AVTC</div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href=https://github.com/andreyjv/personal-av/tree/docs/documentation-revamp/PRD_documentation-revamp/website/docs/reference/reports.md target=_blank rel="noopener noreferrer" class=theme-edit-this-page><svg fill=currentColor height=20 width=20 viewBox="0 0 40 40" class=iconEdit_Z9Sw aria-hidden=true><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"/></g></svg>Edit this page</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"></nav></div></div></div></div></main></div></div></div></div></div><footer class="theme-layout-footer footer"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class=footer__title>Jobs</div><ul class="footer__items clean-list"><li class=footer__item><a class=footer__link-item href=/personal-av-docs/docs/how-to/activate-sims>Activate SIMs</a><li class=footer__item><a class=footer__link-item href=/personal-av-docs/docs/how-to/order-sims>Order SIMs</a><li class=footer__item><a class=footer__link-item href=/personal-av-docs/api>Call the API</a><li class=footer__item><a class=footer__link-item href=/personal-av-docs/docs/how-to/register-routers>Register routers</a></ul></div><div class="theme-layout-footer-column col footer__col"><div class=footer__title>Reference</div><ul class="footer__items clean-list"><li class=footer__item><a class=footer__link-item href=/personal-av-docs/docs/reference/api>API HTML chapters</a><li class=footer__item><a class=footer__link-item href=/personal-av-docs/docs/reference/apn>APN table</a><li class=footer__item><a class=footer__link-item href=/personal-av-docs/docs/changelog>Changelog</a></ul></div><div class="theme-layout-footer-column col footer__col"><div class=footer__title>Preview</div><ul class="footer__items clean-list"><li class=footer__item><a href=https://doc.airvantage.net/ target=_blank rel="noopener noreferrer" class=footer__link-item>Live Hugo (canonical until cutover)<svg width=13.5 height=13.5 aria-label="(opens in new tab)" class=iconExternalLink_nPIU><use href=#theme-svg-external-link /></svg></a><li class=footer__item><a class=footer__link-item href=/personal-av-docs/docs/ui-library>UI library</a><li class=footer__item><a class=footer__link-item href=/personal-av-docs/docs/copy-library>Copy library</a></ul></div></div><div class="footer__bottom text--center"><div class=footer__copyright>Sierra Wireless / AirVantage documentation preview. Live doc.airvantage.net stays Hugo until cutover. Built with Docusaurus.</div></div></div></footer></div></body>

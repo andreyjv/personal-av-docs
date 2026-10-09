@@ -1,0 +1,1293 @@
+<!doctype html><html lang=en dir=ltr class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-reference/api/API-Operation-v1" data-has-hydrated=false><head><meta charset=UTF-8><meta name=generator content="Docusaurus v3.10.2"><title data-rh=true>Operations | AirVantage documentation</title><meta data-rh=true name=viewport content="width=device-width, initial-scale=1.0"/><meta data-rh=true name=twitter:card content=summary_large_image /><meta data-rh=true property=og:image content=https://andreyjv.github.io/personal-av-docs/img/favicon.svg /><meta data-rh=true name=twitter:image content=https://andreyjv.github.io/personal-av-docs/img/favicon.svg /><meta data-rh=true property=og:url content=https://andreyjv.github.io/personal-av-docs/docs/reference/api/API-Operation-v1 /><meta data-rh=true property=og:locale content=en /><meta data-rh=true name=docusaurus_locale content=en /><meta data-rh=true name=docsearch:language content=en /><meta data-rh=true name=docusaurus_version content=current /><meta data-rh=true name=docusaurus_tag content=docs-default-current /><meta data-rh=true name=docsearch:version content=current /><meta data-rh=true name=docsearch:docusaurus_tag content=docs-default-current /><meta data-rh=true property=og:title content="Operations | AirVantage documentation"/><meta data-rh=true name=description content="connectivity · imported from live Hugo on 2026-10-07. Guides stay latest. Original page."/><meta data-rh=true property=og:description content="connectivity · imported from live Hugo on 2026-10-07. Guides stay latest. Original page."/><link data-rh=true rel=icon href=/personal-av-docs/img/favicon.svg /><link data-rh=true rel=canonical href=https://andreyjv.github.io/personal-av-docs/docs/reference/api/API-Operation-v1 /><link data-rh=true rel=alternate href=https://andreyjv.github.io/personal-av-docs/docs/reference/api/API-Operation-v1 hreflang=en /><link data-rh=true rel=alternate href=https://andreyjv.github.io/personal-av-docs/docs/reference/api/API-Operation-v1 hreflang=x-default /><link rel=stylesheet href=/personal-av-docs/assets/css/styles.1e3041e1.css /><script src=/personal-av-docs/assets/js/runtime~main.bbef5b78.js defer></script><script src=/personal-av-docs/assets/js/main.443f591d.js defer></script></head><body><svg style="display: none;"><defs>
+<symbol id=theme-svg-external-link viewBox="0 0 24 24"><path fill=currentColor d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme-deb")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||(window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light")),document.documentElement.setAttribute("data-theme-choice",t||"system")}(),function(){try{for(var[t,e]of new URLSearchParams(window.location.search).entries())if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id=__docusaurus><link rel=preload as=image href=/personal-av-docs/img/favicon.svg /><div role=region aria-label="Skip to main content"><a class=skipToContent_fXgn href=#__docusaurus_skipToContent_fallback>Skip to main content</a></div><nav aria-label=Main class="theme-layout-navbar navbar navbar--fixed-top"><div class=navbar__inner><div class="theme-layout-navbar-left navbar__items"><button aria-label="Toggle navigation bar" aria-expanded=false class="navbar__toggle clean-btn" type=button><svg width=30 height=30 viewBox="0 0 30 30" aria-hidden=true><path stroke=currentColor stroke-linecap=round stroke-miterlimit=10 stroke-width=2 d="M4 7h22M4 15h22M4 23h22"/></svg></button><a class=navbar__brand href=/personal-av-docs/><div class=navbar__logo><img src=/personal-av-docs/img/favicon.svg alt=AirVantage class="themedComponent_mlkZ themedComponent--light_NVdE"/><img src=/personal-av-docs/img/favicon.svg alt=AirVantage class="themedComponent_mlkZ themedComponent--dark_xIcU"/></div><b class="navbar__title text--truncate">AirVantage Docs</b></a><a class="navbar__item navbar__link navbar__guides" href=/personal-av-docs/docs/how-to/activate-sims>Guides</a><a class="navbar__item navbar__link" href=/personal-av-docs/api>API reference</a><a class="navbar__item navbar__link" href=/personal-av-docs/docs/changelog>Changelog</a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type=button disabled title="system mode" aria-label="Switch between dark and light mode (currently system mode)"><svg viewBox="0 0 24 24" width=24 height=24 aria-hidden=true class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill=currentColor d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"/></svg><svg viewBox="0 0 24 24" width=24 height=24 aria-hidden=true class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill=currentColor d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"/></svg><svg viewBox="0 0 24 24" width=24 height=24 aria-hidden=true class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill=currentColor d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"/></svg></button></div><div class=navbarSearchContainer_Bca1><div class="navbar__search searchBarContainer_NW3z" dir=ltr><svg aria-hidden=true class=searchIcon_T3tP focusable=false viewBox="0 0 16 16"><path fill=currentColor d="M6.02945 10.20327a4.17382 4.17382 0 1 1 4.17382-4.17382 4.15609 4.15609 0 0 1-4.17382 4.17382Zm9.69195 4.2199-4.8225-4.82338A5.88021 5.88021 0 0 0 12.058 6.02856 6.00467 6.00467 0 1 0 9.59979 10.8989l4.82338 4.82338a.89729.89729 0 0 0 1.29912 0 .89749.89749 0 0 0-.00087-1.29909Z"/></svg><input placeholder=Search aria-label=Search class="navbar__search-input searchInput_YFbd" value="" /><div class="loadingRing_RJI3 searchBarLoadingRing_YnHq"><div></div><div></div><div></div><div></div></div></div></div></div></div><div role=presentation class=navbar-sidebar__backdrop></div></nav><div id=__docusaurus_skipToContent_fallback class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class=av-shell><nav class=av-rail aria-label=Guides><p class=av-rail-kicker>Guides<ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class=menu__list-item-collapsible><span class="menu__link menu__link--sublist menu__link--sublist-caret av-rail-heading">Quick start</span></div><ul class=menu__list><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link href=/personal-av-docs/docs/how-to/activate-sims>Activate SIMs</a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link href=/personal-av-docs/docs/how-to/order-sims>Order SIMs</a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link href=/personal-av-docs/api>Call the API</a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link href=/personal-av-docs/docs/how-to/register-routers>Register routers</a></ul><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class=menu__list-item-collapsible><span class="menu__link menu__link--sublist menu__link--sublist-caret av-rail-heading">Browse by product</span></div><ul class=menu__list><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link href=/personal-av-docs/docs/how-to/activate-sims>Connectivity</a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link href=/personal-av-docs/docs/how-to/register-routers>Router management</a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link href=/personal-av-docs/docs/explain/states>States and operations</a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link href=/personal-av-docs/api>Developer platform</a></ul><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class=menu__list-item-collapsible><span class="menu__link menu__link--sublist menu__link--sublist-caret av-rail-heading">Keep building</span></div><ul class=menu__list><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link href=/personal-av-docs/docs/explain/states>States and operations</a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link href=/personal-av-docs/docs/reference/apn>APN table</a></ul><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class=menu__link href=/personal-av-docs/docs/get-started/first-sim>Get started</a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class=menu__link href=/personal-av-docs/docs/reference/api>Reference</a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class=menu__link href=/personal-av-docs/docs/changelog>Changelog</a></ul></nav><div class=av-shell-main><div class=docsWrapper_hBAB><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type=button></button><div class=docRoot_UBD9><main class="docMainContainer_TBSr docMainContainerEnhanced_lQrH"><div class="container padding-top--md padding-bottom--lg"><div class=row><div class="col docItemCol_VOVn"><div class=docItemContainer_Djhp><article><div class="theme-doc-markdown markdown"><p>:::note Edition
+<strong>connectivity</strong> · imported from live Hugo on 2026-10-07. Guides stay latest. <a href=https://doc.airvantage.net/connectivity/reference/cloud/API/API-Operation-v1 target=_blank rel="noopener noreferrer" class="">Original page</a>.
+:::</p>
+<header><h1>Operations
+General
+f
+General Information
+Operations
+f
+System
+Operations
+Alert
+Application
+Gateway
+Settings
+Dataset
+Label
+Zone
+Operator
+Offer & Options
+System Configurations
+Administration
+f
+Company
+Partner
+Profile
+User
+Subscription
+f
+Subscription
+Ordering
+f
+Contact
+Order
+Product Reference
+Operation
+Overview
+Fields
+JSON
+Operations
+are created when responses may take some time to be processed. In this case, execution is done asynchronously.
+An operation gives the possibility to trace this execution and to know  whether the response is already available or not.
+Operations may manipulate several entities. For each entity a task is created. Once the operation finished, it is possible to query through all tasks and see details on them.
+Operation triggers
+give the possibility to automatically create new operation when some conditions are met. For now, the only available conditions are:
+The reception of an alert for a given rule,
+The reception of an alert state change for a given rule.
+The created operation only applies on the target referenced in the alert or alert state change event.
+Read only fields are computed by AirVantage and can only be seen on response fragments sent by
+find
+request.
+Operation fields
+Field
+Description
+Read Only
+Type
+uid
+Operation's unique identifier.
+true
+uid
+state
+Shows the state of the operation. Possible values are:
+SCHEDULED, IN_PROGRESS, FINISHED.
+true
+enum
+entity
+The entity type the operation is working on. Possible values are:
+APPLICATION, SYSTEM, GATEWAY, SUBSCRIPTION, ALERT, PARTNER.
+true
+enum
+operationType
+The type of operation launched. For instance:
+SYSTEM_ACTIVATE, SYSTEM_SYNCHRONIZE, SYSTEM_IMPORT, SUBSCRIPTION_ACTIVATE, ...
+true
+enum
+createdAt
+Date time when this operation was created.
+true
+timestamp
+startDate
+Date time when this operation was scheduled.
+true
+timestamp
+cancelDate
+Date time when this operation was cancelled.
+true
+timestamp
+timeoutDate
+Date time when this operation is considered as expired.
+true
+timestamp
+endDate
+Date time when this operation finished its execution.
+true
+timestamp
+counters
+Show how many tasks are in each state.
+true
+total
+Total number of tasks launched by this operation.
+true
+int
+target
+Entity's unique identifier the operation is working on. It is null when the operation works on several entities.
+true
+uid
+company
+Context company.
+true
+uid
+input
+Input used to create the operation:
+the list of target's uids
+the label
+the file name
+the identifier of the parent operation
+true
+object
+details
+Details of the operation. The content is specific to a type of operation. Can be null.
+true
+object
+messages
+List of messages. Each message is formatted with a date, type (INFO, WARNING, ERROR), and a description.
+true
+object array
+trigger
+The source entity that triggered the operation creation:
+type : the type of the trigger, it can be USER or RULE.
+uid  : the unique identifier of the entity.
+name : the name of the entity. It is the user email for USER type and the rule name for RULE type.
+true
+object
+Task fields
+Field
+Description
+Read Only
+Type
+uid
+Task's unique identifier.
+true
+uid
+state
+State of the task. Possible values are:
+PENDING, IN_PROGRESS, CANCELLED, FAILURE, SUCCESS.
+true
+enum
+createdAt
+Date time when the task was created.
+true
+timestamp
+executedAt
+Date time when the task was executed.
+true
+timestamp
+date
+Date time when the task was updated for the last time.
+true
+timestamp
+target
+The unique identifier of the entity related to this task. This field will remain null until the task is executed. Can be null in case of failure.
+true
+uid
+targetDescription
+Description of the target linked to the task.
+The description depends on the target type (system, gateway, ...).
+true
+object
+rank
+The rank of the task.
+If a file is used as input of the operation, the rank represents a line number.
+The tasks of an operation are processed by rank order.
+true
+int
+input
+Shows the input of this task. Generally, it contains information about the entity processed by this task.
+If a file is used as input of the operation, this field contains the line having for line number the value defined by the field 'rank'.
+true
+string
+messages
+List of messages. Each message is formatted with a date, type (INFO, WARNING, ERROR), and a description.
+true
+object array
+operation
+Simple description (UID and type) of the operation owning the task.
+Only returned by
+Find Tasks of a Target
+API
+true
+object
+Operation trigger fields
+Field
+Description
+Read Only
+Type
+uid
+Trigger's unique identifier.
+true
+uid
+type
+The type of event for which a new operation must be created. Possible values are:
+ON_ALERT: on alert reception,
+ON_ALERT_STATE_CHANGE: on alert state change reception, whatever the state is,
+ON_ALERT_STATE_CHANGE_TRUE: on alert state change reception, when state becomes true,
+ON_ALERT_STATE_CHANGE_FALSE: on alert state change reception, when state becomes false.
+false
+enum
+filter
+The alert rule id used to filter alert/alert state change events.
+false
+string
+operationType
+The type of the operation to create:
+SYSTEM_SEND_COMMAND,
+SYSTEM_APPLY_SETTINGS,
+SYSTEM_SUSPEND,
+SYSTEM_CHANGE_OFFER,
+SYSTEM_CHANGE_LABEL.
+false
+enum
+email
+The email of the user who will be notified of operation final status
+false
+string
+notify
+True if the user has to be notified, false otherwise.
+false
+boolean
+callback
+The url that will be called when the operation state changes.
+false
+string
+parameters
+The specific parameters of the operation to create. See
+system
+page for more information about operations parameters.
+false
+object
+This is a complete representation of an Operation. This fragment can be used for
+create
+or
+edit
+requests.
+Please refer to the fields section to know which fields can be modified.
+{
+"uid": "",
+"state": "",
+"entity": "",
+"operationType": "",
+"createdAt": ,
+"startDate": ,
+"cancelDate": ,
+"timeoutDate": ,
+"endDate": ,
+"counters":       [
+{
+"state": "PENDING",
+"count": 0
+},
+{
+"state": "IN_PROGRESS",
+"count": 1
+},
+{
+"state": "CANCELLED",
+"count": 0
+},
+{
+"state": "FAILURE",
+"count": 0
+},
+{
+"state": "SUCCESS",
+"count": 2
+}
+],
+"total": ,
+"target": "",
+"trigger": {
+"type": "",
+"uid": "",
+"name: ""
+},
+"company": "",
+"input":    {},
+"details": {},
+"messages": []
+}
+This is a complete representation of a task.
+{
+"state": "FAILURE",
+"target": "9196f4944c294a168ae5d72f5d0007bf",
+"operation": {
+"operationType": "SYSTEM_RETRIEVE_DATA",
+"uid": "138a50ec5d014db0ace31de5257fb73a"
+},
+"date": 1503325920743,
+"input": null,
+"targetDescription": {
+"uid": "9196f4944c294a168ae5d72f5d0007bf",
+"name": "My System"
+},
+"messages": [
+{
+"date": 1503325920741,
+"type": "ERROR",
+"message": "operation.on.system.missing.comm.identifiers"
+}
+],
+"createdAt": 1503325920647,
+"executedAt": 1503325920686,
+"rank": 0,
+"uid": "015e05351d86485980a19d068a84ca84"
+}
+This is a complete representation of an operation trigger. This fragment can be used for
+create
+or
+edit
+requests.
+{
+"type": "ON_ALERT",
+"filter": "0f3919fd1ac0403ab9e70ae2c3729a21",
+"operationType": "SYSTEM_SEND_COMMAND",
+"notify": true,
+"callback": "<a href=http://blabla.com target=_blank rel="noopener noreferrer" class="">http://blabla.com</a>",
+"parameters": {
+"commandId": "home.ChangeTemperature",
+"protocol": "REST",
+"parameters": {"Temperature": 20},
+"application": {
+"uid": "333ea6a2d6e44a00aee2804ed519128a"
+},
+"requestConnection": false
+}
+}
+API Methods
+Operation
+Find
+Get details
+Get tasks
+Get details of a task
+Get result
+Cancel
+Cancel a task
+Retry
+Find tasks of a target
+Operation trigger
+Retrieve all
+Get details
+Create
+Update
+Delete
+Find
+/api/v1/operations
+Returns a paginated list of operations with their complete details sorted by startDate descending.
+It is possible to restrain the result list using criteria parameters.
+The
+fields
+parameter has to be defined in order to specify the attributes of the operation which will be returned.
+If
+fields
+parameter is missing, only the following attributes of the operation are returned:
+uid, state, entity, operationType, createdAt, startDate, endDate, timeoutDate, cancelDate
+.
+More information about paging, filtering, and sorting
+here
+Sample
+Parameters
+Additional Information
+Request
+GET <a href="https://na.airvantage.net/api/v1/operations?fields=uid,state,operationType,createdAt,trigger" target=_blank rel="noopener noreferrer" class="">https://na.airvantage.net/api/v1/operations?fields=uid,state,operationType,createdAt,trigger</a>
+Response
+200 OK
+HTTP/1.1 200 OK
+Content-Type: application/json
+...
+{
+"items": [{
+"uid": "0f3919fd1ac0403ab9e70ae2c3729a21",
+"state": "FINISHED",
+"operationType": "GATEWAY_IMPORT",
+"createdAt": 1362489511437,
+"trigger": {
+"type": "USER",
+"uid": "4f71674ccd7c495fa3cc83db632f667e",
+"name": "<a href=mailto:user@airvantage.net target=_blank rel="noopener noreferrer" class="">user@airvantage.net</a>"
+}
+},{
+"uid": "55e0736764aa450e9687cb938b623176",
+"state": "IN_PROGRESS",
+"operationType": "SYSTEM_APPLY_SETTINGS",
+"createdAt": 1580897086136,
+"trigger": {
+"type": "RULE",
+"uid": "98e5a48ef8c74e2496a67d3d2ecd426e",
+"name": "Daily usage exceeded"
+}
+}],
+"count": 2,
+"size": 2,
+"offset": 0
+}
+Name
+Description
+Use
+Default
+Type
+Operand
+uid
+Return operation whose uid match with the specified id.
+optional
+null
+uid</h1></header>
+<h1>triggerType
+Returns all operations triggered by entities whose type matches with the specified string.
+The possible values are USER or RULE.
+optional
+null
+string</h1>
+<h1>triggerName
+Returns all operations triggered by the entities whose name contains the specified string.
+optional
+null
+string
+like
+entities
+Returns all operations whose entity is in the given list. Entities are APPLICATION, SYSTEM, GATEWAY, SUBSCRIPTION, PARTNER, ALERT.
+optional
+null
+string list
+in
+operationTypes
+Returns all operations whose operation type is in the given list.
+optional
+null
+string list
+in
+states
+Returns all operations whose state is in the given list. States are SCHEDULED, IN_PROGRESS, FINISHED.
+optional
+null
+string list
+in
+startedAfter
+Return all operations started after the given date. The specified date is included.
+optional
+null
+timestamp
+>=
+startedBefore
+Return all operations started before the given date. The specified date is included.
+optional
+null
+timestamp
+&lt;=
+endedAfter
+Return all operations ended after the given date. The specified date is included.
+optional
+null
+timestamp
+>=
+endedBefore
+Return all operations ended before the given date. The specified date is included.
+optional
+null
+timestamp
+&lt;=
+target
+Returns all operations linked to the specified target uid. Target can be application, system, gateway, subscription.
+optional
+null
+string</h1>
+<h1>company
+Set the context company.
+optional
+caller's company
+uid</h1>
+<h1>HTTP Method
+GET
+Requires Authentication
+Yes
+Rate Limited
+Yes
+Headers
+None
+Permissions
+entities.applications.view
+entities.gateways.view
+entities.system.view
+entities.subscriptions.view
+accountNetwork.partner.view
+Fields
+uid, state, entity, operationType, createdAt, startDate, endDate, timeoutDate, cancelDate, counters, total, target, trigger, company
+Details
+/api/v1/operations/{uid}
+Gets the details of an operation.
+Sample
+Exceptions
+Additional Information
+Request
+GET <a href=https://na.airvantage.net/api/v1/operations/0f3919fd1ac0403ab9e70ae2c3729a21 target=_blank rel="noopener noreferrer" class="">https://na.airvantage.net/api/v1/operations/0f3919fd1ac0403ab9e70ae2c3729a21</a>
+Response
+200 OK
+HTTP/1.1 200 OK
+Content-Type: application/json
+...
+{
+"uid": "0f3919fd1ac0403ab9e70ae2c3729a21",
+"state": "FINISHED",
+"entity": "GATEWAY",
+"startDate": 1362489511437,
+"endDate": 1362489512865,
+"counters":    [
+{
+"state": "PENDING",
+"count": 0
+},
+{
+"state": "IN_PROGRESS",
+"count": 0
+},
+{
+"state": "CANCELLED",
+"count": 0
+},
+{
+"state": "FAILURE",
+"count": 0
+},
+{
+"state": "SUCCESS",
+"count": 2
+}
+],
+"total": 2,
+"target": null,
+"trigger": {
+"type": "USER",
+"uid": "4f71674ccd7c495fa3cc83db632f667e",
+"name": "<a href=mailto:user@airvantage.net target=_blank rel="noopener noreferrer" class="">user@airvantage.net</a>"
+},
+"company": "3d259644960649d99b09a85cad44f976",
+"operationType": "GATEWAY_IMPORT",
+"createdAt": 1362489511437,
+"cancelDate": null,
+"timeoutDate": 1370261911437,
+"input":    {
+"uids": null,
+"label": null,
+"filename": "gateways.csv",
+"dependsOn": null
+},
+"details": {"header": "IMEI,SERIAL NUMBER,MAC ADDRESS,TYPE"},
+"messages": []
+}
+Name
+Description
+operation.unknown
+Raised when the 'uid' points to an unknown operation.
+HTTP Method
+GET
+Requires Authentication
+Yes
+Rate Limited
+Yes
+Headers
+None
+Permissions
+entities.applications.view
+entities.gateways.view
+entities.system.view
+entities.subscriptions.view
+accountNetwork.partner.view
+Get tasks
+/api/v1/operations/{uid}/tasks
+Returns, for an operation, a paginated list of tasks with their complete details sorted by rank.
+It is possible to restrain the result list using criteria parameters.
+The
+fields
+parameter has to be defined in order to specify the attributes of the operation which will be returned.
+If
+fields
+parameter is missing, only the following attributes of the operation are returned:
+uid, date, rank, state, target
+.
+More information about paging, filtering, and sorting
+here
+Sample
+Parameters
+Exceptions
+Additional Information
+Request
+GET <a href=https://na.airvantage.net/api/v1/operations/0f3919fd1ac0403ab9e70ae2c3729a21/tasks target=_blank rel="noopener noreferrer" class="">https://na.airvantage.net/api/v1/operations/0f3919fd1ac0403ab9e70ae2c3729a21/tasks</a>
+Response
+200 OK
+HTTP/1.1 200 OK
+Content-Type: application/json
+...
+{
+"items":    [
+{
+"uid": "e7ded7e286924d37b0db3ebc7d74edc1",
+"date": 1362489512832,
+"rank": 2,
+"state": "SUCCESS",
+"target": "da7032315d644f62aee3809a9ad5610d",
+"targetDescription":          {
+"uid": "da7032315d644f62aee3809a9ad5610d",
+"serialNumber": null,
+"imei": "353270040002745",
+"macAddress": "0C:12:24:F1:A0:A1",
+"type": "M2MBoxPro"
+},
+"input": "353270040002745,,0C:12:24:F1:A0:A1,M2MBoxPro,OpenAT",
+"messages": []
+},
+{
+"uid": "c8c19122dbb44ec99655036a78888c26",
+"date": 1362489512832,
+"rank": 3,
+"state": "SUCCESS",
+"target": "b7a6779b69994809b7f17fae0372047b",
+"targetDescription":          {
+"uid": "b7a6779b69994809b7f17fae0372047b",
+"serialNumber": null,
+"imei": "353270040002746",
+"macAddress": "0C:12:24:F1:A1:A1",
+"type": null
+},
+"input": "353270040002746,,0C:12:24:F1:A1:A1,,",
+"messages": []
+}
+],
+"count": 2,
+"size": 2,
+"offset": 0
+}
+Name
+Description
+Use
+Default
+Type
+Operand
+uid
+Return the task whose uid match with the specified id.
+optional
+null
+uid</h1>
+<h1>states
+Returns all tasks whose state is in the given list. States are PENDING, IN_PROGRESS, CANCELLED, FAILURE, SUCCESS.
+optional
+null
+string list
+in
+target
+Returns the task linked to the specified target uid. Target can be application, system, gateway, subscription, alert, partner.
+optional
+null
+string</h1>
+<h1>Name
+Description
+operation.unknown
+Raised when the 'uid' points to an unknown operation.
+HTTP Method
+GET
+Requires Authentication
+Yes
+Rate Limited
+Yes
+Headers
+None
+Permissions
+entities.applications.view
+entities.gateways.view
+entities.system.view
+entities.subscriptions.view
+accountNetwork.partner.view
+Fields
+uid, date, rank, state, target, targetDescription, input, messages
+Get the details of a task
+/api/v1/operations/{operation-uid}/tasks/{task-uid}
+Gets the details of a task owned by an operation.
+Sample
+Exceptions
+Additional Information
+Request
+GET <a href=https://na.airvantage.net/api/v1/operations/0f3919fd1ac0403ab9e70ae2c3729a21/tasks/e7ded7e286924d37b0db3ebc7d74edc1 target=_blank rel="noopener noreferrer" class="">https://na.airvantage.net/api/v1/operations/0f3919fd1ac0403ab9e70ae2c3729a21/tasks/e7ded7e286924d37b0db3ebc7d74edc1</a>
+Response
+200 OK
+HTTP/1.1 200 OK
+Content-Type: application/json
+...
+{
+"uid": "e7ded7e286924d37b0db3ebc7d74edc1",
+"date": 1362489512832,
+"rank": 2,
+"state": "SUCCESS",
+"target": "da7032315d644f62aee3809a9ad5610d",
+"targetDescription": {
+"uid": "da7032315d644f62aee3809a9ad5610d",
+"serialNumber": null,
+"imei": "353270040002745",
+"macAddress": "0C:12:24:F1:A0:A1",
+"type": "M2MBoxPro"
+},
+"input": "353270040002745,,0C:12:24:F1:A0:A1,M2MBoxPro,OpenAT",
+"messages": []
+}
+Name
+Description
+operation.unknown
+Raised when the specified operation is unknown.
+operation.task.unknown
+Raised when the specified task is unknown or is not owned by the specified operation.
+HTTP Method
+GET
+Requires Authentication
+Yes
+Rate Limited
+Yes
+Headers
+None
+Permissions
+entities.applications.view
+entities.gateways.view
+entities.system.view
+entities.subscriptions.view
+accountNetwork.partner.view
+Get result
+/api/v1/operations/{uid}/result
+Returns the generated file in case this operation was in charge to export some data.
+Sample
+Exceptions
+Additional Information
+Request
+GET <a href=https://na.airvantage.net/api/v1/operations/0f3919fd1ac0403ab9e70ae2c3729a21/result target=_blank rel="noopener noreferrer" class="">https://na.airvantage.net/api/v1/operations/0f3919fd1ac0403ab9e70ae2c3729a21/result</a>
+Response
+200 OK
+HTTP/1.1 200 OK
+Content-Type: text/csv
+Content-Disposition: attachment; filename=data_export_2013_03_05_16-46-10_UTC.csv
+...
+Name
+Description
+operation.unknown
+Raised when the 'uid' points to an unknown operation.
+HTTP Method
+GET
+Requires Authentication
+Yes
+Rate Limited
+Yes
+Headers
+None
+Permissions
+entities.applications.view
+entities.gateways.view
+entities.system.view
+entities.subscriptions.view
+accountNetwork.partner.view
+Cancel
+/api/v1/operations/{uid}/cancel
+Cancels a specific operation.
+All tasks which are not terminated will be cancelled.
+The operation will be finished when all its tasks will be terminated (SUCCESS, FAILURE or CANCELLED).
+Sample
+Exceptions
+Additional information
+Request
+POST <a href=https://na.airvantage.net/api/v1/operations/0f3919fd1ac0403ab9e70ae2c3729a21/cancel target=_blank rel="noopener noreferrer" class="">https://na.airvantage.net/api/v1/operations/0f3919fd1ac0403ab9e70ae2c3729a21/cancel</a>
+Response
+200 OK
+HTTP/1.1 200 OK
+Content-Type: application/json
+...
+{
+"uid": "0f3919fd1ac0403ab9e70ae2c3729a21",
+"state": "FINISHED",
+"entity": "GATEWAY",
+"startDate": 1362502507692,
+"endDate": 1362502581091,
+"counters":    [
+{
+"state": "PENDING",
+"count": 0
+},
+{
+"state": "IN_PROGRESS",
+"count": 10
+},
+{
+"state": "CANCELLED",
+"count": 0
+},
+{
+"state": "FAILURE",
+"count": 1
+},
+{
+"state": "SUCCESS",
+"count": 2
+}
+],
+"total": 13,
+"target": null,
+"trigger": {
+"type": "USER",
+"uid": "4f71674ccd7c495fa3cc83db632f667e",
+"name": "<a href=mailto:user@airvantage.net target=_blank rel="noopener noreferrer" class="">user@airvantage.net</a>"
+},
+"company": "3d259644960649d99b09a85cad44f976",
+"operationType": "GATEWAY_IMPORT",
+"createdAt": 1362502507692,
+"cancelDate": 1362502540121,
+"timeoutDate": 1370274907692
+}
+Name
+Description
+operation.unknown
+Raised when the 'uid' points to an unknown operation.
+operation.invalid.state
+The operation is finished. It cannot be cancelled.
+operation.already.cancelled
+The operation is already cancelled
+HTTP Method
+POST
+Requires Authentication
+Yes
+Rate Limited
+Yes
+Headers
+None
+Permissions
+The same right which is required to launch the operation
+Cancel a task
+/api/v1/operations/{operation-uid}/tasks/{task-uid}/cancel
+Cancels a task of an operation.
+A task already terminated (SUCCESS, FAILURE or CANCELLED) cannot be cancelled.
+Sample
+Exceptions
+Additional information
+Request
+POST <a href=https://na.airvantage.net/api/v1/operations/0f3919fd1ac0403ab9e70ae2c3729a21/tasks/e7ded7e286924d37b0db3ebc7d74edc1/cancel target=_blank rel="noopener noreferrer" class="">https://na.airvantage.net/api/v1/operations/0f3919fd1ac0403ab9e70ae2c3729a21/tasks/e7ded7e286924d37b0db3ebc7d74edc1/cancel</a>
+Response
+200 OK
+HTTP/1.1 200 OK
+Content-Length: 0
+Name
+Description
+operation.unknown
+Raised when the specified operation is unknown.
+operation.task.unknown
+Raised when the specified task is unknown or is not owned by the specified operation.
+operation.invalid.state
+The operation is finished. The task cannot be cancelled.
+operation.task.invalid.state
+The task is already finished. It cannot be cancelled.
+operation.already.cancelled
+The operation is already cancelled
+HTTP Method
+POST
+Requires Authentication
+Yes
+Rate Limited
+Yes
+Headers
+None
+Permissions
+The same right which is required to launch the operation
+Retry
+/api/v1/operations/{uid}/retry
+Retries an operation.
+A new operation is created to perform the retry. This operation is based on the FAILURE and CANCELLED tasks of the operation to retry.
+All operations can be retried except the operations using files (import, bulk edit, application release).
+Sample
+Exceptions
+Additional information
+Request
+POST <a href=https://na.airvantage.net/api/v1/operations/0f3919fd1ac0403ab9e70ae2c3729a21/retry target=_blank rel="noopener noreferrer" class="">https://na.airvantage.net/api/v1/operations/0f3919fd1ac0403ab9e70ae2c3729a21/retry</a>
+Response
+200 OK
+HTTP/1.1 200 OK
+Content-Type: application/json
+...
+{
+"operation":"848d850a92994b089db07b3848faa6d4"
+}
+Name
+Description
+operation.unknown
+Raised when the 'uid' points to an unknown operation.
+operation.invalid.state
+The operation is running. It cannot be retried.
+operation.not.retriable
+The operation cannot be retried.
+operation.no.task.to.retry
+The operation cannot be retried: there is no failure or cancelled tasks
+HTTP Method
+POST
+Requires Authentication
+Yes
+Rate Limited
+Yes
+Headers
+None
+Permissions
+The same right which is required to launch the operation
+Find
+/api/v1/operations/tasks
+Returns, for a target, a paginated list of tasks sorted by createdAt descending.
+It is possible to restrain the result list using criteria parameters.
+The
+fields
+parameter has to be defined in order to specify the attributes of the operation which will be returned.
+If
+fields
+parameter is missing, only the following attributes of the operation are returned:
+uid, date, createdAt, executedAt, rank, state, target
+.
+More information about paging, filtering, and sorting
+here
+Sample
+Parameters
+Additional Information
+Request
+GET <a href="https://na.airvantage.net/api/v1/operations/tasks?target=9196f4944c294a168ae5d72f5d0007bf&fields=uid,state,createdAt,operation&size=1" target=_blank rel="noopener noreferrer" class="">https://na.airvantage.net/api/v1/operations/tasks?target=9196f4944c294a168ae5d72f5d0007bf&fields=uid,state,createdAt,operation&size=1</a>
+Response
+200 OK
+HTTP/1.1 200 OK
+Content-Type: application/json
+...
+{
+"items": [
+{
+"state": "FAILURE",
+"operation": {
+"operationType": "SYSTEM_RETRIEVE_DATA",
+"uid": "138a50ec5d014db0ace31de5257fb73a"
+},
+"createdAt": 1503325920647,
+"uid": "015e05351d86485980a19d068a84ca84"
+}
+],
+"count": 4,
+"size": 1,
+"offset": 0
+}
+Name
+Description
+Use
+Default
+Type
+Operand
+target
+Return tasks of the specified target.
+required
+null
+uid</h1>
+<h1>uid
+Return tasks whose uid match with the specified id.
+optional
+null
+uid</h1>
+<h1>operationUid
+Return the task matching the specified operation id.
+optional
+null
+uid</h1>
+<h1>operationTypes
+Returns all tasks whose operation type is in the given list.
+optional
+null
+string list
+in
+states
+Returns all tasks whose state is in the given list. States are PENDING, IN_PROGRESS, CANCELLED, FAILURE, SUCCESS.
+optional
+null
+string list
+in
+createdAfter
+Return all operations created after the given date. The specified date is included.
+optional
+null
+timestamp
+>=
+createdBefore
+Return all operations created before the given date. The specified date is included.
+optional
+null
+timestamp
+&lt;=
+company
+Set the context company.
+optional
+caller's company
+uid</h1>
+<p>HTTP Method
+GET
+Requires Authentication
+Yes
+Rate Limited
+Yes
+Headers
+None
+Permissions
+entities.applications.view
+entities.gateways.view
+entities.system.view
+entities.subscriptions.view
+accountNetwork.partner.view
+Fields
+uid, date, createdAt, executedAt, rank, state, target, targetDescription, input, messages, operation
+Retrieve all triggers
+/api/v1/operations/triggers
+Retrieves all the triggers of a company.
+Sample
+Parameters
+Additional Information
+Request
+GET <a href=https://na.airvantage.net/api/v1/operations/triggers target=_blank rel="noopener noreferrer" class="">https://na.airvantage.net/api/v1/operations/triggers</a>
+Response
+200 OK
+HTTP/1.1 200 OK
+Content-Type: application/json
+...
+[
+{
+"uid":"984f47c347df411ea101f0f90ab65cd8",
+"type":"ON_ALERT",
+"filter":"34a1f6611d42487783014e6589c97e31",
+"operationType":"SYSTEM_APPLY_SETTINGS",
+"email":"<a href=mailto:bob@m2mop.net target=_blank rel="noopener noreferrer" class="">bob@m2mop.net</a>",
+"notify":true,
+"callback":null,
+"parameters":{
+"templateId":"75c012c806ab4ce8ad0a4e1171bda440"
+}
+},
+...
+]
+Name
+Description
+Use
+Default
+Type
+company
+Set the context company.
+optional
+caller's company
+string
+HTTP Method
+GET
+Requires Authentication
+Yes
+Rate Limited
+Yes
+Headers
+None
+Permissions
+entities.operation.trigger or entities.alerts.rule.view
+Get trigger details
+/api/v1/operations/triggers/{uid}
+Gets the trigger identified by the given uid.
+Sample
+Parameters
+Exceptions
+Additional Information
+Request
+GET <a href=https://na.airvantage.net/api/v1/operations/triggers/df411e4f47c39847a101f0fd890ab65c target=_blank rel="noopener noreferrer" class="">https://na.airvantage.net/api/v1/operations/triggers/df411e4f47c39847a101f0fd890ab65c</a>
+Response
+200 OK
+HTTP/1.1 200 OK
+Content-Type: application/json
+...
+{
+"uid": "df411e4f47c39847a101f0fd890ab65c"
+"type": "ON_ALERT_STATE_CHANGE_TRUE",
+"filter": "34a1f6611d42487783014e6589c97e31",
+"operationType": "SYSTEM_SEND_COMMAND",
+"notify": true,
+"callback": "<a href=http://blabla.com target=_blank rel="noopener noreferrer" class="">http://blabla.com</a>",
+"parameters": {
+"commandId": "home.ChangeTemperature",
+"protocol": "REST",
+"parameters": {"Temperature": 20},
+"application": {
+"uid": "333ea6a2d6e44a00aee2804ed519128a"
+},
+"requestConnection": false
+}
+}
+Name
+Description
+Use
+Default
+Type
+company
+Set the context company.
+optional
+caller's company
+string
+Name
+Description
+operation.trigger.unknown
+Raised when the 'uid' points to an unknown operation trigger.
+HTTP Method
+GET
+Requires Authentication
+Yes
+Rate Limited
+Yes
+Headers
+None
+Permissions
+entities.operation.trigger or entities.alerts.rule.view
+Create a new trigger
+/api/v1/operations/triggers
+Creates a new trigger.
+Sample
+Content
+Parameters
+Exceptions
+Additional Information
+Request
+POST <a href=https://na.airvantage.net/api/v1/operations/triggers target=_blank rel="noopener noreferrer" class="">https://na.airvantage.net/api/v1/operations/triggers</a>
+Content-Type: application/json
+...
+{
+"type": "ON_ALERT_STATE_CHANGE",
+"filter": "47766a1366384dfdb1a45f8a283e2344",
+"operationType": "SYSTEM_SUSPEND",
+"parameters": {}
+}
+Response
+200 OK
+HTTP/1.1 200 OK
+Content-Type: application/json
+...
+{
+"uid":"b0ea1e43e7164b69982ff99170f57dbf",
+"type":"ON_ALERT_STATE_CHANGE",
+"filter":"47766a1366384dfdb1a45f8a283e2344",
+"operationType":"SYSTEM_SUSPEND",
+"email":"<a href=mailto:user@airvantage.com target=_blank rel="noopener noreferrer" class="">user@airvantage.com</a>",
+"notify":false,
+"callback":null,
+"parameters":{
+}
+}
+Name
+Description
+Use
+Default
+Type
+company
+Set the context company.
+optional
+caller's company
+string
+You can find more details
+here
+.
+Name
+Description
+operation.trigger.too.many
+Raised when there are more than 50 triggers in your company.
+operation.trigger.type.unknown
+Raised when the given trigger type is unknown.
+operation.trigger.operation.type.unknown
+Raised when the given operation type is unknown.
+operation.trigger.parameters.invalid
+Raised when the given parameters are not ok for the specified operation type.
+operation.trigger.unauthorized.for.readonly.alert.rule
+Raised when the trigger is being created on read only alert rule.
+HTTP Method
+POST
+Requires Authentication
+Yes
+Rate Limited
+Yes
+Headers
+None
+Permissions
+entities.operation.trigger or entities.alerts.rule.create.edit.delete
+Update a trigger
+/api/v1/operations/triggers/{uid}
+Updates the trigger identified by the given uid.
+Sample
+Content
+Parameters
+Exceptions
+Additional Information
+Request
+PUT <a href=https://na.airvantage.net/api/v1/operations/triggers/b0ea1e43e7164b69982ff99170f57dbf target=_blank rel="noopener noreferrer" class="">https://na.airvantage.net/api/v1/operations/triggers/b0ea1e43e7164b69982ff99170f57dbf</a>
+Content-Type: application/json
+...
+{
+"type": "ON_ALERT",
+"filter": "47766a1366384dfdb1a45f8a283e2344",
+"operationType": "SYSTEM_SUSPEND",
+"parameters": {}
+}
+Response
+200 OK
+HTTP/1.1 200 OK
+Content-Type: application/json
+...
+{
+"uid":"b0ea1e43e7164b69982ff99170f57dbf",
+"type":"ON_ALERT",
+"filter":"47766a1366384dfdb1a45f8a283e2344",
+"operationType":"SYSTEM_SUSPEND",
+"email":"<a href=mailto:user@airvantage.com target=_blank rel="noopener noreferrer" class="">user@airvantage.com</a>",
+"notify":false,
+"callback":null,
+"parameters":{
+}
+}
+Name
+Description
+Use
+Default
+Type
+company
+Set the context company.
+optional
+caller's company
+string
+You can find more details
+here
+.
+Name
+Description
+operation.trigger.unknown
+Raised when the 'uid' points to an unknown operation trigger.
+operation.trigger.type.unknown
+Raised when the given trigger type is unknown.
+operation.trigger.operation.type.unknown
+Raised when the given operation type is unknown.
+operation.trigger.parameters.invalid
+Raised when the given parameters are not ok for the specified operation type.
+HTTP Method
+PUT
+Requires Authentication
+Yes
+Rate Limited
+Yes
+Headers
+None
+Permissions
+entities.operation.trigger or entities.alerts.rule.create.edit.delete
+Delete a trigger
+/api/v1/operations/triggers/{uid}
+Deletes the trigger identified by the given uid.
+Sample
+Parameters
+Exceptions
+Additional Information
+Request
+DELETE <a href=https://na.airvantage.net/api/v1/operations/triggers/b0ea1e43e7164b69982ff99170f57dbf target=_blank rel="noopener noreferrer" class="">https://na.airvantage.net/api/v1/operations/triggers/b0ea1e43e7164b69982ff99170f57dbf</a>
+...
+Response
+200 OK
+HTTP/1.1 200 OK
+Content-Length: 0
+Name
+Description
+Use
+Default
+Type
+company
+Set the context company.
+optional
+caller's company
+string
+Name
+Description
+operation.trigger.unknown
+Raised when the 'uid' points to an unknown operation trigger.
+HTTP Method
+DELETE
+Requires Authentication
+Yes
+Rate Limited
+Yes
+Headers
+None
+Permissions
+entities.operation.trigger or entities.alerts.rule.create.edit.delete</div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href=https://github.com/andreyjv/personal-av/tree/docs/documentation-revamp/PRD_documentation-revamp/website/docs/reference/api/API-Operation-v1.md target=_blank rel="noopener noreferrer" class=theme-edit-this-page><svg fill=currentColor height=20 width=20 viewBox="0 0 40 40" class=iconEdit_Z9Sw aria-hidden=true><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"/></g></svg>Edit this page</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"></nav></div></div></div></div></main></div></div></div></div></div><footer class="theme-layout-footer footer"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class=footer__title>Jobs</div><ul class="footer__items clean-list"><li class=footer__item><a class=footer__link-item href=/personal-av-docs/docs/how-to/activate-sims>Activate SIMs</a><li class=footer__item><a class=footer__link-item href=/personal-av-docs/docs/how-to/order-sims>Order SIMs</a><li class=footer__item><a class=footer__link-item href=/personal-av-docs/api>Call the API</a><li class=footer__item><a class=footer__link-item href=/personal-av-docs/docs/how-to/register-routers>Register routers</a></ul></div><div class="theme-layout-footer-column col footer__col"><div class=footer__title>Reference</div><ul class="footer__items clean-list"><li class=footer__item><a class=footer__link-item href=/personal-av-docs/docs/reference/api>API HTML chapters</a><li class=footer__item><a class=footer__link-item href=/personal-av-docs/docs/reference/apn>APN table</a><li class=footer__item><a class=footer__link-item href=/personal-av-docs/docs/changelog>Changelog</a></ul></div><div class="theme-layout-footer-column col footer__col"><div class=footer__title>Preview</div><ul class="footer__items clean-list"><li class=footer__item><a href=https://doc.airvantage.net/ target=_blank rel="noopener noreferrer" class=footer__link-item>Live Hugo (canonical until cutover)<svg width=13.5 height=13.5 aria-label="(opens in new tab)" class=iconExternalLink_nPIU><use href=#theme-svg-external-link /></svg></a><li class=footer__item><a class=footer__link-item href=/personal-av-docs/docs/ui-library>UI library</a><li class=footer__item><a class=footer__link-item href=/personal-av-docs/docs/copy-library>Copy library</a></ul></div></div><div class="footer__bottom text--center"><div class=footer__copyright>Sierra Wireless / AirVantage documentation preview. Live doc.airvantage.net stays Hugo until cutover. Built with Docusaurus.</div></div></div></footer></div></body>

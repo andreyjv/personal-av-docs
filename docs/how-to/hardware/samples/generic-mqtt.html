@@ -1,0 +1,195 @@
+<!doctype html><html lang=en dir=ltr class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-how-to/hardware/samples/generic-mqtt" data-has-hydrated=false><head><meta charset=UTF-8><meta name=generator content="Docusaurus v3.10.2"><title data-rh=true>Enable a connection to AirVantage using MQTT | AirVantage documentation</title><meta data-rh=true name=viewport content="width=device-width, initial-scale=1.0"/><meta data-rh=true name=twitter:card content=summary_large_image /><meta data-rh=true property=og:image content=https://andreyjv.github.io/personal-av-docs/img/favicon.svg /><meta data-rh=true name=twitter:image content=https://andreyjv.github.io/personal-av-docs/img/favicon.svg /><meta data-rh=true property=og:url content=https://andreyjv.github.io/personal-av-docs/docs/how-to/hardware/samples/generic-mqtt /><meta data-rh=true property=og:locale content=en /><meta data-rh=true name=docusaurus_locale content=en /><meta data-rh=true name=docsearch:language content=en /><meta data-rh=true name=docusaurus_version content=current /><meta data-rh=true name=docusaurus_tag content=docs-default-current /><meta data-rh=true name=docsearch:version content=current /><meta data-rh=true name=docsearch:docusaurus_tag content=docs-default-current /><meta data-rh=true property=og:title content="Enable a connection to AirVantage using MQTT | AirVantage documentation"/><meta data-rh=true name=description content="av · imported from live Hugo on 2026-10-07. Guides stay latest. Original page."/><meta data-rh=true property=og:description content="av · imported from live Hugo on 2026-10-07. Guides stay latest. Original page."/><link data-rh=true rel=icon href=/personal-av-docs/img/favicon.svg /><link data-rh=true rel=canonical href=https://andreyjv.github.io/personal-av-docs/docs/how-to/hardware/samples/generic-mqtt /><link data-rh=true rel=alternate href=https://andreyjv.github.io/personal-av-docs/docs/how-to/hardware/samples/generic-mqtt hreflang=en /><link data-rh=true rel=alternate href=https://andreyjv.github.io/personal-av-docs/docs/how-to/hardware/samples/generic-mqtt hreflang=x-default /><link rel=stylesheet href=/personal-av-docs/assets/css/styles.1e3041e1.css /><script src=/personal-av-docs/assets/js/runtime~main.bbef5b78.js defer></script><script src=/personal-av-docs/assets/js/main.443f591d.js defer></script></head><body><svg style="display: none;"><defs>
+<symbol id=theme-svg-external-link viewBox="0 0 24 24"><path fill=currentColor d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme-deb")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||(window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light")),document.documentElement.setAttribute("data-theme-choice",t||"system")}(),function(){try{for(var[t,e]of new URLSearchParams(window.location.search).entries())if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id=__docusaurus><link rel=preload as=image href=/personal-av-docs/img/favicon.svg /><div role=region aria-label="Skip to main content"><a class=skipToContent_fXgn href=#__docusaurus_skipToContent_fallback>Skip to main content</a></div><nav aria-label=Main class="theme-layout-navbar navbar navbar--fixed-top"><div class=navbar__inner><div class="theme-layout-navbar-left navbar__items"><button aria-label="Toggle navigation bar" aria-expanded=false class="navbar__toggle clean-btn" type=button><svg width=30 height=30 viewBox="0 0 30 30" aria-hidden=true><path stroke=currentColor stroke-linecap=round stroke-miterlimit=10 stroke-width=2 d="M4 7h22M4 15h22M4 23h22"/></svg></button><a class=navbar__brand href=/personal-av-docs/><div class=navbar__logo><img src=/personal-av-docs/img/favicon.svg alt=AirVantage class="themedComponent_mlkZ themedComponent--light_NVdE"/><img src=/personal-av-docs/img/favicon.svg alt=AirVantage class="themedComponent_mlkZ themedComponent--dark_xIcU"/></div><b class="navbar__title text--truncate">AirVantage Docs</b></a><a class="navbar__item navbar__link navbar__guides" href=/personal-av-docs/docs/how-to/activate-sims>Guides</a><a class="navbar__item navbar__link" href=/personal-av-docs/api>API reference</a><a class="navbar__item navbar__link" href=/personal-av-docs/docs/changelog>Changelog</a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type=button disabled title="system mode" aria-label="Switch between dark and light mode (currently system mode)"><svg viewBox="0 0 24 24" width=24 height=24 aria-hidden=true class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill=currentColor d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"/></svg><svg viewBox="0 0 24 24" width=24 height=24 aria-hidden=true class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill=currentColor d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"/></svg><svg viewBox="0 0 24 24" width=24 height=24 aria-hidden=true class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill=currentColor d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"/></svg></button></div><div class=navbarSearchContainer_Bca1><div class="navbar__search searchBarContainer_NW3z" dir=ltr><svg aria-hidden=true class=searchIcon_T3tP focusable=false viewBox="0 0 16 16"><path fill=currentColor d="M6.02945 10.20327a4.17382 4.17382 0 1 1 4.17382-4.17382 4.15609 4.15609 0 0 1-4.17382 4.17382Zm9.69195 4.2199-4.8225-4.82338A5.88021 5.88021 0 0 0 12.058 6.02856 6.00467 6.00467 0 1 0 9.59979 10.8989l4.82338 4.82338a.89729.89729 0 0 0 1.29912 0 .89749.89749 0 0 0-.00087-1.29909Z"/></svg><input placeholder=Search aria-label=Search class="navbar__search-input searchInput_YFbd" value="" /><div class="loadingRing_RJI3 searchBarLoadingRing_YnHq"><div></div><div></div><div></div><div></div></div></div></div></div></div><div role=presentation class=navbar-sidebar__backdrop></div></nav><div id=__docusaurus_skipToContent_fallback class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class=av-shell><nav class=av-rail aria-label=Guides><p class=av-rail-kicker>Guides<ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class=menu__list-item-collapsible><span class="menu__link menu__link--sublist menu__link--sublist-caret av-rail-heading">Quick start</span></div><ul class=menu__list><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link href=/personal-av-docs/docs/how-to/activate-sims>Activate SIMs</a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link href=/personal-av-docs/docs/how-to/order-sims>Order SIMs</a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link href=/personal-av-docs/api>Call the API</a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link href=/personal-av-docs/docs/how-to/register-routers>Register routers</a></ul><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class=menu__list-item-collapsible><span class="menu__link menu__link--sublist menu__link--sublist-caret av-rail-heading">Browse by product</span></div><ul class=menu__list><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link href=/personal-av-docs/docs/how-to/activate-sims>Connectivity</a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link href=/personal-av-docs/docs/how-to/register-routers>Router management</a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link href=/personal-av-docs/docs/explain/states>States and operations</a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link href=/personal-av-docs/api>Developer platform</a></ul><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class=menu__list-item-collapsible><span class="menu__link menu__link--sublist menu__link--sublist-caret av-rail-heading">Keep building</span></div><ul class=menu__list><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link href=/personal-av-docs/docs/explain/states>States and operations</a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link href=/personal-av-docs/docs/reference/apn>APN table</a></ul><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class=menu__link href=/personal-av-docs/docs/get-started/first-sim>Get started</a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class=menu__link href=/personal-av-docs/docs/reference/api>Reference</a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class=menu__link href=/personal-av-docs/docs/changelog>Changelog</a></ul></nav><div class=av-shell-main><div class=docsWrapper_hBAB><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type=button></button><div class=docRoot_UBD9><main class="docMainContainer_TBSr docMainContainerEnhanced_lQrH"><div class="container padding-top--md padding-bottom--lg"><div class=row><div class="col docItemCol_VOVn"><div class=docItemContainer_Djhp><article><div class="theme-doc-markdown markdown"><header><h1>Enable a connection to AirVantage using MQTT</h1></header><p>:::note Edition
+<strong>av</strong> · imported from live Hugo on 2026-10-07. Guides stay latest. <a href=https://doc.airvantage.net/av/howto/hardware/samples/generic-mqtt target=_blank rel="noopener noreferrer" class="">Original page</a>.
+:::</p>
+<p>Enable a connection to AirVantage using MQTT
+This article explains the different steps to enable AirVantage connection for any device using MQTT.
+1 /
+Setup
+2 /
+Design
+3 /
+Implementing
+Step 1: Setup Hardware
+Plug the device to USB.
+Set up Internet on your device with an ethernet cable.
+Install the device developer tools
+Step 2: Design your application
+An
+application model
+aims to explain to AirVantage how to deal with the device about communication and authentication and managing the data: variable, settings or commands.
+If you don’t supply such information, the server will ignore all the communication from your device.
+What is an application model?
+The first step to create the application model is to create a file named model.app with the following content. You just need to change the type value with a unique identifier for your application and the name and revision with the apprioriate value for your use case.
+First of all, to be able to send and receive data, you have to describe your data to AirVantage.
+Here is the description, you just need to change the
+type
+value with a unique identifier
+for your application and the
+name
+and
+revision
+with the appropriate values for your use case.
+You can modify the
+&lt;data>
+area. Once it matches your needs, save everything as
+model.app
+.
+Don’t modify the asset id as it is used in the code source application or modify it accordingly
+&lt;?xml version="1.0" encoding="ISO-8859-1"?>
+&lt;app:application
+xmlns:app="<a href=http://www.sierrawireless.com/airvantage/application/1.0 target=_blank rel="noopener noreferrer" class="">http://www.sierrawireless.com/airvantage/application/1.0</a>"
+type="com.demo.airvantage.app"
+name="Generic Greenhouse"
+revision="1.0">
+&lt;capabilities></p>
+<p>&lt;communication>
+&lt;protocol comm-id="SERIAL" type="MQTT" />
+&lt;/communication></p>
+<p>&lt;data>
+&lt;encoding type="MQTT">
+&lt;asset default-label="Greenhouse" id="machine">
+&lt;variable default-label="Temperature" path="temperature"
+type="double"/>
+&lt;variable default-label="Luminosity" path="luminosity"
+type="double"/>
+&lt;setting default-label="Threshold" path="threshold"
+type="int"/>
+&lt;/asset>
+&lt;/encoding>
+&lt;/data>
+&lt;/capabilities>
+&lt;/app:application>
+Edit your system
+Go to Monitor > Systems
+Select your system and click on the Edit icon
+Search your application
+Click on Search application
+In the new dialog box, select the My Application tab
+Search your application using its name (Generic Greenhouse)
+Associate your application to your system
+Click on the application to select it.
+Click on the padlock and configure the password.
+Click on Save in the right top corner
+Step 3: Implementing an application
+Once your device is registered in AirVantage, you can start developing the embedded application that will use the MQTT protocol to communicate with
+AirVantage. You can use several MQTT clients to develop the embedded client:
+Paho
+,
+MQTT for node
+. Here are the different calls to integrate in the embedded application to send and receive data with AirVantage:
+Server
+AirVantage exposes an MQTT broker on the default MQTT port (
+1883
+). It means that if you are connecting managing your device through
+<a href=https://na.airvantage.net target=_blank rel="noopener noreferrer" class="">https://na.airvantage.net</a>
+, you will need to connect to the broker
+at the following URL:
+tcp://na.airvantage.net:1883
+.
+Authentication
+The MQTT protocol support on AirVantage uses
+Username and Password
+to authenticate devices.
+So you need to specify the username and the password when you connect the client to the broker (AirVantage). The username is the serial number of the gateway in AirVantage and the password is
+the one set during the creation of the system.
+You can check the device is connected on AirVantage by checking the timeline from the System Details view. For each connection, you should see a new line with 0 data.
+Send data to AirVantage
+You can publish on the
+&lt;username>/messages/json
+topic to send your data to AirVantage, where the username is the is the serial number of the gateway in AirVantage. The data shall be encoded
+in JSON using the same format as the one used by the REST API for devices: a message can contain several data and several datapoints for one data. Then you can easily send a complete status or
+historical values in one message.
+Note:
+you must be consistent between the serial number supplied on AirVantage, in the username and in the topic name below.
+Publish on the
+&lt;username>/messages/json
+topic
+[
+{
+"machine.temperature": [{
+"timestamp" : 1349907137,
+"value" : "23.2"
+},
+{
+"timestamp" : 1349908137,
+"value" : "24.5"
+},
+{
+"timestamp" : 1349909137,
+"value" : "22.9"
+}]
+},
+{
+"machine.threshold": [{
+"timestamp" : 1349907137,
+"value" : "30"
+}]
+}
+]
+This message sends 3 values for the temperature with different timestamp and one value for the threshold parameter.
+Timestamp must be in ms.
+Once AirVantage receives this message, data is stored and can be accessed by the Data API on System (Last datapoints, Historical aggregated datapoints, Historical raw datapoints, Export datapoints).
+The timestamp values are optional. When the server will received the values, it will add a timestamp. The format is
+{ "machine.temperature": 23.2, "machine.humidity": 70 }
+How to check your communication?
+If your payload is not well-formed, your communication won’t be displayed in the timeline at all. Check it by using online json chcker & formater.
+Receive tasks from AirVantage
+A device can not only push data to AirVantage but you can also use AirVantage to subscribe to new tasks to be executed. Currently the MQTT protocol supports 2 kinds of tasks: read and write.
+A
+read
+task requests the device to send back to the server the current values for a set of data. It’s a way for a user to request the device to “refresh” the value of a data on the server. This operation is only for variables and settings. To create this operation from AirVantage API, you need to call the “Retrieve data” API (see documentation of System API).
+A
+write
+task requests the device to change the value of a data locally on the device. It’s a way to interact with the device and change the behaviour of the embedded application. This operation is only available for settings. To create this operation from AirVantage API, you need to call the “Apply settings” API (see documentation of System API).
+The device needs to subscribe to the
+&lt;username>/tasks/json
+topic, where the username is the is the serial number of the gateway in AirVantage.
+Payload received from a subscription to the
+&lt;username>/tasks/json
+topic
+[
+{
+"uid" : "3c12547b613740adb686271bdc8f097c",
+"timestamp" : 1348836320188,
+"read" : ["machine.temperature"]
+}
+]
+Or
+[
+{
+"uid": "8006cc58ba2141f69161a78f1bfdea1d",
+"timestamp": 1348836320566,
+"write" : [{"machine.threshold" : 25}}]
+}
+]
+Or
+[
+{
+"uid": "8006cc58ba2141f69161a78f1bfdea1d",
+"timestamp": 1348836320566,
+"command" : {id: "machine.toggleOn", params: {"light": "On", "water": "On"}}
+}
+]
+In this example, AirVantage is asking to the device to send the current temperature and requests to change the value of the threshold to 25. Once the API is
+called, AirVantage assumed the tasks have been retrieved by the device and then acknowledge automatically the tasks. In the current example, the device will
+probably directly call the message API to send back to AirVantage the last value of the temperature.
+Acknowledging incoming commands
+Upon receiving an incoming MQTT command (sent by AirVantage), the device shall return an acknowledge message. This latter must enclose “uid” and “status” keys, the optional “message” key may be provided. Below is a sample ack message to the incoming message as shown in the previous section.
+[{
+"uid":"8006cc58ba2141f69161a78f1bfdea1d",
+"status":"OK"
+}]
+This ack message is JSON encoded and must be published to
+{IMEI or S/N}/acks/json
+topic:</p>
+<ul>
+<li class=""><em>uid</em> is the unique id of the incoming MQTT command to be acknowledged</li>
+<li class=""><em>status</em> being OK or ERROR</li>
+<li class="">optional <em>message</em> key may be included to provided information on the error
+Next Step
+Continue the tutorial
+by using tools supplied by AirVantage to test your communication with your device.</li>
+</ul></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href=https://github.com/andreyjv/personal-av/tree/docs/documentation-revamp/PRD_documentation-revamp/website/docs/how-to/hardware/samples/generic-mqtt.md target=_blank rel="noopener noreferrer" class=theme-edit-this-page><svg fill=currentColor height=20 width=20 viewBox="0 0 40 40" class=iconEdit_Z9Sw aria-hidden=true><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"/></g></svg>Edit this page</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"></nav></div></div></div></div></main></div></div></div></div></div><footer class="theme-layout-footer footer"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class=footer__title>Jobs</div><ul class="footer__items clean-list"><li class=footer__item><a class=footer__link-item href=/personal-av-docs/docs/how-to/activate-sims>Activate SIMs</a><li class=footer__item><a class=footer__link-item href=/personal-av-docs/docs/how-to/order-sims>Order SIMs</a><li class=footer__item><a class=footer__link-item href=/personal-av-docs/api>Call the API</a><li class=footer__item><a class=footer__link-item href=/personal-av-docs/docs/how-to/register-routers>Register routers</a></ul></div><div class="theme-layout-footer-column col footer__col"><div class=footer__title>Reference</div><ul class="footer__items clean-list"><li class=footer__item><a class=footer__link-item href=/personal-av-docs/docs/reference/api>API HTML chapters</a><li class=footer__item><a class=footer__link-item href=/personal-av-docs/docs/reference/apn>APN table</a><li class=footer__item><a class=footer__link-item href=/personal-av-docs/docs/changelog>Changelog</a></ul></div><div class="theme-layout-footer-column col footer__col"><div class=footer__title>Preview</div><ul class="footer__items clean-list"><li class=footer__item><a href=https://doc.airvantage.net/ target=_blank rel="noopener noreferrer" class=footer__link-item>Live Hugo (canonical until cutover)<svg width=13.5 height=13.5 aria-label="(opens in new tab)" class=iconExternalLink_nPIU><use href=#theme-svg-external-link /></svg></a><li class=footer__item><a class=footer__link-item href=/personal-av-docs/docs/ui-library>UI library</a><li class=footer__item><a class=footer__link-item href=/personal-av-docs/docs/copy-library>Copy library</a></ul></div></div><div class="footer__bottom text--center"><div class=footer__copyright>Sierra Wireless / AirVantage documentation preview. Live doc.airvantage.net stays Hugo until cutover. Built with Docusaurus.</div></div></div></footer></div></body>

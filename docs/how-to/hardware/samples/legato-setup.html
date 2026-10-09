@@ -1,0 +1,310 @@
+<!doctype html><html lang=en dir=ltr class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-how-to/hardware/samples/legato-setup" data-has-hydrated=false><head><meta charset=UTF-8><meta name=generator content="Docusaurus v3.10.2"><title data-rh=true>Getting Ready to Develop Legato Applications | AirVantage documentation</title><meta data-rh=true name=viewport content="width=device-width, initial-scale=1.0"/><meta data-rh=true name=twitter:card content=summary_large_image /><meta data-rh=true property=og:image content=https://andreyjv.github.io/personal-av-docs/img/favicon.svg /><meta data-rh=true name=twitter:image content=https://andreyjv.github.io/personal-av-docs/img/favicon.svg /><meta data-rh=true property=og:url content=https://andreyjv.github.io/personal-av-docs/docs/how-to/hardware/samples/legato-setup /><meta data-rh=true property=og:locale content=en /><meta data-rh=true name=docusaurus_locale content=en /><meta data-rh=true name=docsearch:language content=en /><meta data-rh=true name=docusaurus_version content=current /><meta data-rh=true name=docusaurus_tag content=docs-default-current /><meta data-rh=true name=docsearch:version content=current /><meta data-rh=true name=docsearch:docusaurus_tag content=docs-default-current /><meta data-rh=true property=og:title content="Getting Ready to Develop Legato Applications | AirVantage documentation"/><meta data-rh=true name=description content="av · imported from live Hugo on 2026-10-07. Guides stay latest. Original page."/><meta data-rh=true property=og:description content="av · imported from live Hugo on 2026-10-07. Guides stay latest. Original page."/><link data-rh=true rel=icon href=/personal-av-docs/img/favicon.svg /><link data-rh=true rel=canonical href=https://andreyjv.github.io/personal-av-docs/docs/how-to/hardware/samples/legato-setup /><link data-rh=true rel=alternate href=https://andreyjv.github.io/personal-av-docs/docs/how-to/hardware/samples/legato-setup hreflang=en /><link data-rh=true rel=alternate href=https://andreyjv.github.io/personal-av-docs/docs/how-to/hardware/samples/legato-setup hreflang=x-default /><link rel=stylesheet href=/personal-av-docs/assets/css/styles.1e3041e1.css /><script src=/personal-av-docs/assets/js/runtime~main.bbef5b78.js defer></script><script src=/personal-av-docs/assets/js/main.443f591d.js defer></script></head><body><svg style="display: none;"><defs>
+<symbol id=theme-svg-external-link viewBox="0 0 24 24"><path fill=currentColor d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme-deb")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||(window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light")),document.documentElement.setAttribute("data-theme-choice",t||"system")}(),function(){try{for(var[t,e]of new URLSearchParams(window.location.search).entries())if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id=__docusaurus><link rel=preload as=image href=/personal-av-docs/img/favicon.svg /><div role=region aria-label="Skip to main content"><a class=skipToContent_fXgn href=#__docusaurus_skipToContent_fallback>Skip to main content</a></div><nav aria-label=Main class="theme-layout-navbar navbar navbar--fixed-top"><div class=navbar__inner><div class="theme-layout-navbar-left navbar__items"><button aria-label="Toggle navigation bar" aria-expanded=false class="navbar__toggle clean-btn" type=button><svg width=30 height=30 viewBox="0 0 30 30" aria-hidden=true><path stroke=currentColor stroke-linecap=round stroke-miterlimit=10 stroke-width=2 d="M4 7h22M4 15h22M4 23h22"/></svg></button><a class=navbar__brand href=/personal-av-docs/><div class=navbar__logo><img src=/personal-av-docs/img/favicon.svg alt=AirVantage class="themedComponent_mlkZ themedComponent--light_NVdE"/><img src=/personal-av-docs/img/favicon.svg alt=AirVantage class="themedComponent_mlkZ themedComponent--dark_xIcU"/></div><b class="navbar__title text--truncate">AirVantage Docs</b></a><a class="navbar__item navbar__link navbar__guides" href=/personal-av-docs/docs/how-to/activate-sims>Guides</a><a class="navbar__item navbar__link" href=/personal-av-docs/api>API reference</a><a class="navbar__item navbar__link" href=/personal-av-docs/docs/changelog>Changelog</a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type=button disabled title="system mode" aria-label="Switch between dark and light mode (currently system mode)"><svg viewBox="0 0 24 24" width=24 height=24 aria-hidden=true class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill=currentColor d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"/></svg><svg viewBox="0 0 24 24" width=24 height=24 aria-hidden=true class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill=currentColor d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"/></svg><svg viewBox="0 0 24 24" width=24 height=24 aria-hidden=true class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill=currentColor d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"/></svg></button></div><div class=navbarSearchContainer_Bca1><div class="navbar__search searchBarContainer_NW3z" dir=ltr><svg aria-hidden=true class=searchIcon_T3tP focusable=false viewBox="0 0 16 16"><path fill=currentColor d="M6.02945 10.20327a4.17382 4.17382 0 1 1 4.17382-4.17382 4.15609 4.15609 0 0 1-4.17382 4.17382Zm9.69195 4.2199-4.8225-4.82338A5.88021 5.88021 0 0 0 12.058 6.02856 6.00467 6.00467 0 1 0 9.59979 10.8989l4.82338 4.82338a.89729.89729 0 0 0 1.29912 0 .89749.89749 0 0 0-.00087-1.29909Z"/></svg><input placeholder=Search aria-label=Search class="navbar__search-input searchInput_YFbd" value="" /><div class="loadingRing_RJI3 searchBarLoadingRing_YnHq"><div></div><div></div><div></div><div></div></div></div></div></div></div><div role=presentation class=navbar-sidebar__backdrop></div></nav><div id=__docusaurus_skipToContent_fallback class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class=av-shell><nav class=av-rail aria-label=Guides><p class=av-rail-kicker>Guides<ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class=menu__list-item-collapsible><span class="menu__link menu__link--sublist menu__link--sublist-caret av-rail-heading">Quick start</span></div><ul class=menu__list><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link href=/personal-av-docs/docs/how-to/activate-sims>Activate SIMs</a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link href=/personal-av-docs/docs/how-to/order-sims>Order SIMs</a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link href=/personal-av-docs/api>Call the API</a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link href=/personal-av-docs/docs/how-to/register-routers>Register routers</a></ul><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class=menu__list-item-collapsible><span class="menu__link menu__link--sublist menu__link--sublist-caret av-rail-heading">Browse by product</span></div><ul class=menu__list><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link href=/personal-av-docs/docs/how-to/activate-sims>Connectivity</a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link href=/personal-av-docs/docs/how-to/register-routers>Router management</a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link href=/personal-av-docs/docs/explain/states>States and operations</a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link href=/personal-av-docs/api>Developer platform</a></ul><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class=menu__list-item-collapsible><span class="menu__link menu__link--sublist menu__link--sublist-caret av-rail-heading">Keep building</span></div><ul class=menu__list><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link href=/personal-av-docs/docs/explain/states>States and operations</a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link href=/personal-av-docs/docs/reference/apn>APN table</a></ul><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class=menu__link href=/personal-av-docs/docs/get-started/first-sim>Get started</a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class=menu__link href=/personal-av-docs/docs/reference/api>Reference</a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class=menu__link href=/personal-av-docs/docs/changelog>Changelog</a></ul></nav><div class=av-shell-main><div class=docsWrapper_hBAB><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type=button></button><div class=docRoot_UBD9><main class="docMainContainer_TBSr docMainContainerEnhanced_lQrH"><div class="container padding-top--md padding-bottom--lg"><div class=row><div class="col docItemCol_VOVn"><div class=docItemContainer_Djhp><article><div class="theme-doc-markdown markdown"><header><h1>Getting Ready to Develop Legato Applications</h1></header><p>:::note Edition
+<strong>av</strong> · imported from live Hugo on 2026-10-07. Guides stay latest. <a href=https://doc.airvantage.net/av/howto/hardware/samples/legato-setup target=_blank rel="noopener noreferrer" class="">Original page</a>.
+:::</p>
+<p>Getting Ready to Develop Legato Applications
+This tutorials is deprecated.
+Please have a look to
+this page
+.
+Objective
+This tutorial aims to provide setup information to users who want to rapidly get started developing Legato applications using Command-line mode.
+Tutorial on developing Legato application using Developer Studio IDE will be made available in the near future.
+The following steps are described, they are necessary to develop Legato applications:
+Interfacing with Legato device, in order to configure device and to control applications
+Setting up Legato application Development Environment on your host, in order to compile and install applications onto the target device
+Registering your Legato device on AirVantage, so that the device can exchange data with the cloud server
+Although a mangOH board embedding a WP8548 module is used in this tutorial, guidelines provided in this page are also applicable to other Legato-based modules.
+Prerequisite
+The mangOH board shall be correctly mounted (WP module, antennas, power, switches, etc) following this
+user guide
+Download appropriate
+firmware packages
+(Customer Configuration package and Carrier Configuration package) then follow provided instruction to upgrade the device. Please note that signing up/in source.sierrawireless.com is required to download packages and drivers.
+SIM card with data call plan
+Linux PC running Ubuntu/Debian OS
+If you’d like to use your existing Host (e.g. MAC OSX, Windows) to develop Legato applications, you could use Virtual Machine, e.g. VirtualBox
+If you are using Virtual Machine under Windows then install the
+USB Drivers
+Create an Ubuntu/Debian VM image. For instance, you can follow
+Ubuntu on VirtualBox
+Then follow this tutorial
+Have an account on AirVantage server. If you don’t,
+sign up here
+Part references used in this tutorial
+AirPrime WP8548 module
+mangOH board
+Ubuntu 14.04.3 TLS
+Power adapter 12Vdc 1.5A
+USB-to-Serial cable
+Micro-USB cable
+1 /
+Hardware Setup
+2 /
+Dev Host PC Setup
+3 /
+Register
+Any issues ?
+If you encounter any issue to set up your device, don’t hesitate to use the
+developer forum
+to benefit from the developer community experience.
+Step 1: Hardware Setup
+Your Host PC can interface with the Legato device to gain the following functionalities :
+Access to device Linux Console to perform the following basic operations:
+Retrieve embedded system information
+Get Radio and Data connection status
+Set PIN code or remove PIN code
+Retrieve ethernet IP address
+Install Legato Applications (developed on your host) onto the target device
+To access device Linux console
+, the host can use ONE of the following interfaces:
+Serial port
+Ethernet
+USB
+To install Legato applications
+onto Legato device, you can only use ONE of the following interfaces:
+Ethernet
+USB
+How to gain access to device Linux console ?
+There are 3 methods to access device Linux console.
+The most straighforward is to use device Serial port.
+Access to Legato Linux console over the Serial port
+Legato device’s serial port is configured to be used for console input/output. To login, proceed the following:
+Use a Serial-to-USB cable to connect your device to your Host (PC/Mac)
+Setup a terminal emulator program (e.g. minicom, putty) on the host as follow:
+Baud rate : 115200 bps
+Bits : 8
+Parity: None
+Stop Bits: 1
+Open the serial connection, using the serial port being mapped to the USB port (e.g.
+/dev/ttyUSB0
+or
+/dev/ttyS0
+)
+Once the serial port is opened, login as
+root
+, there is no password by default. It is recommended to secure your platform by setting a password (
+passwd
+).
+Target device USB driver is not required when using Serial-to-USB cable.
+You can now enter Commands described in the below section
+Legato Device Setup and Configuration
+Access to Legato Linux console over Ethernet
+This option enables you to access the Linux console remotely using SSH. To login, proceed as follow:
+Connect your Legato device to your local network using an ethernet cable
+Your host (PC/Mac) should also be connected to the same network
+Establish a SSH session from your host using the following command:
+ssh root@&lt;mangOH-ip-addr>
+Please note that, the IP address of the device must be known prior using this ethernet option
+It’s easier to figure out the IP address of the device in a small local network. For instance, sudo nmap -sn 192.168.0.0/24
+You could have your DHCP server to assign a fixed IP address to your device based on his MAC address
+Use a Serial connection (previous section) to access the Linux console, then use
+ifconfig
+command to discover the IP or MAC adressses
+You can now enter Commands described in the below section
+Legato Device Setup and Configuration
+Access to mangOH Linux console over USB
+Connect your device’s microUSB port to your PC using a USB cable
+USB ECM mode is enabled by default on the target device:
+ifconfig
+command shows a new network interface: usb0 along with assigned IP address for your host (default is 192.168.2.3)
+The device exposes an ECM USB interface (Ethernet over USB) to the host under IP address 192.168.2.2 (default address)
+Establish a SSH session from your host using the following command
+ssh root@192.168.2.2
+You can now enter Commands described in the below section
+Legato Device Setup and Configuration
+If USB ECM mode is disabled on the target device:
+Use the Serial interface to access the device Linux console and then enable USB ECM mode. Refer to
+configEcm
+command in the next section
+Legato Device Setup and Configuration
+Once you have connected the host to the device using one of the above interface (Serial, Ethernet or USB), as described in previous sections, you can now access device Linux console.
+Although any Linux commands can be used in the device Linux console, you may enter the following commands to discover or to change configuration.
+System Versions
+cm info
+, to display device model, IMEI, Serial Number, firmware and bootloader versions
+legato version
+, to display Legato framework version
+Radio
+cm radio
+or
+cm radio status
+, to retrieve modem status
+cm radio on/off
+, to enable/disable radio
+refer to
+cm radio
+for more information on this command
+Data Connectivity
+cm data
+or
+cm data info
+, to retrieve current profile in use
+cm data apn YourApn
+, to set APN for profile in use to YourApn
+cm data connect (optional timeout, secs)
+, to start a data connection for the optionally specified duration
+refer to
+cm data
+for more information on this command.
+Applications
+app status
+, to list applications status
+app start/stop/remove appName
+, to start or stop or remove application named
+appName
+refer to
+app
+for more information on this command
+SIM
+cm sim status
+, to retrieve SIM status
+cm sim info
+, to get SIM information
+cm sim enterpin
+, to enter SIM PIN code
+cm sim unlock pin
+, to disable SIM card security, won’t request a PIN code when inserted or at the next system startup. Although, this is not recommanded for deployment, it is convenient for developers who need to reboot the board and to interact with it remotely using ssh
+refer to
+cm sim
+for more information on this command
+IP Address
+ifconfig
+, Linux command, can be used to discover the IP address associated to the Ethernet (if connected). SSH over ethernet is an interesting option to connect to the device for development. Therefore, all above commands can be issued remotely with SSH. In your local network, you could assign a fixed IP address using the MAC address of eth0 interface.
+USB mode
+configEcm show
+, to check whether the USB ECM mode is enable
+configEcm on
+, to activate the USB ECM mode. Device Reboot may be required. This mode enable your host to connect to your device using IP over USB.
+configEcm off
+, to deactivate the USB ECM mode. This is useful when you’d need to upgrade the firmware locally using
+fdt
+tool
+In Step 1, we’ve covered how to:
+Connect your host to the Legato device using different options (Serial port, Ethernet or USB) in order to access device Linux Console
+Issue Commands in device Linux Concole in order to Retrieve information (e.g. IP address, software version) and Set basic configurations (e.g. SIM PIN, APN)
+Step 2: Legato Development Environment
+This tutorial only covers development using Command-Line. Tutorial on using Developer Studio IDE will be available in the near future.
+Before you can start developing Legato applications, the following conditions must be met:
+Development Host should be running Ubuntu/Debian Linux and must have the following packages to be installed:
+Legato Framework
+Legato CLI (Linux Command Lines) tools
+Target Device (Legato-based module)
+Legato version must be in sync with Legato Framwork version in the Host
+Firmware version must be compatible with Legato version
+Underlying dependency such as bootloader, rootfs, os versions are covered by proper firmware package
+The main setup flow to satisfy the aforementioned conditions can be summarized as follow:
+Make sure the Device firmware is compatible with the Legato framework version (e.g. 16.01), if not proceed to download appropriate
+firmware package
+and follow provided instuction to upgrade the device.
+Prepare the host with the required packages/source/toolchain and Legato Framework.
+Setting Up the Ubuntu/Debian Development Host
+Minimum Configuration Requested: RAM: 1 GB / HDD: 5 GB free space / Ubuntu 15.04 recommended
+Legato is providing a complete set of Linux Command Lines (CLI) to develop your Legato applications. The legato-spm tool downloads everything needed to install the Legato CLI and embedded software packages for WP modules.
+Depending on your target distribution, follow one of these 2 steps to install legato-spm
+Install legato-spm on Ubuntu/Debian distribution
+Check your Ubuntu version
+lsb_release -d
+If you are running an Ubuntu version older than 14.10 then install Java 8 as follow, otherwise proceed to
+Install legato-spm
+sudo add-apt-repository ppa:openjdk-r/ppa
+sudo apt-get update
+sudo apt-get install openjdk-8-jre-headless
+sudo update-alternatives --config java
+Install legato-spm
+wget <a href=http://updatesite.sierrawireless.com/legato-spm/debian/legato-spm.list target=_blank rel="noopener noreferrer" class="">http://updatesite.sierrawireless.com/legato-spm/debian/legato-spm.list</a> -O - | sudo tee /etc/apt/sources.list.d/legato-spm.list
+wget <a href=http://updatesite.sierrawireless.com/legato-spm/debian/legato-spm.key target=_blank rel="noopener noreferrer" class="">http://updatesite.sierrawireless.com/legato-spm/debian/legato-spm.key</a> -O - | sudo apt-key add -
+sudo apt-get update
+sudo apt-get install legato-spm
+Install legato-spm on alternate distributions
+Install requirements for legato-spm tool: openjdk-8-jre-headless
+Install requirements to build Legato applications: build-essential python-jinja2 ninja-build
+Download legato-spm tool archive from
+this link
+Extract the archive to the location of your choice (e.g. unzip legato-spm*.zip -d $HOME/legato/spm)
+Potentially add this location to your user’s path (e.g. echo ‘export PATH=$HOME/legato/spm:$PATH’ >> $HOME/.bashrc)
+Download and install the latest Legato CLI tools and embedded software packages
+legato-spm --install --module WP85XX --update-link
+Following packages are now installed in your ~/legato/packages directory:
+legato.framework.*  - Prebuilt Legato framework packages
+legato.toolchain.*  - GCC cross compiler Toolchains
+legato.devimg.*     - Images to upgrade Legato devices system software
+legato.recovery.*   - Tool to recover a bricked Legato device
+legato.source.*     - Legato source distribution package
+Use this script to configure Legato, this script shall be launched once in each new terminal window you’d use for Legato development
+source ~/legato/packages/legato.sdk.latest/resources/configlegatoenv
+Compiling and Installing applications
+Once the Legato CLI tools have been installed in your Ubuntu/Debian host, you are now ready to develop Legato applications.
+Important
+In this Step, your Host needs to be connected to your Legato device over IP (using USB or Ethernet). This IP connection is required to install Legato Applications onto the target.
+Connection over the Serial link cannot be used to install application
+Let’s have a separated Terminal console dedicated to compiling and installing applications. Let’s name it
+Terminal #1
+for referencing convenience.
+In Ubuntu, open a new Terminal console, #1
+Launch the following script to setup environment variables for Legato Development
+source ~/legato/packages/legato.sdk.latest/resources/configlegatoenv
+You are now ready to compile sample applications in the apps/sample directory ($LEGATO_ROOT/apps/sample)
+Get into the
+helloWorld
+directory and compile it for WP8548 (mangOH) target
+cd $LEGATO_ROOT/apps/sample/helloWorld
+make wp85
+helloWorld.wp85
+should be generated as the result of the compilation
+Install it onto mangOH target device
+instapp helloWorld.wp85.update &lt;mangOH-IPaddress>
+Viewing Device logs
+In the Ubuntu Host, let’s have a separated Terminal console dedicated to mangOH log. Let’s name it
+Terminal #2
+for referencing convenience.
+In Ubuntu, open a new Terminal console, #2
+SSH onto the device:
+ssh root@mangOHIPaddress
+Start the logging:
+logread -f
+This terminal console will now display all logs
+Managing Applications on the Device
+In the Ubuntu Host, let’s have a separated Terminal console dedicated to device Linux Console. Let’s name it
+Terminal #3
+for referencing convenience.
+In Ubuntu, open a new Terminal console, #3
+SSH onto the device:
+ssh root@mangOHIPaddress
+Verify that
+helloWorld
+application has been installed:
+app status
+Launch the app :
+app start helloWorld
+You should be seeing “Hello, world” log in Terminal #2. The helloWorld sample application just simply output this log using
+LE_INFO
+macro.
+In Step 2, we’ve covered how to:
+Setup your Ubuntu/Debian host for Legato Development usage
+Compile applications, install application onto the Target device
+Remotely access to Target Device Linux console
+View Target device log
+Step 3: Register your Legato device on AirVantage
+Before your Legato applications can exchange data with AirVantage, your Legato-based device must be registered on AirVantage. This step guide you through this registration procedure.
+Device Registration on AirVantage
+Acces mangOH Linux console, using one of the methods described in the first step:
+Collect Device Identification information:
+cm info
+Connect to
+AirVantage web portal
+using your personal account.
+Go to the
+Register
+activity
+Provide device information: Type, Serial Number, IMEI
+Give it a Name, for searching convenience
+Proceed to
+Register
+to finalize the registration
+Your device can now connect to AirVantage server.
+The tutorial
+exchange asset data with AirVantage
+will guide you through the connection and data exchange data with AirVantage.</div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href=https://github.com/andreyjv/personal-av/tree/docs/documentation-revamp/PRD_documentation-revamp/website/docs/how-to/hardware/samples/legato-setup.md target=_blank rel="noopener noreferrer" class=theme-edit-this-page><svg fill=currentColor height=20 width=20 viewBox="0 0 40 40" class=iconEdit_Z9Sw aria-hidden=true><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"/></g></svg>Edit this page</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"></nav></div></div></div></div></main></div></div></div></div></div><footer class="theme-layout-footer footer"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class=footer__title>Jobs</div><ul class="footer__items clean-list"><li class=footer__item><a class=footer__link-item href=/personal-av-docs/docs/how-to/activate-sims>Activate SIMs</a><li class=footer__item><a class=footer__link-item href=/personal-av-docs/docs/how-to/order-sims>Order SIMs</a><li class=footer__item><a class=footer__link-item href=/personal-av-docs/api>Call the API</a><li class=footer__item><a class=footer__link-item href=/personal-av-docs/docs/how-to/register-routers>Register routers</a></ul></div><div class="theme-layout-footer-column col footer__col"><div class=footer__title>Reference</div><ul class="footer__items clean-list"><li class=footer__item><a class=footer__link-item href=/personal-av-docs/docs/reference/api>API HTML chapters</a><li class=footer__item><a class=footer__link-item href=/personal-av-docs/docs/reference/apn>APN table</a><li class=footer__item><a class=footer__link-item href=/personal-av-docs/docs/changelog>Changelog</a></ul></div><div class="theme-layout-footer-column col footer__col"><div class=footer__title>Preview</div><ul class="footer__items clean-list"><li class=footer__item><a href=https://doc.airvantage.net/ target=_blank rel="noopener noreferrer" class=footer__link-item>Live Hugo (canonical until cutover)<svg width=13.5 height=13.5 aria-label="(opens in new tab)" class=iconExternalLink_nPIU><use href=#theme-svg-external-link /></svg></a><li class=footer__item><a class=footer__link-item href=/personal-av-docs/docs/ui-library>UI library</a><li class=footer__item><a class=footer__link-item href=/personal-av-docs/docs/copy-library>Copy library</a></ul></div></div><div class="footer__bottom text--center"><div class=footer__copyright>Sierra Wireless / AirVantage documentation preview. Live doc.airvantage.net stays Hugo until cutover. Built with Docusaurus.</div></div></div></footer></div></body>

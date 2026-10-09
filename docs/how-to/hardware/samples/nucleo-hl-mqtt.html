@@ -1,0 +1,488 @@
+<!doctype html><html lang=en dir=ltr class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-how-to/hardware/samples/nucleo-hl-mqtt" data-has-hydrated=false><head><meta charset=UTF-8><meta name=generator content="Docusaurus v3.10.2"><title data-rh=true>Connecting STM32 Nucleo-based application to AirVantage | AirVantage documentation</title><meta data-rh=true name=viewport content="width=device-width, initial-scale=1.0"/><meta data-rh=true name=twitter:card content=summary_large_image /><meta data-rh=true property=og:image content=https://andreyjv.github.io/personal-av-docs/img/favicon.svg /><meta data-rh=true name=twitter:image content=https://andreyjv.github.io/personal-av-docs/img/favicon.svg /><meta data-rh=true property=og:url content=https://andreyjv.github.io/personal-av-docs/docs/how-to/hardware/samples/nucleo-hl-mqtt /><meta data-rh=true property=og:locale content=en /><meta data-rh=true name=docusaurus_locale content=en /><meta data-rh=true name=docsearch:language content=en /><meta data-rh=true name=docusaurus_version content=current /><meta data-rh=true name=docusaurus_tag content=docs-default-current /><meta data-rh=true name=docsearch:version content=current /><meta data-rh=true name=docsearch:docusaurus_tag content=docs-default-current /><meta data-rh=true property=og:title content="Connecting STM32 Nucleo-based application to AirVantage | AirVantage documentation"/><meta data-rh=true name=description content="av · imported from live Hugo on 2026-10-07. Guides stay latest. Original page."/><meta data-rh=true property=og:description content="av · imported from live Hugo on 2026-10-07. Guides stay latest. Original page."/><link data-rh=true rel=icon href=/personal-av-docs/img/favicon.svg /><link data-rh=true rel=canonical href=https://andreyjv.github.io/personal-av-docs/docs/how-to/hardware/samples/nucleo-hl-mqtt /><link data-rh=true rel=alternate href=https://andreyjv.github.io/personal-av-docs/docs/how-to/hardware/samples/nucleo-hl-mqtt hreflang=en /><link data-rh=true rel=alternate href=https://andreyjv.github.io/personal-av-docs/docs/how-to/hardware/samples/nucleo-hl-mqtt hreflang=x-default /><link rel=stylesheet href=/personal-av-docs/assets/css/styles.1e3041e1.css /><script src=/personal-av-docs/assets/js/runtime~main.bbef5b78.js defer></script><script src=/personal-av-docs/assets/js/main.443f591d.js defer></script></head><body><svg style="display: none;"><defs>
+<symbol id=theme-svg-external-link viewBox="0 0 24 24"><path fill=currentColor d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme-deb")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||(window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light")),document.documentElement.setAttribute("data-theme-choice",t||"system")}(),function(){try{for(var[t,e]of new URLSearchParams(window.location.search).entries())if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id=__docusaurus><link rel=preload as=image href=/personal-av-docs/img/favicon.svg /><div role=region aria-label="Skip to main content"><a class=skipToContent_fXgn href=#__docusaurus_skipToContent_fallback>Skip to main content</a></div><nav aria-label=Main class="theme-layout-navbar navbar navbar--fixed-top"><div class=navbar__inner><div class="theme-layout-navbar-left navbar__items"><button aria-label="Toggle navigation bar" aria-expanded=false class="navbar__toggle clean-btn" type=button><svg width=30 height=30 viewBox="0 0 30 30" aria-hidden=true><path stroke=currentColor stroke-linecap=round stroke-miterlimit=10 stroke-width=2 d="M4 7h22M4 15h22M4 23h22"/></svg></button><a class=navbar__brand href=/personal-av-docs/><div class=navbar__logo><img src=/personal-av-docs/img/favicon.svg alt=AirVantage class="themedComponent_mlkZ themedComponent--light_NVdE"/><img src=/personal-av-docs/img/favicon.svg alt=AirVantage class="themedComponent_mlkZ themedComponent--dark_xIcU"/></div><b class="navbar__title text--truncate">AirVantage Docs</b></a><a class="navbar__item navbar__link navbar__guides" href=/personal-av-docs/docs/how-to/activate-sims>Guides</a><a class="navbar__item navbar__link" href=/personal-av-docs/api>API reference</a><a class="navbar__item navbar__link" href=/personal-av-docs/docs/changelog>Changelog</a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type=button disabled title="system mode" aria-label="Switch between dark and light mode (currently system mode)"><svg viewBox="0 0 24 24" width=24 height=24 aria-hidden=true class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill=currentColor d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"/></svg><svg viewBox="0 0 24 24" width=24 height=24 aria-hidden=true class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill=currentColor d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"/></svg><svg viewBox="0 0 24 24" width=24 height=24 aria-hidden=true class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill=currentColor d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"/></svg></button></div><div class=navbarSearchContainer_Bca1><div class="navbar__search searchBarContainer_NW3z" dir=ltr><svg aria-hidden=true class=searchIcon_T3tP focusable=false viewBox="0 0 16 16"><path fill=currentColor d="M6.02945 10.20327a4.17382 4.17382 0 1 1 4.17382-4.17382 4.15609 4.15609 0 0 1-4.17382 4.17382Zm9.69195 4.2199-4.8225-4.82338A5.88021 5.88021 0 0 0 12.058 6.02856 6.00467 6.00467 0 1 0 9.59979 10.8989l4.82338 4.82338a.89729.89729 0 0 0 1.29912 0 .89749.89749 0 0 0-.00087-1.29909Z"/></svg><input placeholder=Search aria-label=Search class="navbar__search-input searchInput_YFbd" value="" /><div class="loadingRing_RJI3 searchBarLoadingRing_YnHq"><div></div><div></div><div></div><div></div></div></div></div></div></div><div role=presentation class=navbar-sidebar__backdrop></div></nav><div id=__docusaurus_skipToContent_fallback class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class=av-shell><nav class=av-rail aria-label=Guides><p class=av-rail-kicker>Guides<ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class=menu__list-item-collapsible><span class="menu__link menu__link--sublist menu__link--sublist-caret av-rail-heading">Quick start</span></div><ul class=menu__list><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link href=/personal-av-docs/docs/how-to/activate-sims>Activate SIMs</a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link href=/personal-av-docs/docs/how-to/order-sims>Order SIMs</a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link href=/personal-av-docs/api>Call the API</a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link href=/personal-av-docs/docs/how-to/register-routers>Register routers</a></ul><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class=menu__list-item-collapsible><span class="menu__link menu__link--sublist menu__link--sublist-caret av-rail-heading">Browse by product</span></div><ul class=menu__list><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link href=/personal-av-docs/docs/how-to/activate-sims>Connectivity</a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link href=/personal-av-docs/docs/how-to/register-routers>Router management</a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link href=/personal-av-docs/docs/explain/states>States and operations</a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link href=/personal-av-docs/api>Developer platform</a></ul><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class=menu__list-item-collapsible><span class="menu__link menu__link--sublist menu__link--sublist-caret av-rail-heading">Keep building</span></div><ul class=menu__list><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link href=/personal-av-docs/docs/explain/states>States and operations</a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link href=/personal-av-docs/docs/reference/apn>APN table</a></ul><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class=menu__link href=/personal-av-docs/docs/get-started/first-sim>Get started</a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class=menu__link href=/personal-av-docs/docs/reference/api>Reference</a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class=menu__link href=/personal-av-docs/docs/changelog>Changelog</a></ul></nav><div class=av-shell-main><div class=docsWrapper_hBAB><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type=button></button><div class=docRoot_UBD9><main class="docMainContainer_TBSr docMainContainerEnhanced_lQrH"><div class="container padding-top--md padding-bottom--lg"><div class=row><div class="col docItemCol_VOVn"><div class=docItemContainer_Djhp><article><div class="theme-doc-markdown markdown"><header><h1>Connecting STM32 Nucleo-based application to AirVantage</h1></header><p>:::note Edition
+<strong>av</strong> · imported from live Hugo on 2026-10-07. Guides stay latest. <a href=https://doc.airvantage.net/av/howto/hardware/samples/nucleo-hl-mqtt target=_blank rel="noopener noreferrer" class="">Original page</a>.
+:::</p>
+<p>Connecting STM32 Nucleo-based application to AirVantage
+Objective
+This tutorial describes how to create communication between AirVantage and
+STM32Nucleo-based system
+using
+AirPrime HL wireless module
+.
+The following use cases are covered:
+Sending custom data such as sensor values or application data from STM32/Nucleo board to AirVantage
+Sending commands or configuration from AirVantage to STM32/Nucleo board
+To implement this solution, MQTT protocol will be used.
+Let’s develop a simple Alarm system to better showcase the solution in 4 main steps:
+Setup Hardware
+Setup STM32/Nucleo board Software Development Environment
+Define STM32/Nucleo board-AirVantage Interface
+Develop a simple Alarm system
+Prerequisite
+HL Shield + Antenna + Power adaptor + USB cable MiniB-A
+AirPrime HL series Module
+SIM card with data call plan
+STM32 Nucleo-L053R8 + USB cable type B-A
+USB Hub (3 ports or more) + TTL to Serial USB cable (E.g. TTL-232R)
+LED + PIR Motion detection sensor
+Female to female wiring cable
+Have an account on AirVantage server : eu.airvantage.net
+Part references used in this tutorial
+AirPrime HL8548 module
+STM32 Nuleo-L053R8
+HL Shield: Please contact your local Sierra Wireless Technical representative
+Antenna
+Power adapter 12Vdc 1.5A
+USB Hub
+TTL to Serial USB cable
+USB-A to USB-B cable
+USB-A to MiniUSB cable
+Passive Infra-Red (PIR) motion sensor
+LED
+Wiring cables
+1 /
+Hardware Setup
+2 /
+Software Setup
+3 /
+Client-Server Interface
+4 /
+Alarm App
+Any issues ?
+If you encounter any issue to set up your device, don’t hesitate to use the
+developer forum
+to benefit from the developer community experience.
+Step 1: Hardware Setup
+This step aims to setup the HL shield properly and stack it to STM32 Nucleo-L053R8 board
+Preparing the HL Shield
+Place the HL Module into the shield’s module socket. To ensure the correct orientation of the HL Module, use the
+dot
+mark, printed on the top right corner, as reference. It should be aligned with the
+dot
+mark visible within the shield socket. Then place the shielding cover on the module.
+Ensure that jumpers are correctly placed according to the photo (red marks in ellipses)
+Connect the antenna to the “2G/3G/4G RF MAIN” connector.
+Insert a SIM card into the “SIM1” slot, located in the bottom side of the Shield.
+Connect the “MAIN UART” USB port (green ellipse) to USB Hub which is connected to your PC/Mac
+If USB driver is missing, VCP driver can be downloaded
+here
+Configure Nucleo-L053R8 to use D0 and D1 Arduino pins
+By default, Nucleo boards are configured to have shared UART on pins D0 and D1 with STLink.
+We need to use these D0 and D1 pins independently so the Nucleo can be stacked under the HL Shield, to achieve this:
+Remove Solder Bridges SB13 and SB14, located in the red area in the photo
+Set Solder Bridges SB62 and SB63 to ON, green area in the photo. (Zero resistors removed from SB13 & SB14 can placed in SB62 & SB63)
+Important: without this hardware configuration, D0 and D1 cannot be used as serial port to drive the HL Shield.
+In this case, flying wires should be used (no stacking) to connect Nucleo CN3's RX & TX pins to HL Shield's counterpart Arduino TX & RX pins. IOREF and GND pins must also be wired.
+Stacking HL Shield over Nucleo-L053R8
+Refer to the photo for stacking reference.
+Once stacked, Nucleo’s I/O pins are exposed to the top of the HL Shield through staking headers, highlighted in blue rectangles of the previous photo.
+Note that there is no stacking header for pin D0 to D7, thus not accessible once stacked. Nucleo’s RX and TX pins (D0 and D1) are connected to module’s UART.
+Connecting the Debug cable
+Connect the TTL to Serial Debug cable to Nucleo pin D8 and GND as shown in the previous photo
+Pins D2 and D8 of Nucleo board will be configured programmatically as an serial port for debug output purpose
+Refer to the datasheet of your TTL cable, to perform the following connection:
+the TX wire cannot be connected to Nucleo’s pin D2 (RX) as it is not accessible. Not an issue as Debug output does not make use of RX.
+the RX wire must be connected to Nucleo’s pin D8 (TX)
+the Ground wire must be connected to Nucleo’s GND pin
+Connect the TTL cable to USB Hub which is connected to your PC/Mac
+If USB driver is missing, VCP driver for FTDI-based TTL cables can be downloaded
+here
+In Step 1, we’ve covered how to:
+Configure HL Shield and stack it over the Nucleo board
+Connect HL Module’s UART to your host USB port
+Connect a debug cable (additional serial port configured on Nucleo pins D2 & D8) to your host USB port
+Reference to USB driver has also been provided
+Step 2: Software Setup
+This step first introduce an overview of the embedded system to describe the various software components and their interactions with the development host (PC/Mac).
+It will then guide you through the installation of the required software development environment and components
+Embedded System Overview
+mbed platform will be used to develop the application. Source code is compiled online using web browser, Nucleo binary code is downloaded then uploaded locally to Nucleo.
+Sierra Wireless MQTT Client library (SWIR_MQTTClient) will be leveraged in order to easily establish communication between AirVantage and Nucleo. This library provides 3 functionalities:
+Module management: setting SIM pin code, setting APN, making data call, etc…
+MQTT Client: managing MQTT session with AirVantage, sending/receiving MQTT packets over AT commands.
+MQTT packets are generated and handled by
+Paho MQTTClient library
+which implements MQTT protocol.
+Log output facility:
+SWI_TRACE
+macro enables Nucleo app to output debug traces to a virtual serial port. This latter function is emulated on Nucleo pins D2 & D8 (by default) and trace logs are visible with a serial monitor application bound to the TTL to serial USB port.
+HL Shield wires Nucleo’s default Serial port (pins D0 & D1) to HL module UART. Therefore, Nucleo’s
+Serial
+object instance is used by SWIR_MQTTClient library to send AT commands to HL module, and shall not be used to output program trace log. For the latter purpose, use
+SWI_TRACE
+macro instead.
+HL module’s AT interface trace can be visualized with a serial monitor application bound to the HL Shield Main UART USB port.
+Setup Embedded Software Development Components
+Get started with mbed compiler:
+use your favorite web browser and navigate to
+mbed
+, then go to
+Developer Site
+login or signup
+Click on
+Platforms
+then select NUCLEO-L053R8 device
+On the Nucleo-L053R8 page, click on
+Add to your mbed Compiler
+button
+Click on
+Open mbed Compiler
+to launch the development IDE
+Create a new program with provided Program Name (e.g. Nucleo_AVHL) using
+Empty Program
+template
+Select your new program then click on
+Import
+to open Import Wizard
+In the Libraries tab, drag
+mbed
+library (the official mbed C/C++ SDK for building mbed applications) and drop it onto your project
+In the Upload tab, click on browse button:
+Import Paho MQTTClient library: select the prebuilt Arduino port of Paho MQTTClient
+zip file available here
+Import SWIR_MQTTClient library V0.92: select the MQTTClient library for Sierra Wireless HL serie modules
+zip file available here
+Import these 2 libraries with a provided Import Name (e.g. Lib)
+Setup Debug output
+Unplug all USB plugs on the HUB Hub, while maintaining this latter plugged to your host computer. The intent here is to disconnect the host from all Nucleo/HL Shield USB cables. All virtual COM ports are thus released on the host.
+Debug trace log for Nucleo app
+Launch your favorite Serial monitor software or use the provided
+TestCom.exe
+Plug the TTL to Serial USB cable to the USB Hub, a virtual COM port shall be mounted accordingly
+Select this virtual COM port and choose 115200 baudrate to open this port in the Serial monitor application
+Output log for HL Module
+Launch a second instance of your favorite Serial monitor software or use the provided
+TestCom.exe
+Connect the HL Shield Main UART USB port to the USB Hub, a virtual COM port shall be mounted accordingly
+Select this virtual COM port and choose 115200 baudrate to open this port in the Serial monitor application
+TestCom.exe tip: When plugging/unplugging a USB device, the associated virtual COM port is displayed in TestCom. Identifying the virtual COM to be openned is then made easy in the 2 above steps.
+In Step 2, we’ve covered the following:
+Overview of the HL module-based Nucleo system
+Software Setup :
+mbed development environment
+Import MQTTClient adapter Library for Sierra Wireless HL Serie Modules
+Import Paho MQTTClient Library
+Setup output tracing to view:
+Nucleo application debug trace log
+HL Module’s AT interface trace log
+Step 3: STM32Nucleo-AirVantage Interface
+The mbed-based embedded system has been properly setup in the previous steps. Before developping the Alarm System application on Nucleo let’s:
+Define the interface between the Nucleo and AirVantage: communication protocol, data flow and type.
+Check the MQTT connection between these 2 entities
+Note that prior defining the client-server interface we’d need to define the Alarm System use case to figure out the necessary data flow and type.
+Alarm System Use Case
+On AirVantage portal, the user can turn ON or OFF the Nucleo-based Alarm system
+If the Alarm is be turned ON, Nucleo board shall arm the alarm and switch on the LED
+Then Nucleo shall, on a regular basis, read motion event from PIR sensor, and publish it to AirVantage
+If the Alarm is to be turned OFF, Nucleo shall disarm the alarm system and switch off the LED
+Nucleo shall not post any data to AirVantage
+The data flow and type are therefore defined as follow:
+TurnOn Action command from AirVantage to Device of type
+boolean
+. Value
+true
+for
+Turn ON
+,
+false
+for
+Turn OFF
+Motion event from Device to AirVantage of type
+integer
+. Value
+1
+for
+Motion detected
+,
+0
+for
+No Motion detected
+Alarm System Application Model
+An embedded application on device-side (e.g. Nucleo) is interfacing with a server-side application on AirVantage in order to exchange predefined data over a predefined communication protocol and authentication scheme:
+Server-side application is defined by an
+Application Model
+(a XML file)
+AirVantage uses this XML file to figure out how to deal with the device about
+Communication Protocol
+,
+Authentication
+and
+Data Exchange
+(e.g. variable, settings, commands)
+Based on the use case as described in the previous section, the application model for our Alarm System is defined
+here
+:
+The communication protocol is MQTT, and the authentication is based on the device’s IMEI
+&lt;communication>
+&lt;protocol comm-id="IMEI" type="MQTT" />
+&lt;/communication>
+The downstream TurnOn action command and the upstream motion event are defined in an asset labeled
+My Home
+, exchanged over MQTT protocol:
+&lt;data>
+&lt;encoding type="MQTT">
+&lt;asset default-label="My Home" id="home">
+&lt;setting default-label="Motion Detected" path="motion" type="int"/>
+&lt;command path="TurnOn" default-label="Turn on">
+&lt;parameter id="Alarm" default-label="Alarm" type="boolean" />
+&lt;/command>
+&lt;/asset>
+&lt;/encoding>
+&lt;/data>
+The Application Model for our Alarm System is now defined. Let’s create it on AirVantage with the 2 following procedures:
+Create Application Package
+Save the the
+Alarm Application Model
+to file with
+app
+file extension (e.g. appmodel.app)
+Zip the app file (e.g.
+appmodel.zip
+)
+The filename of this zip file is only used for uploading process. AirVantage does not keep track of this zip filename. Only the XML content will be tracked by AirVantage.
+Log into
+AirVantage Web portal
+Go on Develop Activity > My Apps
+Click on the Release button
+Release Application
+Select your zip file (e.g.
+appmodel.zip
+)
+Open Advanced settings and select
+I want to publish my application after releasing it
+Finally, click on Start
+Making the First MQTT Connection
+Before developing the Alarm System application, let’s first try to make a MQTT connection between Nucleo and AirVantage
+SWIR_MQTTClient Library provides a Quick Start sample that is intended to be used as a starting point to easily build AirVantage-MQTT-ready application.
+This starting point application can publish data to and receive data from AirVantage… without typing a single line of code.
+However this sample app has been configured by default for Arduino platform, do the following to adjust it for Nucleo platform:
+Go to the mbed IDE (web browser)
+Select
+swir_platform_def.h
+file, disable TARGET_ARDUINO (//#define TARGET_ARDUINO) and enable TARGET_MBED (#define TARGET_MBED)
+Right-click and Rename the provided sample arduino sketch HL-AV_QuickStart.ino (SWIR_MQTTClient/examples/HL_AV_QuickStart) to HL-AV_QuickStart.cpp
+Right-click then Copy HL-AV_QuickStart.cpp file which is still greyed out due to precedent invalid
+ino
+file extension
+Right-click on the top level program folder (e.g. Nucleo-AVHL) then select Paste, now the sample cpp file becomes valid.
+Right-click on the greyed out HL-AV_QuickStart.cpp (in SWIR_MQTTClient/examples/HL_AV_QuickStart) then delete it
+Open the Quick Start sample program (just select HL-AV_QuickStart.cpp)
+Adjust the SIM PIN code and APN for your SIM card, change the following definitions in the sketch if necessary:
+#define APN                     "yourAPN"
+#define APN_LOGIN               ""                          //your APN login
+#define APN_PASSWORD            ""                          //your APN password
+#define SIM_PIN_CODE            0                           //default is 0000, it's an integer!
+Click the
+Compile
+button in mbed IDE, this will compile the sample sketch and download the resulting binary
+Make sure that the HL Shield is powered off (unplug power adapter)
+Connect Nucleo board to USB Hub (connected to Host)
+Drag the downloaded mbed compiled binary file and drop it onto the Nucleo mapped drive
+Nucleo sample app will automatically run upon program upload completion
+Nucleo app logs should be visible in the first serial monitor
+Start the HL Module: power on the HL shield then press and hold the red button for 1 second
+Nucleo will attempt to establish MQTT session with AirVantage once data call is ready (module registered to network, CGREG = x,1 or x,5)
+HL Module AT logs should be visible in the second serial monitor
+Verifying MQTT Connection
+The MQTT connection outcome (fail and success cases) are described hereafter.
+MQTT Connection Failed
+”— Fail MQTT connect —” log (in serial monitor) indicates an unsuccessful MQTT connection, refer to top-right picture.
+This is the first connection, your HL Module has not been registered in AirVantage, let’s do the following:
+Log into AirVantage portal
+Release and Publish the Application Model as described in the previous sections
+Create Application Package
+and
+Release Application
+Register your system with below information, go to
+Register
+activity (refer to bottom-right picture)
+Select the
+Type
+of module (as displayed in the serial monitor)
+Copy the Serial Number displayed in serial monitor and pasted it into the
+Serial Number
+field
+Copy the IMEI 15-digits displayed in serial monitor and pasted it into the
+IMEI/ESN
+field
+Assign a Name
+Click on
+Register
+button
+Assign the Alarm Application Model to your device, go to
+Inventory
+activity then
+Systems
+Select your system, as registered in the above steps
+Click on the Edit icon
+In the
+Applications
+field, type in the name of the application (i.e. arduino-alarm) and select it
+Click on the Credentials icon
+Enter a password, it shall match the one in the sketch (#define MODULE_AV_PASSWORD), by default it is
+sierra
+Click on Save button
+From this point, the Nucleo should be able to establish a MQTT session, continue the verification with the next sub-section
+MQTT Connected
+If you have already registered your HL Module on AirVantage portal, then make sure that:
+The Alarm Application Model with MQTT-binding has been created and assigned to your device, refer to case 2 above
+The password assigned in AirVantage to your System/AppModel is matching the one in the sketch (#define MODULE_AV_PASSWORD), it is
+sierra
+by default
+MQTT Connected
+Connected to AirVantage
+”— MQTT connected —” log (in serial monitor) indicates a successful MQTT session
+Sending data to AirVantage
+This sample application posts ellapsed milliseconds (since Jan 1st 1970) to AirVantage. The data key name is
+MilliSec
+To view the data being sent to AirVantage, log into AirVantage portal
+Go to your system monitor page (i.e.
+Monitor
+activity, go to
+Systems
+, then select Your System)
+Published data is visible in the
+Last Communication
+widget
+Receiving data from AirVantage
+This quick start sketch can also receive incoming data sent by AirVantage
+Log into AirVantage portal
+Go to your system monitor page (i.e.
+Monitor
+activity, go to
+Systems
+, then select Your System)
+Click on
+dropdown box then select
+Custom Command
+In the
+Application
+field, select the alarm application (i.e. arduino-alarm)
+Choose a
+Command
+and define
+Parameters
+then click on
+Send Command
+This data should be received by your Nucleo, it is displayed in the serial monitor
+Upon receiving command from AirVantage, the device should return an acknowlegment message back to AirVantage.
+This ack message is automatically published (by the SWIR_MQTTClient library) to the /acks/json topic, as shown below
+In Step 3, we’ve covered how to:
+Define the use case for the Alarm System which helps to figure out the data flow and type
+Create the Alarm Application Model that defines the interface between Nucleo and AirVantage
+Make a first MQTT connection with AirVantage without coding
+Register device in AirVantage and then Assign Alarm Application Model to it
+Verify that Nucleo can publish data to AirVantage
+Verify that Nucleo can receive data from AirVantage
+Step 4: Build an Alarm System
+In this step, let’s modify the previous sample sketch to build a simple alarm system application. The use case of this Alarm application is described is the Step 3, section
+Alarm System Use Case
+.
+Hardware Setup
+Let’s wire the LED to Nucleo’s digital pin D9 exposed to the top of the shield through stacking header, as shown in the picture
+The short leg pin of the LED shall be wired to the GND
+Wire the PIR’s Output to Nucleo’s digital pin D10 exposed to the top of the shield through stacking header, as shown in the picture
+PIR’s GND and VCC pins shall wired to respectively Nucleo’s GND and 5V pins
+Application Development Guideline
+The QuickStart sample, provided by the SWIR_MQTTClient library, should be used as a starting point to develop a new application.
+It is structured as follow:
+Configuration
+#define
+keyword is used to declare configurations which can adjusted by altering default values
+e.g. APN, SIM PIN code, Baudrate, MQTT quality of service level, delays, etc
+This is the right spot to declare additional data key names defined in your application model
+Global variables
+SWIR_MQTTClient object instance is needed as it is the interface with the Library
+A variable to keep track of the SIM status (ready or need SIM pin code)
+You may declare more variables to fulfill your needs
+QuickStart sketch provides a boilerplate code to facilitate the integration with AirVantage
+Check SIM pin, wait for readiness of data call, make MQTT connection, retry mechanism, perform regular task are handled in a proper sequence
+You can customize the application as follow:
+Add your one-time setup code in doCustomSetup() function
+Add your code to be executed on a regular basis when MQTT session is established in doCustomLoopTask(), called by main’s loop()
+Usually, this is the placeholder to read sensor data and publish them to AirVantage
+Add your code to execute incoming Commands from AirVantage in messageArrived() function
+Helper functions are provided for your convenience:
+PostData(keyName, value) to publish data (key/value) to AirVantage
+SWI_TRACE macro to print debug trace to serial monitor
+Coding the Alarm System
+Let’s code this application using the QuickStart sketch as a starting point, following the above guideline
+Note the Alarm scenario specific code below can be be activated by enabling the flag ALARM_SCENARIO (#define ALARM_SCENARIO)
+In mbed IDE, select HL_AV_QuickStart.cpp file
+Configuration:
+Add these new definitions for LED and PIR pins
+#define ALARM_STATUS_LED_PIN    D9  //the LED is wired to Nucleo's digital pin D9
+#define PIR_PIN                 D10 //the PIR is wired to Nucleo's digital pin D10
+Change data key name to match the ones defined in the
+Alarm Application Model
+(defined in Step 3)
+Data key names are prefixed with the asset id (i.e. home).
+#define PUBLISH_DATA_NAME       "home.motion"
+#define INCOMING_DATA_NAME      "home.TurnOn.Alarm"
+Global variables:
+Declare this new global variable to track the Alarm status (on/off), default is off. Place this line before the setup() function.
+int     _isAlarmOn = 0;
+Declare global variables for the LED and PIR pins
+DigitalOut                      _ledAlarmOnOff(ALARM_STATUS_LED_PIN);   //variable binding to this output pin
+DigitalIn                       _pirState(PIR_PIN);                     //variable binding to this input pin
+Publish the motion detection status to AirVantage in the doCustomLoopTask() function
+void doCustomLoopTask()
+{
+if (_isAlarmOn)
+{
+//At this point, the MQTT session has been established and the Alarm system has been armed
+if (_pirState)
+{
+postData(PUBLISH_DATA_NAME, 1);     //Motion detected, let's post this event to AV
+}
+else
+{
+postData(PUBLISH_DATA_NAME, 0);     //No Motion detected, let's post this event to AV anyway
+}
+}
+}
+Handle AirVantage-originated Commands in the messageArrived() function
+void messageArrived(const char* szKey, const char* szValue, const char* szTimestamp)
+{
+SWIR_TRACE(F("\r\n>>> Message from AirVantage: %s = %s @ %s\r\n"), szKey, szValue, szTimestamp);
+//based on szKey and szValue let's turn on/off the alarm on/off LED
+String sKey = String(szKey);
+String sValue = String(szValue);
+if (sKey == INCOMING_DATA_NAME)
+{
+if (sValue == ON_VALUE)
+{
+_ledAlarmOnOff = true;                      //Switch ON LED
+_isAlarmOn = 1;                             //Arm the Alarm System
+}
+else
+{
+_ledAlarmOnOff = false;                     /Switch OFF LED
+_isAlarmOn = 0;                             //Disarm the Alarm System</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block" style=--prism-color:#393A34;--prism-background-color:#f6f8fa><div class=codeBlockContent_QJqH><pre tabindex=0 class="prism-code language-text codeBlock_bY9V thin-scrollbar" style=color:#393A34;background-color:#f6f8fa><code class=codeBlockLines_e6Vv><div class=token-line style=color:#393A34><span class="token plain">        postData(PUBLISH_DATA_NAME, 0);             //Publish message : "home.motion = 0", for consistency</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">    }</span><br/></div><div class=token-line style=color:#393A34><span class="token plain" style=display:inline-block></span><br/></div><div class=token-line style=color:#393A34><span class="token plain">    return 0;                                       //to indicate that the command has been handled</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">}</span><br/></div><div class=token-line style=color:#393A34><span class="token plain" style=display:inline-block></span><br/></div><div class=token-line style=color:#393A34><span class="token plain">return 1;                                           //to indicate unknown command,</span><br/></div><div class=token-line style=color:#393A34><span class="token plain">                                                    //this information will be returned to AirVantage within the ACK message</span><br/></div></code></pre></div></div>
+<p>}
+Upload the Alarm app to Nucleo
+Compile the modified application to retrieved the resulting binary via download
+Make sure that the HL Shield is powered off (unplug power adapter)
+Connect Nucleo to USB Hub (to Host)
+Drag the downloaded mbed compiled binary file and drop it onto the Nucleo mapped drive
+Nucleo sample app will automatically run upon program upload completion
+Nucleo app logs should be visible in the first serial monitor
+Start the HL Module: power on the HL shield then press and hold the red button for 1 second
+Nucleo will attempt to establish MQTT session with AirVantage once data call is ready (module registered to network, CGREG = x,1 or x,5)
+HL Module AT logs should be visible in the second serial monitor
+Testing the Alarm System
+Refer to
+Verifying MQTT Connection
+section in Step 3 to :
+Check the MQTT connection with AirVantage
+Remotely activate the Alarm system by sending Custom Command
+TurnOn.Alarm
+on AirVantage
+View motion detection events posted to AirVantage
+In Step 4, we’ve covered :
+Nucleo Hardware setup to fulfill the Alarm Use Case
+The guideline to easily develop an AirVantage-MQTT-ready application
+How to to develop the Alarm application using the QuickStart sketch as a starting point</div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col noPrint_WFHX"><a href=https://github.com/andreyjv/personal-av/tree/docs/documentation-revamp/PRD_documentation-revamp/website/docs/how-to/hardware/samples/nucleo-hl-mqtt.md target=_blank rel="noopener noreferrer" class=theme-edit-this-page><svg fill=currentColor height=20 width=20 viewBox="0 0 40 40" class=iconEdit_Z9Sw aria-hidden=true><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"/></g></svg>Edit this page</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Docs pages"></nav></div></div></div></div></main></div></div></div></div></div><footer class="theme-layout-footer footer"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class=footer__title>Jobs</div><ul class="footer__items clean-list"><li class=footer__item><a class=footer__link-item href=/personal-av-docs/docs/how-to/activate-sims>Activate SIMs</a><li class=footer__item><a class=footer__link-item href=/personal-av-docs/docs/how-to/order-sims>Order SIMs</a><li class=footer__item><a class=footer__link-item href=/personal-av-docs/api>Call the API</a><li class=footer__item><a class=footer__link-item href=/personal-av-docs/docs/how-to/register-routers>Register routers</a></ul></div><div class="theme-layout-footer-column col footer__col"><div class=footer__title>Reference</div><ul class="footer__items clean-list"><li class=footer__item><a class=footer__link-item href=/personal-av-docs/docs/reference/api>API HTML chapters</a><li class=footer__item><a class=footer__link-item href=/personal-av-docs/docs/reference/apn>APN table</a><li class=footer__item><a class=footer__link-item href=/personal-av-docs/docs/changelog>Changelog</a></ul></div><div class="theme-layout-footer-column col footer__col"><div class=footer__title>Preview</div><ul class="footer__items clean-list"><li class=footer__item><a href=https://doc.airvantage.net/ target=_blank rel="noopener noreferrer" class=footer__link-item>Live Hugo (canonical until cutover)<svg width=13.5 height=13.5 aria-label="(opens in new tab)" class=iconExternalLink_nPIU><use href=#theme-svg-external-link /></svg></a><li class=footer__item><a class=footer__link-item href=/personal-av-docs/docs/ui-library>UI library</a><li class=footer__item><a class=footer__link-item href=/personal-av-docs/docs/copy-library>Copy library</a></ul></div></div><div class="footer__bottom text--center"><div class=footer__copyright>Sierra Wireless / AirVantage documentation preview. Live doc.airvantage.net stays Hugo until cutover. Built with Docusaurus.</div></div></div></footer></div></body>
