@@ -1,0 +1,241 @@
+openapi: 3.0.3
+info:
+  title: AirVantage Web Services API
+  version: '2026-10-07'
+  description: |
+    Starter OpenAPI imported from live HTML chapters on 2026-10-07
+    (System v1, Subscription v1, Alert v2). Paths and summaries come
+    from documented headings. It is not a complete contract and does
+    not execute requests.
+
+    Operator **Service plan** maps to API `offer` / `offerId`.
+    A System is not a SIM.
+
+    Resource Owner (password) grant is deprecated. Proposed end date
+    2026-12-31 (live sentence: "end of the year").
+  x-imported-from: https://doc.airvantage.net/connectivity/reference/cloud/API/
+servers:
+  - url: https://na.example.invalid
+    description: Example only — do not call. Live North America host is https://na.airvantage.net (HTML chapters).
+  - url: https://eu.example.invalid
+    description: Example only — do not call. Live Europe host is https://eu.airvantage.net (HTML chapters).
+tags:
+  - name: System
+    description: System v1 — HTML chapter API-System-v1
+  - name: Subscription
+    description: Subscription v1 — HTML chapter API-Subscription-v1
+  - name: Alert
+    description: Alert v2 — HTML chapter API-Alert-v2
+  - name: OAuth
+    description: Token endpoint from the API overview
+security:
+  - bearerAuth: []
+paths:
+  /api/oauth/token:
+    post:
+      tags: [OAuth]
+      security: []
+      summary: Request an access token
+      description: |
+        Authorization Code, Client Credentials, or deprecated Resource Owner
+        (password) grant. Password grant support will end by the end of the year
+        (Proposed date 2026-12-31).
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              required: [grant_type]
+              properties:
+                grant_type:
+                  type: string
+                  enum: [authorization_code, client_credentials, password, refresh_token]
+                username:
+                  type: string
+                  description: Resource Owner flow only (deprecated)
+                password:
+                  type: string
+                  description: Resource Owner flow only (deprecated)
+                code:
+                  type: string
+                refresh_token:
+                  type: string
+      responses:
+        '200':
+          description: Access token
+  /api/v1/systems:
+    get:
+      tags: [System]
+      summary: Find systems
+      parameters:
+        - $ref: '#/components/parameters/pageOffset'
+        - $ref: '#/components/parameters/pageSize'
+      responses:
+        '200':
+          description: System list
+    post:
+      tags: [System]
+      summary: Create system
+      responses:
+        '200':
+          description: Created
+  /api/v1/systems/{uid}:
+    parameters:
+      - $ref: '#/components/parameters/uid'
+    get:
+      tags: [System]
+      summary: System details
+      responses:
+        '200':
+          description: System
+    put:
+      tags: [System]
+      summary: Edit system
+      responses:
+        '200':
+          description: Updated
+    delete:
+      tags: [System]
+      summary: Delete system
+      responses:
+        '200':
+          description: Deleted
+  /api/v1/operations/systems/activate:
+    post:
+      tags: [System]
+      summary: Activate systems
+      description: Activate is a subscription/system operation. It is not radio attach.
+      responses:
+        '200':
+          description: Operation
+  /api/v1/subscriptions:
+    get:
+      tags: [Subscription]
+      summary: Find subscriptions
+      responses:
+        '200':
+          description: Subscription list
+    post:
+      tags: [Subscription]
+      summary: Create subscription
+      responses:
+        '200':
+          description: Created
+  /api/v1/subscriptions/{uid}:
+    parameters:
+      - $ref: '#/components/parameters/uid'
+    get:
+      tags: [Subscription]
+      summary: Subscription details
+      responses:
+        '200':
+          description: Subscription
+    put:
+      tags: [Subscription]
+      summary: Edit subscription
+      responses:
+        '200':
+          description: Updated
+  /api/v1/operations/subscriptions/activate:
+    post:
+      tags: [Subscription]
+      summary: Activate subscriptions
+      responses:
+        '200':
+          description: Operation
+  /api/v1/operations/subscriptions/suspend:
+    post:
+      tags: [Subscription]
+      summary: Suspend subscriptions
+      responses:
+        '200':
+          description: Operation
+  /api/v1/operations/subscriptions/restore:
+    post:
+      tags: [Subscription]
+      summary: Restore subscriptions
+      responses:
+        '200':
+          description: Operation
+  /api/v2/alertrules:
+    get:
+      tags: [Alert]
+      summary: Retrieve all rules
+      responses:
+        '200':
+          description: Rules
+    post:
+      tags: [Alert]
+      summary: Create rule
+      responses:
+        '200':
+          description: Created
+  /api/v2/alertrules/{uid}:
+    parameters:
+      - $ref: '#/components/parameters/uid'
+    get:
+      tags: [Alert]
+      summary: Get rule details
+      responses:
+        '200':
+          description: Rule
+    put:
+      tags: [Alert]
+      summary: Update rule
+      responses:
+        '200':
+          description: Updated
+    delete:
+      tags: [Alert]
+      summary: Delete rule
+      responses:
+        '200':
+          description: Deleted
+  /api/v3/alerts/current:
+    get:
+      tags: [Alert]
+      summary: Find current alerts
+      responses:
+        '200':
+          description: Current alerts
+  /api/v3/alerts/history:
+    get:
+      tags: [Alert]
+      summary: Find alerts history
+      responses:
+        '200':
+          description: History
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+  parameters:
+    uid:
+      name: uid
+      in: path
+      required: true
+      schema:
+        type: string
+    pageOffset:
+      name: offset
+      in: query
+      schema:
+        type: integer
+        default: 0
+    pageSize:
+      name: size
+      in: query
+      schema:
+        type: integer
+        default: 100
+  schemas:
+    OfferMapping:
+      type: object
+      description: API `offer` / `offerId` is the operator Service plan.
+      properties:
+        offerId:
+          type: string
+          description: Service plan identifier
